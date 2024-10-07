@@ -1,0 +1,16 @@
+.App-header {
+        font-family: "Kay Pho Du", serif;
+        font-weight: 400;
+        font-style: normal;
+}
+
+.App-header h2 {
+        font-size: 3rem;
+}
+
+.header-links {
+        font-size: 1.2em;
+        display: flex;
+        justify-content: center;
+        gap: 1em;
+}

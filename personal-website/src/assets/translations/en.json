@@ -1,0 +1,25 @@
+{
+  "GENERAL": {
+    "change_language": "Change language to slovene",
+    "toggle_darkMode": "Change to dark mode",
+    "toggle_lightMode": "Change to light mode"
+  },
+  "MAIN": {
+    "title": "About me",
+    "description": "I am a former computer science student with hands-on experience in mobile, web,\nbackend, and database systems development.\nIn addition to my academic pursuits, I am teching programming and developing my\nown hobby projects to learn new technologies.\nAspiring to make a positive impact on the world with my work.\n"
+  },
+  "EXPERIENCE": {
+    "title": "Experience",
+    "xp1_title": "Full Stack Developer",
+    "xp1_company": "Ixtlan Team d.o.o.",
+    "xp1_desc": "Development of software solutions using Typescript, Angular, Java, PL/SQL, containerisation",
+    "xp2_title": "Frontend Developer",
+    "xp2_company": "Project Formaviva (Kundi d.o.o.)",
+    "xp2_desc": "Lead Frontend Engineer on the project, responsible for user experience, development and maintenance",
+    "xp3_title": "Programming Teacher",
+    "xp3_company": "DigitalSchool",
+    "xp3_desc": "Teaching programming to children and teenagers, developing curriculums, conducting workshops",
+    "website": "Website",
+    "current": "current"
+  }
+}

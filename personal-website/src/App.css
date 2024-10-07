@@ -1,0 +1,13 @@
+.App {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+a:hover {
+    opacity: 0.8;
+}
+a {
+    text-decoration: none;
+    color: unset;
+}

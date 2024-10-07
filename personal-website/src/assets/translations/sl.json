@@ -1,0 +1,27 @@
+{
+  "GENERAL": {
+    "change_language": "Spremeni jezik v angleščino",
+    "toggle_darkMode": "Spremeni v temen način",
+    "toggle_lightMode": "Spremeni v svetel način"
+  },
+
+  "MAIN": {
+    "title": "O meni",
+    "description": "Sem bivši študent računalništva z izkušnjami z razvojem mobilnih in spletnih\naplikacij, zaledja ter baznih sistemov.\nUkvarjam se tudi z učenjem programiranja ter z lastnimi hobi projekti.\nS svojim delom želim vsaj za odtenek izboljšati svet.\n",
+    "my_cv": "Moj življenjepis"
+  },
+  "EXPERIENCE": {
+    "title": "Izkušnje",
+    "xp1_title": "Razvojni inženir - Full Stack",
+    "xp1_company": "Ixtlan Team d.o.o.",
+    "xp1_desc": "Razvoj programskih rešitev z uporabo Typescript, Angular, Java, PL/SQL,kontejnerizacije",
+    "xp2_title": "Frontend razvijalec",
+    "xp2_company": "Projekt Formaviva (Kundi d.o.o.)",
+    "xp2_desc": "Vodilni samostojen Frontend inženir na projektu, skrb za uporabniško izkušnjo, razvoj in vzdrževanje",
+    "xp3_title": "Učitelj programiranja",
+    "xp3_company": "DigitalSchool",
+    "xp3_desc": "Učenje programiranja otrok in mladostnikov, razvoj učnih načrtov, izvedba delavnic",
+    "website": "Spletna stran",
+    "current": "trenutno"
+  }
+  }
