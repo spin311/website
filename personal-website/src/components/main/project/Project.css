@@ -1,0 +1,19 @@
+.project-card {
+    border: 2px solid;
+    border-radius: 10px;
+}
+
+.project-image {
+    max-width: 150px;
+    max-height: 150px;
+}
+
+.project-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.project-date {
+    margin-right: 15px;
+    margin-top: 15px;
+}

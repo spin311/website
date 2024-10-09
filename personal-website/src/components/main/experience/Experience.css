@@ -3,3 +3,13 @@
     justify-content: space-between;
     align-items: center;
 }
+
+.mt-0 {
+    margin-top: 0;
+}
+
+.company-logo {
+    width: 20px;
+    height: 20px;
+    margin-left: 0.5rem;
+}

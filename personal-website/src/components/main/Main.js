@@ -1,34 +1,187 @@
+import React, {useEffect, useState} from 'react';
 import {useLanguage} from "../../context/LanguageContext";
 import "./Main.css";
-import React from 'react';
 import Experience from "./experience/Experience";
+import Project from "./project/Project";
 
-function Main () {
-    const {text, formatTextWithLineBreaks} = useLanguage();
-    const experiences  = [
+function Main() {
+    const { text, formatTextWithLineBreaks } = useLanguage();
+    let allProjects = [
+        {
+            name: "Microsoft Automatic Rewards",
+            ghName: "MicrosoftRewardsWebsite",
+            type: text.PROJECT.t_extension,
+            ghUrl: "https://github.com/spin311/MicrosoftRewardsWebsite",
+            description: text.PROJECT.p1_description,
+            img: "/assets/images/microsoft.png",
+            website: "https://chromewebstore.google.com/detail/microsoft-automatic-rewar/ocmmbfdhomnkljmjkmafegefcgcfkefo",
+            stars: 0,
+            forks: 0,
+            created_at: null
+        },
+        {
+            name: "Prolific Studies Notifier",
+            ghName: "ProlificAutomaticStudies",
+            type: text.PROJECT.t_extension,
+            ghUrl: "https://github.com/spin311/ProlificAutomaticStudies",
+            description: text.PROJECT.p2_description,
+            img: "/assets/images/prolific.png",
+            website: "https://chromewebstore.google.com/detail/prolific-studies-notifier/mlicfddkgjkeajfgkihplfbgpmbonbao",
+            stars: 0,
+            forks: 0,
+            created_at: null
+        },
+        {
+            name: "Gobar",
+            ghName: "Gobar",
+            type: text.PROJECT.t_mobile,
+            ghUrl: "https://github.com/JuiceVodka/Gobar",
+            description: text.PROJECT.p3_description,
+            img: "/assets/images/gobar.png",
+            website: "https://juicevodka.github.io/Gobar/",
+            stars: 0,
+            forks: 0,
+            created_at: null
+        },
+        {
+            name: "ChatGPT pair programming",
+            ghName: "diploma",
+            type: text.GENERAL.website,
+            ghUrl: "https://github.com/spin311/diploma",
+            description: text.PROJECT.p4_description,
+            img: "/assets/images/prompt.png",
+            website: "https://spin311.github.io/diploma/",
+            stars: 0,
+            forks: 0,
+            created_at: null
+        },
+        {
+            name: "Survalien",
+            ghName: "Survalien-Unity",
+            type: text.PROJECT.t_game,
+            ghUrl: "https://github.com/gregorkovac/Survalien-Unity",
+            description: text.PROJECT.p5_description,
+            img: "/assets/images/survalien.png",
+            website: "https://www.dropbox.com/scl/fi/hdcw6938y4ha3virfb4fo/Survalien%20-%20Predstavitev.mp4?rlkey=xho6lfj4m78doev6sjyvwmda5&e=3&dl=0",
+            stars: 0,
+            forks: 0,
+            created_at: null
+        },
+        {
+            name: "Kesi",
+            ghName: "KeSi",
+            type: text.PROJECT.t_mobile,
+            ghUrl: "https://github.com/JuiceVodka/KeSi",
+            description: text.PROJECT.p6_description,
+            img: "/assets/images/kesi.png",
+            website: "https://juicevodka.github.io/KeSi/",
+            stars: 0,
+            forks: 0,
+            created_at: null
+        },
+        {
+            name: "K8 AppStack",
+            ghName: "Appstack",
+            type: text.GENERAL.website,
+            ghUrl: "https://github.com/spin311/Appstack",
+            description: text.PROJECT.p7_description,
+            img: "/assets/images/kubernetes.png",
+            website: "https://github.com/spin311/Appstack",
+            stars: 0,
+            forks: 0,
+            created_at: null
+        }
+    ];
+    const [projects, setProjects] = useState(allProjects);
+
+    const getProjectStars = async () => {
+        try {
+            const headers = {
+                'Authorization': `token ${process.env.REACT_APP_GITHUB_TOKEN}`
+            };
+            const username = `${process.env.REACT_APP_GITHUB_USERNAME}`;
+
+            const response = await fetch(`https://api.github.com/users/${username}/starred`, { headers });
+            const starredRepos = await response.json();
+
+            const updatedProjects = projects.map(project => {
+                const matchingRepo = starredRepos.find(repo => repo.name === project.ghName);
+                if (matchingRepo) {
+                    return { ...project, stars: matchingRepo.stargazers_count || 0, forks: matchingRepo.forks_count || 0, created_at: matchingRepo.created_at || null };
+                }
+                return project;
+            });
+
+            setProjects(updatedProjects);
+        } catch (error) {
+            console.error('Error fetching project stars:', error);
+        }
+    };
+
+    useEffect(() => {
+        const fetchData = async () => {
+            await getProjectStars();
+        };
+        fetchData();
+    }, []);
+
+    useEffect(() => {
+        setProjects(allProjects);
+    }, [text]);
+
+    const [sortOption, setSortOption] = useState('');
+
+    const experiences = [
         {
             title: text.EXPERIENCE.xp3_title,
-            company: text.EXPERIENCE.xp3_company,
+            company: "Digital School",
             desc: text.EXPERIENCE.xp3_desc,
             website: "https://digitalschool.si/",
-            years: `2021 - 2024`
+            years: `2021 - 2024`,
+            logo: "/assets/images/ds.png"
         },
         {
             title: text.EXPERIENCE.xp1_title,
-            company: text.EXPERIENCE.xp1_company,
+            company: "Ixtlan Team",
             desc: text.EXPERIENCE.xp1_desc,
             website: "https://www.ixtlan-team.si/",
-            years: "2023 - 2024"
+            years: "2023 - 2024",
+            logo: "/assets/images/ix.png"
         },
         {
             title: text.EXPERIENCE.xp2_title,
-            company: text.EXPERIENCE.xp2_company,
+            company: "Formaviva",
             desc: text.EXPERIENCE.xp2_desc,
-            website:  "https://formaviva.com/",
-            years: `2024 - ${text.EXPERIENCE.current}`
+            website: "https://formaviva.com/",
+            years: `2024 - ${text.EXPERIENCE.current}`,
+            logo: "/assets/images/formaviva.png"
         }
-
     ];
+
+    const handleSortChange = (event) => {
+      const option = event.target.value;
+      setSortOption(option);
+      switch (option) {
+            case 'stars-':
+                setProjects(projects.sort((a, b) => b.stars - a.stars));
+                break;
+            case 'stars+':
+                setProjects(projects.sort((a, b) => a.stars - b.stars));
+                break;
+            case 'name+':
+                setProjects(projects.sort((a, b) => a.name.localeCompare(b.name)));
+                break;
+            case 'name-':
+                setProjects(projects.sort((a, b) => b.name.localeCompare(a.name)));
+                break;
+            case 'date+':
+                setProjects(projects.sort((a, b) => new Date(a.created_at) - new Date(b.created_at)));
+                break;
+            case 'date-':
+                setProjects(projects.sort((a, b) => new Date(b.created_at) - new Date(a.created_at)));
+                break;
+      }
+    };
 
     return (
         <div className="Main">
@@ -38,8 +191,25 @@ function Main () {
             </p>
             <h2>{text.EXPERIENCE.title}</h2>
             {experiences.map((xp, index) => (
-                <Experience key={index} title={xp.title} company={xp.company} desc={xp.desc} years={xp.years} website={xp.website} />
+                <Experience key={index} title={xp.title} company={xp.company} desc={xp.desc} years={xp.years} website={xp.website} logo={xp.logo} />
             ))}
+            <h2>{text.PROJECT.title}</h2>
+            <div className="projects">
+                <label htmlFor="sort">{text.GENERAL.sort_by}: </label>
+                <select id="sort" onChange={handleSortChange} value={sortOption} className="sort-select">
+                    <option value="stars-">{text.GENERAL.starsDesc}</option>
+                    <option value="stars+">{text.GENERAL.starsAsc}</option>
+                    <option value="name+">{text.GENERAL.nameAsc}</option>
+                    <option value="name-">{text.GENERAL.nameDesc}</option>
+                    <option value="date+">{text.GENERAL.dateAsc}</option>
+                    <option value="date-">{text.GENERAL.dateDesc}</option>
+                </select>
+                {projects.map((project, index) => (
+                    <Project key={index} name={project.name} type={project.type} ghUrl={project.ghUrl}
+                             description={project.description} img={project.img} website={project.website}
+                             stars={project.stars} forks={project.forks} created_at={project.created_at}/>
+                ))}
+            </div>
         </div>
     );
 }

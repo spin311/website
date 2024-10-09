@@ -1,7 +1,7 @@
 function Footer() {
   return (
     <footer>
-      <p>© 2024</p>
+      <p>Made with react © 2024</p>
     </footer>
   );
 }

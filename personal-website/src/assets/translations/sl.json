@@ -2,7 +2,16 @@
   "GENERAL": {
     "change_language": "Spremeni jezik v angleščino",
     "toggle_darkMode": "Spremeni v temen način",
-    "toggle_lightMode": "Spremeni v svetel način"
+    "toggle_lightMode": "Spremeni v svetel način",
+    "website": "Spletna stran",
+    "type": "Vrsta",
+    "sort_by": "Razvrsti po",
+    "starsAsc": "Število GitHub zvezdic naraščajoče",
+    "starsDesc": "Število GitHub zvezdic padajoče",
+    "nameAsc": "Ime projekta naraščajoče (A - Ž)",
+    "nameDesc": "Ime projekta padajoče (Ž - A)",
+    "dateAsc": "Datum nastanka naraščajoče",
+    "dateDesc": "Datum nastanka padajoče"
   },
 
   "MAIN": {
@@ -13,7 +22,7 @@
   "EXPERIENCE": {
     "title": "Izkušnje",
     "xp1_title": "Razvojni inženir - Full Stack",
-    "xp1_company": "Ixtlan Team d.o.o.",
+    "xp1_company": "Ixtlan Team",
     "xp1_desc": "Razvoj programskih rešitev z uporabo Typescript, Angular, Java, PL/SQL,kontejnerizacije",
     "xp2_title": "Frontend razvijalec",
     "xp2_company": "Projekt Formaviva (Kundi d.o.o.)",
@@ -21,7 +30,19 @@
     "xp3_title": "Učitelj programiranja",
     "xp3_company": "DigitalSchool",
     "xp3_desc": "Učenje programiranja otrok in mladostnikov, razvoj učnih načrtov, izvedba delavnic",
-    "website": "Spletna stran",
     "current": "trenutno"
+  },
+  "PROJECT": {
+    "title": "Projekti",
+    "t_extension": "Razširitev",
+    "t_mobile": "Mobilna aplikacija",
+    "t_game": "Računalniška igra",
+    "p1_description": "Moja osebna spletna stran, ki jo trenutno gledate.",
+    "p2_description": "Mobilna igra za učenje programiranja, ki je trenutno v razvoju.",
+    "p3_description": "Mobilna aplikacija za sledenje nalogam, ki je trenutno v razvoju.",
+    "p4_description": "Mobilna aplikacija za sledenje nalogam, ki je trenutno v razvoju.",
+    "p5_description": "Mobilna aplikacija za sledenje nalogam, ki je trenutno v razvoju.",
+    "p6_description": "Mobilna aplikacija za sledenje nalogam, ki je trenutno v razvoju.",
+    "p7_description": "Mobilna aplikacija za sledenje nalogam, ki je trenutno v razvoju."
   }
   }

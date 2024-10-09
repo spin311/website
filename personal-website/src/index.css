@@ -12,7 +12,15 @@ body.light-mode {
   color: black;
 }
 
-body.dark-mode {
-  background-color: #36363a;
-  color: white;
+body {
+  background-color: var(--background-color);
+  color: var(--primary-color);
+}
+.light-mode {
+  --primary-color: black;
+  --background-color: #eeefef;
+}
+.dark-mode {
+  --primary-color: white;
+  --background-color: #36363a;
 }

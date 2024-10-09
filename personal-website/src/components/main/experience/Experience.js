@@ -4,18 +4,18 @@ import React from "react";
 import "./Experience.css";
 import {useLanguage} from "../../../context/LanguageContext";
 
-function Experience({title, company, desc, years, website}) {
+function Experience({title, company, desc, years, website, logo}) {
     const {text} = useLanguage();
     return (
         <div>
         <h4>{title}</h4>
     <div className="xp-info">
-        <a href={website} target="_blank">
-            <p><FontAwesomeIcon icon={faGlobe}/> {text.EXPERIENCE.website}</p>
+        <a href={website} target="_blank" rel="noopener noreferrer">
+            <p><FontAwesomeIcon icon={faGlobe}/> {text.GENERAL.website}</p>
         </a>
         <span>{years}</span>
     </div>
-    <p>{company}</p>
+    <p className="mt-0">{company} <img className="company-logo" src={logo} alt="company_logo"/></p>
     <p>{desc}</p>
         </div>
 );

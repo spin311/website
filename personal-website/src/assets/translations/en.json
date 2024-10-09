@@ -2,7 +2,16 @@
   "GENERAL": {
     "change_language": "Change language to slovene",
     "toggle_darkMode": "Change to dark mode",
-    "toggle_lightMode": "Change to light mode"
+    "toggle_lightMode": "Change to light mode",
+    "website": "Website",
+    "type": "Type",
+    "sort_by": "Sort by",
+    "starsAsc": "Number of GitHub stars ascending",
+    "starsDesc": "Number of GitHub stars descending",
+    "nameAsc": "Project name ascending (A - Z)",
+    "nameDesc": "Project name descending (Z - A)",
+    "dateAsc": "Date added ascending",
+    "dateDesc": "Date added descending"
   },
   "MAIN": {
     "title": "About me",
@@ -11,15 +20,25 @@
   "EXPERIENCE": {
     "title": "Experience",
     "xp1_title": "Full Stack Developer",
-    "xp1_company": "Ixtlan Team d.o.o.",
     "xp1_desc": "Development of software solutions using Typescript, Angular, Java, PL/SQL, containerisation",
     "xp2_title": "Frontend Developer",
-    "xp2_company": "Project Formaviva (Kundi d.o.o.)",
     "xp2_desc": "Lead Frontend Engineer on the project, responsible for user experience, development and maintenance",
     "xp3_title": "Programming Teacher",
-    "xp3_company": "DigitalSchool",
     "xp3_desc": "Teaching programming to children and teenagers, developing curriculums, conducting workshops",
     "website": "Website",
     "current": "current"
+  },
+  "PROJECT": {
+    "title": "Projects",
+    "t_extension": "Extension",
+    "t_mobile": "Mobile app",
+    "t_game": "Video game",
+    "p1_description": "Moja osebna spletna stran, ki jo trenutno gledate.",
+    "p2_description": "Mobilna igra za učenje programiranja, ki je trenutno v razvoju.",
+    "p3_description": "Mobilna aplikacija za sledenje nalogam, ki je trenutno v razvoju.",
+    "p4_description": "Mobilna aplikacija za sledenje nalogam, ki je trenutno v razvoju.",
+    "p5_description": "Mobilna aplikacija za sledenje nalogam, ki je trenutno v razvoju.",
+    "p6_description": "Mobilna aplikacija za sledenje nalogam, ki je trenutno v razvoju.",
+    "p7_description": "Mobilna aplikacija za sledenje nalogam, ki je trenutno v razvoju."
   }
 }
