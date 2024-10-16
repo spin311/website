@@ -18,7 +18,7 @@ function Header(){
             <div className="header-links">
                 <a href="https://github.com/spin311" target="_blank" rel="noopener noreferrer">Github <FontAwesomeIcon icon={faGithub} /></a>
                 <a href="mailto:svit.spindler@gmail.com">E-Mail <FontAwesomeIcon icon={faEnvelope} /> </a>
-                <a href={cvLink}>CV <FontAwesomeIcon icon={faFile} /> </a>
+                <a href={cvLink} target="_blank" rel="noopener noreferrer">CV <FontAwesomeIcon icon={faFile} /> </a>
             </div>
 
 

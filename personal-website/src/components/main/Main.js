@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useState, useMemo} from 'react';
 import {useLanguage} from "../../context/LanguageContext";
 import "./Main.css";
 import Experience from "./experience/Experience";
@@ -6,7 +6,8 @@ import Project from "./project/Project";
 
 function Main() {
     const { text, formatTextWithLineBreaks } = useLanguage();
-    let allProjects = [
+
+    const allProjects = useMemo(() => [
         {
             name: "Microsoft Automatic Rewards",
             ghName: "MicrosoftRewardsWebsite",
@@ -78,20 +79,22 @@ function Main() {
             stars: 0,
             forks: 0,
             created_at: null
-        },
-        {
-            name: "K8 AppStack",
-            ghName: "Appstack",
-            type: text.GENERAL.website,
-            ghUrl: "https://github.com/spin311/Appstack",
-            description: text.PROJECT.p7_description,
-            img: "/assets/images/kubernetes.png",
-            website: "https://github.com/spin311/Appstack",
-            stars: 0,
-            forks: 0,
-            created_at: null
         }
-    ];
+        // ,
+        // {
+        //     name: "K8 AppStack",
+        //     ghName: "Appstack",
+        //     type: text.GENERAL.website,
+        //     ghUrl: "https://github.com/spin311/Appstack",
+        //     description: text.PROJECT.p7_description,
+        //     img: "/assets/images/kubernetes.png",
+        //     website: "https://github.com/spin311/Appstack",
+        //     stars: 0,
+        //     forks: 0,
+        //     created_at: null
+        // }
+    ], [text]);
+
     const [projects, setProjects] = useState(allProjects);
 
     const getProjectStars = async () => {
@@ -126,7 +129,15 @@ function Main() {
     }, []);
 
     useEffect(() => {
-        setProjects(allProjects);
+        const updatedProjects = projects.map(project => {
+            const matchingProject = allProjects.find(p => p.ghName === project.ghName);
+            return {
+                ...project,
+                type: matchingProject.type,
+                description: matchingProject.description
+            };
+        });
+        setProjects(updatedProjects);
     }, [text]);
 
     const [sortOption, setSortOption] = useState('');
@@ -159,9 +170,9 @@ function Main() {
     ];
 
     const handleSortChange = (event) => {
-      const option = event.target.value;
-      setSortOption(option);
-      switch (option) {
+        const option = event.target.value;
+        setSortOption(option);
+        switch (option) {
             case 'stars-':
                 setProjects(projects.sort((a, b) => b.stars - a.stars));
                 break;
@@ -180,7 +191,9 @@ function Main() {
             case 'date-':
                 setProjects(projects.sort((a, b) => new Date(b.created_at) - new Date(a.created_at)));
                 break;
-      }
+            default:
+                break;
+        }
     };
 
     return (
@@ -191,19 +204,21 @@ function Main() {
             </p>
             <h2>{text.EXPERIENCE.title}</h2>
             {experiences.map((xp, index) => (
-                <Experience key={index} title={xp.title} company={xp.company} desc={xp.desc} years={xp.years} website={xp.website} logo={xp.logo} />
+                <Experience key={index} title={xp.title} company={xp.company} desc={xp.desc} years={xp.years}
+                            website={xp.website} logo={xp.logo}/>
             ))}
             <h2>{text.PROJECT.title}</h2>
+            <label htmlFor="sort">{text.GENERAL.sort_by}: </label>
+            <select id="sort" onChange={handleSortChange} value={sortOption} className="sort-select">
+                <option value="stars-">{text.GENERAL.starsDesc}</option>
+                <option value="stars+">{text.GENERAL.starsAsc}</option>
+                <option value="name+">{text.GENERAL.nameAsc}</option>
+                <option value="name-">{text.GENERAL.nameDesc}</option>
+                <option value="date+">{text.GENERAL.dateAsc}</option>
+                <option value="date-">{text.GENERAL.dateDesc}</option>
+            </select>
+
             <div className="projects">
-                <label htmlFor="sort">{text.GENERAL.sort_by}: </label>
-                <select id="sort" onChange={handleSortChange} value={sortOption} className="sort-select">
-                    <option value="stars-">{text.GENERAL.starsDesc}</option>
-                    <option value="stars+">{text.GENERAL.starsAsc}</option>
-                    <option value="name+">{text.GENERAL.nameAsc}</option>
-                    <option value="name-">{text.GENERAL.nameDesc}</option>
-                    <option value="date+">{text.GENERAL.dateAsc}</option>
-                    <option value="date-">{text.GENERAL.dateDesc}</option>
-                </select>
                 {projects.map((project, index) => (
                     <Project key={index} name={project.name} type={project.type} ghUrl={project.ghUrl}
                              description={project.description} img={project.img} website={project.website}

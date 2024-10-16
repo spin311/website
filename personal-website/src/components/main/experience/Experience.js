@@ -8,7 +8,7 @@ function Experience({title, company, desc, years, website, logo}) {
     const {text} = useLanguage();
     return (
         <div>
-        <h4>{title}</h4>
+        <h4 className="ext-title">{title}</h4>
     <div className="xp-info">
         <a href={website} target="_blank" rel="noopener noreferrer">
             <p><FontAwesomeIcon icon={faGlobe}/> {text.GENERAL.website}</p>
