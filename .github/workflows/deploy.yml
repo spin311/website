@@ -17,6 +17,8 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: '14'
+      - name: Change directory
+        run: cd ./personal-website
 
       - name: Install dependencies
         run: npm install
