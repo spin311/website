@@ -172,28 +172,17 @@ function Main() {
     const handleSortChange = (event) => {
         const option = event.target.value;
         setSortOption(option);
-        switch (option) {
-            case 'stars-':
-                setProjects(projects.sort((a, b) => b.stars - a.stars));
-                break;
-            case 'stars+':
-                setProjects(projects.sort((a, b) => a.stars - b.stars));
-                break;
-            case 'name+':
-                setProjects(projects.sort((a, b) => a.name.localeCompare(b.name)));
-                break;
-            case 'name-':
-                setProjects(projects.sort((a, b) => b.name.localeCompare(a.name)));
-                break;
-            case 'date+':
-                setProjects(projects.sort((a, b) => new Date(a.created_at) - new Date(b.created_at)));
-                break;
-            case 'date-':
-                setProjects(projects.sort((a, b) => new Date(b.created_at) - new Date(a.created_at)));
-                break;
-            default:
-                break;
-        }
+
+        const sortFunctions = {
+            'stars-': (a, b) => b.stars - a.stars,
+            'stars+': (a, b) => a.stars - b.stars,
+            'name+': (a, b) => a.name.localeCompare(b.name),
+            'name-': (a, b) => b.name.localeCompare(a.name),
+            'date+': (a, b) => new Date(a.created_at) - new Date(b.created_at),
+            'date-': (a, b) => new Date(b.created_at) - new Date(a.created_at)
+        };
+
+        setProjects(projects.sort(sortFunctions[option]));
     };
 
     return (
@@ -202,11 +191,13 @@ function Main() {
             <p>
                 {formatTextWithLineBreaks(text.MAIN.description)}
             </p>
+            <hr/>
             <h2>{text.EXPERIENCE.title}</h2>
             {experiences.map((xp, index) => (
                 <Experience key={index} title={xp.title} company={xp.company} desc={xp.desc} years={xp.years}
                             website={xp.website} logo={xp.logo}/>
             ))}
+            <hr/>
             <h2>{text.PROJECT.title}</h2>
             <label htmlFor="sort">{text.GENERAL.sort_by}: </label>
             <select id="sort" onChange={handleSortChange} value={sortOption} className="sort-select">

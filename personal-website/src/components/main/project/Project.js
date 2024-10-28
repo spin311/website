@@ -17,13 +17,13 @@ function Project({name, type, ghUrl, description, img, website, stars, forks, cr
                 {created_at && <><span className="project-date">{formattedDate}</span></>}
             </span>
                     <h4>{name}</h4>
-            <p>
+            <div className="project-links">
                 <a href={website} target="_blank"><FontAwesomeIcon icon={faGlobe}/> {text.GENERAL.website}
                 </a> <a href={ghUrl} target="_blank"
                         rel="noopener noreferrer"><FontAwesomeIcon icon={faGithub}/> Github {stars > 0 && <>
                 <FontAwesomeIcon icon={faStar}/>: {stars}</>} {forks > 0 && <><FontAwesomeIcon
-                icon={faCodeFork}/>: {forks}</>}</a>
-            </p>
+                icon={faCodeFork} className="forks" />: {forks}</>}</a>
+            </div>
             <p>{text.GENERAL.type}: {type}</p>
             <p>{description}</p>
         </div>

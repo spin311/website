@@ -20,3 +20,12 @@
     margin-right: 15px;
     margin-top: 15px;
 }
+
+.project-links {
+    display: flex;
+    gap: 1em;
+}
+
+.forks {
+    margin-left: 0.2em;
+}
