@@ -1,5 +1,4 @@
 import "./SidebarButtons.css"
-import {useMemo} from "react";
 import {useTheme} from "../../context/ThemeContext";
 import {useLanguage} from "../../context/LanguageContext";
 import { Tooltip } from 'react-tooltip'
