@@ -4,8 +4,12 @@
         font-style: normal;
 }
 
+.name {
+        text-align: center;
+}
+
 .App-header h2 {
-        font-size: 3rem;
+        font-size: 4rem;
 }
 
 .header-links {

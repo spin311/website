@@ -1,7 +1,10 @@
+import {useLanguage} from "../../context/LanguageContext";
+
 function Footer() {
+    let {text} = useLanguage();
   return (
-    <footer>
-      <p>Made with react © 2024</p>
+    <footer id="contact">
+      <p>{text.GENERAL.made_with} © 2024</p>
     </footer>
   );
 }

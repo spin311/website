@@ -3,14 +3,18 @@ import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
 import Main from "./components/main/Main";
 import SidebarButtons from "./components/sidebar-buttons/SidebarButtons";
+import SidebarMenu from "./components/sidebar-menu/SidebarMenu";
 
 function App() {
   return (
     <div className="App">
-      <Header />
+        <SidebarMenu className="SidebarMenu"  />
       <SidebarButtons />
-        <Main />
-        <Footer />
+        <div className="Content">
+            <Header />
+            <Main  className="Main" />
+            <Footer />
+        </div>
     </div>
   );
 }

@@ -13,12 +13,12 @@
     cursor: pointer;
 }
 .darkmode-btn {
-    height: 2rem;
-    width: 2rem;
+    height: 3rem;
+    width: 3rem;
 }
 
 .language-btn {
-    height: 1.5rem;
-    width: 2.5rem;
+    height: 2rem;
+    width: 3rem;
     object-fit: cover;
 }

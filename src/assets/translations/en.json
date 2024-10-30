@@ -11,7 +11,9 @@
     "nameAsc": "Project name ascending (A - Z)",
     "nameDesc": "Project name descending (Z - A)",
     "dateAsc": "Date added ascending",
-    "dateDesc": "Date added descending"
+    "dateDesc": "Date added descending",
+    "home": "Home",
+    "made_with": "Made with React"
   },
   "MAIN": {
     "title": "About me",
@@ -33,12 +35,12 @@
     "t_extension": "Extension",
     "t_mobile": "Mobile app",
     "t_game": "Video game",
-    "p1_description": "Moja osebna spletna stran, ki jo trenutno gledate.",
-    "p2_description": "Mobilna igra za učenje programiranja, ki je trenutno v razvoju.",
-    "p3_description": "Mobilna aplikacija za sledenje nalogam, ki je trenutno v razvoju.",
-    "p4_description": "Mobilna aplikacija za sledenje nalogam, ki je trenutno v razvoju.",
-    "p5_description": "Mobilna aplikacija za sledenje nalogam, ki je trenutno v razvoju.",
-    "p6_description": "Mobilna aplikacija za sledenje nalogam, ki je trenutno v razvoju.",
-    "p7_description": "Mobilna aplikacija za sledenje nalogam, ki je trenutno v razvoju."
+    "p1_description": "Chrome extension for automating daily Microsoft Rewards points, fully customizable. Used by over 8000 users daily with an average rating of 4.3/5.",
+    "p2_description": "Chrome extension for alerting users of Prolific studies, fully customizable. Used by over 2000 users daily with an average rating of 4.6/5.",
+    "p3_description": "A mobile app that allows you to identify mushrooms with a pre-trained AI model, store your collection and share the location of your mushrooms. The app won theBest Carbon footprint reduction app competition at the 2023 DragonHack Hackathon.",
+    "p4_description": "The website for the \"Prompt Engineering\" thesis experiment, which allows to compile and save Python code, with a chat dialog with chatGPT. The backend was developed with Java and HSQLDB, deployed with AWS.",
+    "p5_description": "Co-developed Survalien, a game where we help an alien repair his ship and survive on Earth. The game includes various AI opponents, random map generation, main boss, animations.",
+    "p6_description": "Android application for guessing the location of other users, built at DragonHack 2024, built using Kotlin and NOSQL SaaS Back4App database",
+    "p7_description": "Android app to promote blood donation campaigns. It allows you to keep track of your visits and collect achievements. The app won 2nd place in the Eestech Challenge 2023 hackathlon."
   }
 }

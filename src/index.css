@@ -19,8 +19,10 @@ body {
 .light-mode {
   --primary-color: black;
   --background-color: #eeefef;
+  --active-color: #3b3bf6;
 }
 .dark-mode {
   --primary-color: white;
   --background-color: #36363a;
+  --active-color: #3b3bf6;
 }

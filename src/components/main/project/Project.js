@@ -18,8 +18,8 @@ function Project({name, type, ghUrl, description, img, website, stars, forks, cr
             </span>
                     <h4>{name}</h4>
             <div className="project-links">
-                <a href={website} target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faGlobe}/> {text.GENERAL.website}
-                </a> <a href={ghUrl} target="_blank"
+                {website && <a href={website} target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faGlobe}/> {text.GENERAL.website}</a> }
+                <a href={ghUrl} target="_blank"
                         rel="noopener noreferrer"><FontAwesomeIcon icon={faGithub}/> Github {stars > 0 && <>
                 <FontAwesomeIcon icon={faStar}/>: {stars}</>} {forks > 0 && <><FontAwesomeIcon
                 icon={faCodeFork} className="forks" />: {forks}</>}</a>
