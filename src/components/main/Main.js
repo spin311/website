@@ -125,7 +125,7 @@ function Main() {
             await getProjectStars();
         };
         fetchData();
-    }, []);
+    });
 
     useEffect(() => {
         const updatedProjects = projects.map(project => {
@@ -137,7 +137,8 @@ function Main() {
             };
         });
         setProjects(updatedProjects);
-    }, [text]);
+        // eslint-disable-next-line
+    }, [allProjects, text]);
 
     const [sortOption, setSortOption] = useState('');
 
