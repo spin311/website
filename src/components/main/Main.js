@@ -14,7 +14,7 @@ function Main() {
             type: text.PROJECT.t_extension,
             ghUrl: "https://github.com/spin311/MicrosoftRewardsWebsite",
             description: text.PROJECT.p1_description,
-            img: "/assets/images/microsoft.png",
+            img: `${process.env.PUBLIC_URL}/assets/images/microsoft.png`,
             website: "https://chromewebstore.google.com/detail/microsoft-automatic-rewar/ocmmbfdhomnkljmjkmafegefcgcfkefo",
             stars: 0,
             forks: 0,
@@ -26,7 +26,7 @@ function Main() {
             type: text.PROJECT.t_extension,
             ghUrl: "https://github.com/spin311/ProlificAutomaticStudies",
             description: text.PROJECT.p2_description,
-            img: "/assets/images/prolific.png",
+            img: `${process.env.PUBLIC_URL}/assets/images/prolific.png`,
             website: "https://chromewebstore.google.com/detail/prolific-studies-notifier/mlicfddkgjkeajfgkihplfbgpmbonbao",
             stars: 0,
             forks: 0,
@@ -38,7 +38,7 @@ function Main() {
             type: text.PROJECT.t_mobile,
             ghUrl: "https://github.com/JuiceVodka/Gobar",
             description: text.PROJECT.p3_description,
-            img: "/assets/images/gobar.png",
+            img: `${process.env.PUBLIC_URL}/assets/images/gobar.png`,
             website: "https://juicevodka.github.io/Gobar/",
             stars: 0,
             forks: 0,
@@ -50,7 +50,7 @@ function Main() {
             type: text.GENERAL.website,
             ghUrl: "https://github.com/spin311/diploma",
             description: text.PROJECT.p4_description,
-            img: "/assets/images/prompt.png",
+            img: `${process.env.PUBLIC_URL}/assets/images/prompt.png`,
             website: "https://spin311.github.io/diploma/",
             stars: 0,
             forks: 0,
@@ -74,7 +74,7 @@ function Main() {
             type: text.PROJECT.t_mobile,
             ghUrl: "https://github.com/JuiceVodka/KeSi",
             description: text.PROJECT.p6_description,
-            img: "/assets/images/kesi.png",
+            img: `${process.env.PUBLIC_URL}/assets/images/kesi.png`,
             website: "https://juicevodka.github.io/KeSi/",
             stars: 0,
             forks: 0,
@@ -86,7 +86,7 @@ function Main() {
             type: text.PROJECT.t_mobile,
             ghUrl: "https://github.com/spin311/kdhero",
             description: text.PROJECT.p7_description,
-            img: "/assets/images/zdravko.png",
+            img: `${process.env.PUBLIC_URL}/assets/images/zdravko.png`,
             website: null,
             stars: 0,
             forks: 0,
@@ -149,7 +149,7 @@ function Main() {
             desc: text.EXPERIENCE.xp3_desc,
             website: "https://digitalschool.si/",
             years: `2021 - 2024`,
-            logo: "/assets/images/ds.png"
+            logo: `${process.env.PUBLIC_URL}/assets/images/ds.png`
         },
         {
             title: text.EXPERIENCE.xp1_title,
@@ -157,7 +157,7 @@ function Main() {
             desc: text.EXPERIENCE.xp1_desc,
             website: "https://www.ixtlan-team.si/",
             years: "2023 - 2024",
-            logo: "/assets/images/ix.png"
+            logo: `${process.env.PUBLIC_URL}/assets/images/ix.png`
         },
         {
             title: text.EXPERIENCE.xp2_title,
@@ -165,7 +165,7 @@ function Main() {
             desc: text.EXPERIENCE.xp2_desc,
             website: "https://formaviva.com/",
             years: `2024 - ${text.EXPERIENCE.current}`,
-            logo: "/assets/images/formaviva.png"
+            logo: `${process.env.PUBLIC_URL}/assets/images/formaviva.png`
         }
     ];
 

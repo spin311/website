@@ -7,8 +7,8 @@ function SidebarButtons() {
     const { darkMode, toggleTheme } = useTheme();
     const {language, changeLanguage, text} = useLanguage();
 
-    let languageImage = language === "en" ? "/assets/images/flag-uk.svg" : "/assets/images/flag-slo.png";
-    let darkModeImage = darkMode ? "/assets/images/dark-mode.png" : "/assets/images/light-mode.png";
+    let languageImage = language === "en" ? `${process.env.PUBLIC_URL}/assets/images/flag-uk.svg` : `${process.env.PUBLIC_URL}/assets/images/flag-slo.png`;
+    let darkModeImage = darkMode ? `${process.env.PUBLIC_URL}/assets/images/dark-mode.png` : `${process.env.PUBLIC_URL}/assets/images/light-mode.png`;
     let darkModeTooltip = darkMode ? text.GENERAL.toggle_lightMode : text.GENERAL.toggle_darkMode;
 
   return (
