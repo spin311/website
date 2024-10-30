@@ -62,7 +62,7 @@ function Main() {
             type: text.PROJECT.t_game,
             ghUrl: "https://github.com/gregorkovac/Survalien-Unity",
             description: text.PROJECT.p5_description,
-            img: "/assets/images/survalien.png",
+            img: `${process.env.PUBLIC_URL}/assets/images/survalien.png`,
             website: "https://www.dropbox.com/scl/fi/hdcw6938y4ha3virfb4fo/Survalien%20-%20Predstavitev.mp4?rlkey=xho6lfj4m78doev6sjyvwmda5&e=3&dl=0",
             stars: 0,
             forks: 0,
