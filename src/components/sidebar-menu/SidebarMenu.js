@@ -1,7 +1,6 @@
-import React, { useRef, useState } from "react";
 import "./SidebarMenu.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAddressBook, faBriefcase, faDiagramProject, faHouse } from "@fortawesome/free-solid-svg-icons";
+import {  faBriefcase, faDiagramProject, faHouse } from "@fortawesome/free-solid-svg-icons";
 import useActiveSection from "../../hooks/useActiveSection";
 import {useLanguage} from "../../context/LanguageContext";
 
@@ -22,9 +21,6 @@ const SidebarMenu = () => {
                 <li className={activeSection === 'project' ? 'active' : ''}>
                     <a href="#project"><FontAwesomeIcon icon={faDiagramProject}/> {text.PROJECT.title}</a>
                 </li>
-                {/*<li className={activeSection === 'contact' ? 'active' : ''}>*/}
-                {/*    <a href="#contact"><FontAwesomeIcon icon={faAddressBook}/> Contact</a>*/}
-                {/*</li>*/}
             </ul>
         </div>
     );
