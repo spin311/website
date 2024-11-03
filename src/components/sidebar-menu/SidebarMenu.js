@@ -18,37 +18,21 @@ const SidebarMenu = () => {
     }, []);
 
 
-    return !isMobile ? (
+    return (
         <div className="sidebar-menu">
             <ul>
                 <li className={activeSection === 'home' ? 'active' : ''}>
-                    <a href="#home"> <FontAwesomeIcon icon={faHouse}/> {text.GENERAL.home}</a>
+                    <a href="#home"> <FontAwesomeIcon icon={faHouse}/> {isMobile ? '' : text.GENERAL.home}</a>
                 </li>
                 <li className={activeSection === 'experience' ? 'active' : ''}>
-                    <a href="#experience"><FontAwesomeIcon icon={faBriefcase}/> {text.EXPERIENCE.title}</a>
+                    <a href="#experience"><FontAwesomeIcon icon={faBriefcase}/> {isMobile ? '' : text.EXPERIENCE.title}</a>
                 </li>
                 <li className={activeSection === 'project' ? 'active' : ''}>
-                    <a href="#project"><FontAwesomeIcon icon={faDiagramProject}/> {text.PROJECT.title}</a>
+                    <a href="#project"><FontAwesomeIcon icon={faDiagramProject}/> {isMobile ? '' : text.PROJECT.title}</a>
                 </li>
             </ul>
         </div>
-    ) : (
-        <div className="sidebar-menu">
-            <ul>
-                <li className={activeSection === 'home' ? 'active' : ''}>
-                    <a href="#home"> <FontAwesomeIcon icon={faHouse}/> </a>
-                </li>
-                <li className={activeSection === 'experience' ? 'active' : ''}>
-                    <a href="#experience"><FontAwesomeIcon icon={faBriefcase}/> </a>
-                </li>
-                <li className={activeSection === 'project' ? 'active' : ''}>
-                    <a href="#project"><FontAwesomeIcon icon={faDiagramProject}/> </a>
-                </li>
-            </ul>
-        </div>
-    )
-
-        ;
+    );
 };
 
 export default SidebarMenu;
