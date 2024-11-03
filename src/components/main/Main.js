@@ -125,7 +125,8 @@ function Main() {
             await getProjectStars();
         };
         fetchData();
-    });
+        // eslint-disable-next-line
+    }, []);
 
     useEffect(() => {
         const updatedProjects = projects.map(project => {
@@ -138,7 +139,7 @@ function Main() {
         });
         setProjects(updatedProjects);
         // eslint-disable-next-line
-    }, [allProjects, text]);
+    }, [text]);
 
     const [sortOption, setSortOption] = useState('');
 
