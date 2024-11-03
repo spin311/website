@@ -22,3 +22,18 @@
     width: 3rem;
     object-fit: cover;
 }
+@media screen and (max-width: 767px) {
+    .sidebar-buttons {
+        top: 2%;
+        right: 2%;
+    }
+    .darkmode-btn {
+        height: 2rem;
+        width: 2rem;
+    }
+    .language-btn {
+        height: 1.5rem;
+        width: 2rem;
+    }
+
+}

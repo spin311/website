@@ -44,3 +44,17 @@
         width: 100%;
     }
 }
+
+@media screen and (max-width: 767px) {
+    .sidebar-menu {
+        margin-left: 0.5em;
+        margin-top: 0.5em;
+    }
+    .sidebar-menu ul {
+        font-size: 1em;
+    }
+    .sidebar-menu li {
+        padding: 0.3em;
+        margin: 0.3em 0.3em 0.5em;
+    }
+}

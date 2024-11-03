@@ -14,7 +14,7 @@ function Project({name, type, ghUrl, description, img, website, stars, forks, cr
         <div className="project-card">
             <span className="project-header">
                 <img src={img} alt={name} className="project-image"/>
-                {created_at && <><span className="project-date">{formattedDate}</span></>}
+                {created_at && <><span className="project-date"><b>{formattedDate} </b></span></>}
             </span>
                     <h4>{name}</h4>
             <div className="project-links">
