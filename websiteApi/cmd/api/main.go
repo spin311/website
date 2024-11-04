@@ -14,7 +14,7 @@ import (
 func main() {
 	r := mux.NewRouter()
 
-	userRateLimiter := services.NewUserRateLimiter(3, time.Minute)
+	userRateLimiter := services.NewUserRateLimiter(5, time.Minute)
 
 	r.Use(middleware.CORS)
 

@@ -13,7 +13,8 @@
     "dateAsc": "Datum nastanka naraščajoče",
     "dateDesc": "Datum nastanka padajoče",
     "home": "Domov",
-    "made_with": "Narejeno z jezikom React"
+    "made_with": "Narejeno z jezikoma React in Golang",
+    "gh_code": "GitHub koda"
   },
 
   "MAIN": {
@@ -46,5 +47,18 @@
     "p5_description": "Sokreator igre Survalien, v kateri pomagamo vesoljcu popraviti njegovo ladjo in preživeti na Zemlji. Igra vključuje različne AI nasprotnike, naključno generacijo zemljevidov, glavnega šefa in animacije.",
     "p6_description": "Android aplikacija za ugibanje lokacije drugih uporabnikov, izdelana na hackathonu DragonHack 2024 z uporabo Kotlin in NOSQL SaaS baze Back4App.",
     "p7_description": "Android aplikacija za spodbujanje krvodajalskih akcij. Omogoča beleženje obiskov ter pridobivanje dosežkov. Aplikacija je dobila 2. mesto na Eestech Challenge 2023 hackatlonu."
-}
+},
+  "CONTACT": {
+    "contact": "Kontakt",
+    "title": "Kontaktiraj me",
+    "description": "Če imate kakršnakoli vprašanja ali bi želeli sodelovati, me kontaktirajte preko elektronske pošte ali družbenih omrežij.",
+    "subject": "Zadeva",
+    "sender": "Pošiljatelj",
+    "send": "Pošlji sporočilo",
+    "message": "Sporočilo",
+    "subject_placeholder": "Na kratko opišite svoj namen",
+    "sender_placeholder": "Vaše ime",
+    "contact_placeholder": "Vaš e-naslov ali telefonska številka",
+    "message_placeholder": "Napišite svoje sporočilo tukaj..."
+  }
   }

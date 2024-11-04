@@ -1,0 +1,8 @@
+.ghLink {
+    font-weight: 600;
+}
+.footer {
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+}
