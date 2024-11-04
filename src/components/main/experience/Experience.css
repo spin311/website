@@ -7,6 +7,9 @@
 .mt-0 {
     margin-top: 0;
 }
+.website {
+    float: right;
+}
 
 .company-logo {
     width: 20px;
@@ -18,4 +21,12 @@
     font-size: 1.5rem;
     font-weight: 500;
     margin-bottom: 0.5rem;
+}
+
+.company {
+    font-size: 1.2rem;
+}
+
+.desc {
+    margin-top: 1.3em;
 }

@@ -98,12 +98,7 @@ function Main() {
 
     const getProjectStars = async () => {
         try {
-            const headers = {
-                'Authorization': `token ${process.env.REACT_APP_GITHUB_TOKEN}`
-            };
-            const username = `${process.env.REACT_APP_GITHUB_USERNAME}`;
-
-            const response = await fetch(`https://api.github.com/users/${username}/starred`, { headers });
+            const response = await fetch("http://localhost:8080/starredRepos");
             const starredRepos = await response.json();
 
             const updatedProjects = projects.map(project => {

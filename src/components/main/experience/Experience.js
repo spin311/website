@@ -11,15 +11,15 @@ function Experience({title, company, desc, years, website, logo}) {
             <h4 className="ext-title">{title}</h4>
             <div className="xp-info">
 
-                <p>{company} <img className="company-logo" src={logo} alt="company_logo"/></p>
+                <p className="company">{company} <img className="company-logo" src={logo} alt="company_logo"/></p>
 
 
             <span> <b>{years} </b></span>
         </div>
     <a href={website} target="_blank" rel="noopener noreferrer">
-        <p className="mt-0"><FontAwesomeIcon icon={faGlobe}/> {text.GENERAL.website}</p>
+        <p className="mt-0 website"><FontAwesomeIcon icon={faGlobe}/> {text.GENERAL.website}</p>
     </a>
-        <p>{desc}</p>
+        <p className="desc">{desc}</p>
     </div>
 )
     ;
