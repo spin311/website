@@ -8,8 +8,8 @@ import {useLanguage} from "../../context/LanguageContext";
 function Header(){
     const {language} = useLanguage();
     const cvLink = language === "en" ?
-        "/assets/CV/CV_ENG.pdf " :
-        "/assets/CV/CV_SLO.pdf";
+        `${process.env.PUBLIC_URL}/assets/CV/CV_ENG.pdf` :
+        `${process.env.PUBLIC_URL}/assets/CV/CV_SLO.pdf`;
 
     return (
         <div id="home">
