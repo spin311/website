@@ -59,6 +59,7 @@
     "subject_placeholder": "Na kratko opišite svoj namen",
     "sender_placeholder": "Vaše ime",
     "contact_placeholder": "Vaš e-naslov ali telefonska številka",
-    "message_placeholder": "Napišite svoje sporočilo tukaj..."
+    "message_placeholder": "Napišite svoje sporočilo tukaj...",
+    "disabled_tooltip": "Pred pošiljanjem sporočila izpolnite vsa polja."
   }
   }

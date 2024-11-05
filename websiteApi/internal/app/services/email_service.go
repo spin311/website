@@ -20,7 +20,14 @@ func SendEmail(email models.Email) models.HttpError {
 	smthPort := emailConfig.EmailPort
 	recipient := emailConfig.EmailRecipient
 
-	message := fmt.Sprintf("From: %s\nTo: %s\nSubject: %s\n\nContact: %s\n\n%s", email.Sender, recipient, email.Subject, email.Contact, email.Body)
+	message := fmt.Sprintf("From: %s\nTo: %s\nSubject: %s\n\n%s\n%s",
+		email.Sender, recipient, email.Subject,
+		func() string {
+			if email.Contact != "" {
+				return fmt.Sprintf("Contact: %s\n\n", email.Contact)
+			}
+			return ""
+		}(), email.Body)
 
 	auth := smtp.PlainAuth("", emailUser, emailPassword, smthHost)
 

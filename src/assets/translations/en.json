@@ -55,6 +55,7 @@
       "subject_placeholder": "Briefly describe your inquiry",
         "sender_placeholder": "Your name",
       "contact_placeholder": "Your email or phone number",
-      "message_placeholder": "Write your message here..."
+      "message_placeholder": "Write your message here...",
+      "disabled_tooltip": "Before sending the message, fill in all the fields."
     }
 }

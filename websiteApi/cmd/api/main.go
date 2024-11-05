@@ -19,8 +19,7 @@ func main() {
 	r.Use(middleware.CORS)
 
 	r.HandleFunc("/starredRepos", handlers.GetStarredRepos).Methods(http.MethodGet)
-	r.HandleFunc("/sendEmail", handlers.SendEmail(userRateLimiter)).Methods(http.MethodPost)
-
+	r.HandleFunc("/sendEmail", handlers.SendEmail(userRateLimiter)).Methods(http.MethodPost, http.MethodOptions)
 	serverPort := config.GetEnvString("SERVER_PORT")
 	log.Fatal(http.ListenAndServe(serverPort, r))
 }

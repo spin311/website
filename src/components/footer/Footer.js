@@ -8,7 +8,7 @@ import "./Footer.css";
 function Footer() {
     let {text} = useLanguage();
   return (
-    <footer id="contact">
+    <footer>
         <Contact />
       <p className="footer"> <span>{text.GENERAL.made_with} © 2024 </span>
           <a href="https://github.com/spin311/website" target="_blank" rel="noopener noreferrer" className="ghLink">{text.GENERAL.gh_code} <FontAwesomeIcon icon={faGithub}/></a></p>
