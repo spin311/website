@@ -1,0 +1,25 @@
+meta {
+  name: sendEmail
+  type: http
+  seq: 2
+}
+
+post {
+  url: http://localhost:8080/sendEmail
+  body: text
+  auth: none
+}
+
+headers {
+  X-User-ID: 11
+  Content-Type: Application/json
+}
+
+body:text {
+  {
+  "sender": "svit spin",
+  "subject": "new email",
+  "contact": "svit.spindler@gmail.com",
+  "body": "email test22222!!!!"
+  }
+}
