@@ -2,6 +2,7 @@ package main
 
 import (
 	"github.com/gorilla/mux"
+	httpSwagger "github.com/swaggo/http-swagger"
 	"log"
 	"net/http"
 	"time"
@@ -25,6 +26,10 @@ func main() {
 
 	r.HandleFunc("/starredRepos", handlers.GetStarredRepos).Methods(http.MethodGet)
 	r.HandleFunc("/sendEmail", handlers.SendEmail(userRateLimiter)).Methods(http.MethodPost, http.MethodOptions)
+
+	// Swagger UI
+	r.PathPrefix("/swagger/").Handler(httpSwagger.WrapHandler)
+
 	serverPort := config.GetEnvString("SERVER_PORT")
 	log.Fatal(http.ListenAndServe(serverPort, r))
 }
