@@ -55,11 +55,14 @@
     "subject": "Zadeva",
     "sender": "Pošiljatelj",
     "send": "Pošlji sporočilo",
+    "sending": "Sporočilo se pošilja...",
     "message": "Sporočilo",
     "subject_placeholder": "Na kratko opišite svoj namen",
     "sender_placeholder": "Vaše ime",
     "contact_placeholder": "Vaš e-naslov ali telefonska številka",
     "message_placeholder": "Napišite svoje sporočilo tukaj...",
-    "disabled_tooltip": "Pred pošiljanjem sporočila izpolnite vsa polja."
+    "disabled_tooltip": "Pred pošiljanjem sporočila izpolnite vsa polja.",
+    "success": "Sporočilo je bilo uspešno poslano. Odgovoril vam bom v najkrajšem možnem času.",
+    "error": "Prišlo je do napake pri pošiljanju sporočila. Poskusite znova kasneje."
   }
   }

@@ -5,13 +5,16 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {ThemeProvider} from "./context/ThemeContext";
 import {LanguageProvider} from "./context/LanguageContext";
+import {NotificationProvider} from "./context/NotificationContext";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <ThemeProvider>
         <LanguageProvider>
-            <App />
+            <NotificationProvider>
+                <App />
+            </NotificationProvider>
         </LanguageProvider>
     </ThemeProvider>
   </React.StrictMode>

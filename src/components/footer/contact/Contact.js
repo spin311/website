@@ -3,15 +3,19 @@ import "./Contact.css";
 import {useEffect, useState} from "react";
 import {Tooltip} from "react-tooltip";
 import {getOrCreateGUID} from "../../../helpers/Guid";
+import {useNotification} from "../../../context/NotificationContext";
 
 function Contact() {
     let {text} = useLanguage();
+    let {createNotification} = useNotification();
     const [inputs, setInputs] = useState({
         subject: '',
         sender: '',
         contact: '',
         body: ''
-    });    const [disabledSend, setDisabledSend] = useState(true);
+    });
+    const [isSending, setIsSending] = useState(false);
+    const [disabledSend, setDisabledSend] = useState(true);
     const handleChange = (event) => {
         const name = event.target.name;
         const value = event.target.value;
@@ -20,21 +24,33 @@ function Contact() {
     const handleSubmit = async (event) => {
         event.preventDefault();
         const guid = getOrCreateGUID();
-        const response = await fetch("http://localhost:8080/sendEmail", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-                "X-User-ID": guid
-            },
-            body: JSON.stringify(inputs)
-        });
-        const result = await response.json();
-        setInputs(values => ({
-            ...values,
-            subject: '',
-            body: ''
-        }))
-        console.log(result);
+        try {
+            setIsSending(true);
+            const response = await fetch("http://localhost:8080/sendEmail", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    "X-User-ID": guid
+                },
+                body: JSON.stringify(inputs)
+            });
+            const result = await response.json();
+            if (response.ok) {
+                setInputs(values => ({
+                    ...values,
+                    subject: '',
+                    body: ''
+                }));
+                createNotification(text.CONTACT.success, 'success');
+            } else {
+                createNotification(text.CONTACT.error, 'error');
+            }
+        } catch (e) {
+            createNotification(text.CONTACT.error, 'error');
+        }
+        finally {
+            setIsSending(false);
+        }
     }
     useEffect(() => {
         if (inputs.subject && inputs.sender && inputs.body) {
@@ -82,10 +98,12 @@ function Contact() {
                 data-tooltip-id="disabled-btn-tooltip"
                 data-tooltip-content={text.CONTACT.disabled_tooltip}
                 data-tooltip-place="right"
-                >{text.CONTACT.send}</button>
-
+                >
+                    {isSending ? text.CONTACT.sending : text.CONTACT.send}
+                </button>
                 {disabledSend && <Tooltip id="disabled-btn-tooltip"/>}
             </form>
+
         </div>
     );
 }

@@ -51,11 +51,14 @@
         "subject": "Subject",
       "sender": "Sender",
       "send": "Send message",
+      "sending": "Sending...",
         "message": "Message",
       "subject_placeholder": "Briefly describe your inquiry",
         "sender_placeholder": "Your name",
       "contact_placeholder": "Your email or phone number",
       "message_placeholder": "Write your message here...",
-      "disabled_tooltip": "Before sending the message, fill in all the fields."
+      "disabled_tooltip": "Before sending the message, fill in all the fields.",
+      "success": "Your message has been sent successfully. I’ll get back to you as soon as possible.",
+      "error": "An error occurred while sending the message. Please try again later."
     }
 }
