@@ -8,9 +8,12 @@ import (
 )
 
 func init() {
-	err := godotenv.Load()
-	if err != nil {
-		log.Fatalf("Error loading .env file")
+	// Only load .env file if not running in production
+	if os.Getenv("RENDER") == "" {
+		err := godotenv.Load()
+		if err != nil {
+			log.Println("No .env file found, proceeding with environment variables")
+		}
 	}
 }
 
