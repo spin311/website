@@ -1,0 +1,100 @@
+basePath: /
+definitions:
+  models.Email:
+    properties:
+      body:
+        type: string
+      contact:
+        type: string
+      sender:
+        type: string
+      subject:
+        type: string
+    type: object
+  models.GithubRepo:
+    properties:
+      created_at:
+        type: string
+      forks_count:
+        type: integer
+      name:
+        type: string
+      stargazers_count:
+        type: integer
+    type: object
+  models.HttpError:
+    properties:
+      message:
+        description: 'example: "invalid identifier"'
+        type: string
+      statusCode:
+        description: 'example: 400'
+        type: integer
+    type: object
+host: localhost:8080
+info:
+  contact: {}
+  description: Simple website API for sending emails and getting starred repos
+  title: Website API
+  version: "1.0"
+paths:
+  /sendEmail:
+    post:
+      consumes:
+      - application/json
+      description: Send an email with provided sender, subject, and body
+      parameters:
+      - description: User ID
+        example: "1"
+        in: header
+        name: X-User-ID
+        required: true
+        type: string
+      - description: Email object
+        in: body
+        name: email
+        required: true
+        schema:
+          $ref: '#/definitions/models.Email'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Email sent successfully
+          schema:
+            type: string
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.HttpError'
+        "429":
+          description: Too Many Requests
+          schema:
+            $ref: '#/definitions/models.HttpError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.HttpError'
+      summary: Send an email
+      tags:
+      - email
+  /starredRepos:
+    get:
+      description: Get a list of starred repositories for the authenticated user
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/models.GithubRepo'
+            type: array
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.HttpError'
+      summary: Get starred repositories
+      tags:
+      - gitHub
+swagger: "2.0"
