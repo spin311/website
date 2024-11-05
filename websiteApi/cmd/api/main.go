@@ -11,6 +11,11 @@ import (
 	"websiteApi/pkg/middleware"
 )
 
+// @title Website API
+// @version 1.0
+// @description Simple website API for sending emails and getting starred repos
+// @host localhost:8080
+// @BasePath /
 func main() {
 	r := mux.NewRouter()
 

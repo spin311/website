@@ -1,5 +1,8 @@
 package models
 
+// GithubRepo represents a Github repository
+//
+//swagger:model
 type GithubRepo struct {
 	RepoName  string `json:"name"`
 	RepoStar  int    `json:"stargazers_count"`

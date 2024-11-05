@@ -1,5 +1,8 @@
 package models
 
+// EmailConfig represents the configuration for sending emails
+//
+//swagger:model
 type EmailConfig struct {
 	EmailUser      string
 	EmailPassword  string

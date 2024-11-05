@@ -9,6 +9,19 @@ import (
 	"websiteApi/internal/repository/models"
 )
 
+// SendEmail godoc
+// @Summary Send an email
+// @Description Send an email with provided sender, subject, and body
+// @Tags email
+// @Accept json
+// @Produce json
+// @Param X-User-ID header string true "User ID" example(1)
+// @Param email body models.Email true "Email object" example({"sender": "John Doe", "subject": "Question about program", "body": "Hello, World!"})
+// @Success 200 {string} string "Email sent successfully"
+// @Failure 400 {object} models.HttpError
+// @Failure 429 {object} models.HttpError
+// @Failure 500 {object} models.HttpError
+// @Router /sendEmail [post]
 func SendEmail(userRateLimiter *services.UserRateLimiter) http.HandlerFunc {
 	return func(writer http.ResponseWriter, request *http.Request) {
 		userID := request.Header.Get("X-User-ID")

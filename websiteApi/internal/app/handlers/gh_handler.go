@@ -8,6 +8,14 @@ import (
 	"websiteApi/internal/repository/models"
 )
 
+// GetStarredRepos godoc
+// @Summary Get starred repositories
+// @Description Get a list of starred repositories for the authenticated user
+// @Tags gitHub
+// @Produce json
+// @Success 200 {array} models.GithubRepo
+// @Failure 500 {object} models.HttpError
+// @Router /starredRepos [get]
 func GetStarredRepos(writer http.ResponseWriter, _ *http.Request) {
 	ghRepos, httpErr := services.GetStarredRepos()
 	if !models.IsHttpErrorEmpty(httpErr) {

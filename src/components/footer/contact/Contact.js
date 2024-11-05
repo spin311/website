@@ -34,7 +34,7 @@ function Contact() {
                 },
                 body: JSON.stringify(inputs)
             });
-            const result = await response.json();
+            await response.json();
             if (response.ok) {
                 setInputs(values => ({
                     ...values,
