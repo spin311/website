@@ -101,7 +101,7 @@ function Main() {
 
     const getProjectStars = async () => {
         try {
-            const response = await fetch("https://website-f3b3.onrender.com/starredRepos");
+            const response = await fetch("https://website-production-967e.up.railway.app/starredRepos");
             setIsLoading(true);
             const starredRepos = await response.json();
 

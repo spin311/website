@@ -26,7 +26,7 @@ function Contact() {
         const guid = getOrCreateGUID();
         try {
             setIsSending(true);
-            const response = await fetch("https://website-f3b3.onrender.com/sendEmail", {
+            const response = await fetch("https://website-production-967e.up.railway.app/sendEmail", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
