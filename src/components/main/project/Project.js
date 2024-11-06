@@ -2,12 +2,12 @@ import "./Project.css";
 import {useLanguage} from "../../../context/LanguageContext";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faGithub} from "@fortawesome/free-brands-svg-icons/faGithub";
-import {faGlobe} from "@fortawesome/free-solid-svg-icons";
+import {faGlobe, faSpinner} from "@fortawesome/free-solid-svg-icons";
 import {faStar} from "@fortawesome/free-solid-svg-icons/faStar";
 import {faCodeFork} from "@fortawesome/free-solid-svg-icons/faCodeFork";
 import React from "react";
 
-function Project({name, type, ghUrl, description, img, website, stars, forks, created_at}) {
+function Project({name, type, ghUrl, description, img, website, stars, forks, created_at, isLoading}) {
     const {text} = useLanguage();
     const formattedDate = created_at ? new Date(created_at).toLocaleDateString('en-US', { month: '2-digit', year: 'numeric' }).replace('/', ' /') : '"';
     return (
@@ -21,8 +21,17 @@ function Project({name, type, ghUrl, description, img, website, stars, forks, cr
                 {website && <a href={website} target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faGlobe}/> {text.GENERAL.website}</a> }
                 <a href={ghUrl} target="_blank"
                         rel="noopener noreferrer"><FontAwesomeIcon icon={faGithub}/> Github {stars > 0 && <>
-                <FontAwesomeIcon icon={faStar}/>: {stars}</>} {forks > 0 && <><FontAwesomeIcon
-                icon={faCodeFork} className="forks" />: {forks}</>}</a>
+                <FontAwesomeIcon icon={faStar}/>: {stars}</>}
+                    {isLoading ? (
+                        <FontAwesomeIcon icon={faSpinner} className="fa-spin ml-small" />
+                    ) : (
+                        forks > 0 && (
+                            <>
+                                <FontAwesomeIcon icon={faCodeFork} className="ml-small " />: {forks}
+                            </>
+                        )
+                    )}
+                </a>
             </div>
             <p>{text.GENERAL.type}: {type}</p>
             <p>{description}</p>

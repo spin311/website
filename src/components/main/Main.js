@@ -45,13 +45,13 @@ function Main() {
             created_at: null
         },
         {
-            name: "ChatGPT pair programming",
-            ghName: "diploma",
-            type: text.GENERAL.website,
-            ghUrl: "https://github.com/spin311/diploma",
-            description: text.PROJECT.p4_description,
-            img: `${process.env.PUBLIC_URL}/assets/images/prompt.png`,
-            website: "https://spin311.github.io/diploma/",
+            name: "Zdravko",
+            ghName: "kdhero",
+            type: text.PROJECT.t_mobile,
+            ghUrl: "https://github.com/spin311/kdhero",
+            description: text.PROJECT.p7_description,
+            img: `${process.env.PUBLIC_URL}/assets/images/zdravko.png`,
+            website: null,
             stars: 0,
             forks: 0,
             created_at: null
@@ -81,24 +81,28 @@ function Main() {
             created_at: null
         },
         {
-            name: "Zdravko",
-            ghName: "kdhero",
-            type: text.PROJECT.t_mobile,
-            ghUrl: "https://github.com/spin311/kdhero",
-            description: text.PROJECT.p7_description,
-            img: `${process.env.PUBLIC_URL}/assets/images/zdravko.png`,
-            website: null,
+            name: "ChatGPT pair programming",
+            ghName: "diploma",
+            type: text.GENERAL.website,
+            ghUrl: "https://github.com/spin311/diploma",
+            description: text.PROJECT.p4_description,
+            img: `${process.env.PUBLIC_URL}/assets/images/prompt.png`,
+            website: "https://spin311.github.io/diploma/",
             stars: 0,
             forks: 0,
             created_at: null
         }
+
     ], [text]);
 
     const [projects, setProjects] = useState(allProjects);
 
+    const [isLoading, setIsLoading] = useState(true);
+
     const getProjectStars = async () => {
         try {
-            const response = await fetch("http://localhost:8080/starredRepos");
+            const response = await fetch("https://website-f3b3.onrender.com/starredRepos");
+            setIsLoading(true);
             const starredRepos = await response.json();
 
             const updatedProjects = projects.map(project => {
@@ -112,6 +116,9 @@ function Main() {
             setProjects(updatedProjects);
         } catch (error) {
             console.error('Error fetching project stars:', error);
+        }
+        finally {
+            setIsLoading(false);
         }
     };
 
@@ -211,7 +218,7 @@ function Main() {
                     {projects.map((project, index) => (
                         <Project key={index} name={project.name} type={project.type} ghUrl={project.ghUrl}
                                  description={project.description} img={project.img} website={project.website}
-                                 stars={project.stars} forks={project.forks} created_at={project.created_at}/>
+                                 stars={project.stars} forks={project.forks} created_at={project.created_at} isLoading={isLoading}/>
                     ))}
                 </div>
             </div>
