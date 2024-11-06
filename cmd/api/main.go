@@ -30,6 +30,6 @@ func main() {
 	// Swagger UI
 	r.PathPrefix("/swagger/").Handler(httpSwagger.WrapHandler)
 
-	serverPort := config.GetEnvString("SERVER_PORT")
-	log.Fatal(http.ListenAndServe(serverPort, r))
+	serverPort := config.GetPort()
+	log.Fatal(http.ListenAndServe(":"+serverPort, r))
 }

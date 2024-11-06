@@ -37,3 +37,11 @@ func GetGithubConfig() *models.GithubConfig {
 func GetEnvString(s string) string {
 	return os.Getenv(s)
 }
+
+func GetPort() string {
+	port := os.Getenv("PORT")
+	if port != "" {
+		port = os.Getenv("SERVER_PORT")
+	}
+	return port
+}
