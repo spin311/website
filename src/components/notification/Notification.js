@@ -9,6 +9,15 @@ function Notification({message, type, id, onClose}) {
         }, CLOSE_TIMEOUT);
     }, [id, onClose]);
 
+    const formatMessage = (message) => {
+        return message.split('\n').map((item, index) => (
+            <span key={index}>
+                {item}
+                <br />
+            </span>
+        ));
+    };
+
     return (
         <div className={`notification ${type}`}>
             <span className="x-button"
@@ -18,7 +27,7 @@ function Notification({message, type, id, onClose}) {
             <div className="content">
                 <span
                     className={`icon ${type === 'success' ? 'fa fa-check-circle' : type === 'error' ? 'fa fa-times-circle' : ''}`}></span>
-                <p>{message}</p>
+                <p>{formatMessage(message)}</p>
             </div>
             <div className="progress-bar">
                 <div className="progress"></div>

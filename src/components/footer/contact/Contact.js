@@ -26,7 +26,7 @@ function Contact() {
         const guid = getOrCreateGUID();
         try {
             setIsSending(true);
-            const response = await fetch("http://localhost:8080/sendEmail", {
+            const response = await fetch("https://website-f3b3.onrender.com/sendEmail", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -34,7 +34,7 @@ function Contact() {
                 },
                 body: JSON.stringify(inputs)
             });
-            await response.json();
+            const re = await response.json();
             if (response.ok) {
                 setInputs(values => ({
                     ...values,
@@ -43,7 +43,7 @@ function Contact() {
                 }));
                 createNotification(text.CONTACT.success, 'success');
             } else {
-                createNotification(text.CONTACT.error, 'error');
+                createNotification(`${text.CONTACT.error}\nError:${re.Message}`, 'error');
             }
         } catch (e) {
             createNotification(text.CONTACT.error, 'error');
