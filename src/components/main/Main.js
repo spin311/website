@@ -149,7 +149,7 @@ function Main() {
         {
             title: text.EXPERIENCE.xp3_title,
             company: "Digital School",
-            desc: text.EXPERIENCE.xp3_desc,
+            desc: [text.EXPERIENCE.xp3_desc1, text.EXPERIENCE.xp3_desc2],
             website: "https://digitalschool.si/",
             years: `2021 - 2024`,
             logo: `${process.env.PUBLIC_URL}/assets/images/ds.png`
@@ -157,7 +157,7 @@ function Main() {
         {
             title: text.EXPERIENCE.xp1_title,
             company: "Ixtlan Team",
-            desc: text.EXPERIENCE.xp1_desc,
+            desc: [text.EXPERIENCE.xp1_desc1, text.EXPERIENCE.xp1_desc2, text.EXPERIENCE.xp1_desc3],
             website: "https://www.ixtlan-team.si/",
             years: "2023 - 2024",
             logo: `${process.env.PUBLIC_URL}/assets/images/ix.png`
@@ -165,7 +165,7 @@ function Main() {
         {
             title: text.EXPERIENCE.xp2_title,
             company: "Formaviva",
-            desc: text.EXPERIENCE.xp2_desc,
+            desc: [text.EXPERIENCE.xp2_desc1, text.EXPERIENCE.xp2_desc2, text.EXPERIENCE.xp2_desc3],
             website: "https://formaviva.com/",
             years: `2024 - ${text.EXPERIENCE.current}`,
             logo: `${process.env.PUBLIC_URL}/assets/images/formaviva.png`
@@ -190,7 +190,7 @@ function Main() {
 
     return (
         <div className="Main">
-            <h1>{text.MAIN.title}</h1>
+            <h2>{text.MAIN.title}</h2>
             <p>
                 {formatTextWithLineBreaks(text.MAIN.description)}
             </p>

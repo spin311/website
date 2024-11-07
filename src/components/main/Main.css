@@ -1,9 +1,9 @@
 .sort-select {
-    padding: 0.5rem;
+    padding: 0.4rem;
     border: 1px solid ;
     border-radius: 5px;
     background-color: var(--input-color);
-    font-size: 1rem;
+    font-size: 0.9rem;
     font-family: 'Roboto', sans-serif;
     color: var(--primary-color);
     cursor: pointer;

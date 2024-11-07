@@ -14,7 +14,7 @@ function Header(){
     return (
         <div id="home">
             <header className="App-header">
-                <h2 className="name">Svit Spindler</h2>
+                <h1 className="name">Svit Spindler</h1>
 
                 <div className="header-links">
                     <a href="https://github.com/spin311" target="_blank" rel="noopener noreferrer">Github <FontAwesomeIcon icon={faGithub} /></a>

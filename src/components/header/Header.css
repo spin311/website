@@ -2,13 +2,15 @@
         font-family: "Kay Pho Du", serif;
         font-weight: 400;
         font-style: normal;
+        margin-bottom: 5em;
 }
 
 .name {
+        font-family: "Kay Pho Du", serif;
         text-align: center;
 }
 
-.App-header h2 {
+.App-header h1 {
         font-size: 4rem;
 }
 

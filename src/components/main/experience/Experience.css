@@ -1,14 +1,29 @@
 .xp-info {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: flex-end;
+    grid-template-areas:
+        "title year"
+        "company website";
+}
+
+.company {
+    grid-area: company;
+    margin-bottom: 0.5em;
+}
+
+.year {
+    grid-area: year;
+}
+
+.website {
+    grid-area: website;
+    justify-self: end;
+    align-self: center;
 }
 
 .mt-0 {
     margin-top: 0;
-}
-.website {
-    float: right;
 }
 
 .company-logo {
@@ -18,8 +33,7 @@
 }
 
 .ext-title {
-    font-size: 1.5rem;
-    font-weight: 500;
+    grid-area: title;
     margin-bottom: 0.5rem;
 }
 

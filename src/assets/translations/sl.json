@@ -1,8 +1,8 @@
 {
   "GENERAL": {
     "change_language": "Spremeni jezik v angleščino",
-    "toggle_darkMode": "Spremeni v temen način",
-    "toggle_lightMode": "Spremeni v svetel način",
+    "toggle_darkMode": "Preklopi na temni način",
+    "toggle_lightMode": "Preklopi na svetli način",
     "website": "Spletna stran",
     "type": "Vrsta",
     "sort_by": "Razvrsti po",
@@ -19,20 +19,24 @@
 
   "MAIN": {
     "title": "O meni",
-    "description": "Sem bivši študent računalništva z izkušnjami z razvojem mobilnih in spletnih\naplikacij, zaledja ter baznih sistemov.\nUkvarjam se tudi z učenjem programiranja ter z lastnimi hobi projekti.\nS svojim delom želim vsaj za odtenek izboljšati svet.\n",
-    "my_cv": "Moj življenjepis"
+    "description": "Sem bivši študent računalništva z izkušnjami z razvojem mobilnih in spletnih aplikacij, zaledja ter baznih sistemov.\nUkvarjam se tudi z učenjem programiranja ter z lastnimi hobi projekti, predvsem s pisanjem Google razširitev in mobilnih aplikacij v Kotlinu"
   },
   "EXPERIENCE": {
     "title": "Izkušnje",
     "xp1_title": "Razvojni inženir - Full Stack",
     "xp1_company": "Ixtlan Team",
-    "xp1_desc": "Razvoj programskih rešitev z uporabo Typescript, Angular, Java, PL/SQL in kontejnerizacije",
+    "xp1_desc1": "Razvoj programske opreme z uporabo Typescripta, Angularja, Java, PL/SQL, kontejnerizacije",
+    "xp1_desc2": "Načrtovanje in razvoj aplikacij in mikrostoritev",
+    "xp1_desc3": "Izdelava sistemov nad podatkovnimi zbirkami Oracle.",
     "xp2_title": "Frontend razvijalec",
     "xp2_company": "Projekt Formaviva (Kundi d.o.o.)",
-    "xp2_desc": "Vodilni samostojen Frontend inženir na projektu, skrb za uporabniško izkušnjo, razvoj in vzdrževanje",
+    "xp2_desc1": "Vodilni Frontend inženir na projektu, odgovoren za uporabniško izkušnjo, razvoj in vzdrževanje",
+    "xp2_desc2": "CI/CD pipeline, pregledi kode, Netlify razvoj",
+    "xp2_desc3": "Pisanje in vzdrževanje testov",
     "xp3_title": "Učitelj programiranja",
     "xp3_company": "DigitalSchool",
-    "xp3_desc": "Učenje programiranja otrok in mladostnikov, razvoj učnih načrtov, izvedba delavnic",
+    "xp3_desc1": "Učenje programiranja otrok in najstnikov, razvoj učnih načrtov, izvajanje delavnic",
+    "xp3_desc2": "Koordinacija več skupin in asistentov",
     "current": "trenutno"
   },
   "PROJECT": {
@@ -40,18 +44,18 @@
     "t_extension": "Razširitev",
     "t_mobile": "Mobilna aplikacija",
     "t_game": "Računalniška igra",
-    "p1_description": "Razširitev za Chrome za samodejno pridobivanje dnevnih Microsoft Rewards točk, popolnoma prilagodljiva. Dnevno jo uporablja več kot 8000 uporabnikov s povprečno oceno 4,3/5.",
-    "p2_description": "Razširitev za Chrome za obveščanje uporabnikov o raziskavah na platformi Prolific, popolnoma prilagodljiva. Dnevno jo uporablja več kot 2000 uporabnikov s povprečno oceno 4,6/5.",
+    "p1_description": "Razširitev za Chrome za samodejno pridobivanje dnevnih Microsoft Rewards točk. Tedensko jo uporablja več kot 9000 uporabnikov in ima povprečno oceno 4,3/5.",
+    "p2_description": "Razširitev za Chrome za obveščanje uporabnikov o raziskavah na platformi Prolific. Tedensko jo uporablja več kot 2000 uporabnikov in ima povprečno oceno 4,6/5.",
     "p3_description": "Mobilna aplikacija, ki omogoča prepoznavanje gob s pomočjo vnaprej usposobljenega AI modela, shranjevanje zbirke in deljenje lokacije gob. Aplikacija je zmagala na tekmovanju za najboljšo aplikacijo za zmanjšanje ogljičnega odtisa na hackathonu DragonHack 2023.",
     "p4_description": "Spletna stran za eksperiment diplomske naloge \"Inženiring pozivov\", ki omogoča prevajanje in shranjevanje Python kode ter vključuje klepet s chatGPT. Zaledje je bilo razvito z Java in HSQLDB ter nameščeno na AWS.",
-    "p5_description": "Sokreator igre Survalien, v kateri pomagamo vesoljcu popraviti njegovo ladjo in preživeti na Zemlji. Igra vključuje različne AI nasprotnike, naključno generacijo zemljevidov, glavnega šefa in animacije.",
+    "p5_description": "Videoigra Survalien, v kateri pomagamo vesoljcu popraviti njegovo ladjo in preživeti na Zemlji. Igra vključuje različne AI nasprotnike, naključno generacijo zemljevidov, glavnega šefa in animacije.",
     "p6_description": "Android aplikacija za ugibanje lokacije drugih uporabnikov, izdelana na hackathonu DragonHack 2024 z uporabo Kotlin in NOSQL SaaS baze Back4App.",
-    "p7_description": "Android aplikacija za spodbujanje krvodajalskih akcij. Omogoča beleženje obiskov ter pridobivanje dosežkov. Aplikacija je dobila 2. mesto na Eestech Challenge 2023 hackatlonu."
+    "p7_description": "Android Kotlin aplikacija za spodbujanje krvodajalskih akcij. Omogoča beleženje in spodbujanje obiskov s pomočjo gamifikacije. Aplikacija je dosegla 2. mesto na Eestech Challenge 2023 hackatlonu."
 },
   "CONTACT": {
     "contact": "Kontakt",
     "title": "Kontaktiraj me",
-    "description": "Če imate kakršnakoli vprašanja ali bi želeli sodelovati, me kontaktirajte preko spodnjega obrazca.",
+    "description": "Če imate kakršnakoli vprašanja ali bi želeli sodelovati, mi lahko spodaj pošljete sporočilo.",
     "subject": "Zadeva",
     "sender": "Pošiljatelj",
     "send": "Pošlji sporočilo",
@@ -63,6 +67,6 @@
     "message_placeholder": "Napišite svoje sporočilo tukaj...",
     "disabled_tooltip": "Pred pošiljanjem sporočila izpolnite vsa polja.",
     "success": "Sporočilo je bilo uspešno poslano. Odgovoril vam bom v najkrajšem možnem času.",
-    "error": "Prišlo je do napake pri pošiljanju sporočila. Poskusite znova kasneje."
+    "error": "Prišlo je do napake pri pošiljanju sporočila. Prosimo, poskusite kasneje."
   }
   }

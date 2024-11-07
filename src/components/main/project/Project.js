@@ -33,7 +33,7 @@ function Project({name, type, ghUrl, description, img, website, stars, forks, cr
                     )}
                 </a>
             </div>
-            <p>{text.GENERAL.type}: {type}</p>
+            <p>{text.GENERAL.type}: <span className="bold-light">{type}</span></p>
             <p>{description}</p>
         </div>
     );

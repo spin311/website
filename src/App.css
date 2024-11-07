@@ -10,6 +10,16 @@
     }
 
 }
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Roboto', sans-serif;
+}
+h2 {
+    font-size: 2rem;
+}
+
+p, li, label, select, b, a, span, button {
+    font-family: 'Poppins', sans-serif;
+}
 
 html {
     scroll-behavior: smooth;

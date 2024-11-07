@@ -18,16 +18,21 @@
   },
   "MAIN": {
     "title": "About me",
-    "description": "I am a former computer science student with hands-on experience in mobile, web,\nbackend, and database systems development.\nIn addition to my academic pursuits, I am teching programming and developing my\nown hobby projects to learn new technologies.\nAspiring to make a positive impact on the world with my work.\n"
+    "description": "I am a former computer science student with hands-on experience in mobile, web, backend, and database systems development.\nIn addition to my academic pursuits, I am teaching programming and developing my own hobby projects to learn new technologies. I am particularly interested in writing Google extensions and mobile applications in Kotlin."
   },
   "EXPERIENCE": {
     "title": "Experience",
     "xp1_title": "Full Stack Developer",
-    "xp1_desc": "Development of software solutions using Typescript, Angular, Java, PL/SQL, containerisation",
+    "xp1_desc1": "Development of software solutions using Typescript, Angular, Java, PL/SQL, containerisation",
+    "xp1_desc2": "Design and development of applications and microservices",
+    "xp1_desc3": "Development of systems on top of Oracle databases",
     "xp2_title": "Frontend Developer",
-    "xp2_desc": "Lead Frontend Engineer on the project, responsible for user experience, development and maintenance",
+    "xp2_desc1": "Lead Frontend Engineer on the project, responsible for user experience, development and maintenance",
+    "xp2_desc2": "CI/CD pipeline, code reviews, Netlify deployment",
+    "xp2_desc3": "Writing and maintaining tests",
     "xp3_title": "Programming Teacher",
-    "xp3_desc": "Teaching programming to children and teenagers, developing curriculums, conducting workshops",
+    "xp3_desc1": "Teaching programming to children and teenagers, developing curriculums, conducting workshops",
+    "xp3_desc2": "Coordinating multiple groups and assistants",
     "website": "Website",
     "current": "current"
   },
