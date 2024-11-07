@@ -21,10 +21,6 @@ export function LanguageProvider({children}) {
         ));
     };
 
-    const formatString = (str, variables) => {
-        return str.replace(/{(\w+)}/g, (_, key) => variables[key]);
-    }
-
     const text = language === "en" ? enText : sloText;
 
     return (

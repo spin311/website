@@ -19,7 +19,7 @@ function Project({name, type, ghUrl, description, img, website, stars, forks, cr
             <h3>{name}</h3>
             <div className="project-links">
                 {website && <a href={website} target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faGlobe}/> {text.GENERAL.website}</a> }
-                {download_link && <a href={download_link} className="ml-small" download target="_blank" rel="noopener noreferrer">
+                {download_link && <a href={download_link} download target="_blank" rel="noopener noreferrer">
                     <FontAwesomeIcon icon={faArrowDown} /> {text.PROJECT.download}
                 </a>}
                 <a href={ghUrl} target="_blank" rel="noopener noreferrer">
