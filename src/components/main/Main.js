@@ -99,7 +99,6 @@ function Main() {
             forks: 0,
             created_at: null
         }
-
     ], [text]);
 
     const [projects, setProjects] = useState(allProjects);
