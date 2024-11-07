@@ -12,10 +12,12 @@ function Main() {
             name: "Microsoft Automatic Rewards",
             ghName: "MicrosoftRewardsWebsite",
             type: text.PROJECT.t_extension,
+            rating_default: text.PROJECT.extension_rating1_default,
+            users_default: "9000",
             ghUrl: "https://github.com/spin311/MicrosoftRewardsWebsite",
             description: text.PROJECT.p1_description,
             img: `${process.env.PUBLIC_URL}/assets/images/microsoft.png`,
-            website: "https://chromewebstore.google.com/detail/microsoft-automatic-rewar/ocmmbfdhomnkljmjkmafegefcgcfkefo",
+            download_link: "https://chromewebstore.google.com/detail/microsoft-automatic-rewar/ocmmbfdhomnkljmjkmafegefcgcfkefo",
             stars: 0,
             forks: 0,
             created_at: null
@@ -24,10 +26,12 @@ function Main() {
             name: "Prolific Studies Notifier",
             ghName: "ProlificAutomaticStudies",
             type: text.PROJECT.t_extension,
+            rating_default: text.PROJECT.extension_rating2_default,
+            users_default: "2000",
             ghUrl: "https://github.com/spin311/ProlificAutomaticStudies",
             description: text.PROJECT.p2_description,
             img: `${process.env.PUBLIC_URL}/assets/images/prolific.png`,
-            website: "https://chromewebstore.google.com/detail/prolific-studies-notifier/mlicfddkgjkeajfgkihplfbgpmbonbao",
+            download_link: "https://chromewebstore.google.com/detail/prolific-studies-notifier/mlicfddkgjkeajfgkihplfbgpmbonbao",
             stars: 0,
             forks: 0,
             created_at: null
@@ -40,6 +44,7 @@ function Main() {
             description: text.PROJECT.p3_description,
             img: `${process.env.PUBLIC_URL}/assets/images/gobar.png`,
             website: "https://juicevodka.github.io/Gobar/",
+            download_link: `${process.env.PUBLIC_URL}/assets/files/Gobar.apk`,
             stars: 0,
             forks: 0,
             created_at: null
@@ -64,18 +69,20 @@ function Main() {
             description: text.PROJECT.p5_description,
             img: `${process.env.PUBLIC_URL}/assets/images/survalien.png`,
             website: "https://www.dropbox.com/scl/fi/hdcw6938y4ha3virfb4fo/Survalien%20-%20Predstavitev.mp4?rlkey=xho6lfj4m78doev6sjyvwmda5&e=3&dl=0",
+            download_link: "https://www.dropbox.com/scl/fo/bo4dqchusf56ah4ipd1oi/h?rlkey=bnqwwi2li1whkc8h3ag53lfpl&e=2&dl=0",
             stars: 0,
             forks: 0,
             created_at: null
         },
         {
-            name: "Kesi",
+            name: "KeSi",
             ghName: "KeSi",
             type: text.PROJECT.t_mobile,
             ghUrl: "https://github.com/JuiceVodka/KeSi",
             description: text.PROJECT.p6_description,
             img: `${process.env.PUBLIC_URL}/assets/images/kesi.png`,
             website: "https://juicevodka.github.io/KeSi/",
+            download_link: `${process.env.PUBLIC_URL}/assets/files/KeSi.apk`,
             stars: 0,
             forks: 0,
             created_at: null
@@ -87,7 +94,7 @@ function Main() {
             ghUrl: "https://github.com/spin311/diploma",
             description: text.PROJECT.p4_description,
             img: `${process.env.PUBLIC_URL}/assets/images/prompt.png`,
-            website: "https://spin311.github.io/diploma/",
+            website: "https://github.com/spin311/hiter-inzeniring-diploma",
             stars: 0,
             forks: 0,
             created_at: null
@@ -218,7 +225,7 @@ function Main() {
                     {projects.map((project, index) => (
                         <Project key={index} name={project.name} type={project.type} ghUrl={project.ghUrl}
                                  description={project.description} img={project.img} website={project.website}
-                                 stars={project.stars} forks={project.forks} created_at={project.created_at} isLoading={isLoading}/>
+                                 stars={project.stars} forks={project.forks} created_at={project.created_at} isLoading={isLoading} download_link={project.download_link}/>
                     ))}
                 </div>
             </div>
