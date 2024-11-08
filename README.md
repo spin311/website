@@ -60,30 +60,12 @@ Once the development server is running, you can view the portfolio in your brows
 - `public`: Contains static files such as the favicon and manifest.
 
 ## Features
-
+-**Projects**: Fetches and displays GitHub projects and their stats using the GitHub API.
 - **Language Toggle**: Switch between English and Slovenian.
 - **Dark Mode**: Toggle between light and dark themes.
 - **Project Sorting**: Sort projects by stars, name, or date.
 - **Responsive Design**: Optimized for both desktop and mobile devices.
-
-## Contributing
-
-Contributions are welcome! Please follow these steps to contribute:
-
-1. Fork the repository.
-2. Create a new branch:
-    ```sh
-    git checkout -b feature/your-feature-name
-    ```
-3. Make your changes and commit them:
-    ```sh
-    git commit -m 'Add some feature'
-    ```
-4. Push to the branch:
-    ```sh
-    git push origin feature/your-feature-name
-    ```
-5. Open a pull request.
+- **Contact Form**: Send an email directly from the portfolio.
 
 ## License
 
