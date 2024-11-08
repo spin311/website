@@ -13,7 +13,7 @@ function Project({name, type, ghUrl, description, img, website, stars, forks, cr
     return (
         <div className="project-card">
             <span className="project-header">
-                <img src={img} alt={`Image of ${name},  Svit Spindler's project for (${type})`} className="project-image"/>
+                <img src={img} alt={name} className="project-image"/>
                 {created_at && <span className="project-date"><b>{formattedDate} </b></span>}
             </span>
             <h3>{name}</h3>
