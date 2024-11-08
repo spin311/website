@@ -20,7 +20,7 @@ function SidebarButtons() {
                data-tooltip-id="lang-btn-tooltip"
                data-tooltip-content={text.GENERAL.change_language}
                data-tooltip-place="left"
-               alt="language-image" />
+               alt={`Button to change language to ${language === "en" ? "Slovenian" : "English"}`} />
           <Tooltip id="lang-btn-tooltip"/>
 
           <img id="darkmode-btn"
@@ -30,7 +30,7 @@ function SidebarButtons() {
                data-tooltip-id="darkMode-btn-tooltip"
                data-tooltip-content={darkModeTooltip}
                data-tooltip-place="left"
-               alt="darkmode-image" />
+               alt={`Button to toggle ${darkMode ? "light" : "dark"} mode`} />
             <Tooltip id="darkMode-btn-tooltip"/>
       </div>
   );
