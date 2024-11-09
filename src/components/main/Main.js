@@ -89,12 +89,12 @@ function Main() {
         },
         {
             name: "ChatGPT pair programming",
-            ghName: "diploma",
+            ghName: "hiter-inzeniring-diploma",
             type: text.GENERAL.website,
-            ghUrl: "https://github.com/spin311/diploma",
+            ghUrl: "https://github.com/spin311/hiter-inzeniring-diploma",
             description: text.PROJECT.p4_description,
             img: `${process.env.PUBLIC_URL}/assets/images/prompt.png`,
-            website: "https://github.com/spin311/hiter-inzeniring-diploma",
+            website: "https://spin311.github.io/diploma/",
             stars: 0,
             forks: 0,
             created_at: null
