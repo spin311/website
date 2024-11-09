@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Svit Portfolio",
+  "name": "Svit Spindler Portfolio",
   "icons": [
     {
       "src": "favicon.ico",
@@ -8,8 +8,11 @@
       "type": "image/x-icon"
     }
   ],
-  "start_url": ".",
+  "start_url": "/",
   "display": "standalone",
   "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "background_color": "#ffffff",
+  "description": "Portfolio of Svit Spindler, a web developer specializing in full-stack and frontend development.",
+  "lang": "en",
+  "orientation": "portrait"
 }
