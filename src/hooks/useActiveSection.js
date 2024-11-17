@@ -22,11 +22,14 @@ const useActiveSection = (sectionIds) => {
             }
         };
 
-        const observerOptions = (id) => ({
-            root: null,
-            rootMargin: "0px",
-            threshold: id === "project" ? 0.3 : 1.0,
-        });
+        const observerOptions = (id) => {
+            const isSmallScreen = window.innerWidth <= 1024;
+            return {
+                root: null,
+                rootMargin: "0px",
+                threshold: id === "project" ? (isSmallScreen ? 0.1 : 0.3) : (isSmallScreen ? 0.6 : 1.0),
+            };
+        };
 
         const observers = sections.map((section) => {
             const observer = new IntersectionObserver(handleIntersection, observerOptions(section.id));

@@ -1,6 +1,6 @@
 {
-  "name": "personal-website",
-  "version": "0.1.0",
+  "name": "svit-spindler-portfolio-personal-website",
+  "version": "1.0.0",
   "private": true,
   "homepage": "https://svitspindler.com",
   "dependencies": {
@@ -11,7 +11,6 @@
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
-    "dotenv": "^16.4.5",
     "path-browserify": "^1.0.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
