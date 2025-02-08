@@ -1,8 +1,9 @@
 .project-card {
-    border: 2px solid;
+    border: 2px solid var(--border-color);
     border-radius: 20px;
     margin: 20px 0;
     padding: 10px;
+    background: var(--background-secondary-color);
 }
 
 .project-image {

@@ -18,20 +18,20 @@
   },
   "MAIN": {
     "title": "About me",
-    "description": "I am a former computer science student with hands-on experience in mobile, web, backend, and database systems development.\nIn addition to my academic pursuits, I am teaching programming and developing my own hobby projects to learn new technologies. I am particularly interested in writing Google extensions and mobile applications in Kotlin."
+    "description": "I am a computer science graduate with hands-on experience in mobile, web, backend, and database systems development.\nIn my free time I like developing my own hobby projects to learn new technologies. I am particularly interested in writing Google extensions and mobile applications."
   },
   "EXPERIENCE": {
     "title": "Experience",
     "xp1_title": "Full Stack Developer",
-    "xp1_desc1": "Development of software solutions using Typescript, Angular, Java, PL/SQL, containerisation",
+    "xp1_desc1": "Development of software solutions using Typescript, Angular, Java, PL/SQL",
     "xp1_desc2": "Design and development of applications and microservices",
     "xp1_desc3": "Development of systems on top of Oracle databases",
     "xp2_title": "Frontend Developer",
-    "xp2_desc1": "Lead Frontend Engineer on the project, responsible for user experience, development and maintenance",
-    "xp2_desc2": "CI/CD pipeline, code reviews, Netlify deployment",
-    "xp2_desc3": "Writing and maintaining tests",
+    "xp2_desc1": "Lead Frontend Engineer on the project Formaviva",
+    "xp2_desc2": "CI/CD pipeline, docker and backend",
+    "xp2_desc3": "Writing tests, QA",
     "xp3_title": "Programming Teacher",
-    "xp3_desc1": "Teaching programming to children and teenagers, developing curriculums, conducting workshops",
+    "xp3_desc1": "Teaching programming to children and teenagers, developing curriculums",
     "xp3_desc2": "Coordinating multiple groups and assistants",
     "website": "Website",
     "current": "current"
@@ -42,13 +42,13 @@
     "t_extension": "Extension",
     "t_mobile": "Mobile app",
     "t_game": "Video game",
-    "p1_description": "Chrome extension for automating daily Microsoft Rewards points, fully customizable. Extension received Google's \"Featured\" badge for following best design practices. Used by over 9000 users every week with an average rating of 4.4/5.",
-    "p2_description": "Chrome extension for alerting users of Prolific studies. Used by over 2000 users every week with an average rating of 4.7/5.",
+    "p1_description": "Chrome extension for automating daily Microsoft Rewards points, fully customizable. Extension received Google's Featured badge for following best design practices. Used by over 14,000 users every week with an average rating of 4.5/5.",
+    "p2_description": "Chrome extension for alerting users of Prolific studies. Used by over 4000 users every week with an average rating of 4.4/5.",
     "p3_description": "A mobile app that allows you to identify mushrooms with a pre-trained AI model, store your collection and share the location of your mushrooms. The app won the \"Best Carbon footprint reduction app\" competition at the 2023 DragonHack Hackathon.",
     "p4_description": "The website for the \"Prompt Engineering\" thesis experiment, which allows to compile and save Python code, with a chat dialog with chatGPT. The backend was developed with Java and HSQLDB, deployed with AWS.",
     "p5_description": "Video game Survalien, a game where we help an alien repair his ship and survive on Earth. The game includes various AI opponents, random map generation, main boss, animations.",
     "p6_description": "Android application for guessing the location of other users. Allows you to compete against other users in a similar way to the popular video game GeoGuessr. Built at DragonHack 2024 using Kotlin and NOSQL Back4App database",
-    "p7_description": "Android app to promote blood donation campaigns. It allows you to keep track of your visits and encourage donations with gamification. The app won 2nd place in the Eestech Challenge 2023 hackathlon."
+    "p7_description": "Android app to promote blood donation campaigns. It allows you to keep track of your visits and encourage donations with gamification. The app won 2nd place in the Eestech Challenge 2023 Hackathon."
   },
     "CONTACT": {
         "contact": "Contact",

@@ -20,13 +20,14 @@ body {
   --primary-color: black;
   --secondary-color: #333;
   --background-color: #eeefef;
-  --background-secondary-color: #f9f9f9;
+  --background-secondary-color: #faf9f9;
   --active-color: #3b3bf6;
     --disabled-color: #989696;
   --input-color: white;
   --shador-color: rgba(0, 0, 0, 0.1);
   --text-secondary-color: #666;
   --active-secondary-color: #5151fa;
+  --border-color: hsl(185, 0%, 30%);
 }
 .dark-mode {
   --primary-color: white;
@@ -39,4 +40,5 @@ body {
     --shadow-color: rgba(0, 0, 0, 0.5);
     --text-secondary-color: #838080;
     --active-secondary-color: #5151fa;;
+  --border-color: hsl(185, 0%, 70%);
 }

@@ -88,7 +88,7 @@ function Main() {
             created_at: null
         },
         {
-            name: "ChatGPT pair programming",
+            name: "ChatGPT prompt engineering",
             ghName: "hiter-inzeniring-diploma",
             type: text.GENERAL.website,
             ghUrl: "https://github.com/spin311/hiter-inzeniring-diploma",
@@ -169,12 +169,12 @@ function Main() {
             logo: `${process.env.PUBLIC_URL}/assets/images/ix.png`
         },
         {
-            title: text.EXPERIENCE.xp2_title,
-            company: "Formaviva",
+            title: text.EXPERIENCE.xp1_title,
+            company: "Nightwatch, Formaviva",
             desc: [text.EXPERIENCE.xp2_desc1, text.EXPERIENCE.xp2_desc2, text.EXPERIENCE.xp2_desc3],
-            website: "https://formaviva.com/",
+            website: "https://nightwatch.io/",
             years: `2024 - ${text.EXPERIENCE.current}`,
-            logo: `${process.env.PUBLIC_URL}/assets/images/formaviva.png`
+            logo: `${process.env.PUBLIC_URL}/assets/images/nightwatch.jpg`
         }
     ];
 
@@ -204,8 +204,7 @@ function Main() {
             <div id="experience">
                 <h2>{text.EXPERIENCE.title}</h2>
                 {experiences.map((xp, index) => (
-                    <Experience key={index} title={xp.title} company={xp.company} desc={xp.desc} years={xp.years}
-                                website={xp.website} logo={xp.logo}/>
+                    <Experience key={index} title={xp.title} company={xp.company} desc={xp.desc} years={xp.years} logo={xp.logo} website={xp.website}/>
                 ))}
             </div>
             <hr/>

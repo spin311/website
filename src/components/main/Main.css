@@ -2,7 +2,8 @@
     padding: 0.4rem;
     border: 1px solid ;
     border-radius: 5px;
-    background-color: var(--input-color);
+    border-color: var(--border-color);
+    background-color: var(--background-secondary-color);
     font-size: 0.9rem;
     font-family: 'Roboto', sans-serif;
     color: var(--primary-color);
