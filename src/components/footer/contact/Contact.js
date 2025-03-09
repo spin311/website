@@ -4,6 +4,7 @@ import {useEffect, useState} from "react";
 import {Tooltip} from "react-tooltip";
 import {getOrCreateGUID} from "../../../helpers/Guid";
 import {useNotification} from "../../../context/NotificationContext";
+import {useSearchParams} from "react-router-dom";
 
 function Contact() {
     let {text} = useLanguage();
@@ -21,6 +22,16 @@ function Contact() {
         const value = event.target.value;
         setInputs(values => ({...values, [name]: value}));
     }
+
+    const [searchParams] = useSearchParams();
+    const subjectQueryParam = searchParams.get('subject');
+
+    useEffect(() => {
+        if (subjectQueryParam) {
+            setInputs(values => ({...values, subject: subjectQueryParam}));
+        }
+    }, [subjectQueryParam]);
+
     const handleSubmit = async (event) => {
         event.preventDefault();
         const guid = getOrCreateGUID();

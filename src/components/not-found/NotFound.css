@@ -1,0 +1,21 @@
+.notFound {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4em;
+}
+.dogImg {
+    border-radius: 50%;
+    width: 400px;
+    height: 400px;
+}
+
+.left-arrow {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    width: 68px;
+    height: 42px;
+    cursor: pointer;
+}
