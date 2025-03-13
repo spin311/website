@@ -6,7 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import {ThemeProvider} from "./context/ThemeContext";
 import {LanguageProvider} from "./context/LanguageContext";
 import {NotificationProvider} from "./context/NotificationContext";
-import {HashRouter, Route, Routes} from "react-router-dom";
+import {BrowserRouter, Route, Routes} from "react-router-dom";
 import ContactMe from "./components/contact-me/ContactMe";
 import NotFound from "./components/not-found/NotFound";
 
@@ -16,13 +16,13 @@ root.render(
     <ThemeProvider>
         <LanguageProvider>
             <NotificationProvider>
-                <HashRouter>
+                <BrowserRouter>
                     <Routes>
                         <Route path="/" element={<App />} />
                         <Route path="/contact" element={<ContactMe />} />
                         <Route path="*" element={<NotFound />} />
                     </Routes>
-                </HashRouter>
+                </BrowserRouter>
             </NotificationProvider>
         </LanguageProvider>
     </ThemeProvider>
