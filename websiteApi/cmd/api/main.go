@@ -26,9 +26,11 @@ func main() {
 
 	r.HandleFunc("/starredRepos", handlers.GetStarredRepos).Methods(http.MethodGet)
 	r.HandleFunc("/sendEmail", handlers.SendEmail(userRateLimiter)).Methods(http.MethodPost, http.MethodOptions)
+	r.HandleFunc("/extension", handlers.GetExtension).Methods(http.MethodGet)
 
 	// Swagger UI
 	r.PathPrefix("/swagger/").Handler(httpSwagger.WrapHandler)
 	serverPort := config.GetPort()
+	log.Printf("Server is starting on port %s...\n", serverPort)
 	log.Fatal(http.ListenAndServe(":"+serverPort, r))
 }

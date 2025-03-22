@@ -4,8 +4,9 @@ package models
 //
 //swagger:model
 type Email struct {
-	Subject string
-	Sender  string
-	Body    string
-	Contact string
+	Subject   string
+	Sender    string
+	Body      string
+	Contact   string
+	Recipient string
 }
