@@ -255,7 +255,7 @@ function Main() {
                 ))}
             </div>
             <hr/>
-            <div id="project">
+            <div id="projects">
                 <h2>{text.PROJECT.title}</h2>
                 <label htmlFor="sort">{text.GENERAL.sort_by}: </label>
                 <select id="sort" onChange={handleSortChange} value={sortOption} className="sort-select">

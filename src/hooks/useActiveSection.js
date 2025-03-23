@@ -27,7 +27,7 @@ const useActiveSection = (sectionIds) => {
             return {
                 root: null,
                 rootMargin: "0px",
-                threshold: id === "project" ? (isSmallScreen ? 0.1 : 0.3) : (isSmallScreen ? 0.6 : 1.0),
+                threshold: id === "projects" ? (isSmallScreen ? 0.1 : 0.3) : (isSmallScreen ? 0.6 : 1.0),
             };
         };
 
