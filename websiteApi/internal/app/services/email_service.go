@@ -18,18 +18,15 @@ func SendEmail(email models.Email) models.HttpError {
 	emailPassword := emailConfig.EmailPassword
 	smthHost := emailConfig.EmailHost
 	smthPort := emailConfig.EmailPort
-	recipient := email.Recipient
-	if recipient == "" {
-		recipient = emailConfig.EmailRecipient
-	}
+	recipient := emailConfig.EmailRecipient
 
-	body := fmt.Sprintf("From: %s\n\n%s", email.Sender, email.Body)
+	body := fmt.Sprintf("From: %s\n%s", email.Sender, email.Body)
 
 	message := fmt.Sprintf("From: %s\nTo: %s\nSubject: %s\n\n%s\n%s",
 		emailUser, recipient, email.Subject,
 		func() string {
 			if email.Contact != "" {
-				return fmt.Sprintf("Contact: %s\n\n", email.Contact)
+				return fmt.Sprintf("Contact: %s\n", email.Contact)
 			}
 			return ""
 		}(), body)
