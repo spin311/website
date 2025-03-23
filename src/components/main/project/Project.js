@@ -17,7 +17,10 @@ function Project({project, isLoading}) {
                 <img src={img} alt={name} className="project-image"/>
                 {created_at && <span className="project-date"><b>{formattedDate} </b></span>}
             </span>
-            <h3>{name}</h3>
+            <h3>
+                {website && <a href={website} target="_blank" rel="noopener noreferrer">{name}</a> }
+                {!website && <>{name}</>}
+            </h3>
             <div className="project-links">
                 {website && <a href={website} target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faGlobe}/> {text.GENERAL.website}</a> }
                 {download_link && <a href={download_link} download target="_blank" rel="noopener noreferrer">

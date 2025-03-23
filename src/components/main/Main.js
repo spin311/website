@@ -20,6 +20,7 @@ function Main() {
             ghUrl: "https://github.com/spin311/MicrosoftRewardsWebsite",
             description: text.PROJECT.p1_description,
             img: `${process.env.PUBLIC_URL}/assets/images/microsoft.png`,
+            website: "/microsoft-automatic-rewards",
             download_link: "https://chromewebstore.google.com/detail/microsoft-automatic-rewar/ocmmbfdhomnkljmjkmafegefcgcfkefo",
             stars: 0,
             forks: 0,

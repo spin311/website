@@ -6,3 +6,7 @@
     height: 42px;
     cursor: pointer;
 }
+
+.dark-mode .left-arrow {
+    filter: invert(1);
+}

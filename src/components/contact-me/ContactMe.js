@@ -4,7 +4,6 @@ import "./ContactMe.css"
 function ContactMe() {
     return (
         <div className={"contact-me"}>
-            <SidebarButtons></SidebarButtons>
             <Contact className={"contact"} backArrow={true}></Contact>
         </div>
     );

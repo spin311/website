@@ -9,6 +9,8 @@ import {NotificationProvider} from "./context/NotificationContext";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import ContactMe from "./components/contact-me/ContactMe";
 import NotFound from "./components/not-found/NotFound";
+import MicrosoftAutomaticRewards from "./components/extensions/microsoftAutomaticRewards/MicrosoftAutomaticRewards";
+import SidebarButtons from "./components/sidebar-buttons/SidebarButtons";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -16,10 +18,12 @@ root.render(
     <ThemeProvider>
         <LanguageProvider>
             <NotificationProvider>
+                <SidebarButtons/>
                 <BrowserRouter>
                     <Routes>
                         <Route path="/" element={<App />} />
                         <Route path="/contact" element={<ContactMe />} />
+                        <Route path="/microsoft-automatic-rewards" element={<MicrosoftAutomaticRewards />} />
                         <Route path="*" element={<NotFound />} />
                     </Routes>
                 </BrowserRouter>

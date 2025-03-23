@@ -14,7 +14,8 @@
     "dateDesc": "Datum nastanka padajoče",
     "home": "Domov",
     "made_with": "Narejeno z jezikoma React in Golang",
-    "gh_code": "GitHub koda"
+    "gh_code": "GitHub koda",
+    "not_found": "Stran ni bila najdena"
   },
 
   "MAIN": {

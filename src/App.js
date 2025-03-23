@@ -10,7 +10,6 @@ function App() {
   return (
     <div className="App">
         <SidebarMenu className="SidebarMenu"  />
-      <SidebarButtons />
         <div className="Content">
             <Header />
             <Main  className="Main" />

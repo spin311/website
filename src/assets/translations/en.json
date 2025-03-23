@@ -14,7 +14,8 @@
     "dateDesc": "Date added descending",
     "home": "Home",
     "made_with": "Made with React and Golang",
-    "gh_code": "GitHub code"
+    "gh_code": "GitHub code",
+    "not_found": "Page not found"
   },
   "MAIN": {
     "title": "About me",

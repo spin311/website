@@ -1,4 +1,4 @@
-import {createContext, useContext, useState} from "react";
+import {createContext, useContext, useEffect, useState} from "react";
 import enText from "../assets/translations/en.json";
 import sloText from "../assets/translations/sl.json";
 import React from "react";
@@ -6,7 +6,13 @@ import React from "react";
 const LanguageContext  = createContext();
 
 export function LanguageProvider({children}) {
-    const [language, setLanguage] = useState("en");
+    const [language, setLanguage] = useState(() => {
+        return localStorage.getItem("language") || 'en';
+    });
+
+    useEffect(() => {
+        localStorage.setItem('language', language);
+    }, [language]);
 
     const changeLanguage = () => {
         setLanguage(language === "en" ? "slo" : "en");
