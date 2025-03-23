@@ -3,40 +3,48 @@ import {useLanguage} from "../../context/LanguageContext";
 import "./Main.css";
 import Experience from "./experience/Experience";
 import Project from "./project/Project";
+import numeral from "numeral";
+import { motion, AnimatePresence } from "framer-motion";
+
 
 function Main() {
     const { text, formatTextWithLineBreaks } = useLanguage();
 
     const allProjects = useMemo(() => [
         {
+            id: 1,
+            extensionId: "ocmmbfdhomnkljmjkmafegefcgcfkefo",
             name: "Microsoft Automatic Rewards",
             ghName: "MicrosoftRewardsWebsite",
             type: text.PROJECT.t_extension,
-            rating_default: text.PROJECT.extension_rating1_default,
-            users_default: "9000",
             ghUrl: "https://github.com/spin311/MicrosoftRewardsWebsite",
             description: text.PROJECT.p1_description,
             img: `${process.env.PUBLIC_URL}/assets/images/microsoft.png`,
             download_link: "https://chromewebstore.google.com/detail/microsoft-automatic-rewar/ocmmbfdhomnkljmjkmafegefcgcfkefo",
             stars: 0,
             forks: 0,
-            created_at: null
+            users: 15000,
+            rating: 4.6,
+            created_at: null,
         },
         {
+            id: 2,
+            extensionId: "mlicfddkgjkeajfgkihplfbgpmbonbao",
             name: "Prolific Studies Notifier",
             ghName: "ProlificAutomaticStudies",
             type: text.PROJECT.t_extension,
-            rating_default: text.PROJECT.extension_rating2_default,
-            users_default: "2000",
             ghUrl: "https://github.com/spin311/ProlificAutomaticStudies",
             description: text.PROJECT.p2_description,
             img: `${process.env.PUBLIC_URL}/assets/images/prolific.png`,
             download_link: "https://chromewebstore.google.com/detail/prolific-studies-notifier/mlicfddkgjkeajfgkihplfbgpmbonbao",
             stars: 0,
             forks: 0,
+            users: 3000,
+            rating: 4.1,
             created_at: null
         },
         {
+            id: 3,
             name: "Gobar",
             ghName: "Gobar",
             type: text.PROJECT.t_mobile,
@@ -50,6 +58,7 @@ function Main() {
             created_at: null
         },
         {
+            id: 4,
             name: "Zdravko",
             ghName: "kdhero",
             type: text.PROJECT.t_mobile,
@@ -62,6 +71,7 @@ function Main() {
             created_at: null
         },
         {
+            id: 5,
             name: "Survalien",
             ghName: "Survalien-Unity",
             type: text.PROJECT.t_game,
@@ -75,6 +85,7 @@ function Main() {
             created_at: null
         },
         {
+            id: 6,
             name: "KeSi",
             ghName: "KeSi",
             type: text.PROJECT.t_mobile,
@@ -88,6 +99,7 @@ function Main() {
             created_at: null
         },
         {
+            id: 7,
             name: "ChatGPT prompt engineering",
             ghName: "hiter-inzeniring-diploma",
             type: text.GENERAL.website,
@@ -107,23 +119,39 @@ function Main() {
 
     const getProjectStars = async () => {
         try {
-            const response = await fetch("https://website-production-967e.up.railway.app/starredRepos");
             setIsLoading(true);
+            const response = await fetch("https://website-production-967e.up.railway.app/starredRepos");
             const starredRepos = await response.json();
 
-            const updatedProjects = projects.map(project => {
+            const updatedProjects = await Promise.all(projects.map(async project => {
                 const matchingRepo = starredRepos.find(repo => repo.name === project.ghName);
-                if (matchingRepo) {
-                    return { ...project, stars: matchingRepo.stargazers_count || 0, forks: matchingRepo.forks_count || 0, created_at: matchingRepo.created_at || null };
-                }
-                return project;
-            });
+                let updatedProject = { ...project };
 
+                if (matchingRepo) {
+                    updatedProject = {
+                        ...updatedProject,
+                        stars: matchingRepo.stargazers_count || 0,
+                        forks: matchingRepo.forks_count || 0,
+                        created_at: matchingRepo.created_at || null
+                    };
+                }
+
+                if (project.type === text.PROJECT.t_extension && project.extensionId) {
+                    const extensionResponse = await fetch(`http://localhost:8080/extension?id=${project.extensionId}`);
+                    const extensionValues = await extensionResponse.json();
+                    updatedProject = {
+                        ...updatedProject,
+                        users: extensionValues.userCount || project.users,
+                        rating: parseFloat(extensionValues.ratingValue?.toFixed(1)) || project.rating
+                    };
+                    updatedProject.description = replaceDescription(updatedProject, updatedProject.users, updatedProject.rating);
+                }
+                return updatedProject;
+            }));
             setProjects(updatedProjects);
         } catch (error) {
             console.error('Error fetching project stars:', error);
-        }
-        finally {
+        } finally {
             setIsLoading(false);
         }
     };
@@ -138,12 +166,22 @@ function Main() {
 
     useEffect(() => {
         const updatedProjects = projects.map(project => {
-            const matchingProject = allProjects.find(p => p.ghName === project.ghName);
-            return {
-                ...project,
-                type: matchingProject.type,
-                description: matchingProject.description
-            };
+            const matchingProject = allProjects.find(p => p.id === project.id);
+            if (matchingProject.type === text.PROJECT.t_extension) {
+                return {
+                    ...project,
+                    type: matchingProject?.type,
+                    description: replaceDescription(matchingProject, project.users, project.rating)
+                }
+            }
+            else {
+                return {
+                    ...project,
+                    type: matchingProject?.type,
+                    description: matchingProject?.description
+                };
+            }
+
         });
         setProjects(updatedProjects);
         // eslint-disable-next-line
@@ -194,6 +232,14 @@ function Main() {
         setProjects(projects.sort(sortFunctions[option]));
     };
 
+    function formatBigNumbers(number) {
+        return numeral(number).format('0,0').replace(/,/g, ' ');
+    }
+
+    function replaceDescription(project, users, rating) {
+        return project.description.replace('{users}', formatBigNumbers(users)).replace('{rating}', rating);
+    }
+
     return (
         <div className="Main">
             <h2>{text.MAIN.title}</h2>
@@ -220,11 +266,20 @@ function Main() {
                     <option value="date-">{text.GENERAL.dateDesc}</option>
                 </select>
                 <div className="projects">
-                    {projects.map((project, index) => (
-                        <Project key={index} name={project.name} type={project.type} ghUrl={project.ghUrl}
-                                 description={project.description} img={project.img} website={project.website}
-                                 stars={project.stars} forks={project.forks} created_at={project.created_at} isLoading={isLoading} download_link={project.download_link}/>
+                    <AnimatePresence>
+                    {projects.map((project) => (
+                        <motion.div
+                            key={project.id}
+                            layout
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0, y: -20 }}
+                            transition={{ duration: 0.5 }}
+                        >
+                        <Project project={project} isLoading={isLoading}/>
+                        </motion.div>
                     ))}
+                    </AnimatePresence>
                 </div>
             </div>
         </div>

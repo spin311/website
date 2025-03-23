@@ -5,8 +5,9 @@ import {Tooltip} from "react-tooltip";
 import {getOrCreateGUID} from "../../../helpers/Guid";
 import {useNotification} from "../../../context/NotificationContext";
 import {useSearchParams} from "react-router-dom";
+import HomeArrow from "../../home-arrow/HomeArrow";
 
-function Contact() {
+function Contact({backArrow = false}) {
     let {text} = useLanguage();
     let {createNotification} = useNotification();
     const [inputs, setInputs] = useState({
@@ -73,6 +74,7 @@ function Contact() {
 
     return (
         <div className="contact-form" id="contact">
+            {backArrow && <HomeArrow/>}
             <h2>{text.CONTACT.title}</h2>
             <p>{text.CONTACT.description}</p>
             <form onSubmit={handleSubmit}>

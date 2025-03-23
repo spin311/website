@@ -5,7 +5,7 @@ function ContactMe() {
     return (
         <div className={"contact-me"}>
             <SidebarButtons></SidebarButtons>
-            <Contact className={"contact"}></Contact>
+            <Contact className={"contact"} backArrow={true}></Contact>
         </div>
     );
 }

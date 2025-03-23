@@ -7,8 +7,9 @@ import {faStar} from "@fortawesome/free-solid-svg-icons/faStar";
 import {faCodeFork} from "@fortawesome/free-solid-svg-icons/faCodeFork";
 import React from "react";
 
-function Project({name, type, ghUrl, description, img, website, stars, forks, created_at, isLoading, download_link}) {
+function Project({project, isLoading}) {
     const {text} = useLanguage();
+    const {name, description, img, website, download_link, ghUrl, stars, forks, type, created_at} = project;
     const formattedDate = created_at ? new Date(created_at).toLocaleDateString('en-US', { month: '2-digit', year: 'numeric' }).replace('/', ' /') : '"';
     return (
         <div className="project-card">
@@ -44,4 +45,4 @@ function Project({name, type, ghUrl, description, img, website, stars, forks, cr
     );
 }
 
-export default Project;
+export default React.memo(Project);

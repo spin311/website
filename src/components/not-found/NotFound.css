@@ -10,12 +10,3 @@
     width: 400px;
     height: 400px;
 }
-
-.left-arrow {
-    position: absolute;
-    top: 5%;
-    left: 5%;
-    width: 68px;
-    height: 42px;
-    cursor: pointer;
-}
