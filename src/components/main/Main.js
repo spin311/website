@@ -123,7 +123,6 @@ function Main() {
             setIsLoading(true);
             const response = await fetch("https://website-production-967e.up.railway.app/starredRepos");
             const starredRepos = await response.json();
-
             const updatedProjects = await Promise.all(projects.map(async project => {
                 const matchingRepo = starredRepos.find(repo => repo.name === project.ghName);
                 let updatedProject = { ...project };
@@ -138,14 +137,19 @@ function Main() {
                 }
 
                 if (project.type === text.PROJECT.t_extension && project.extensionId) {
-                    const extensionResponse = await fetch(`http://localhost:8080/extension?id=${project.extensionId}`);
-                    const extensionValues = await extensionResponse.json();
-                    updatedProject = {
-                        ...updatedProject,
-                        users: extensionValues.userCount || project.users,
-                        rating: parseFloat(extensionValues.ratingValue?.toFixed(1)) || project.rating
-                    };
-                    updatedProject.description = replaceDescription(updatedProject, updatedProject.users, updatedProject.rating);
+                    try {
+                        const extensionResponse = await fetch(`http://localhost:8080/extension?id=${project.extensionId}`);
+                        const extensionValues = await extensionResponse.json();
+                        updatedProject = {
+                            ...updatedProject,
+                            users: extensionValues?.userCount || project.users,
+                            rating: parseFloat(extensionValues?.ratingValue?.toFixed(1)) || project.rating
+                        };
+                        updatedProject.description = replaceDescription(updatedProject, updatedProject.users, updatedProject.rating);
+                    } catch (e) {
+                        updatedProject.description = replaceDescription(updatedProject, updatedProject.users, updatedProject.rating);
+                        console.error('Error fetching extension data:', e);
+                    }
                 }
                 return updatedProject;
             }));

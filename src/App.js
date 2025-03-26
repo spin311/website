@@ -6,20 +6,33 @@ import {faAddressBook, faBriefcase, faDiagramProject, faHouse} from "@fortawesom
 import SidebarMenu from "./components/sidebar-menu/SidebarMenu";
 import Contact from "./components/footer/contact/Contact";
 import {useLanguage} from "./context/LanguageContext";
+import {faEnvelope, faFile} from '@fortawesome/free-solid-svg-icons';
+import { faGithub } from '@fortawesome/free-brands-svg-icons/faGithub';
 
 function App() {
-    const {text} = useLanguage();
+    const {text, language} = useLanguage();
+    const title = 'Svit Spindler';
+    const cvLink = language === "en" ?
+        `${process.env.PUBLIC_URL}/assets/CV/CV_ENG.pdf` :
+        `${process.env.PUBLIC_URL}/assets/CV/CV_SLO.pdf`;
+    const links = [
+        {text: 'GitHub', href: 'https://github.com/spin311', icon: faGithub, link: true},
+        {text: "E-Mail", href: "mailto:svit.spindler@gmail.com", icon: faEnvelope, link: false},
+        {text: "CV", href: cvLink, icon: faFile, link: true}
+    ];
+    const image = {src: 'assets/images/cropped_image2.png', alt: 'Profile'};
+
     const mainAppSections = [
         {id: 'home', icon: faHouse, text: text.GENERAL.home},
         {id: 'experience', icon: faBriefcase, text: text.EXPERIENCE.title},
         {id: 'projects', icon: faDiagramProject, text: text.PROJECT.title},
         {id: 'contact', icon: faAddressBook, text: text.CONTACT.contact},
-    ]
+    ];
   return (
     <div className="App">
         <SidebarMenu className="SidebarMenu" sections={mainAppSections} />
         <div className="Content">
-            <Header />
+            <Header links={links} title={title} image={image} />
             <Main  className="Main" />
             <Contact></Contact>
             <Footer />

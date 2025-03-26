@@ -18,8 +18,8 @@ function Project({project, isLoading}) {
                 {created_at && <span className="project-date"><b>{formattedDate} </b></span>}
             </span>
             <h3>
-                {website && <a href={website} target="_blank" rel="noopener noreferrer">{name}</a> }
-                {!website && <>{name}</>}
+                {website ? (<a href={website} target={website.includes("http") ? '_blank' : ''} rel="noopener noreferrer">{name}</a>)
+                               : (name)}
             </h3>
             <div className="project-links">
                 {website && <a href={website} target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faGlobe}/> {text.GENERAL.website}</a> }
