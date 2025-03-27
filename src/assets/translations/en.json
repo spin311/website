@@ -1,5 +1,6 @@
 {
   "GENERAL": {
+    "back": "Back",
     "change_language": "Change language to slovene",
     "toggle_darkMode": "Change to dark mode",
     "toggle_lightMode": "Change to light mode",
@@ -67,5 +68,8 @@
       "disabled_tooltip": "Before sending the message, fill in all the fields.",
       "success": "Your message has been sent successfully. I’ll get back to you as soon as possible.",
       "error": "An error occurred while sending the message. Please try again later."
-    }
+    },
+  "MICROSOFT": {
+    "mobile": "Mobile"
+  }
 }

@@ -1,5 +1,6 @@
 {
   "GENERAL": {
+    "back": "Nazaj",
     "change_language": "Spremeni jezik v angleščino",
     "toggle_darkMode": "Preklopi na temni način",
     "toggle_lightMode": "Preklopi na svetli način",
@@ -70,5 +71,8 @@
     "disabled_tooltip": "Pred pošiljanjem sporočila izpolnite vsa polja.",
     "success": "Sporočilo je bilo uspešno poslano. Odgovoril vam bom v najkrajšem možnem času.",
     "error": "Prišlo je do napake pri pošiljanju sporočila. Prosimo, poskusite kasneje."
+  },
+  "MICROSOFT": {
+    "mobile": "Telefon"
   }
 }

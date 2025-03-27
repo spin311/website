@@ -11,7 +11,7 @@ import { faGithub } from '@fortawesome/free-brands-svg-icons/faGithub';
 
 function App() {
     const {text, language} = useLanguage();
-    const title = 'Svit Spindler';
+    const title = {text: 'Svit Spindler', class: ""};
     const cvLink = language === "en" ?
         `${process.env.PUBLIC_URL}/assets/CV/CV_ENG.pdf` :
         `${process.env.PUBLIC_URL}/assets/CV/CV_SLO.pdf`;

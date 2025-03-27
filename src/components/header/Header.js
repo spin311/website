@@ -7,7 +7,7 @@ function Header({title, links, image}){
     return (
         <div id="home">
             <header className="App-header">
-                <h1 className="name">{title}</h1>
+                <h1 className={`${title.class} name`}>{title.text}</h1>
                 <div className="header-links">
                     {links.map((link, i) => (
                         <a key={i} href={link.href}  target={link.link ? "_blank" : ""} rel={link.link ? "noopener noreferrer" : ""}>
