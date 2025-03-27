@@ -20,6 +20,7 @@
         justify-content: center;
         gap: 2em;
         margin-bottom: 2em;
+        flex-wrap: wrap;
 }
 
 .profile-picture {
@@ -34,4 +35,19 @@
 
 .md-text {
         font-size: 3rem !important;
+}
+
+@media screen and (max-width: 768px) {
+        .App-header h1 {
+                font-size: 3rem;
+        }
+
+        .header-links {
+                font-size: 1rem;
+        }
+
+        .profile-picture {
+                width: 145px;
+                height: 145px;
+        }
 }

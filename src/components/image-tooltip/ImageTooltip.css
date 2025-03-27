@@ -1,0 +1,35 @@
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+.tooltip-icon:hover {
+    cursor: pointer;
+
+}
+
+.tooltip:hover .tooltip-image {
+    display: block;
+}
+
+.tooltip-image {
+    display: none;
+    position: absolute;
+    left: 100%;
+    margin-left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    max-width: 300px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+@media screen and (max-width: 768px) {
+    .tooltip-image {
+        left: auto;
+        right: 100%;
+        margin-left: 0;
+        margin-right: 10px;
+    }
+}

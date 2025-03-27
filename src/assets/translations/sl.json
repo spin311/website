@@ -16,7 +16,9 @@
     "home": "Domov",
     "made_with": "Narejeno z jezikoma React in Golang",
     "gh_code": "GitHub koda",
-    "not_found": "Stran ni bila najdena"
+    "not_found": "Stran ni bila najdena",
+    "donate": "Doniraj",
+    "features": "Funkcije"
   },
 
   "MAIN": {
@@ -73,6 +75,11 @@
     "error": "Prišlo je do napake pri pošiljanju sporočila. Prosimo, poskusite kasneje."
   },
   "MICROSOFT": {
-    "mobile": "Telefon"
+    "mobile": "Telefon",
+    "about": "O projektu",
+    "description": "Google razširitev za samodejno pridobivanje Microsoft Rewards točk. Deluje tako, da samodejno odpira Bing zavihke in dnevne naloge. vsak dan odpre zavihke ob prvem odpiranju brskalnika",
+    "to_work": "For it to work, you need to:",
+    "step1": "Login to Microsoft Rewards with Microsoft account on rewards.bing.com",
+    "step2": "Login to your Microsoft account on bing.com"
   }
 }

@@ -1,25 +1,12 @@
 import "./SidebarMenu.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import useActiveSection from "../../hooks/useActiveSection";
-import {useEffect, useState} from "react";
+import useIsMobile from "../../hooks/useIsMobile";
 
 const SidebarMenu = ({sections}) => {
     const sectionIds = sections.map((section) => section.id);
     const activeSection = useActiveSection(sectionIds);
-    const [isMobile, setIsMobile] = useState(window.innerWidth <= 767);
-
-    useEffect(() => {
-        const handleResize = () => {
-            setIsMobile(window.innerWidth <= 767);
-        };
-
-        window.addEventListener("resize", handleResize);
-
-        return () => {
-            window.removeEventListener("resize", handleResize);
-        };
-    }, []);
-
+    const isMobile = useIsMobile();
 
     return (
         <div className="sidebar-menu">

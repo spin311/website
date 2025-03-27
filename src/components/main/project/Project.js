@@ -22,7 +22,7 @@ function Project({project, isLoading}) {
                                : (name)}
             </h3>
             <div className="project-links">
-                {website && <a href={website} target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faGlobe}/> {text.GENERAL.website}</a> }
+                {website && <a href={website} target={website.includes("http") ? '_blank' : ''} rel="noopener noreferrer"><FontAwesomeIcon icon={faGlobe}/> {text.GENERAL.website}</a> }
                 {download_link && <a href={download_link} download target="_blank" rel="noopener noreferrer">
                     <FontAwesomeIcon icon={faArrowDown} /> {text.PROJECT.download}
                 </a>}

@@ -42,3 +42,26 @@ body {
     --active-secondary-color: #5151fa;;
   --border-color: hsl(185, 0%, 70%);
 }
+
+.center {
+  display: flex;
+  flex-direction: column; /* Stack children vertically */
+  justify-content: center; /* Center vertically (Y-axis) */
+  align-items: center; /* Center horizontally (X-axis) */
+  height: 100vh; /* Full viewport height */
+  max-width: 800px; /* Constrain width (adjust as needed) */
+  margin: 0 auto; /* Center the container itself horizontally */
+  padding: 20px; /* Optional: Add some spacing */
+}
+
+.solo {
+  margin: 0 auto;
+  padding: 1em;
+  background: var(--background-secondary-color);
+  border-radius: 5px;
+  box-shadow: 0 0 10px var(--shadow-color);
+}
+
+.w-40 {
+    width: 40%;
+}

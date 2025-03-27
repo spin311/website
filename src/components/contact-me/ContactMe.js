@@ -1,11 +1,16 @@
-import SidebarButtons from "../sidebar-buttons/SidebarButtons";
 import Contact from "../footer/contact/Contact";
-import "./ContactMe.css"
+import {Helmet} from "react-helmet";
 function ContactMe() {
     return (
-        <div className={"contact-me"}>
-            <Contact className={"contact"} backArrow={true}></Contact>
-        </div>
+        <>
+            <Helmet>
+                <title>Contact Me</title>
+                <meta name="description" content="Contact me" />
+            </Helmet>
+            <div className={"center"}>
+                <Contact className={"w-40"} backArrow={true}></Contact>
+            </div>
+        </>
     );
 }
     export default ContactMe;

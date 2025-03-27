@@ -1,12 +1,16 @@
 import "./NotFound.css"
-import {Link} from "react-router-dom";
 import HomeArrow from "../home-arrow/HomeArrow";
 import {useLanguage} from "../../context/LanguageContext";
+import {Helmet} from "react-helmet";
 
 function NotFound() {
     let {text} = useLanguage();
     return (
         <>
+            <Helmet>
+                <title>404 {text.GENERAL.not_found}</title>
+                <meta name="description" content="Not found page" />
+            </Helmet>
             <HomeArrow/>
             <div className={"notFound"}>
                 <h1>404 {text.GENERAL.not_found}</h1>

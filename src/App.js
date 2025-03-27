@@ -8,6 +8,7 @@ import Contact from "./components/footer/contact/Contact";
 import {useLanguage} from "./context/LanguageContext";
 import {faEnvelope, faFile} from '@fortawesome/free-solid-svg-icons';
 import { faGithub } from '@fortawesome/free-brands-svg-icons/faGithub';
+import {Helmet} from "react-helmet";
 
 function App() {
     const {text, language} = useLanguage();
@@ -29,15 +30,22 @@ function App() {
         {id: 'contact', icon: faAddressBook, text: text.CONTACT.contact},
     ];
   return (
-    <div className="App">
-        <SidebarMenu className="SidebarMenu" sections={mainAppSections} />
-        <div className="Content">
-            <Header links={links} title={title} image={image} />
-            <Main  className="Main" />
-            <Contact></Contact>
-            <Footer />
-        </div>
-    </div>
+      <>
+          <Helmet>
+              <title>Svit Spindler</title>
+              <meta name="description" content="Personal website of Svit Spindler" />
+          </Helmet>
+          <div className="App">
+              <SidebarMenu className="SidebarMenu" sections={mainAppSections} />
+              <div className="Content">
+                  <Header links={links} title={title} image={image} />
+                  <Main  className="Main" />
+                  <Contact></Contact>
+                  <Footer />
+              </div>
+          </div>
+      </>
+
   );
 }
 

@@ -1,0 +1,21 @@
+import {useLanguage} from "../../../../context/LanguageContext";
+import "./Features.css";
+
+function Features () {
+    const {text} = useLanguage();
+    return (
+        <div id="features">
+            <h2 className="f-title">{text.GENERAL.features}</h2>
+                <ul className="f-list">
+                    <li>{text.MICROSOFT.feature1}</li>
+                    <li>{text.MICROSOFT.feature2}</li>
+                    <li>{text.MICROSOFT.feature3}</li>
+                    <li>{text.MICROSOFT.feature4}</li>
+                    <li>{text.MICROSOFT.feature5}</li>
+                </ul>
+                <img src={`${process.env.PUBLIC_URL}/assets/images/microsoft-popup.png`} alt="microsoft popup" className="f-image"/>
+        </div>
+    )
+}
+
+export default Features;

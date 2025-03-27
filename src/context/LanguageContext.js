@@ -1,6 +1,7 @@
 import {createContext, useContext, useEffect, useState} from "react";
 import enText from "../assets/translations/en.json";
 import sloText from "../assets/translations/sl.json";
+import parse from 'html-react-parser';
 import React from "react";
 
 const LanguageContext  = createContext();
@@ -27,10 +28,14 @@ export function LanguageProvider({children}) {
         ));
     };
 
+    const formatHtml = (text) => {
+        return parse(text || "");
+    }
+
     const text = language === "en" ? enText : sloText;
 
     return (
-        <LanguageContext.Provider value={{ language, changeLanguage, text, formatTextWithLineBreaks}}>
+        <LanguageContext.Provider value={{ language, changeLanguage, text, formatTextWithLineBreaks, formatHtml }}>
             {children}
         </LanguageContext.Provider>
     );
