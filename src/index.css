@@ -45,13 +45,12 @@ body {
 
 .center {
   display: flex;
-  flex-direction: column; /* Stack children vertically */
-  justify-content: center; /* Center vertically (Y-axis) */
-  align-items: center; /* Center horizontally (X-axis) */
-  height: 100vh; /* Full viewport height */
-  max-width: 800px; /* Constrain width (adjust as needed) */
-  margin: 0 auto; /* Center the container itself horizontally */
-  padding: 20px; /* Optional: Add some spacing */
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
 .solo {

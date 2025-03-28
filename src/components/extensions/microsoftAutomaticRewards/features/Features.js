@@ -1,10 +1,10 @@
 import {useLanguage} from "../../../../context/LanguageContext";
 import "./Features.css";
 
-function Features () {
+function Features ({className = ''}) {
     const {text} = useLanguage();
     return (
-        <div id="features">
+        <div id="features" className={className}>
             <h2 className="f-title">{text.GENERAL.features}</h2>
                 <ul className="f-list">
                     <li>{text.MICROSOFT.feature1}</li>

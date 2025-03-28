@@ -53,10 +53,10 @@ function MicrosoftAutomaticRewards() {
               <div className="Content">
                   <Header title={title} links={links} image={image}/>
                   <About/>
+                  <hr className="mb-2"/>
+                  <Features className="mb-2"/>
                   <hr/>
-                  <Features/>
-                  <hr/>
-                  <Donate/>
+                  <Donate className="mb-4"/>
 
                   <Contact/>
                   <Footer />
