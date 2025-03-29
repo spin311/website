@@ -16,7 +16,7 @@ function Donate({soloComponent=false, className=''}) {
                 </>
             }
             <div id="donate" className={soloComponent ? `center ${className}` : className}>
-                <div className="solo">
+                <div  className={soloComponent ? 'solo' : ''}>
                     <h2>{text.GENERAL.donate}</h2>
                     <p>{formatHtml(text.MICROSOFT.donate_explanation)}</p>
                     <ul>

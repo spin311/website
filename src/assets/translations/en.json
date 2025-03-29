@@ -93,5 +93,19 @@
     "feature3": "Completes tasks on browser startup",
     "feature4": "Customizable settings",
     "feature5": "Random words or letters search"
+  },
+  "EXTENSION": {
+    "your_email": "Your e-mail",
+    "form_title": "Extension Uninstall Feedback",
+    "uninstall_reason": "Uninstall reason:",
+    "form_explanation": "Thank you for trying my extension. Please take a few seconds so I can improve it in the future.",
+    "reason": "Reason",
+    "not_need": "Don't need / use it anymore",
+    "not_work": "Stopped working",
+    "not_perform": "Performance issues",
+    "missing_feature": "Missing features I want / found something better",
+    "not_clear": "Unclear how to use / bad design",
+    "other": "Other"
+
   }
 }

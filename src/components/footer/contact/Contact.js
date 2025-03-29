@@ -6,6 +6,7 @@ import {getOrCreateGUID} from "../../../helpers/Guid";
 import {useNotification} from "../../../context/NotificationContext";
 import {useSearchParams} from "react-router-dom";
 import HomeArrow from "../../home-arrow/HomeArrow";
+import IsRequired from "../../is-required/IsRequired";
 
 function Contact({backArrow = false}) {
     let {text} = useLanguage();
@@ -78,14 +79,14 @@ function Contact({backArrow = false}) {
             <h2>{text.CONTACT.title}</h2>
             <p>{text.CONTACT.description}</p>
             <form onSubmit={handleSubmit}>
-                <label htmlFor="subject">{text.CONTACT.subject} <span className="is-required">*</span></label>
+                <label htmlFor="subject">{text.CONTACT.subject} <IsRequired/></label>
                 <input type="text" id="subject" name="subject"
                        value={inputs.subject}
                        onChange={handleChange}
                        placeholder={text.CONTACT.subject_placeholder}
                        required/>
 
-                <label htmlFor="sender">{text.CONTACT.sender} <span className="is-required">*</span></label>
+                <label htmlFor="sender">{text.CONTACT.sender} <IsRequired/></label>
                 <input type="text" id="sender" name="sender"
                        value={inputs.sender}
                        onChange={handleChange}
@@ -99,7 +100,7 @@ function Contact({backArrow = false}) {
                        onChange={handleChange}
                 />
 
-                <label htmlFor="body">{text.CONTACT.message} <span className="is-required">*</span></label>
+                <label htmlFor="body">{text.CONTACT.message} <IsRequired/></label>
                 <textarea id="body" name="body" rows="6"
                           value={inputs.body}
                           onChange={handleChange}

@@ -57,7 +57,3 @@
 .contact-form button:not(:disabled):hover {
     background: var(--active-secondary-color);
 }
-
-.is-required {
-    color: red;
-}
