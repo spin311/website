@@ -109,7 +109,8 @@
   },
   "WEBSITE": {
     "title": "Microsoft Automatic Rewards Website",
-    "description": "Website implementation for Microsoft Automatic Rewards that you can use on your mobile device to get mobile points",
+    "description": "Website implementation for Microsoft Automatic Rewards that you can use on your mobile device to get mobile points. It works by opening new bing tabs",
+    "allow_popup": "*Need to allow popups to work",
     "search_nu": "Number of searches",
     "search_delay": "Delay between searches",
     "get_rewards": "Get Rewards",

@@ -7,6 +7,7 @@ import {Helmet} from "react-helmet";
 import {title} from "framer-motion/m";
 import HomeArrow from "../../../../home-arrow/HomeArrow";
 import {generate} from 'random-words';
+import ImageTooltip from "../../../../image-tooltip/ImageTooltip";
 
 
 function isValueNotSet(value) {
@@ -133,7 +134,7 @@ function Website() {
     return (
         <>
             <Helmet>
-                <title>Microsoft Automatic Rewards Website</title>
+                <title>Microsoft Rewards Website</title>
                 <meta name="description" content="Microsoft Automatic Rewards Website"/>
             </Helmet>
             <HomeArrow/>
@@ -166,6 +167,7 @@ function Website() {
                         </span>
                             </label>
                         </div>
+                        <span className="gray-text">{text.WEBSITE.allow_popup}  <ImageTooltip src='enable-popup.png'/></span>
 
                         <button type="submit"
                                 disabled={disabledSend}

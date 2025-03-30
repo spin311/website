@@ -80,11 +80,11 @@ function Uninstall () {
                 <meta name="description" content="Uninstall reason" />
             </Helmet>
             <HomeArrow/>
-            <div className="contact-form center" id="contact">
+            <div className="uninstall-form center" id="contact">
                 <h1>{text.EXTENSION.form_title}</h1>
                 <p>{text.EXTENSION.form_explanation}</p>
                 <form onSubmit={handleSubmit}>
-                    <h2 className="uninstall-reason">{text.EXTENSION.uninstall_reason}<IsRequired/></h2>
+                    <h2 className="uninstall-reason">{text.EXTENSION.uninstall_reason} <IsRequired/></h2>
                     <div className="radio-options">
                         <input type="radio" id="not-need" name="reason" value={text.EXTENSION.not_need} onChange={handleChange}/>
                         <label htmlFor="not-need">{text.EXTENSION.not_need}</label>
