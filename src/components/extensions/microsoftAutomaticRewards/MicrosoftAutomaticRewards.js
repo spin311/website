@@ -17,6 +17,7 @@ import About from "./about/About";
 import Features from "./features/Features.js";
 import Donate from "./donate/Donate";
 import useIsMobile from "../../../hooks/useIsMobile";
+import {Outlet} from "react-router-dom";
 
 function MicrosoftAutomaticRewards() {
     const {text} = useLanguage();
@@ -37,7 +38,7 @@ function MicrosoftAutomaticRewards() {
     };
     let links = [
         {href: "https://github.com/spin311/MicrosoftRewardsWebsite", text: "GitHub", icon: faGithub, link: true},
-        {href: "microsoft-automatic-rewards/website", text: text.MICROSOFT.mobile, icon: faMobileScreen, link: false},
+        {href: "microsoft-automatic-rewards/mobile/website", text: text.MICROSOFT.mobile, icon: faMobileScreen, link: false},
         {href: "/donate", text: text.GENERAL.donate, icon: faDonate, link: false}
     ];
     links = !isMobile ? [downloadLink, ...links] : links;
@@ -62,6 +63,7 @@ function MicrosoftAutomaticRewards() {
                   <Footer />
               </div>
           </div>
+          <Outlet/>
       </>
 
   );

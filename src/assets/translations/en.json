@@ -106,6 +106,13 @@
     "missing_feature": "Missing features I want / found something better",
     "not_clear": "Unclear how to use / bad design",
     "other": "Other"
-
+  },
+  "WEBSITE": {
+    "title": "Microsoft Automatic Rewards Website",
+    "description": "Website implementation for Microsoft Automatic Rewards that you can use on your mobile device to get mobile points",
+    "search_nu": "Number of searches",
+    "search_delay": "Delay between searches",
+    "get_rewards": "Get Rewards",
+    "stop_searches": "Stop Searches"
   }
 }

@@ -13,6 +13,8 @@ import MicrosoftAutomaticRewards from "./components/extensions/microsoftAutomati
 import SidebarButtons from "./components/sidebar-buttons/SidebarButtons";
 import Donate from "./components/extensions/microsoftAutomaticRewards/donate/Donate";
 import Uninstall from "./components/extensions/uninstall/uninstall";
+import Website from "./components/extensions/microsoftAutomaticRewards/mobile/website/website";
+import Mobile from "./components/extensions/microsoftAutomaticRewards/mobile/mobile";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -25,12 +27,13 @@ root.render(
                     <Routes>
                         <Route path="/" element={<App />} />
                         <Route path="/contact" element={<ContactMe />} />
-                        <Route path="/microsoft-automatic-rewards" element={<MicrosoftAutomaticRewards />} >
-                            <Route index element={<MicrosoftAutomaticRewards />} />
-                            <Route path="mobile" element={<NotFound />} />
-                        </Route>
                         <Route path="/donate" element={<Donate soloComponent={true} />} />
                         <Route path="/uninstall" element={<Uninstall />} />
+
+                        <Route path="/microsoft-automatic-rewards" element={<MicrosoftAutomaticRewards />} />
+                        <Route path="/microsoft-automatic-rewards/mobile" element={<Mobile />} />
+                        <Route path="/microsoft-automatic-rewards/mobile/website" element={<Website />} />
+
                         <Route path="*" element={<NotFound />} />
                     </Routes>
                 </BrowserRouter>

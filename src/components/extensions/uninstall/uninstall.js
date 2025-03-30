@@ -22,7 +22,7 @@ function Uninstall () {
     const handleChange = (event) => {
         const name = event.target.name;
         const value = event.target.value;
-        setInputs(values => ({...inputs, [name] :value}));
+        setInputs(() => ({...inputs, [name] :value}));
     }
     const [searchParams] = useSearchParams();
     const extensionName = searchParams.get('extension');

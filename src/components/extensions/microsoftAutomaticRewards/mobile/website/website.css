@@ -1,0 +1,201 @@
+/* Form Container Styles */
+.website.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 2rem;
+    background-color: var(--background-color);
+}
+
+.website .solo {
+    width: 100%;
+    max-width: 600px;
+    background: var(--background-secondary-color);
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px var(--shadow-color);
+}
+
+/* Typography */
+.website h1 {
+    text-align: center;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+    font-size: 2rem;
+}
+
+.website p {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--text-secondary-color);
+    line-height: 1.6;
+}
+
+/* Input Fields */
+.website-input {
+    margin-bottom: 1.5rem;
+}
+
+.website-input label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+.website-input input {
+    width: 94%;
+    padding: 0.8rem 1rem;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1rem;
+    background: var(--input-color);
+    color: var(--primary-color);
+    transition: all 0.3s ease;
+}
+
+.website-input input:focus {
+    outline: none;
+    border-color: var(--active-color);
+    box-shadow: 0 0 0 3px rgba(69, 134, 246, 0.2);
+}
+
+/* Submit Button */
+.website button[type="submit"] {
+    width: 100%;
+    padding: 1rem;
+    margin-top: 1rem;
+    background: var(--active-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.website button.gray {
+    background: var(--disabled-color);
+    color: var(--secondary-color);
+}
+
+.website button[type="submit"]:hover {
+    background: var(--active-secondary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px var(--shadow-color);
+}
+
+.website button[type="submit"]:active {
+    transform: translateY(0);
+}
+
+.website button[type="submit"]:disabled {
+    background: var(--disabled-color);
+    color: var(--secondary-color);
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+/* Tooltip Styling */
+.tooltip {
+    font-size: 0.9rem;
+    padding: 0.5rem 0.75rem;
+    background: var(--background-secondary-color);
+    color: var(--primary-color);
+    border-radius: 6px;
+    box-shadow: 0 2px 8px var(--shadow-color);
+    border: 1px solid var(--border-color);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .website .solo {
+        padding: 1.5rem;
+    }
+
+    .website h1 {
+        font-size: 1.5rem;
+    }
+}
+
+.toggle-switch-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 220px;
+    height: 44px;
+}
+
+.toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--input-color);
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    transition: .4s;
+    display: flex;
+    overflow: hidden;
+}
+
+.slider:before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 50%;
+    left: 0;
+    bottom: 0;
+    background-color: var(--active-color);
+    transition: .4s;
+    z-index: 1;
+}
+
+.toggle-switch input:checked + .slider:before {
+    transform: translateX(100%);
+}
+
+.option {
+    position: relative;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    color: var(--primary-color);
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.words {
+    color: white;
+}
+
+.toggle-switch input:checked + .slider .words {
+    color: var(--primary-color);
+}
+
+.toggle-switch input:checked + .slider .letters {
+    color: white;
+}
+
+/* Ensure text stays visible when switch is toggled */
+.toggle-switch input:not(:checked) + .slider .words,
+.toggle-switch input:checked + .slider .letters {
+    color: white;
+}
