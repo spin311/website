@@ -4,7 +4,6 @@ import {useSearchParams} from "react-router-dom";
 import {Tooltip} from "react-tooltip";
 import "./website.css"
 import {Helmet} from "react-helmet";
-import {title} from "framer-motion/m";
 import HomeArrow from "../../../../home-arrow/HomeArrow";
 import {generate} from 'random-words';
 import ImageTooltip from "../../../../image-tooltip/ImageTooltip";
