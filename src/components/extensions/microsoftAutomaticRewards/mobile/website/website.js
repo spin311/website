@@ -38,7 +38,6 @@ function Website() {
             isWordsSelected: !prev.isWordsSelected
         }));
     };
-    const [isWordsSelected, setIsWordsSelected] = useState(true);
     const BING_SEARCH_URL = "https://www.bing.com/search?q=";
     const BING_SEARCH_PARAMS = "&qs=n&form=QBLH&sp=-1";
 
