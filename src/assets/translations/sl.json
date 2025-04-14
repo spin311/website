@@ -78,8 +78,45 @@
     "mobile": "Telefon",
     "about": "O projektu",
     "description": "Google razširitev za samodejno pridobivanje Microsoft Rewards točk. Deluje tako, da samodejno odpira Bing zavihke in dnevne naloge. vsak dan odpre zavihke ob prvem odpiranju brskalnika",
-    "to_work": "For it to work, you need to:",
-    "step1": "Login to Microsoft Rewards with Microsoft account on rewards.bing.com",
-    "step2": "Login to your Microsoft account on bing.com"
+    "to_work": "Za delovanje morate:",
+    "step1": "Prijavite se v <a href='https://rewards.bing.com/welcome?rh=4F5D8490&ref=rafsae' target=_blank>Microsoft Rewards </a> z Microsoftovim računom",
+    "step2": "Prijavite se v svoj Microsoftov račun na bing.com",
+    "to_daily": "Za pridobivanje dnevnih točk:",
+    "step3": "Omogočite dnevni nabor v razširitvi",
+    "step4": "Dovolite pojavna okna na <a href='https://rewards.bing.com/' target=_blank>rewards.bing</a>",
+    "to_mobile": "Za pridobivanje mobilnih točk:",
+    "step5": "<a href='microsoft-automatic-rewards/mobile'>Kliknite tukaj</a> in sledite navodilom",
+    "donate_explanation": "Izdelava in posodabljanje razširitev zahteva veliko časa in truda. Čeprav si prizadevam, da moje razširitve ostanejo <b>brezplačne in dostopne vsem</b>, vaša podpora pomaga:",
+    "donate1": "<b>Izboljšati moje razširitve</b> z dodajanjem novih funkcij in popravljanjem napak",
+    "donate2": "<b>Ohraniti moje razširitve posodobljene</b> z najnovejšimi spremembami",
+    "donate3": "<b>Ostati neodvisen</b> brez oglasov ali plačljivih funkcij",
+    "donation_request": "Če vam je moje delo všeč, razmislite o tem, da mi <b>kupite kavo</b> ☕ ali naredite majhno donacijo. Vsak prispevek, ne glede na to, kako majhen, pomaga ohraniti moj projekt živ!",
+    "feature1": "Samodejno odpira zavihke Bing",
+    "feature2": "Samodejno opravlja dnevne naloge",
+    "feature3": "Opravlja naloge ob zagonu brskalnika",
+    "feature4": "Prilagodljive nastavitve",
+    "feature5": "Iskanje naključnih besed ali znakov"
+  },
+  "EXTENSION": {
+    "your_email": "Vaš e-poštni naslov",
+    "form_title": "Povratne informacije o odstranitvi razširitve",
+    "uninstall_reason": "Razlog za odstranitev:",
+    "form_explanation": "Hvala, ker ste preizkusili mojo razširitev. Prosimo, vzemite si nekaj sekund, da jo lahko izboljšam v prihodnosti.",
+    "reason": "Razlog",
+    "not_need": "Ne potrebujem / ne uporabljam več",
+    "not_work": "Ne dela več",
+    "not_perform": "Težave z zmogljivostjo",
+    "missing_feature": "Manjkajo funkcije, ki jih želim / našel sem kaj boljšega",
+    "not_clear": "Nejasno, kako uporabljati / slab dizajn",
+    "other": "Drugo"
+  },
+  "WEBSITE": {
+    "title": "Spletna stran Microsoft Automatic Rewards",
+    "description": "Implementacija spletne strani za Microsoft Automatic Rewards, ki jo lahko uporabljate na mobilni napravi za pridobivanje mobilnih točk. Deluje tako, da odpira nove zavihke Bing",
+    "allow_popup": "*Za delovanje je potrebno dovoliti pojavna okna",
+    "search_nu": "Število iskanj",
+    "search_delay": "Zamik med iskanji",
+    "get_rewards": "Pridobi nagrade",
+    "stop_searches": "Ustavi iskanja"
   }
 }
