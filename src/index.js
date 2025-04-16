@@ -33,7 +33,7 @@ root.render(
 
                         <Route path="/microsoft-automatic-rewards" element={<MicrosoftAutomaticRewards />} />
                         <Route path="/microsoft-automatic-rewards/mobile" element={<Mobile />} />
-                        <Route path="/microsoft-automatic-rewards/mobile/privacy " element={<Terms />} />
+                        <Route path="/microsoft-automatic-rewards/mobile/privacy" element={<Terms />} />
                         <Route path="/microsoft-automatic-rewards/mobile/website" element={<Website />} />
 
                         <Route path="*" element={<NotFound />} />
