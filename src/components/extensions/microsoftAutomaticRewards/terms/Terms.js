@@ -5,8 +5,8 @@ function Terms (){
     return (
         <>
             <Helmet>
-                <title>Terms & Conditions</title>
-                <meta name="description" content="Terms & Conditions for Microsoft Automatic Rewards app"/>
+                <title>Privacy Policy</title>
+                <meta name="description" content="Privacy Policy for Microsoft Automatic Rewards app"/>
             </Helmet>
             <div className="terms">
                 <h1 className="titles">Privacy Policy for Microsoft Automatic Rewards</h1>
