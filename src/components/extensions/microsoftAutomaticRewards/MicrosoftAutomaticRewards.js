@@ -15,7 +15,7 @@ import Contact from "../../footer/contact/Contact";
 import Footer from "../../footer/Footer";
 import About from "./about/About";
 import Features from "./features/Features.js";
-import Donate from "./donate/Donate";
+import Donate from "../donate/Donate";
 import useIsMobile from "../../../hooks/useIsMobile";
 import {Outlet} from "react-router-dom";
 

@@ -11,10 +11,11 @@ import ContactMe from "./components/contact-me/ContactMe";
 import NotFound from "./components/not-found/NotFound";
 import MicrosoftAutomaticRewards from "./components/extensions/microsoftAutomaticRewards/MicrosoftAutomaticRewards";
 import SidebarButtons from "./components/sidebar-buttons/SidebarButtons";
-import Donate from "./components/extensions/microsoftAutomaticRewards/donate/Donate";
+import Donate from "./components/extensions/donate/Donate";
 import Uninstall from "./components/extensions/uninstall/uninstall";
 import Website from "./components/extensions/microsoftAutomaticRewards/mobile/website/website";
 import Mobile from "./components/extensions/microsoftAutomaticRewards/mobile/mobile";
+import Terms from "./components/extensions/microsoftAutomaticRewards/terms/Terms";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -22,8 +23,8 @@ root.render(
     <ThemeProvider>
         <LanguageProvider>
             <NotificationProvider>
-                <SidebarButtons/>
                 <BrowserRouter>
+                    <SidebarButtons/>
                     <Routes>
                         <Route path="/" element={<App />} />
                         <Route path="/contact" element={<ContactMe />} />
@@ -32,6 +33,7 @@ root.render(
 
                         <Route path="/microsoft-automatic-rewards" element={<MicrosoftAutomaticRewards />} />
                         <Route path="/microsoft-automatic-rewards/mobile" element={<Mobile />} />
+                        <Route path="/microsoft-automatic-rewards/mobile/terms" element={<Terms />} />
                         <Route path="/microsoft-automatic-rewards/mobile/website" element={<Website />} />
 
                         <Route path="*" element={<NotFound />} />

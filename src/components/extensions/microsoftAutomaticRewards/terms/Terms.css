@@ -1,0 +1,11 @@
+.terms {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    padding: 2rem;
+    max-width: 800px;
+    margin: auto;
+    color: #333;
+}
+.titles {
+    color: #2c3e50;
+}

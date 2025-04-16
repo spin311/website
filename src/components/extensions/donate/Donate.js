@@ -1,6 +1,6 @@
-import {useLanguage} from "../../../../context/LanguageContext";
 import {Helmet} from "react-helmet";
-import HomeArrow from "../../../home-arrow/HomeArrow";
+import {useLanguage} from "../../../context/LanguageContext";
+import HomeArrow from "../../home-arrow/HomeArrow";
 
 function Donate({soloComponent=false, className=''}) {
     const { text, formatHtml } = useLanguage();

@@ -138,7 +138,7 @@ function Main() {
 
                 if (project.type === text.PROJECT.t_extension && project.extensionId) {
                     try {
-                        const extensionResponse = await fetch(`http://localhost:8080/extension?id=${project.extensionId}`);
+                        const extensionResponse = await fetch(`https://website-production-967e.up.railway.app/extension?id=${project.extensionId}`);
                         const extensionValues = await extensionResponse.json();
                         updatedProject = {
                             ...updatedProject,
