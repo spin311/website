@@ -31,7 +31,7 @@ function Terms (){
                 <p>This app uses internet access solely to open Bing search pages. No other permissions are required or used.</p>
 
                 <h2 className="titles">5. Children’s Privacy</h2>
-                <p>This app is <strong>not intended for children under 16</strong>. We do not knowingly collect or store data from users under the age of 16.</p>
+                <p>Target audience is 13 years old and older. We do not knowingly collect or store data from users</p>
 
                 <h2 className="titles">6. Third-party Services</h2>
                 <p>This app is not affiliated with, endorsed by, or supported by Microsoft Corporation. Microsoft® and Bing® are registered trademarks of Microsoft.</p>
