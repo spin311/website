@@ -44,7 +44,7 @@ function Uninstall () {
                 bodyContent += `\n\n${inputs.explanation}`;
             }
             mail.body = bodyContent;
-            const response = await fetch("https://website-production-967e.up.railway.app/sendEmail", {
+            const response = await fetch(`${process.env.REACT_APP_API_HOST}/sendEmail`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

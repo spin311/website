@@ -121,7 +121,7 @@ function Main() {
     const getProjectStars = async () => {
         try {
             setIsLoading(true);
-            const response = await fetch("https://website-production-967e.up.railway.app/starredRepos");
+            const response = await fetch(`${process.env.REACT_APP_API_HOST}/starredRepos`);
             const starredRepos = await response.json();
             const updatedProjects = await Promise.all(projects.map(async project => {
                 const matchingRepo = starredRepos.find(repo => repo.name === project.ghName);
@@ -138,7 +138,7 @@ function Main() {
 
                 if (project.type === text.PROJECT.t_extension && project.extensionId) {
                     try {
-                        const extensionResponse = await fetch(`https://website-production-967e.up.railway.app/extension?id=${project.extensionId}`);
+                        const extensionResponse = await fetch(`${process.env.REACT_APP_API_HOST}/extension?id=${project.extensionId}`);
                         const extensionValues = await extensionResponse.json();
                         updatedProject = {
                             ...updatedProject,
