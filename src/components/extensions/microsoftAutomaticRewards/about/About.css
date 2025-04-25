@@ -1,0 +1,32 @@
+.about-phone {
+    height: 20rem;
+}
+
+.to-work {
+    display: flex;
+    justify-content: space-between;
+}
+
+.about-image {
+    display: flex;
+    align-self: flex-end;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: underline;
+}
+
+@media screen and (max-width: 768px) {
+    .to-work {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #about > div > a {
+        align-self: unset;
+    }
+
+    .about-phone {
+        height: 17rem;
+    }
+
+}

@@ -1,7 +1,7 @@
-import "./Terms.css"
+import "./Privacy.css"
 import {Helmet} from "react-helmet";
 
-function Terms (){
+function Privacy (){
     return (
         <>
             <Helmet>
@@ -44,4 +44,4 @@ function Terms (){
     );
 }
 
-export default Terms;
+export default Privacy;

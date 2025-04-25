@@ -82,7 +82,8 @@
     "step3": "Enable daily set in extension",
     "step4": "Allow popups at <a href='https://rewards.bing.com/' target=_blank>rewards.bing</a>",
     "to_mobile": "To get Mobile points:",
-    "step5": "<a href='microsoft-automatic-rewards/mobile/website'>Click here</a> and follow instructions",
+    "step5":"<a href='microsoft-automatic-rewards/mobile/test-app'>Download Android App</a> or",
+    "step6": "<a href='microsoft-automatic-rewards/mobile/website'>Use website implementation</a> on your phone",
     "donate_explanation": "Making and updating extensions takes a lot of time and effort. While I'm commited to keeping my extensions <b>free and accessible to everyone</b>, your support helps me:",
     "donate1": "<b>Improve my extensions</b> by adding new features and fixing bugs",
     "donate2": "<b>Keep my extensions up to date</b> with the latest changes",
@@ -92,7 +93,9 @@
     "feature2": "Automatically completes daily tasks",
     "feature3": "Completes tasks on browser startup",
     "feature4": "Customizable settings",
-    "feature5": "Random words or letters search"
+    "feature5": "Random words or letters search",
+    "download": "Download App",
+    "new_feature": "Request new feature"
   },
   "EXTENSION": {
     "your_email": "Your e-mail",

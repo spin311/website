@@ -14,8 +14,8 @@ import SidebarButtons from "./components/sidebar-buttons/SidebarButtons";
 import Donate from "./components/extensions/donate/Donate";
 import Uninstall from "./components/extensions/uninstall/uninstall";
 import Website from "./components/extensions/microsoftAutomaticRewards/mobile/website/website";
-import Mobile from "./components/extensions/microsoftAutomaticRewards/mobile/mobile";
-import Terms from "./components/extensions/microsoftAutomaticRewards/terms/Terms";
+import Privacy from "./components/extensions/microsoftAutomaticRewards/mobile/privacy/Privacy";
+import TestList from "./components/extensions/microsoftAutomaticRewards/mobile/test-list/TestList";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -30,11 +30,10 @@ root.render(
                         <Route path="/contact" element={<ContactMe />} />
                         <Route path="/donate" element={<Donate soloComponent={true} />} />
                         <Route path="/uninstall" element={<Uninstall />} />
-
                         <Route path="/microsoft-automatic-rewards" element={<MicrosoftAutomaticRewards />} />
-                        <Route path="/microsoft-automatic-rewards/mobile" element={<Mobile />} />
-                        <Route path="/microsoft-automatic-rewards/mobile/privacy" element={<Terms />} />
+                        <Route path="/microsoft-automatic-rewards/mobile/privacy" element={<Privacy />} />
                         <Route path="/microsoft-automatic-rewards/mobile/website" element={<Website />} />
+                        <Route path="/microsoft-automatic-rewards/mobile/test-app" element={<TestList />} />
 
                         <Route path="*" element={<NotFound />} />
                     </Routes>

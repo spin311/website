@@ -85,7 +85,8 @@
     "step3": "Omogočite dnevni nabor v razširitvi",
     "step4": "Dovolite pojavna okna na <a href='https://rewards.bing.com/' target=_blank>rewards.bing</a>",
     "to_mobile": "Za pridobivanje mobilnih točk:",
-    "step5": "<a href='microsoft-automatic-rewards/mobile/website'>Kliknite tukaj</a> in sledite navodilom",
+    "step5":"<a href='microsoft-automatic-rewards/mobile/test-app'>Naloži Android aplikacijoj</a> ali",
+    "step6":"<a href='microsoft-automatic-rewards/mobile/website'>Uporabi spletno implementacije</a> na svojem telefonu",
     "donate_explanation": "Izdelava in posodabljanje razširitev zahteva veliko časa in truda. Čeprav si prizadevam, da moje razširitve ostanejo <b>brezplačne in dostopne vsem</b>, vaša podpora pomaga:",
     "donate1": "<b>Izboljšati moje razširitve</b> z dodajanjem novih funkcij in popravljanjem napak",
     "donate2": "<b>Ohraniti moje razširitve posodobljene</b> z najnovejšimi spremembami",
@@ -95,7 +96,9 @@
     "feature2": "Samodejno opravlja dnevne naloge",
     "feature3": "Opravlja naloge ob zagonu brskalnika",
     "feature4": "Prilagodljive nastavitve",
-    "feature5": "Iskanje naključnih besed ali znakov"
+    "feature5": "Iskanje naključnih besed ali znakov",
+    "download": "Prenesi aplikacijo",
+    "new_feature": "Predlagaj novo funkcionalnost"
   },
   "EXTENSION": {
     "your_email": "Vaš e-poštni naslov",
