@@ -138,6 +138,12 @@ function Website() {
             <HomeArrow/>
             <div className="website center">
                 <div className="solo">
+                    <div className="qr-code-with-text">
+                        <img src={`${process.env.PUBLIC_URL}/assets/svgs/qr-code-colored.svg`} alt="QR code" className="qr-code"/>
+                        <span>{text.WEBSITE.scan}</span>
+
+                    </div>
+
                     <h1>{text.WEBSITE.title}</h1>
                     <p>{text.WEBSITE.description}</p>
 

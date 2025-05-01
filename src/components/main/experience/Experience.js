@@ -14,7 +14,7 @@ function Experience({title, company, desc, years, website, logo}) {
                 <span className="year">
                     <b>{years} </b>
                 </span>
-                <a href={website} target="_blank" rel="noopener noreferrer" className="mt-0 website">
+                <a href={website} target="_blank" rel="noopener noreferrer" className="mt-0 ext-website">
                     <FontAwesomeIcon icon={faGlobe}/> {text.GENERAL.website}
                 </a>
             </div>

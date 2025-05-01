@@ -19,7 +19,7 @@
     white-space: nowrap;
 }
 
-.website {
+.ext-website {
     grid-area: website;
     justify-self: end;
     align-self: center;

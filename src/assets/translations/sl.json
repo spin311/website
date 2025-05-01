@@ -120,6 +120,7 @@
     "search_nu": "Število iskanj",
     "search_delay": "Zamik med iskanji",
     "get_rewards": "Pridobi nagrade",
-    "stop_searches": "Ustavi iskanja"
+    "stop_searches": "Ustavi iskanja",
+    "scan": "Odpri na telefonu"
   }
 }
