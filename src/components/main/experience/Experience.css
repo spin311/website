@@ -5,21 +5,25 @@
     grid-template-areas:
         "title year"
         "company website";
+    grid-gap: 1.3em;
+    margin-bottom: 1em;
 }
 
 .company {
     grid-area: company;
-    margin-bottom: 0.5em;
+    font-family: Poppins, sans-serif;
 }
 
 .year {
     grid-area: year;
+    white-space: nowrap;
 }
 
 .website {
     grid-area: website;
     justify-self: end;
     align-self: center;
+    white-space: nowrap;
 }
 
 .mt-0 {
@@ -33,9 +37,14 @@
     border-radius: 25%;
 }
 
+.dark-mode .company-logo {
+    filter: grayscale(100%) invert(1);
+}
+
 .ext-title {
     grid-area: title;
-    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+    font-weight: 700;
 }
 
 .company {

@@ -9,8 +9,8 @@ function Experience({title, company, desc, years, website, logo}) {
     return (
         <div>
             <div className="xp-info">
-            <h3 className="ext-title">{title}</h3>
-                <p className="company">{company} <img className="company-logo" src={logo} alt="company_logo"/></p>
+            <div className="ext-title">{title}</div>
+                <div className="company">{company} <img className="company-logo" src={logo} alt="company_logo"/></div>
                 <span className="year">
                     <b>{years} </b>
                 </span>
