@@ -1,10 +1,19 @@
 .left-arrow {
-    position: absolute;
+    position: fixed;
     top: 5%;
-    left: 5%;
+    left: 2%;
     width: 68px;
     height: 42px;
     cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+    .left-arrow {
+        top: 2%;
+        width: 50px;
+        height: 30px;
+
+    }
 }
 
 .dark-mode .left-arrow {

@@ -7,6 +7,7 @@ import {Helmet} from "react-helmet";
 import HomeArrow from "../../../../home-arrow/HomeArrow";
 import {generate} from 'random-words';
 import ImageTooltip from "../../../../image-tooltip/ImageTooltip";
+import useIsMobile from "../../../../../hooks/useIsMobile";
 
 
 function isValueNotSet(value) {
@@ -18,6 +19,7 @@ function Website() {
     const stop = useRef(false);
     const {text} = useLanguage();
     const [searchParams] = useSearchParams();
+    const isMobile = useIsMobile();
     const [inputs, setInputs] = useState(() => {
         const searchNu = parseInt(searchParams.get("searchNu"));
         if (searchNu) {
@@ -137,14 +139,22 @@ function Website() {
             </Helmet>
             <HomeArrow/>
             <div className="website center">
-                <div className="solo">
-                    <div className="qr-code-with-text">
-                        <img src={`${process.env.PUBLIC_URL}/assets/svgs/qr-code-colored.svg`} alt="QR code" className="qr-code"/>
-                        <span>{text.WEBSITE.scan}</span>
 
+                <div className="solo">
+                    <h1>{text.WEBSITE.title}</h1>
+                    <div className="website-header">
+                        {!isMobile &&
+                            <div className="qr-code-with-text">
+                            <img src={`${process.env.PUBLIC_URL}/assets/svgs/qr-code-colored.svg`} alt="QR code" className="qr-code"/>
+                            <span>{text.WEBSITE.scan}</span>
+                        </div>
+                        }
+                        <a className="website-phone" href='/microsoft-automatic-rewards/mobile/test-app'>
+                            <img className="website-phone-image" src={`${process.env.PUBLIC_URL}/assets/images/mar-phone.png`} alt="Microsoft Automatic Rewards Phone App"/>
+                            <div>{text.MICROSOFT.download}</div>
+                        </a>
                     </div>
 
-                    <h1>{text.WEBSITE.title}</h1>
                     <p>{text.WEBSITE.description}</p>
 
                     <form onSubmit={handleSubmit}>
@@ -171,7 +181,8 @@ function Website() {
                         </span>
                             </label>
                         </div>
-                        <span className="gray-text">{text.WEBSITE.allow_popup}  <ImageTooltip src='enable-popup.png'/></span>
+                        {!isMobile &&
+                            <span className="gray-text">{text.WEBSITE.allow_popup}  <ImageTooltip src='enable-popup.png'/></span>}
 
                         <button type="submit"
                                 disabled={disabledSend}
