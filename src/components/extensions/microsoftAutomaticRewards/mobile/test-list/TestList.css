@@ -69,6 +69,16 @@
     align-items: center;
 }
 
+@media screen and (max-width: 767px) {
+    .row {
+        flex-direction: column;
+        justify-content: unset;
+    }
+    .phone-img {
+        height: 34vh;
+    }
+}
+
 .p-lg {
     padding: 2em;
 }

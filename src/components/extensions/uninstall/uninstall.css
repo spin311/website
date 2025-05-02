@@ -110,6 +110,10 @@
     padding-top: 0;
 }
 
+#body, #contactInput {
+    box-sizing: border-box;
+}
+
 h2.uninstall-reason  {
     text-align: unset;
 }

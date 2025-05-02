@@ -5,7 +5,6 @@ import {useEffect, useState} from "react";
 import {useSearchParams} from "react-router-dom";
 import {getOrCreateGUID} from "../../../helpers/Guid";
 import {Tooltip} from "react-tooltip";
-import BackArrow from "../../back-arrow/BackArrow";
 import './uninstall.css'
 import IsRequired from "../../is-required/IsRequired";
 
@@ -79,7 +78,6 @@ function Uninstall () {
                 <title>Uninstall</title>
                 <meta name="description" content="Uninstall reason" />
             </Helmet>
-            <BackArrow/>
             <div className="uninstall-form center" id="contact">
                 <h1>{text.EXTENSION.form_title}</h1>
                 <p>{text.EXTENSION.form_explanation}</p>
