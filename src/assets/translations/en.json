@@ -18,7 +18,8 @@
     "gh_code": "GitHub code",
     "not_found": "Page not found",
     "donate": "Donate",
-    "features": "Features"
+    "features": "Features",
+    "e_mail": "E-mail"
   },
   "MAIN": {
     "title": "About me",
@@ -95,10 +96,12 @@
     "feature4": "Customizable settings",
     "feature5": "Random words or letters search",
     "download": "Download App",
-    "new_feature": "Request new feature"
+    "new_feature": "Request new feature",
+    "test_title": "Test Microsoft Automatic Rewards phone app",
+    "test_description": "Enter your E-mail below to get invited to test Microsoft Automatic Rewards phone app.\nInvitation will be sent shortly"
   },
   "EXTENSION": {
-    "your_email": "Your e-mail",
+    "your_email": "Enter your e-mail",
     "form_title": "Extension Uninstall Feedback",
     "uninstall_reason": "Uninstall reason:",
     "form_explanation": "Thank you for trying my extension. Please take a few seconds so I can improve it in the future.",

@@ -4,12 +4,12 @@ import {Tooltip} from "react-tooltip";
 import {useLanguage} from "../../../../../context/LanguageContext";
 import {useNotification} from "../../../../../context/NotificationContext";
 import {getOrCreateGUID} from "../../../../../helpers/Guid";
-import HomeArrow from "../../../../home-arrow/HomeArrow";
+import BackArrow from "../../../../back-arrow/BackArrow";
 import IsRequired from "../../../../is-required/IsRequired";
 import {Helmet} from "react-helmet";
 
 function TestList({backArrow = false}) {
-    let {text} = useLanguage();
+    let {text, formatTextWithLineBreaks} = useLanguage();
     let {createNotification} = useNotification();
     const [contact, setContact] = useState("");
     const [isSending, setIsSending] = useState(false);
@@ -61,17 +61,18 @@ function TestList({backArrow = false}) {
                 <title>Test Microsoft Automatic Rewards phone app</title>
                 <meta name="description" content="Test Microsoft Automatic Rewards phone app" />
             </Helmet>
+            <BackArrow/>
             <div className="center">
                 <div className="row">
                     <div className="contact-form p-lg">
-                        {backArrow && <HomeArrow/>}
-                        <h2>Test Microsoft Automatic Rewards phone app</h2>
-                        <p>Enter your E-mail below to test Microsoft Automatic Rewards phone app. <br/> Your invitation will be sent shortly (usually less than 24h)</p>
+                        {backArrow && <BackArrow/>}
+                        <h2>{text.MICROSOFT.test_title}</h2>
+                        <p>{formatTextWithLineBreaks(text.MICROSOFT.test_description)}</p>
                         <form onSubmit={handleSubmit}>
-                            <label htmlFor="contactInput">E-mail  <IsRequired/></label>
+                            <label htmlFor="contactInput">{text.GENERAL.e_mail}  <IsRequired/></label>
                             <input type="text" id="contactInput" name="contact"
                                    value={contact}
-                                   placeholder={"Enter your e-mail"}
+                                   placeholder={text.EXTENSION.your_email}
                                    onChange={(e) => setContact(e.target.value)}
                             />
                             <button type="submit"

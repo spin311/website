@@ -4,7 +4,7 @@ import {useSearchParams} from "react-router-dom";
 import {Tooltip} from "react-tooltip";
 import "./website.css"
 import {Helmet} from "react-helmet";
-import HomeArrow from "../../../../home-arrow/HomeArrow";
+import BackArrow from "../../../../back-arrow/BackArrow";
 import {generate} from 'random-words';
 import ImageTooltip from "../../../../image-tooltip/ImageTooltip";
 import useIsMobile from "../../../../../hooks/useIsMobile";
@@ -40,7 +40,7 @@ function Website() {
         }));
     };
     const BING_SEARCH_URL = "https://www.bing.com/search?q=";
-    const BING_SEARCH_PARAMS = "&qs=n&form=QBLH&sp=-1";
+    const BING_SEARCH_PARAMS = "&qs=n&form=QBLH&sp=-1&pq=";
 
     async function openRandomTab(useWords = true) {
         let query;
@@ -137,7 +137,7 @@ function Website() {
                 <title>Microsoft Rewards Website</title>
                 <meta name="description" content="Microsoft Automatic Rewards Website"/>
             </Helmet>
-            <HomeArrow/>
+            <BackArrow/>
             <div className="website center">
 
                 <div className="solo">

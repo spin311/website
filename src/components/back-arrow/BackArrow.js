@@ -1,7 +1,7 @@
 import {useNavigate} from "react-router-dom";
-import "./HomeArrow.css";
+import "./BackArrow.css";
 
-function HomeArrow() {
+function BackArrow() {
     const navigate = useNavigate();
 
     return (
@@ -15,4 +15,4 @@ function HomeArrow() {
             </div>
         </div>);
 }
-export default HomeArrow;
+export default BackArrow;

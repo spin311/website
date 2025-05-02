@@ -18,7 +18,8 @@
     "gh_code": "GitHub koda",
     "not_found": "Stran ni bila najdena",
     "donate": "Doniraj",
-    "features": "Funkcije"
+    "features": "Funkcije",
+    "e_mail": "E-pošta"
   },
 
   "MAIN": {
@@ -98,10 +99,12 @@
     "feature4": "Prilagodljive nastavitve",
     "feature5": "Iskanje naključnih besed ali znakov",
     "download": "Prenesi aplikacijo",
-    "new_feature": "Predlagaj novo funkcionalnost"
+    "new_feature": "Predlagaj novo funkcionalnost",
+    "test_title": "Preizkusi Microsoft Automatic Rewards mobilno aplikacijo",
+    "test_description": "Vnesite svoj e-poštni naslov spodaj in prejmite povabilo za testiranje telefonske aplikacije Microsoft Automatic Rewards.\nVabilo bo poslano v kratkem"
   },
   "EXTENSION": {
-    "your_email": "Vaš e-poštni naslov",
+    "your_email": "Vnesite vaš e-poštni naslov",
     "form_title": "Povratne informacije o odstranitvi razširitve",
     "uninstall_reason": "Razlog za odstranitev:",
     "form_explanation": "Hvala, ker ste preizkusili mojo razširitev. Prosimo, vzemite si nekaj sekund, da jo lahko izboljšam v prihodnosti.",

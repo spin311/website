@@ -12,7 +12,7 @@ function SidebarButtons() {
     let darkModeImage = darkMode ? `${process.env.PUBLIC_URL}/assets/images/dark-mode.png` : `${process.env.PUBLIC_URL}/assets/images/light-mode.png`;
     let darkModeTooltip = darkMode ? text.GENERAL.toggle_lightMode : text.GENERAL.toggle_darkMode;
     const location = useLocation();
-    const excludedPaths = [ "privacy", "donate", "uninstall", "test-app"];
+    const excludedPaths = [ "privacy", "uninstall"];
     if (excludedPaths.some(path => location.pathname.includes(path))) {
         return null;
     } else {

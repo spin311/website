@@ -5,7 +5,7 @@ import {Tooltip} from "react-tooltip";
 import {getOrCreateGUID} from "../../../helpers/Guid";
 import {useNotification} from "../../../context/NotificationContext";
 import {useSearchParams} from "react-router-dom";
-import HomeArrow from "../../home-arrow/HomeArrow";
+import BackArrow from "../../back-arrow/BackArrow";
 import IsRequired from "../../is-required/IsRequired";
 
 function Contact({backArrow = false}) {
@@ -75,7 +75,7 @@ function Contact({backArrow = false}) {
 
     return (
         <div className="contact-form" id="contact">
-            {backArrow && <HomeArrow/>}
+            {backArrow && <BackArrow/>}
             <h2>{text.CONTACT.title}</h2>
             <p>{text.CONTACT.description}</p>
             <form onSubmit={handleSubmit}>

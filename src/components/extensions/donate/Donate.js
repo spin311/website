@@ -1,6 +1,6 @@
 import {Helmet} from "react-helmet";
 import {useLanguage} from "../../../context/LanguageContext";
-import HomeArrow from "../../home-arrow/HomeArrow";
+import BackArrow from "../../back-arrow/BackArrow";
 
 function Donate({soloComponent=false, className=''}) {
     const { text, formatHtml } = useLanguage();
@@ -12,7 +12,7 @@ function Donate({soloComponent=false, className=''}) {
                         <title>Donate</title>
                         <meta name="description" content="Donate reasons and ways to donate" />
                     </Helmet>
-                    <HomeArrow/>
+                    <BackArrow/>
                 </>
             }
             <div id="donate" className={soloComponent ? `center ${className}` : className}>
