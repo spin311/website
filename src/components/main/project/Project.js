@@ -6,6 +6,7 @@ import {faArrowDown, faGlobe, faSpinner} from "@fortawesome/free-solid-svg-icons
 import {faStar} from "@fortawesome/free-solid-svg-icons/faStar";
 import {faCodeFork} from "@fortawesome/free-solid-svg-icons/faCodeFork";
 import React from "react";
+import LinkComponent from "../../link-component/LinkComponent";
 
 function Project({project, isLoading}) {
     const {text} = useLanguage();
@@ -18,11 +19,11 @@ function Project({project, isLoading}) {
                 {created_at && <span className="project-date"><b>{formattedDate} </b></span>}
             </span>
             <h3>
-                {website ? (<a href={website} target={website.includes("http") ? '_blank' : ''} rel="noopener noreferrer">{name}</a>)
-                               : (name)}
+                {website  ? <LinkComponent href={website} children={name}/>
+                                :  <span>{name}</span>}
             </h3>
             <div className="project-links">
-                {website && <a href={website} target={website.includes("http") ? '_blank' : ''} rel="noopener noreferrer"><FontAwesomeIcon icon={faGlobe}/> {text.GENERAL.website}</a> }
+                {website && <LinkComponent href={website} children={<><FontAwesomeIcon icon={faGlobe}/> {text.GENERAL.website}</>} />}
                 {download_link && <a href={download_link} download target="_blank" rel="noopener noreferrer">
                     <FontAwesomeIcon icon={faArrowDown} /> {text.PROJECT.download}
                 </a>}

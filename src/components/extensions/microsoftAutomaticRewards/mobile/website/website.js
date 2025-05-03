@@ -1,6 +1,6 @@
 import {useLanguage} from "../../../../../context/LanguageContext";
 import {useEffect, useRef, useState} from "react";
-import {useSearchParams} from "react-router-dom";
+import {Link, useSearchParams} from "react-router-dom";
 import {Tooltip} from "react-tooltip";
 import "./website.css"
 import {Helmet} from "react-helmet";
@@ -149,10 +149,10 @@ function Website() {
                             <span>{text.WEBSITE.scan}</span>
                         </div>
                         }
-                        <a className="website-phone" href='/microsoft-automatic-rewards/mobile/test-app'>
+                        <Link className="website-phone" to='/microsoft-automatic-rewards/mobile/test-app'>
                             <img className="website-phone-image" src={`${process.env.PUBLIC_URL}/assets/images/mar-phone.png`} alt="Microsoft Automatic Rewards Phone App"/>
                             <div>{text.MICROSOFT.download}</div>
-                        </a>
+                        </Link>
                     </div>
 
                     <p>{text.WEBSITE.description}</p>

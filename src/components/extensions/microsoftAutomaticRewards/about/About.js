@@ -1,6 +1,7 @@
 import ImageTooltip from "../../../image-tooltip/ImageTooltip";
 import {useLanguage} from "../../../../context/LanguageContext";
 import './About.css'
+import {Link} from "react-router-dom";
 function About() {
     const {text, formatHtml} = useLanguage();
     return (
@@ -23,14 +24,14 @@ function About() {
                     </ul>
                     <h3>{text.MICROSOFT.to_mobile}</h3>
                     <ul>
-                        <li className='underline-link' >{formatHtml(`${text.MICROSOFT.step5}`)}</li>
-                        <li className='underline-link' >{formatHtml(`${text.MICROSOFT.step6}`)}</li>
+                        <li className='underline-link' ><Link to={'/microsoft-automatic-rewards/mobile/test-app'}>{text.MICROSOFT.step5}</Link> {text.MICROSOFT.or}</li>
+                        <li className='underline-link' ><Link to={'/microsoft-automatic-rewards/mobile/website'}>{text.MICROSOFT.step6}</Link> {text.MICROSOFT.on_mobile}</li>
                     </ul>
                 </div>
-                    <a className="about-image" href='/microsoft-automatic-rewards/mobile/test-app'>
+                    <Link className="about-image" to='/microsoft-automatic-rewards/mobile/test-app'>
                         <img className="about-phone" src={`${process.env.PUBLIC_URL}/assets/images/mar-phone.png`} alt="Microsoft Automatic Rewards Phone App"/>
                         <div>{text.MICROSOFT.download}</div>
-                    </a>
+                    </Link>
             </div>
         </div>
     )

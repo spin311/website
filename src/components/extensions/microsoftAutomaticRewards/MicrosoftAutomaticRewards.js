@@ -37,9 +37,9 @@ function MicrosoftAutomaticRewards() {
         link: true
     };
     let links = [
-        {href: "https://github.com/spin311/MicrosoftRewardsWebsite", text: "GitHub", icon: faGithub, link: true},
-        {href: "microsoft-automatic-rewards/mobile/website", text: text.MICROSOFT.mobile, icon: faMobileScreen, link: false},
-        {href: "/donate", text: text.GENERAL.donate, icon: faDonate, link: false}
+        {href: "https://github.com/spin311/MicrosoftRewardsWebsite", text: "GitHub", icon: faGithub, link: true, internal: false},
+        {href: "/microsoft-automatic-rewards/mobile/website", text: text.MICROSOFT.mobile, icon: faMobileScreen, link: false, internal: true},
+        {href: "/donate", text: text.GENERAL.donate, icon: faDonate, link: false, internal: true},
     ];
     links = !isMobile ? [downloadLink, ...links] : links;
     const image={src: "assets/images/microsoft.png", alt: "Microsoft Automatic Rewards"};

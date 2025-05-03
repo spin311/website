@@ -13,13 +13,11 @@ import {Helmet} from "react-helmet";
 function App() {
     const {text, language} = useLanguage();
     const title = {text: 'Svit Spindler', class: ""};
-    const cvLink = language === "en" ?
-        `${process.env.PUBLIC_URL}/assets/CV/CV_ENG.pdf` :
-        `${process.env.PUBLIC_URL}/assets/CV/CV_SLO.pdf`;
+    const cvLink = `${process.env.PUBLIC_URL}/assets/CV/CV_${language === "en" ? "ENG" : "SLO"}.pdf`;
     const links = [
-        {text: 'GitHub', href: 'https://github.com/spin311', icon: faGithub, link: true},
-        {text: "E-Mail", href: "mailto:svit.spindler@gmail.com", icon: faEnvelope, link: false},
-        {text: "CV", href: cvLink, icon: faFile, link: true}
+        {text: 'GitHub', href: 'https://github.com/spin311', icon: faGithub, link: true, internal: false},
+        {text: "E-Mail", href: "mailto:svit.spindler@gmail.com", icon: faEnvelope, link: false, internal: false},
+        {text: "CV", href: cvLink, icon: faFile, link: true, internal: false}
     ];
     const image = {src: 'assets/images/cropped_image2.png', alt: 'Profile'};
 

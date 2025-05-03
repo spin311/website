@@ -16,6 +16,7 @@ import Uninstall from "./components/extensions/uninstall/uninstall";
 import Website from "./components/extensions/microsoftAutomaticRewards/mobile/website/website";
 import Privacy from "./components/extensions/microsoftAutomaticRewards/mobile/privacy/Privacy";
 import TestList from "./components/extensions/microsoftAutomaticRewards/mobile/test-list/TestList";
+import ScrollToTop from "./components/scroll-to-top/ScrollToTop";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -24,6 +25,7 @@ root.render(
         <LanguageProvider>
             <NotificationProvider>
                 <BrowserRouter>
+                    <ScrollToTop/>
                     <SidebarButtons/>
                     <Routes>
                         <Route path="/" element={<App />} />
