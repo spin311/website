@@ -24,4 +24,4 @@ jobs:
         run: npm run check-translations
 
       - name: Check sitemap matching
-        run: npm run check-sitemap-matching
+        run: npm run check-sitemap
