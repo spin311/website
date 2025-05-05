@@ -36,7 +36,7 @@ function TestList({backArrow = false}) {
             });
             const re = await response.json();
             if (response.ok) {
-                createNotification(text.CONTACT.success, 'success');
+                createNotification(text.CONTACT.success_test_app, 'success');
             } else {
                 createNotification(`${text.CONTACT.error}\nError:${re.Message}`, 'error');
             }

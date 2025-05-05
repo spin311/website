@@ -29,19 +29,17 @@
   "EXPERIENCE": {
     "title": "Izkušnje",
     "xp1_title": "Razvojni inženir - Full Stack",
-    "xp1_company": "Ixtlan Team",
     "xp1_desc1": "Razvoj programske opreme z uporabo Typescripta, Angularja, Java, PL/SQL",
     "xp1_desc2": "Načrtovanje in razvoj aplikacij in mikrostoritev",
     "xp1_desc3": "Izdelava sistemov nad podatkovnimi zbirkami Oracle.",
     "xp2_title": "Frontend razvijalec",
-    "xp2_company": "Projekt Formaviva (Kundi d.o.o.)",
     "xp2_desc1": "Vodilni Frontend inženir na projektu Formaviva",
     "xp2_desc2": "CI/CD pipeline, docker in zaledje",
     "xp2_desc3": "Pisanje testov, QA",
     "xp3_title": "Učitelj programiranja",
-    "xp3_company": "DigitalSchool",
     "xp3_desc1": "Učenje programiranja otrok in najstnikov, razvoj učnih načrtov",
     "xp3_desc2": "Koordinacija več skupin in asistentov",
+    "website": "Spletna stran",
     "current": "trenutno"
   },
   "PROJECT": {
@@ -73,6 +71,7 @@
     "message_placeholder": "Napišite svoje sporočilo tukaj...",
     "disabled_tooltip": "Pred pošiljanjem sporočila izpolnite vsa polja.",
     "success": "Sporočilo je bilo uspešno poslano. Odgovoril vam bom v najkrajšem možnem času.",
+    "success_test_ap": "Zahteva za testiranje aplikacije je bila uspešno poslana. V najkrajšem možnem času (do 24 ur) vam bom odgovoril.",
     "error": "Prišlo je do napake pri pošiljanju sporočila. Prosimo, poskusite kasneje."
   },
   "MICROSOFT": {

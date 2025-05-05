@@ -70,6 +70,7 @@
       "message_placeholder": "Write your message here...",
       "disabled_tooltip": "Before sending the message, fill in all the fields.",
       "success": "Your message has been sent successfully. I’ll get back to you as soon as possible.",
+      "success_test_app": "Request to test the app has been sent successfully. I’ll get back to you as soon as possible (up to 24h).",
       "error": "An error occurred while sending the message. Please try again later."
     },
   "MICROSOFT": {
