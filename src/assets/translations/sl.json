@@ -71,7 +71,7 @@
     "message_placeholder": "Napišite svoje sporočilo tukaj...",
     "disabled_tooltip": "Pred pošiljanjem sporočila izpolnite vsa polja.",
     "success": "Sporočilo je bilo uspešno poslano. Odgovoril vam bom v najkrajšem možnem času.",
-    "success_test_ap": "Zahteva za testiranje aplikacije je bila uspešno poslana. V najkrajšem možnem času (do 24 ur) vam bom odgovoril.",
+    "success_test_app": "Zahteva za testiranje aplikacije je bila uspešno poslana. V najkrajšem možnem času (do 24 ur) vam bom odgovoril.",
     "error": "Prišlo je do napake pri pošiljanju sporočila. Prosimo, poskusite kasneje."
   },
   "MICROSOFT": {
