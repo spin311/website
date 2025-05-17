@@ -6,7 +6,7 @@ function About() {
     const {text, formatHtml} = useLanguage();
     return (
         <div id="about">
-            <h2>{text.MICROSOFT.about}</h2>
+            <h2>{text.EXTENSION.about}</h2>
             <p>
                 {text.MICROSOFT.description}
             </p>

@@ -38,7 +38,7 @@ function MicrosoftAutomaticRewards() {
     };
     let links = [
         {href: "https://github.com/spin311/MicrosoftRewardsWebsite", text: "GitHub", icon: faGithub, link: true, internal: false},
-        {href: "/microsoft-automatic-rewards/mobile/website", text: text.MICROSOFT.mobile, icon: faMobileScreen, link: false, internal: true},
+        {href: "/microsoft-automatic-rewards/mobile/website", text: text.GENERAL.mobile, icon: faMobileScreen, link: false, internal: true},
         {href: "/donate", text: text.GENERAL.donate, icon: faDonate, link: false, internal: true},
     ];
     links = !isMobile ? [downloadLink, ...links] : links;

@@ -13,7 +13,7 @@ function Features ({className = ''}) {
                     <li>{text.MICROSOFT.feature3}</li>
                     <li>{text.MICROSOFT.feature4}</li>
                     <li>{text.MICROSOFT.feature5}</li>
-                    <li className='underline-link' ><Link to={`/contact?subject=${encodeURIComponent("Microsoft Rewards feature suggestion")}`}>{text.MICROSOFT.new_feature}</Link></li>
+                    <li className='underline-link' ><Link to={`/contact?subject=${encodeURIComponent("Microsoft Rewards feature suggestion")}`}>{text.EXTENSION.new_feature}</Link></li>
                 </ul>
                 <img src={`${process.env.PUBLIC_URL}/assets/images/microsoft-popup.png`} alt="microsoft popup" className="f-image"/>
         </div>

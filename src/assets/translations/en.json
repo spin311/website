@@ -19,7 +19,8 @@
     "not_found": "Page not found",
     "donate": "Donate",
     "features": "Features",
-    "e_mail": "E-mail"
+    "e_mail": "E-mail",
+    "mobile": "Mobile"
   },
   "MAIN": {
     "title": "About me",
@@ -74,8 +75,6 @@
       "error": "An error occurred while sending the message. Please try again later."
     },
   "MICROSOFT": {
-    "mobile": "Mobile",
-    "about": "About",
     "description": "Google extension for automating microsoft rewards points generation. It works by automatically opening bing tabs and daily tasks. Opens tabs the first time browser is opened every day.",
     "to_work": "To get search points:",
     "step1": "<a href='https://rewards.bing.com/welcome?rh=4F5D8490&ref=rafsae' target=_blank>Login to Microsoft Rewards</a> with Microsoft account",
@@ -87,22 +86,36 @@
     "or": "or",
     "step6": "Use website implementation",
     "on_mobile": "on your phone",
-    "donate_explanation": "Making and updating extensions takes a lot of time and effort. While I'm commited to keeping my extensions <b>free and accessible to everyone</b>, your support helps me:",
-    "donate1": "<b>Improve my extensions</b> by adding new features and fixing bugs",
-    "donate2": "<b>Keep my extensions up to date</b> with the latest changes",
-    "donate3": "<b>Stay independent</b> with no ads or paid features",
-    "donation_request": "If you enjoy my work, consider <b>buying me a coffee</b> ☕ or making a small donation. Every contribution, no matter how small, helps keep my project alive!",
     "feature1": "Automatically opens Bing tabs",
     "feature2": "Automatically completes daily tasks",
     "feature3": "Completes tasks on browser startup",
     "feature4": "Customizable settings",
     "feature5": "Random words or letters search",
     "download": "Download App",
-    "new_feature": "Request new feature",
     "test_title": "Test Microsoft Automatic Rewards phone app",
     "test_description": "Enter your E-mail below to get invited to test Microsoft Automatic Rewards phone app.\nInvitation will be sent shortly"
   },
+  "PROLIFIC": {
+    "description": "Google extension for alerting for new Prolific studies. It works by sending notifications when new studies are available.",
+    "to_work": "To get notifications:",
+    "step1": "Have a <a href='https://app.prolific.com/' target=_blank>Prolific</a> studies tab open",
+    "step2": "Enable notifications in your browser",
+    "step3": "Enable notifications on your PC",
+    "feature1": "Notifies for new studies when website or title changes",
+    "feature2": "Remember old studies",
+    "feature3": "Study history with search and filtering",
+    "feature4": "Filter or blacklist studies",
+    "feature5": "Audio and notification alerts",
+    "feature6": "Customizable settings"
+  },
   "EXTENSION": {
+    "about": "About",
+    "donation_request": "If you enjoy my work, consider <b>buying me a coffee</b> ☕ or making a small donation. Every contribution, no matter how small, helps keep my project alive!",
+    "donate_explanation": "Making and updating extensions takes a lot of time and effort. While I'm commited to keeping my extensions <b>free and accessible to everyone</b>, your support helps me:",
+    "donate1": "<b>Improve my extensions</b> by adding new features and fixing bugs",
+    "donate2": "<b>Keep my extensions up to date</b> with the latest changes",
+    "donate3": "<b>Stay independent</b> with no ads or paid features",
+    "new_feature": "Request new feature",
     "your_email": "Enter your e-mail",
     "form_title": "Extension Uninstall Feedback",
     "uninstall_reason": "Uninstall reason:",

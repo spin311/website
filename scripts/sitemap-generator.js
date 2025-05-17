@@ -1,5 +1,5 @@
 const { SitemapStream, streamToPromise } = require('sitemap');
-const { createWriteStream, writeFileSync, mkdirSync, existsSync } = require('fs');
+const { writeFileSync, mkdirSync, existsSync } = require('fs');
 const { resolve } = require('path');
 
 // Define links for your routes
@@ -12,6 +12,7 @@ const links = [
     { url: '/microsoft-automatic-rewards/mobile/privacy', changefreq: 'monthly' },
     { url: '/microsoft-automatic-rewards/mobile/website', changefreq: 'monthly' },
     { url: '/microsoft-automatic-rewards/mobile/test-app', changefreq: 'monthly' },
+    { url: '/prolific-studies-notifier', changefreq: 'monthly' },
 ];
 
 // Create the stream and define your site hostname

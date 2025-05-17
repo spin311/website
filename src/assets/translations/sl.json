@@ -19,7 +19,8 @@
     "not_found": "Stran ni bila najdena",
     "donate": "Doniraj",
     "features": "Funkcije",
-    "e_mail": "E-pošta"
+    "e_mail": "E-pošta",
+    "mobile": "Telefon"
   },
 
   "MAIN": {
@@ -75,8 +76,6 @@
     "error": "Prišlo je do napake pri pošiljanju sporočila. Prosimo, poskusite kasneje."
   },
   "MICROSOFT": {
-    "mobile": "Telefon",
-    "about": "O projektu",
     "description": "Google razširitev za samodejno pridobivanje Microsoft Rewards točk. Deluje tako, da samodejno odpira Bing zavihke in dnevne naloge. vsak dan odpre zavihke ob prvem odpiranju brskalnika",
     "to_work": "Za delovanje morate:",
     "step1": "Prijavite se v <a href='https://rewards.bing.com/welcome?rh=4F5D8490&ref=rafsae' target=_blank>Microsoft Rewards </a> z Microsoftovim računom",
@@ -88,22 +87,36 @@
     "or": "ali",
     "step6": "Uporabi spletno implementacijo",
     "on_mobile": "na svojem telefonu",
-    "donate_explanation": "Izdelava in posodabljanje razširitev zahteva veliko časa in truda. Čeprav si prizadevam, da moje razširitve ostanejo <b>brezplačne in dostopne vsem</b>, vaša podpora pomaga:",
-    "donate1": "<b>Izboljšati moje razširitve</b> z dodajanjem novih funkcij in popravljanjem napak",
-    "donate2": "<b>Ohraniti moje razširitve posodobljene</b> z najnovejšimi spremembami",
-    "donate3": "<b>Ostati neodvisen</b> brez oglasov ali plačljivih funkcij",
-    "donation_request": "Če vam je moje delo všeč, razmislite o tem, da mi <b>kupite kavo</b> ☕ ali naredite majhno donacijo. Vsak prispevek, ne glede na to, kako majhen, pomaga ohraniti moj projekt živ!",
     "feature1": "Samodejno odpira zavihke Bing",
     "feature2": "Samodejno opravlja dnevne naloge",
     "feature3": "Opravlja naloge ob zagonu brskalnika",
     "feature4": "Prilagodljive nastavitve",
     "feature5": "Iskanje naključnih besed ali znakov",
     "download": "Prenesi aplikacijo",
-    "new_feature": "Predlagaj novo funkcionalnost",
     "test_title": "Preizkusi Microsoft Automatic Rewards mobilno aplikacijo",
     "test_description": "Vnesite svoj e-poštni naslov spodaj in prejmite povabilo za testiranje telefonske aplikacije Microsoft Automatic Rewards.\nVabilo bo poslano v kratkem"
   },
+  "PROLIFIC": {
+    "description": "Razširitev za Google Chrome, ki obvešča o novih študijah na Prolific. Deluje tako, da pošlje obvestilo, ko so na voljo nove študije.",
+    "to_work": "Za prejemanje obvestil:",
+    "step1": "Imejte odprt zavihek s <a href='https://app.prolific.com/' target=_blank>Prolific</a> študijami",
+    "step2": "Omogočite obvestila v brskalniku",
+    "step3": "Omogočite obvestila na računalniku",
+    "feature1": "Obvešča o novih študijah ob spremembi spletne strani ali naslova",
+    "feature2": "Si zapomni stare študije",
+    "feature3": "Zgodovina študij z iskanjem in filtriranjem",
+    "feature4": "Filtriranje in črni seznam študij",
+    "feature5": "Zvočna opozorila in obvestila",
+    "feature6": "Prilagodljive nastavitve"
+  },
   "EXTENSION": {
+    "about": "O projektu",
+    "donation_request": "Če vam je moje delo všeč, razmislite o tem, da mi <b>kupite kavo</b> ☕ ali naredite majhno donacijo. Vsak prispevek, ne glede na to, kako majhen, pomaga ohraniti moj projekt živ!",
+    "donate_explanation": "Izdelava in posodabljanje razširitev zahteva veliko časa in truda. Čeprav si prizadevam, da moje razširitve ostanejo <b>brezplačne in dostopne vsem</b>, vaša podpora pomaga:",
+    "donate1": "<b>Izboljšati moje razširitve</b> z dodajanjem novih funkcij in popravljanjem napak",
+    "donate2": "<b>Ohraniti moje razširitve posodobljene</b> z najnovejšimi spremembami",
+    "donate3": "<b>Ostati neodvisen</b> brez oglasov ali plačljivih funkcij",
+    "new_feature": "Predlagaj novo funkcionalnost",
     "your_email": "Vnesite vaš e-poštni naslov",
     "form_title": "Povratne informacije o odstranitvi razširitve",
     "uninstall_reason": "Razlog za odstranitev:",

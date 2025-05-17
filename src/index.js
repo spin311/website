@@ -17,6 +17,7 @@ import Website from "./components/extensions/microsoftAutomaticRewards/mobile/we
 import Privacy from "./components/extensions/microsoftAutomaticRewards/mobile/privacy/Privacy";
 import TestList from "./components/extensions/microsoftAutomaticRewards/mobile/test-list/TestList";
 import ScrollToTop from "./components/scroll-to-top/ScrollToTop";
+import ProlificStudiesNotifier from "./components/extensions/prolificStudiesNotifier/ProlificStudiesNotifier";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -36,6 +37,7 @@ root.render(
                         <Route path="/microsoft-automatic-rewards/mobile/privacy" element={<Privacy />} />
                         <Route path="/microsoft-automatic-rewards/mobile/website" element={<Website />} />
                         <Route path="/microsoft-automatic-rewards/mobile/test-app" element={<TestList />} />
+                        <Route path="/prolific-studies-notifier" element={<ProlificStudiesNotifier />} />
 
                         <Route path="*" element={<NotFound />} />
                     </Routes>

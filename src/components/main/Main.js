@@ -37,6 +37,7 @@ function Main() {
             ghUrl: "https://github.com/spin311/ProlificAutomaticStudies",
             description: text.PROJECT.p2_description,
             img: `${process.env.PUBLIC_URL}/assets/images/prolific.png`,
+            website: "/prolific-studies-notifier",
             download_link: "https://chromewebstore.google.com/detail/prolific-studies-notifier/mlicfddkgjkeajfgkihplfbgpmbonbao",
             stars: 0,
             forks: 0,
