@@ -12,7 +12,7 @@ function Features ({className = ''}) {
                 <li>{text.PROLIFIC.feature3}</li>
                 <li>{text.PROLIFIC.feature4}</li>
                 <li>{text.PROLIFIC.feature5}</li>
-                <li className='underline-link' ><Link to={`/contact?subject=${encodeURIComponent("Microsoft Rewards feature suggestion")}`}>{text.EXTENSION.new_feature}</Link></li>
+                <li className='underline-link' ><Link to={`/contact?subject=${encodeURIComponent("Prolific Notifier feature suggestion")}`}>{text.EXTENSION.new_feature}</Link></li>
             </ul>
             <img src={`${process.env.PUBLIC_URL}/assets/images/prolificNotifier.png`} alt="microsoft popup" className="f-image"/>
         </div>
