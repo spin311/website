@@ -1,6 +1,5 @@
 import {useLanguage} from "../../../../context/LanguageContext";
 import ImageTooltip from "../../../image-tooltip/ImageTooltip";
-import {Link} from "react-router-dom";
 
 function About() {
     const {text, formatHtml} = useLanguage();
