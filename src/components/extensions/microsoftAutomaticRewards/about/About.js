@@ -20,6 +20,7 @@ function About() {
                     <h3>{text.MICROSOFT.to_daily} </h3>
                     <ul>
                         <li>{text.MICROSOFT.step3} <ImageTooltip src='enable-daily.png'/></li>
+                        <li className='underline-link' >{formatHtml(`${text.MICROSOFT.step4}`)}  <ImageTooltip src='enable-popup.png'/></li>
                     </ul>
                     <h3>{text.MICROSOFT.to_mobile}</h3>
                     <ul>
