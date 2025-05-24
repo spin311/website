@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 // --- Load route paths from index.js ---
-const indexPath = path.resolve(__dirname, '../src/index.js');
+const indexPath = path.resolve(__dirname, '../src/index.tsx');
 const indexContent = fs.readFileSync(indexPath, 'utf-8');
 
 const routeRegex = /<Route\s+path="([^"]+)"/g;
