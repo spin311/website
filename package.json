@@ -5,8 +5,8 @@
   "homepage": "https://svitspindler.com",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.6.0",
-    "@fortawesome/free-brands-svg-icons": "^6.6.0",
-    "@fortawesome/free-solid-svg-icons": "^6.6.0",
+    "@fortawesome/free-brands-svg-icons": "^6.7.2",
+    "@fortawesome/free-solid-svg-icons": "^6.7.2",
     "@fortawesome/react-fontawesome": "^0.2.2",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
@@ -34,7 +34,9 @@
     "eject": "node_modules/.bin/react-scripts eject",
     "generate-sitemap": "node scripts/sitemap-generator.js",
     "check-translations": "node scripts/check-translations.js",
-    "check-sitemap": "node scripts/check-sitemap.js"
+    "check-sitemap": "node scripts/check-sitemap.js",
+    "lint": "eslint \"src/**/*.{ts,tsx}\"",
+    "lint:fix": "eslint \"src/**/*.{ts,tsx}\" --fix"
   },
   "eslintConfig": {
     "extends": [
@@ -56,6 +58,12 @@
   },
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
-    "cross-env": "^7.0.3"
+    "@types/node": "^22.15.21",
+    "@types/numeral": "^2.0.5",
+    "@types/react-helmet": "^6.1.11",
+    "cross-env": "^7.0.3",
+    "eslint-config-prettier": "^10.1.5",
+    "eslint-plugin-prettier": "^5.4.0",
+    "prettier": "^3.5.3"
   }
 }
