@@ -93,7 +93,7 @@ export default function Contact({
       {backArrow && <BackArrow />}
       <h2>{text.CONTACT.title}</h2>
       <p>{text.CONTACT.description}</p>
-      <form onSubmit={() => handleSubmit}>
+      <form onSubmit={(e) => void handleSubmit(e)}>
         <label htmlFor="subject">
           {text.CONTACT.subject} <IsRequired />
         </label>

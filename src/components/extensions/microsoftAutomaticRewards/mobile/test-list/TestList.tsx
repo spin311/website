@@ -79,7 +79,7 @@ function TestList({ backArrow = false }: { backArrow?: boolean }) {
             {backArrow && <BackArrow />}
             <h2>{text.MICROSOFT.test_title}</h2>
             <p>{formatTextWithLineBreaks(text.MICROSOFT.test_description)}</p>
-            <form onSubmit={() => handleSubmit}>
+            <form onSubmit={(e) => void handleSubmit(e)}>
               <label htmlFor="contactInput">
                 {text.GENERAL.e_mail} <IsRequired />
               </label>

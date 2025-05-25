@@ -94,7 +94,7 @@ function Uninstall() {
       <div className="uninstall-form center" id="contact">
         <h1>{text.EXTENSION.form_title}</h1>
         <p>{text.EXTENSION.form_explanation}</p>
-        <form onSubmit={() => handleSubmit}>
+        <form onSubmit={(e) => void handleSubmit(e)}>
           <h2 className="uninstall-reason">
             {text.EXTENSION.uninstall_reason} <IsRequired />
           </h2>
