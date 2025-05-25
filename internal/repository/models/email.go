@@ -8,4 +8,5 @@ type Email struct {
 	Sender  string
 	Body    string
 	Contact string
+	Website string `json:"website,omitempty"` // honeypot field
 }

@@ -41,8 +41,12 @@ func SendEmail(userRateLimiter *services.UserRateLimiter) http.HandlerFunc {
 			helpers.WriteErrorResponse(writer, err, http.StatusBadRequest)
 			return
 		}
-		if email.Sender == "" || email.Subject == "" || email.Body == "" {
-			helpers.WriteHttpErrorResponse(writer, models.NewHttpError("sender, subject, and body parameters are required", http.StatusBadRequest))
+		if email.Website != "" {
+			helpers.WriteHttpErrorResponse(writer, models.NewHttpError("Invalid request", http.StatusBadRequest))
+			return
+		}
+		if email.Contact == "" || email.Subject == "" || email.Body == "" {
+			helpers.WriteHttpErrorResponse(writer, models.NewHttpError("contact, subject, and body parameters are required", http.StatusBadRequest))
 			return
 		}
 

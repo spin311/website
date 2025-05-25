@@ -40,7 +40,7 @@ func GetEnvString(s string) string {
 
 func GetPort() string {
 	port := os.Getenv("PORT")
-	if port != "" {
+	if port == "" {
 		port = os.Getenv("SERVER_PORT")
 	}
 	return port

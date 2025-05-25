@@ -2,13 +2,22 @@ package services
 
 import (
 	"encoding/json"
+	"github.com/patrickmn/go-cache"
 	"io"
+	"log"
 	"net/http"
+	"time"
 	"websiteApi/internal/repository/models"
 	"websiteApi/pkg/config"
 )
 
+var ghCache = cache.New(4*time.Hour, 1*time.Hour)
+
 func GetStarredRepos() ([]models.GithubRepo, models.HttpError) {
+	if cached, found := ghCache.Get("githubRepos"); found {
+		log.Printf("/starredRepos: Cache hit for starred repos")
+		return cached.([]models.GithubRepo), models.NewEmptyHttpError()
+	}
 	githubConfig := config.GetGithubConfig()
 	token := githubConfig.AccessToken
 	username := githubConfig.Username
@@ -36,5 +45,7 @@ func GetStarredRepos() ([]models.GithubRepo, models.HttpError) {
 	if err != nil {
 		return nil, models.NewHttpError(err.Error(), http.StatusInternalServerError)
 	}
+	ghCache.Set("githubRepos", starredRepos, cache.DefaultExpiration)
+	log.Printf("/starredRepos: Starred repos fetched and cached successfully")
 	return starredRepos, models.NewEmptyHttpError()
 }
