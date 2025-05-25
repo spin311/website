@@ -60,10 +60,13 @@
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@types/node": "^22.15.21",
     "@types/numeral": "^2.0.5",
+    "@types/react": "^19.1.5",
+    "@types/react-dom": "^19.1.5",
     "@types/react-helmet": "^6.1.11",
     "cross-env": "^7.0.3",
     "eslint-config-prettier": "^10.1.5",
     "eslint-plugin-prettier": "^5.4.0",
-    "prettier": "^3.5.3"
+    "prettier": "^3.5.3",
+    "typescript": "^5.8.3"
   }
 }

@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import React from "react";
 
 import "./Notification.css";
 import { NotificationMessage } from "../../types/ComponentTypes";

@@ -1,6 +1,7 @@
 import "./SidebarMenu.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
+import React from "react";
 
 import useActiveSection from "../../hooks/useActiveSection";
 import useIsMobile from "../../hooks/useIsMobile";

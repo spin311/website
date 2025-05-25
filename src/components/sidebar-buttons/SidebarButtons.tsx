@@ -1,6 +1,7 @@
 import "./SidebarButtons.css";
 import { Tooltip } from "react-tooltip";
 import { useLocation } from "react-router-dom";
+import React from "react";
 
 import { useTheme } from "../../context/ThemeContext";
 import { useLanguage } from "../../context/LanguageContext";
@@ -11,11 +12,11 @@ function SidebarButtons() {
 
   const languageImage =
     language === "en"
-      ? `${process.env.PUBLIC_URL}/assets/images/flag-uk.svg`
-      : `${process.env.PUBLIC_URL}/assets/images/flag-slo.png`;
+      ? `${process.env.PUBLIC_URL ?? ""}/assets/images/flag-uk.svg`
+      : `${process.env.PUBLIC_URL ?? ""}/assets/images/flag-slo.png`;
   const darkModeImage = darkMode
-    ? `${process.env.PUBLIC_URL}/assets/images/dark-mode.png`
-    : `${process.env.PUBLIC_URL}/assets/images/light-mode.png`;
+    ? `${process.env.PUBLIC_URL ?? ""}/assets/images/dark-mode.png`
+    : `${process.env.PUBLIC_URL ?? ""}/assets/images/light-mode.png`;
   const darkModeTooltip = darkMode
     ? text.GENERAL.toggle_lightMode
     : text.GENERAL.toggle_darkMode;

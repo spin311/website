@@ -1,6 +1,6 @@
 import ImageTooltip from "../../../image-tooltip/ImageTooltip";
 import { useLanguage } from "../../../../context/LanguageContext";
-
+import React from "react";
 import "./About.css";
 import { Link } from "react-router-dom";
 function About() {
@@ -50,7 +50,7 @@ function About() {
         >
           <img
             className="about-phone"
-            src={`${process.env.PUBLIC_URL}/assets/images/mar-phone.png`}
+            src={`${process.env.PUBLIC_URL ?? ""}/assets/images/mar-phone.png`}
             alt="Microsoft Automatic Rewards Phone App"
           />
           <div>{text.MICROSOFT.download}</div>

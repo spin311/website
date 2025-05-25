@@ -2,14 +2,16 @@ import "./TestList.css";
 import { FormEvent, useEffect, useState } from "react";
 import { Tooltip } from "react-tooltip";
 import { Helmet } from "react-helmet";
+import React from "react";
 
 import { useLanguage } from "../../../../../context/LanguageContext";
 import { useNotification } from "../../../../../context/NotificationContext";
 import { getOrCreateGUID } from "../../../../../helpers/Guid";
 import BackArrow from "../../../../back-arrow/BackArrow";
 import IsRequired from "../../../../is-required/IsRequired";
+import { MailResponse } from "../../../../../types/ComponentTypes";
 
-function TestList({ backArrow = false }) {
+function TestList({ backArrow = false }: { backArrow?: boolean }) {
   const { text, formatTextWithLineBreaks } = useLanguage();
   const { createNotification } = useNotification();
   const [contact, setContact] = useState("");
@@ -28,7 +30,7 @@ function TestList({ backArrow = false }) {
         body: `${contact} wants to test Microsoft Automatic Rewards phone app.`,
       };
       const response = await fetch(
-        `${process.env.REACT_APP_API_HOST}/sendEmail`,
+        `${process.env.REACT_APP_API_HOST ?? ""}/sendEmail`,
         {
           method: "POST",
           headers: {
@@ -38,12 +40,12 @@ function TestList({ backArrow = false }) {
           body: JSON.stringify(inputs),
         },
       );
-      const re = await response.json();
+      const re = (await response.json()) as MailResponse;
       if (response.ok) {
         createNotification(text.CONTACT.success_test_app, "success");
       } else {
         createNotification(
-          `${text.CONTACT.error}\nError:${re.Message}`,
+          `${text.CONTACT.error}\nError:${re.Message ?? "There was an error sending the email. Please try again later."}`,
           "error",
         );
       }
@@ -77,7 +79,7 @@ function TestList({ backArrow = false }) {
             {backArrow && <BackArrow />}
             <h2>{text.MICROSOFT.test_title}</h2>
             <p>{formatTextWithLineBreaks(text.MICROSOFT.test_description)}</p>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={() => handleSubmit}>
               <label htmlFor="contactInput">
                 {text.GENERAL.e_mail} <IsRequired />
               </label>
@@ -103,7 +105,7 @@ function TestList({ backArrow = false }) {
           </div>
           <img
             className="phone-img"
-            src={`${process.env.PUBLIC_URL}/assets/images/mar-phone.png`}
+            src={`${process.env.PUBLIC_URL ?? ""}/assets/images/mar-phone.png`}
             alt="Microsoft Automatic Rewards Phone App"
           />
         </div>

@@ -1,4 +1,5 @@
 import { Helmet } from "react-helmet";
+import React from "react";
 
 import Contact from "../footer/contact/Contact";
 function ContactMe() {

@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
-
+import React from "react";
 import { useLanguage } from "../../../../context/LanguageContext";
 
-function Features({ className = "" }) {
+function Features({ className = "" }: { className?: string }) {
   const { text } = useLanguage();
   return (
     <div id="features" className={className}>
@@ -22,7 +22,7 @@ function Features({ className = "" }) {
         </li>
       </ul>
       <img
-        src={`${process.env.PUBLIC_URL}/assets/images/prolificNotifier.png`}
+        src={`${process.env.PUBLIC_URL ?? ""}/assets/images/prolificNotifier.png`}
         alt="microsoft popup"
         className="f-image"
       />

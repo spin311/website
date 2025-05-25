@@ -1,5 +1,6 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import "./BackArrow.css";
+import React from "react";
 
 function BackArrow() {
   const navigate = useNavigate();
@@ -7,9 +8,9 @@ function BackArrow() {
 
   const handleBackClick = () => {
     if (location.key === "default") {
-      navigate("/");
+      void navigate("/");
     } else {
-      navigate(-1);
+      void navigate(-1);
     }
   };
 
@@ -18,7 +19,7 @@ function BackArrow() {
       <div className="left-arrow-button" onClick={handleBackClick}>
         <img
           className="left-arrow"
-          src={`${process.env.PUBLIC_URL}/assets/svgs/left-arrow.svg`}
+          src={`${process.env.PUBLIC_URL ?? ""}/assets/svgs/left-arrow.svg`}
           alt="left arrow"
         />
       </div>

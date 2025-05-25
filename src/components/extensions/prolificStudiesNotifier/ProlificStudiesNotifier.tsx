@@ -6,6 +6,7 @@ import {
   faHouse,
   faLightbulb,
 } from "@fortawesome/free-solid-svg-icons";
+import React from "react";
 import { faGithub } from "@fortawesome/free-brands-svg-icons/faGithub";
 import { Helmet } from "react-helmet";
 

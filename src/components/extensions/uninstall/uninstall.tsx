@@ -2,6 +2,7 @@ import { Helmet } from "react-helmet";
 import { ChangeEvent, FormEvent, useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { Tooltip } from "react-tooltip";
+import React from "react";
 
 import { useLanguage } from "../../../context/LanguageContext";
 import { useNotification } from "../../../context/NotificationContext";
@@ -9,7 +10,7 @@ import { getOrCreateGUID } from "../../../helpers/Guid";
 
 import "./uninstall.css";
 import IsRequired from "../../is-required/IsRequired";
-import { Mail } from "../../../types/ComponentTypes";
+import { Mail, MailResponse } from "../../../types/ComponentTypes";
 
 function Uninstall() {
   const { text } = useLanguage();
@@ -39,7 +40,7 @@ function Uninstall() {
       const mail: Mail = {
         subject: `${extensionName || "Extension"} uninstall`,
         sender: `${extensionName || "Extension"} user`,
-        contact: "",
+        contact: `${extensionName || "Extension"} user`,
         body: "",
       };
       if (inputs.contact?.trim()) {
@@ -51,7 +52,7 @@ function Uninstall() {
       }
       mail.body = bodyContent;
       const response = await fetch(
-        `${process.env.REACT_APP_API_HOST}/sendEmail`,
+        `${process.env.REACT_APP_API_HOST ?? ""}/sendEmail`,
         {
           method: "POST",
           headers: {
@@ -61,7 +62,7 @@ function Uninstall() {
           body: JSON.stringify(mail),
         },
       );
-      const re = await response.json();
+      const re = (await response.json()) as MailResponse;
       if (response.ok) {
         setInputs(() => ({
           reason: "",
@@ -71,7 +72,7 @@ function Uninstall() {
         createNotification(text.CONTACT.success, "success");
       } else {
         createNotification(
-          `${text.CONTACT.error}\nError:${re.Message}`,
+          `${text.CONTACT.error}\nError:${re.Message ?? "There was an error sending the email. Please try again later."}`,
           "error",
         );
       }
@@ -93,7 +94,7 @@ function Uninstall() {
       <div className="uninstall-form center" id="contact">
         <h1>{text.EXTENSION.form_title}</h1>
         <p>{text.EXTENSION.form_explanation}</p>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={() => handleSubmit}>
           <h2 className="uninstall-reason">
             {text.EXTENSION.uninstall_reason} <IsRequired />
           </h2>

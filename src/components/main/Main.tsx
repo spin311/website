@@ -18,6 +18,11 @@ type MainProps = {
   classes?: string;
 };
 
+interface ExtensionValues {
+  userCount?: number;
+  ratingValue?: number;
+}
+
 function Main({ classes = "" }: MainProps) {
   const { text, formatTextWithLineBreaks } = useLanguage();
 
@@ -31,7 +36,7 @@ function Main({ classes = "" }: MainProps) {
         type: text.PROJECT.t_extension,
         ghUrl: "https://github.com/spin311/MicrosoftRewardsWebsite",
         description: text.PROJECT.p1_description,
-        img: `${process.env.PUBLIC_URL}/assets/images/microsoft.png`,
+        img: `${process.env.PUBLIC_URL ?? ""}/assets/images/microsoft.png`,
         website: "/microsoft-automatic-rewards",
         download_link:
           "https://chromewebstore.google.com/detail/microsoft-automatic-rewar/ocmmbfdhomnkljmjkmafegefcgcfkefo",
@@ -49,7 +54,7 @@ function Main({ classes = "" }: MainProps) {
         type: text.PROJECT.t_extension,
         ghUrl: "https://github.com/spin311/ProlificAutomaticStudies",
         description: text.PROJECT.p2_description,
-        img: `${process.env.PUBLIC_URL}/assets/images/prolific.png`,
+        img: `${process.env.PUBLIC_URL ?? ""}/assets/images/prolific.png`,
         website: "/prolific-studies-notifier",
         download_link:
           "https://chromewebstore.google.com/detail/prolific-studies-notifier/mlicfddkgjkeajfgkihplfbgpmbonbao",
@@ -66,9 +71,9 @@ function Main({ classes = "" }: MainProps) {
         type: text.PROJECT.t_mobile,
         ghUrl: "https://github.com/JuiceVodka/Gobar",
         description: text.PROJECT.p3_description,
-        img: `${process.env.PUBLIC_URL}/assets/images/gobar.png`,
+        img: `${process.env.PUBLIC_URL ?? ""}/assets/images/gobar.png`,
         website: "https://juicevodka.github.io/Gobar/",
-        download_link: `${process.env.PUBLIC_URL}/assets/files/Gobar.apk`,
+        download_link: `${process.env.PUBLIC_URL ?? ""}/assets/files/Gobar.apk`,
         stars: 0,
         forks: 0,
         created_at: null,
@@ -80,7 +85,7 @@ function Main({ classes = "" }: MainProps) {
         type: text.PROJECT.t_mobile,
         ghUrl: "https://github.com/spin311/kdhero",
         description: text.PROJECT.p7_description,
-        img: `${process.env.PUBLIC_URL}/assets/images/zdravko.png`,
+        img: `${process.env.PUBLIC_URL ?? ""}/assets/images/zdravko.png`,
         website: null,
         stars: 0,
         forks: 0,
@@ -93,7 +98,7 @@ function Main({ classes = "" }: MainProps) {
         type: text.PROJECT.t_game,
         ghUrl: "https://github.com/gregorkovac/Survalien-Unity",
         description: text.PROJECT.p5_description,
-        img: `${process.env.PUBLIC_URL}/assets/images/survalien.png`,
+        img: `${process.env.PUBLIC_URL ?? ""}/assets/images/survalien.png`,
         website:
           "https://www.dropbox.com/scl/fi/hdcw6938y4ha3virfb4fo/Survalien%20-%20Predstavitev.mp4?rlkey=xho6lfj4m78doev6sjyvwmda5&e=3&dl=0",
         download_link:
@@ -109,9 +114,9 @@ function Main({ classes = "" }: MainProps) {
         type: text.PROJECT.t_mobile,
         ghUrl: "https://github.com/JuiceVodka/KeSi",
         description: text.PROJECT.p6_description,
-        img: `${process.env.PUBLIC_URL}/assets/images/kesi.png`,
+        img: `${process.env.PUBLIC_URL ?? ""}/assets/images/kesi.png`,
         website: "https://juicevodka.github.io/KeSi/",
-        download_link: `${process.env.PUBLIC_URL}/assets/files/KeSi.apk`,
+        download_link: `${process.env.PUBLIC_URL ?? ""}/assets/files/KeSi.apk`,
         stars: 0,
         forks: 0,
         created_at: null,
@@ -123,7 +128,7 @@ function Main({ classes = "" }: MainProps) {
         type: text.GENERAL.website,
         ghUrl: "https://github.com/spin311/hiter-inzeniring-diploma",
         description: text.PROJECT.p4_description,
-        img: `${process.env.PUBLIC_URL}/assets/images/prompt.png`,
+        img: `${process.env.PUBLIC_URL ?? ""}/assets/images/prompt.png`,
         website: "https://spin311.github.io/diploma/",
         stars: 0,
         forks: 0,
@@ -141,9 +146,10 @@ function Main({ classes = "" }: MainProps) {
     try {
       setIsLoading(true);
       const response = await fetch(
-        `${process.env.REACT_APP_API_HOST}/starredRepos`,
+        `${process.env.REACT_APP_API_HOST ?? ""}/starredRepos`,
       );
-      const starredRepos: RepositoryType[] = await response.json();
+      const starredRepos: RepositoryType[] =
+        (await response.json()) as RepositoryType[];
       const updatedProjects: ProjectType[] = await Promise.all(
         projects.map(async (project) => {
           const matchingRepo = starredRepos.find(
@@ -166,14 +172,15 @@ function Main({ classes = "" }: MainProps) {
           ) {
             try {
               const extensionResponse = await fetch(
-                `${process.env.REACT_APP_API_HOST}/extension?id=${project.extensionId}`,
+                `${process.env.REACT_APP_API_HOST ?? ""}/extension?id=${project.extensionId}`,
               );
-              const extensionValues = await extensionResponse.json();
+              const extensionValues: ExtensionValues =
+                (await extensionResponse.json()) as ExtensionValues;
               updatedProject = {
                 ...updatedProject,
                 users: extensionValues?.userCount || project.users,
                 rating:
-                  parseFloat(extensionValues?.ratingValue?.toFixed(1)) ||
+                  parseFloat(extensionValues?.ratingValue?.toFixed(1) ?? "0") ||
                   project.rating,
               };
               updatedProject.description = replaceDescription(
@@ -205,9 +212,9 @@ function Main({ classes = "" }: MainProps) {
     const fetchData = async () => {
       await getProjectStars();
     };
-    fetchData();
+    void fetchData();
     // eslint-disable-next-line
-    }, []);
+  }, []);
 
   useEffect(() => {
     const updatedProjects: ProjectType[] = projects.map((project) => {
@@ -239,7 +246,7 @@ function Main({ classes = "" }: MainProps) {
     });
     setProjects(updatedProjects);
     // eslint-disable-next-line
-    }, [text]);
+  }, [text]);
 
   const [sortOption, setSortOption] = useState("");
 
@@ -250,7 +257,7 @@ function Main({ classes = "" }: MainProps) {
       desc: [text.EXPERIENCE.xp3_desc1, text.EXPERIENCE.xp3_desc2],
       website: "https://digitalschool.si/",
       years: `2021 - 2024`,
-      logo: `${process.env.PUBLIC_URL}/assets/images/ds.png`,
+      logo: `${process.env.PUBLIC_URL ?? ""}/assets/images/ds.png`,
     },
     {
       title: text.EXPERIENCE.xp1_title,
@@ -262,7 +269,7 @@ function Main({ classes = "" }: MainProps) {
       ],
       website: "https://www.ixtlan-team.si/",
       years: "2023 - 2024",
-      logo: `${process.env.PUBLIC_URL}/assets/images/ix.png`,
+      logo: `${process.env.PUBLIC_URL ?? ""}/assets/images/ix.png`,
     },
     {
       title: text.EXPERIENCE.xp1_title,
@@ -274,7 +281,7 @@ function Main({ classes = "" }: MainProps) {
       ],
       website: "https://nightwatch.io/",
       years: `2024 - ${text.EXPERIENCE.current}`,
-      logo: `${process.env.PUBLIC_URL}/assets/images/nightwatch.jpg`,
+      logo: `${process.env.PUBLIC_URL ?? ""}/assets/images/nightwatch.jpg`,
     },
   ];
 

@@ -1,18 +1,23 @@
 import { useLanguage } from "../../../context/LanguageContext";
-
 import "./Contact.css";
-import { useEffect, useState } from "react";
+import { ChangeEvent, FormEvent, useEffect, useState } from "react";
 import { Tooltip } from "react-tooltip";
-
 import { getOrCreateGUID } from "../../../helpers/Guid";
 import { useNotification } from "../../../context/NotificationContext";
-
 import { useSearchParams } from "react-router-dom";
-
 import BackArrow from "../../back-arrow/BackArrow";
 import IsRequired from "../../is-required/IsRequired";
+import React from "react";
+import { MailResponse } from "../../../types/ComponentTypes";
 
-function Contact({ backArrow = false, classes = "" }) {
+interface ContactProps {
+  backArrow?: boolean;
+  classes?: string;
+}
+export default function Contact({
+  backArrow = false,
+  classes = "",
+}: ContactProps) {
   const { text } = useLanguage();
   const { createNotification } = useNotification();
   const [inputs, setInputs] = useState({
@@ -23,9 +28,10 @@ function Contact({ backArrow = false, classes = "" }) {
   });
   const [isSending, setIsSending] = useState(false);
   const [disabledSend, setDisabledSend] = useState(true);
-  const handleChange = (event) => {
-    const name = event.target.name;
-    const value = event.target.value;
+  const handleChange = (
+    event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
+    const { name, value } = event.target;
     setInputs((values) => ({ ...values, [name]: value }));
   };
 
@@ -38,13 +44,13 @@ function Contact({ backArrow = false, classes = "" }) {
     }
   }, [subjectQueryParam]);
 
-  const handleSubmit = async (event) => {
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const guid = getOrCreateGUID();
     try {
       setIsSending(true);
       const response = await fetch(
-        `${process.env.REACT_APP_API_HOST}/sendEmail`,
+        `${process.env.REACT_APP_API_HOST ?? ""}/sendEmail`,
         {
           method: "POST",
           headers: {
@@ -54,7 +60,7 @@ function Contact({ backArrow = false, classes = "" }) {
           body: JSON.stringify(inputs),
         },
       );
-      const re = await response.json();
+      const re = (await response.json()) as MailResponse;
       if (response.ok) {
         setInputs((values) => ({
           ...values,
@@ -64,7 +70,7 @@ function Contact({ backArrow = false, classes = "" }) {
         createNotification(text.CONTACT.success, "success");
       } else {
         createNotification(
-          `${text.CONTACT.error}\nError:${re.Message}`,
+          `${text.CONTACT.error}\nError:${re.Message ?? "Error sending email. Please try again later."}`,
           "error",
         );
       }
@@ -75,7 +81,7 @@ function Contact({ backArrow = false, classes = "" }) {
     }
   };
   useEffect(() => {
-    if (inputs.subject && inputs.sender && inputs.body) {
+    if (inputs.subject && inputs.contact && inputs.body) {
       setDisabledSend(false);
     } else {
       setDisabledSend(true);
@@ -87,7 +93,7 @@ function Contact({ backArrow = false, classes = "" }) {
       {backArrow && <BackArrow />}
       <h2>{text.CONTACT.title}</h2>
       <p>{text.CONTACT.description}</p>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={() => handleSubmit}>
         <label htmlFor="subject">
           {text.CONTACT.subject} <IsRequired />
         </label>
@@ -101,9 +107,7 @@ function Contact({ backArrow = false, classes = "" }) {
           required
         />
 
-        <label htmlFor="sender">
-          {text.CONTACT.sender} <IsRequired />
-        </label>
+        <label htmlFor="sender">{text.CONTACT.sender}</label>
         <input
           type="text"
           id="sender"
@@ -114,7 +118,9 @@ function Contact({ backArrow = false, classes = "" }) {
           required
         />
 
-        <label htmlFor="contactInput">{text.CONTACT.contact} </label>
+        <label htmlFor="contactInput">
+          {text.CONTACT.contact} <IsRequired />
+        </label>
         <input
           type="text"
           id="contactInput"
@@ -130,7 +136,7 @@ function Contact({ backArrow = false, classes = "" }) {
         <textarea
           id="body"
           name="body"
-          rows="6"
+          rows={6}
           value={inputs.body}
           onChange={handleChange}
           placeholder={text.CONTACT.message_placeholder}
@@ -151,4 +157,3 @@ function Contact({ backArrow = false, classes = "" }) {
     </div>
   );
 }
-export default Contact;

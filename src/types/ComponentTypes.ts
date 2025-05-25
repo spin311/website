@@ -62,3 +62,7 @@ export type Mail = {
   contact: string;
   body: string;
 };
+
+export interface MailResponse {
+  Message?: string;
+}

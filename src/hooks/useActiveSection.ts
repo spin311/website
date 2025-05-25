@@ -1,18 +1,18 @@
 import { useEffect, useState } from "react";
 
-const useActiveSection = (sectionIds) => {
+const useActiveSection = (sectionIds: string[]) => {
   const [activeSection, setActiveSection] = useState("");
 
   useEffect(() => {
     const sections = sectionIds
       .map((id) => document.getElementById(id))
-      .filter((el) => el !== null);
+      .filter((el): el is HTMLElement => el !== null);
 
     if (!sections.length) {
       return;
     }
 
-    const handleIntersection = (entries) => {
+    const handleIntersection = (entries: IntersectionObserverEntry[]) => {
       const visibleSections = entries.filter((entry) => entry.isIntersecting);
       if (visibleSections.length) {
         const topSection = visibleSections.reduce((prev, current) =>
@@ -24,7 +24,7 @@ const useActiveSection = (sectionIds) => {
       }
     };
 
-    const observerOptions = (id) => {
+    const observerOptions = (id: string) => {
       const isSmallScreen = window.innerWidth <= 1024;
       return {
         root: null,
@@ -55,8 +55,6 @@ const useActiveSection = (sectionIds) => {
       );
     };
   }, [sectionIds]);
-
-  useEffect(() => {}, [activeSection]);
 
   return activeSection;
 };

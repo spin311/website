@@ -1,5 +1,5 @@
 import { createContext, useContext, useEffect, useState } from "react";
-
+import React from "react";
 import { ReactNodeProps } from "../types/PropTypes";
 
 type ThemeContextType = {
@@ -12,7 +12,7 @@ const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 export function ThemeProvider({ children }: ReactNodeProps) {
   const [darkMode, setDarkMode] = useState<boolean>(() => {
     const stored = localStorage.getItem("darkMode");
-    return stored ? JSON.parse(stored) : false;
+    return stored ? (JSON.parse(stored) as boolean) : false;
   });
 
   useEffect(() => {

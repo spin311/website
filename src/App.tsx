@@ -1,4 +1,5 @@
 import "./App.css";
+import React from "react";
 import {
   faAddressBook,
   faBriefcase,
@@ -21,7 +22,7 @@ import { Link, Section } from "./types/ComponentTypes";
 function App() {
   const { text, language } = useLanguage();
   const title = { text: "Svit Spindler", class: "" };
-  const cvLink = `${process.env.PUBLIC_URL}/assets/CV/CV_${language === "en" ? "ENG" : "SLO"}.pdf`;
+  const cvLink = `${process.env.PUBLIC_URL ?? ""}/assets/CV/CV_${language === "en" ? "ENG" : "SLO"}.pdf`;
   const links: Link[] = [
     {
       text: "GitHub",

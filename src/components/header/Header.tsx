@@ -25,20 +25,16 @@ function Header({ title, links, image }: HeaderProps) {
         <div className="header-links">
           {links.map((link: Link, i: number) => (
             <React.Fragment key={i}>
-              <LinkComponent
-                internal={link.internal}
-                href={link.href}
-                children={
-                  <>
-                    {link.text} <FontAwesomeIcon icon={link.icon} />
-                  </>
-                }
-              />
+              <LinkComponent internal={link.internal} href={link.href}>
+                <>
+                  {link.text} <FontAwesomeIcon icon={link.icon} />
+                </>
+              </LinkComponent>
             </React.Fragment>
           ))}
         </div>
         <img
-          src={`${process.env.PUBLIC_URL}/${image.src}`}
+          src={`${process.env.PUBLIC_URL ?? ""}/${image.src}`}
           alt={image.alt}
           className="profile-picture"
         />

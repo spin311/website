@@ -1,5 +1,6 @@
 import "./NotFound.css";
 import { Helmet } from "react-helmet";
+import React from "react";
 
 import BackArrow from "../back-arrow/BackArrow";
 import { useLanguage } from "../../context/LanguageContext";
@@ -17,7 +18,7 @@ function NotFound() {
         <h1>404 {text.GENERAL.not_found}</h1>
         <img
           className={"dogImg"}
-          src={`${process.env.PUBLIC_URL}/assets/images/sniffer.jpg`}
+          src={`${process.env.PUBLIC_URL ?? ""}/assets/images/sniffer.jpg`}
           alt="dog"
         />
       </div>

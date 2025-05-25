@@ -1,5 +1,6 @@
 import "./Privacy.css";
 import { Helmet } from "react-helmet";
+import React from "react";
 
 function Privacy() {
   return (

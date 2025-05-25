@@ -1,9 +1,15 @@
 import { Helmet } from "react-helmet";
+import React from "react";
 
 import { useLanguage } from "../../../context/LanguageContext";
 import BackArrow from "../../back-arrow/BackArrow";
 
-function Donate({ soloComponent = false, className = "" }) {
+interface DonateProps {
+  soloComponent?: boolean;
+  className?: string;
+}
+
+function Donate({ soloComponent = false, className = "" }: DonateProps) {
   const { text, formatHtml } = useLanguage();
   return (
     <>

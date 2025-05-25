@@ -1,6 +1,6 @@
 import { useLanguage } from "../../../../context/LanguageContext";
 import ImageTooltip from "../../../image-tooltip/ImageTooltip";
-
+import React from "react";
 function About() {
   const { text, formatHtml } = useLanguage();
   return (
@@ -25,7 +25,7 @@ function About() {
         <div className="about-image">
           <img
             className=""
-            src={`${process.env.PUBLIC_URL}/assets/images/studiesTab.png`}
+            src={`${process.env.PUBLIC_URL ?? ""}/assets/images/studiesTab.png`}
             alt="Studies tab"
           />
         </div>

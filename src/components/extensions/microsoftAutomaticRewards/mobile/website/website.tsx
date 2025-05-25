@@ -1,17 +1,30 @@
-import { useLanguage } from "../../../../../context/LanguageContext";
-
-import { useEffect, useRef, useState } from "react";
+import React, {
+  ChangeEvent,
+  FormEvent,
+  RefObject,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import { Tooltip } from "react-tooltip";
-import "./website.css";
 import { Helmet } from "react-helmet";
 import { generate } from "random-words";
 
 import BackArrow from "../../../../back-arrow/BackArrow";
 import ImageTooltip from "../../../../image-tooltip/ImageTooltip";
 import useIsMobile from "../../../../../hooks/useIsMobile";
+import { useLanguage } from "../../../../../context/LanguageContext";
 
-function isValueNotSet(value) {
+import "./website.css";
+
+type Inputs = {
+  searchNu: number;
+  searchDelay: number;
+  isWordsSelected: boolean;
+};
+
+function isValueNotSet(value: string | null | undefined | number): boolean {
   return value === null || value === undefined;
 }
 
@@ -20,17 +33,25 @@ function Website() {
   const { text } = useLanguage();
   const [searchParams] = useSearchParams();
   const isMobile = useIsMobile();
-  const [inputs, setInputs] = useState(() => {
-    const searchNu = parseInt(searchParams.get("searchNu"));
+
+  const [inputs, setInputs] = useState<Inputs>(() => {
+    const searchNuStr = searchParams.get("searchNu");
+    const searchNu = searchNuStr ? parseInt(searchNuStr, 10) : 0;
+
     if (searchNu) {
-      const searchDelay = parseInt(searchParams.get("delay"));
-      return { searchNu, searchDelay };
+      const searchDelayStr = searchParams.get("delay");
+      const searchDelay = searchDelayStr ? parseInt(searchDelayStr, 10) : 0;
+      return { searchNu, searchDelay, isWordsSelected: true };
     }
+
     const savedInputs = localStorage.getItem("websiteFormInputs");
     return savedInputs
-      ? JSON.parse(savedInputs)
+      ? (JSON.parse(savedInputs) as Inputs)
       : { searchNu: 12, searchDelay: 7, isWordsSelected: true };
   });
+
+  const [isSending, setIsSending] = useState<boolean>(false);
+  const [disabledSend, setDisabledSend] = useState<boolean>(false);
 
   const toggleWordsLetters = () => {
     setInputs((prev) => ({
@@ -38,25 +59,24 @@ function Website() {
       isWordsSelected: !prev.isWordsSelected,
     }));
   };
+
   const BING_SEARCH_URL = "https://www.bing.com/search?q=";
   const BING_SEARCH_PARAMS = "&qs=n&form=QBLH&sp=-1&pq=";
 
-  async function openRandomTab(useWords = true) {
-    let query;
-    if (useWords) {
-      query = generate({ min: 2, max: 3, join: " " });
-    } else {
-      query = generateRandomString();
-    }
+  function openRandomTab(useWords = true): void {
+    const query = useWords
+      ? generate({ min: 2, max: 3, join: " " })
+      : generateRandomString();
+
     const searchUrl = `${BING_SEARCH_URL}${encodeURIComponent(query)}${BING_SEARCH_PARAMS}`;
     window.open(searchUrl, "_blank");
   }
 
-  function stopSearch() {
+  function stopSearch(): void {
     stop.current = true;
   }
 
-  function generateRandomString() {
+  function generateRandomString(): string {
     const chars =
       "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
     const length = Math.floor(Math.random() * 3) + 5;
@@ -69,18 +89,20 @@ function Website() {
     return result;
   }
 
-  function getRandomNumber(min = 100, max = 1000) {
+  function getRandomNumber(min = 100, max = 1000): number {
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }
 
-  async function delay(ms, stopRef) {
-    return new Promise((resolve) => {
-      const checkInterval = 100; // Check stop.current every 100ms
+  async function delay(
+    ms: number,
+    stopRef?: RefObject<boolean>,
+  ): Promise<void> {
+    return new Promise<void>((resolve) => {
+      const checkInterval = 100;
       let elapsedTime = 0;
 
       const intervalId = setInterval(() => {
-        // Resolve immediately if stop.current becomes true
-        if (stopRef.current || elapsedTime >= ms) {
+        if (stopRef?.current || elapsedTime >= ms) {
           clearInterval(intervalId);
           resolve();
         }
@@ -89,14 +111,14 @@ function Website() {
     });
   }
 
-  async function openSearches() {
+  async function openSearches(): Promise<void> {
     setIsSending(true);
     try {
       for (let i = 0; i < inputs.searchNu; i++) {
         if (stop.current) {
           break;
         }
-        await openRandomTab(inputs.isWordsSelected);
+        openRandomTab(inputs.isWordsSelected);
         await delay(inputs.searchDelay * 1000 + getRandomNumber(), stop);
       }
     } finally {
@@ -105,7 +127,9 @@ function Website() {
     }
   }
 
-  async function handleSubmit(event) {
+  async function handleSubmit(
+    event: FormEvent<HTMLFormElement>,
+  ): Promise<void> {
     event.preventDefault();
     if (isSending) {
       stopSearch();
@@ -114,13 +138,11 @@ function Website() {
     }
   }
 
-  const handleChange = (event) => {
-    const name = event.target.name;
+  const handleChange = (event: ChangeEvent<HTMLInputElement>): void => {
+    const name = event.target.name as keyof Inputs;
     const value = parseInt(event.target.value);
-    setInputs(() => ({ ...inputs, [name]: value }));
+    setInputs((prev) => ({ ...prev, [name]: value }));
   };
-  const [isSending, setIsSending] = useState(false);
-  const [disabledSend, setDisabledSend] = useState(false);
 
   useEffect(() => {
     setDisabledSend(
@@ -144,16 +166,16 @@ function Website() {
       <BackArrow />
       <div className="website center">
         <div className="solo">
-          <h1>{text.WEBSITE.title}</h1>
+          <h1>{text.WEBSITE.title ?? "Microsoft Rewards"}</h1>
           <div className="website-header">
             {!isMobile && (
               <div className="qr-code-with-text">
                 <img
-                  src={`${process.env.PUBLIC_URL}/assets/svgs/qr-code-colored.svg`}
+                  src={`${process.env.PUBLIC_URL ?? ""}/assets/svgs/qr-code-colored.svg`}
                   alt="QR code"
                   className="qr-code"
                 />
-                <span>{text.WEBSITE.scan}</span>
+                <span>{text.WEBSITE.scan ?? "Scan QR code"}</span>
               </div>
             )}
             <Link
@@ -162,16 +184,16 @@ function Website() {
             >
               <img
                 className="website-phone-image"
-                src={`${process.env.PUBLIC_URL}/assets/images/mar-phone.png`}
+                src={`${process.env.PUBLIC_URL ?? ""}/assets/images/mar-phone.png`}
                 alt="Microsoft Automatic Rewards Phone App"
               />
-              <div>{text.MICROSOFT.download}</div>
+              <div>{text.MICROSOFT.download ?? "Download App"}</div>
             </Link>
           </div>
 
-          <p>{text.WEBSITE.description}</p>
+          <p>{text.WEBSITE.description ?? "Start earning with Bing."}</p>
 
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={() => void handleSubmit}>
             <div className="website-input">
               <label htmlFor="searchNu">{text.WEBSITE.search_nu}</label>
               <input

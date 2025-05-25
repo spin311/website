@@ -1,5 +1,6 @@
 import "./MicrosoftAutomaticRewards.css";
 import "../../../App.css";
+import React from "react";
 import {
   faAddressBook,
   faHouse,
@@ -22,7 +23,8 @@ import Donate from "../donate/Donate";
 import useIsMobile from "../../../hooks/useIsMobile";
 
 import About from "./about/About";
-import Features from "./features/Features.js";
+import Features from "./features/Features";
+import { Link } from "../../../types/ComponentTypes";
 
 function MicrosoftAutomaticRewards() {
   const { text } = useLanguage();
@@ -47,7 +49,7 @@ function MicrosoftAutomaticRewards() {
     icon: faArrowDown,
     link: true,
   };
-  let links = [
+  let links: Link[] = [
     {
       href: "https://github.com/spin311/MicrosoftRewardsWebsite",
       text: "GitHub",
@@ -85,7 +87,7 @@ function MicrosoftAutomaticRewards() {
         />
       </Helmet>
       <div className="App">
-        <SidebarMenu className="SidebarMenu" sections={microsoftSections} />
+        <SidebarMenu classes="SidebarMenu" sections={microsoftSections} />
         <div className="Content">
           <Header title={title} links={links} image={image} />
           <About />

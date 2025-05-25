@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { ReactNode } from "react";
+import React from "react";
 
 type LinkComponentProps = {
   href: string;

@@ -50,21 +50,16 @@ function Project({ project, isLoading }: ProjectProps) {
       </span>
       <h3>
         {website ? (
-          <LinkComponent href={website} children={name} />
+          <LinkComponent href={website}>{name}</LinkComponent>
         ) : (
           <span>{name}</span>
         )}
       </h3>
       <div className="project-links">
         {website && (
-          <LinkComponent
-            href={website}
-            children={
-              <>
-                <FontAwesomeIcon icon={faGlobe} /> {text.GENERAL.website}
-              </>
-            }
-          />
+          <LinkComponent href={website}>
+            <FontAwesomeIcon icon={faGlobe} /> {text.GENERAL.website}
+          </LinkComponent>
         )}
         {download_link && (
           <a
