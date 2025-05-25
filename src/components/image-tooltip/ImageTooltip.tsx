@@ -12,7 +12,7 @@ function ImageTooltip({ src }: ImageTooltipProps) {
       <FontAwesomeIcon icon={faInfoCircle} className="tooltip-icon" />
       <img
         className="tooltip-image"
-        src={`${process.env.PUBLIC_URL ?? ""}/assets/images/${src}`}
+        src={`${import.meta.env.PUBLIC_URL ?? ""}/assets/images/${src}`}
         alt="tooltip steps"
       />
     </div>

@@ -52,7 +52,7 @@ function Uninstall() {
       }
       mail.body = bodyContent;
       const response = await fetch(
-        `${process.env.REACT_APP_API_HOST ?? ""}/sendEmail`,
+        `${import.meta.env.VITE_API_HOST ?? ""}/sendEmail`,
         {
           method: "POST",
           headers: {

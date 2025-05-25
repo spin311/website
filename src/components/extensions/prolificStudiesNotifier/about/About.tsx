@@ -25,7 +25,7 @@ function About() {
         <div className="about-image">
           <img
             className=""
-            src={`${process.env.PUBLIC_URL ?? ""}/assets/images/studiesTab.png`}
+            src={`${import.meta.env.PUBLIC_URL ?? ""}/assets/images/studiesTab.png`}
             alt="Studies tab"
           />
         </div>

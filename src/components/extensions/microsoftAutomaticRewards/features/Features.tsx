@@ -23,7 +23,7 @@ function Features({ className = "" }: { className?: string }) {
         </li>
       </ul>
       <img
-        src={`${process.env.PUBLIC_URL ?? ""}/assets/images/microsoft-popup.png`}
+        src={`${import.meta.env.PUBLIC_URL ?? ""}/assets/images/microsoft-popup.png`}
         alt="microsoft popup"
         className="f-image"
       />

@@ -30,7 +30,7 @@ function TestList({ backArrow = false }: { backArrow?: boolean }) {
         body: `${contact} wants to test Microsoft Automatic Rewards phone app.`,
       };
       const response = await fetch(
-        `${process.env.REACT_APP_API_HOST ?? ""}/sendEmail`,
+        `${import.meta.env.VITE_API_HOST ?? ""}/sendEmail`,
         {
           method: "POST",
           headers: {
@@ -105,7 +105,7 @@ function TestList({ backArrow = false }: { backArrow?: boolean }) {
           </div>
           <img
             className="phone-img"
-            src={`${process.env.PUBLIC_URL ?? ""}/assets/images/mar-phone.png`}
+            src={`${import.meta.env.PUBLIC_URL ?? ""}/assets/images/mar-phone.png`}
             alt="Microsoft Automatic Rewards Phone App"
           />
         </div>

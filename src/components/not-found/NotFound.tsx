@@ -18,7 +18,7 @@ function NotFound() {
         <h1>404 {text.GENERAL.not_found}</h1>
         <img
           className={"dogImg"}
-          src={`${process.env.PUBLIC_URL ?? ""}/assets/images/sniffer.jpg`}
+          src={`${import.meta.env.PUBLIC_URL ?? ""}/assets/images/sniffer.jpg`}
           alt="dog"
         />
       </div>

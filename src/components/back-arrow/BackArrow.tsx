@@ -19,7 +19,7 @@ function BackArrow() {
       <div className="left-arrow-button" onClick={handleBackClick}>
         <img
           className="left-arrow"
-          src={`${process.env.PUBLIC_URL ?? ""}/assets/svgs/left-arrow.svg`}
+          src={`${import.meta.env.PUBLIC_URL ?? ""}/assets/svgs/left-arrow.svg`}
           alt="left arrow"
         />
       </div>

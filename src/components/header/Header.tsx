@@ -34,7 +34,7 @@ function Header({ title, links, image }: HeaderProps) {
           ))}
         </div>
         <img
-          src={`${process.env.PUBLIC_URL ?? ""}/${image.src}`}
+          src={`${import.meta.env.PUBLIC_URL ?? ""}/${image.src}`}
           alt={image.alt}
           className="profile-picture"
         />
