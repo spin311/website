@@ -67,7 +67,7 @@
         "message": "Message",
       "subject_placeholder": "Briefly describe your inquiry",
         "sender_placeholder": "Your name",
-      "contact_placeholder": "Your email or phone number",
+      "contact_placeholder": "Enter your e-mail",
       "message_placeholder": "Write your message here...",
       "disabled_tooltip": "Before sending the message, fill in all the fields.",
       "success": "Your message has been sent successfully. I’ll get back to you as soon as possible.",

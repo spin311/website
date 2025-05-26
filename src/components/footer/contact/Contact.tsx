@@ -25,6 +25,7 @@ export default function Contact({
     sender: "",
     contact: "",
     body: "",
+    website: "", // Honeypot field
   });
   const [isSending, setIsSending] = useState(false);
   const [disabledSend, setDisabledSend] = useState(true);
@@ -66,6 +67,7 @@ export default function Contact({
           ...values,
           subject: "",
           body: "",
+          website: "",
         }));
         createNotification(text.CONTACT.success, "success");
       } else {
@@ -81,7 +83,12 @@ export default function Contact({
     }
   };
   useEffect(() => {
-    if (inputs.subject && inputs.contact && inputs.body) {
+    if (
+      inputs.subject &&
+      inputs.contact &&
+      inputs.contact.includes("@") &&
+      inputs.body
+    ) {
       setDisabledSend(false);
     } else {
       setDisabledSend(true);
@@ -128,6 +135,15 @@ export default function Contact({
           value={inputs.contact}
           placeholder={text.CONTACT.contact_placeholder}
           onChange={handleChange}
+        />
+        <input
+          type="text"
+          name="website"
+          value={inputs.website}
+          onChange={handleChange}
+          autoComplete="off"
+          style={{ display: "none" }}
+          tabIndex={-1}
         />
 
         <label htmlFor="body">
