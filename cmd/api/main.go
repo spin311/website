@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"github.com/gorilla/mux"
 	httpSwagger "github.com/swaggo/http-swagger"
 	"log"
@@ -32,6 +33,6 @@ func main() {
 	// Swagger UI
 	r.PathPrefix("/swagger/").Handler(httpSwagger.WrapHandler)
 	serverPort := config.GetPort()
-	log.Printf("Server is starting on port %s...\n", serverPort)
+	fmt.Printf("Server is starting on port %s...\n", serverPort)
 	log.Fatal(http.ListenAndServe(":"+serverPort, r))
 }

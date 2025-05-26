@@ -5,7 +5,6 @@ import (
 	"fmt"
 	"github.com/patrickmn/go-cache"
 	"io"
-	"log"
 	"net/http"
 	"time"
 	"websiteApi/internal/repository/models"
@@ -16,7 +15,7 @@ var extCache = cache.New(24*time.Hour, 1*time.Hour)
 
 func GetExtension(extensionId string) (models.Extension, models.HttpError) {
 	if cached, found := extCache.Get(extensionId); found {
-		log.Printf("/extension: Cache hit for extension ID: %s", extensionId)
+		fmt.Printf("/extension: Cache hit for extension ID: %s", extensionId)
 		return cached.(models.Extension), models.NewEmptyHttpError()
 	}
 
@@ -59,6 +58,6 @@ func GetExtension(extensionId string) (models.Extension, models.HttpError) {
 	}
 
 	extCache.Set(extensionId, extension, cache.DefaultExpiration)
-	log.Printf("/extension: Cache miss for extension ID: %s, fetched and cached", extensionId)
+	fmt.Printf("/extension: Cache miss for extension ID: %s, fetched and cached", extensionId)
 	return extension, models.NewEmptyHttpError()
 }
