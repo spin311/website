@@ -93,8 +93,8 @@
     "feature4": "Customizable settings",
     "feature5": "Random words or letters search",
     "download": "Download App",
-    "test_title": "Test Microsoft Automatic Rewards phone app",
-    "test_description": "Enter your E-mail below to get invited to test Microsoft Automatic Rewards phone app.\nInvitation will be sent shortly"
+    "test_title": "Microsoft Automatic Rewards app",
+    "test_description": "Mobile app for automating Microsoft Rewards points generation. It opens Bing tabs inside the app."
   },
   "PROLIFIC": {
     "description": "Google extension for alerting for new Prolific studies. It works by sending notifications when new studies are available.",
@@ -138,6 +138,5 @@
     "get_rewards": "Get Rewards",
     "stop_searches": "Stop Searches",
     "scan": "Open on phone"
-
   }
 }

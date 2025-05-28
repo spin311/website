@@ -94,8 +94,8 @@
     "feature4": "Prilagodljive nastavitve",
     "feature5": "Iskanje naključnih besed ali znakov",
     "download": "Prenesi aplikacijo",
-    "test_title": "Preizkusi Microsoft Automatic Rewards mobilno aplikacijo",
-    "test_description": "Vnesite svoj e-poštni naslov spodaj in prejmite povabilo za testiranje telefonske aplikacije Microsoft Automatic Rewards.\nVabilo bo poslano v kratkem"
+    "test_title": "Microsoft Automatic Rewards aplikacija",
+    "test_description": "Mobilna aplikacija za avtomatizacijo točk Microsoft Rewards točk. V aplikaciji odpre Bing zavihke."
   },
   "PROLIFIC": {
     "description": "Razširitev za Google Chrome, ki obvešča o novih študijah na Prolific. Deluje tako, da pošlje obvestilo, ko so na voljo nove študije.",

@@ -1,113 +1,86 @@
-import "./TestList.css";
-import { FormEvent, useEffect, useState } from "react";
-import { Tooltip } from "react-tooltip";
-import { Helmet } from "react-helmet";
 import React from "react";
-
-import { useLanguage } from "../../../../../context/LanguageContext";
-import { useNotification } from "../../../../../context/NotificationContext";
-import { getOrCreateGUID } from "../../../../../helpers/Guid";
+import { Helmet } from "react-helmet";
 import BackArrow from "../../../../back-arrow/BackArrow";
-import IsRequired from "../../../../is-required/IsRequired";
-import { MailResponse } from "../../../../../types/ComponentTypes";
+import useIsMobile from "../../../../../hooks/useIsMobile";
+import { useLanguage } from "../../../../../context/LanguageContext";
+import LinkComponent from "../../../../link-component/LinkComponent";
+import "./TestList.css";
+import { faArrowDown, faDonate } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "../../../../../types/ComponentTypes";
+import { faGithub } from "@fortawesome/free-brands-svg-icons/faGithub";
+import HeaderLinks from "../../../../header/HeaderLinks";
 
-function TestList({ backArrow = false }: { backArrow?: boolean }) {
-  const { text, formatTextWithLineBreaks } = useLanguage();
-  const { createNotification } = useNotification();
-  const [contact, setContact] = useState("");
-  const [isSending, setIsSending] = useState(false);
-  const [disabledSend, setDisabledSend] = useState(true);
+function TestList() {
+  const { text } = useLanguage();
+  const isMobile = useIsMobile();
 
-  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    const guid = getOrCreateGUID();
-    try {
-      setIsSending(true);
-      const inputs = {
-        subject: "Test Microsoft Automatic Rewards phone app",
-        sender: "newTestUser",
-        contact: contact,
-        body: `${contact} wants to test Microsoft Automatic Rewards phone app.`,
-      };
-      const response = await fetch(
-        `${import.meta.env.VITE_API_HOST ?? ""}/sendEmail`,
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            "X-User-ID": guid,
-          },
-          body: JSON.stringify(inputs),
-        },
-      );
-      const re = (await response.json()) as MailResponse;
-      if (response.ok) {
-        createNotification(text.CONTACT.success_test_app, "success");
-      } else {
-        createNotification(
-          `${text.CONTACT.error}\nError:${re.Message ?? "There was an error sending the email. Please try again later."}`,
-          "error",
-        );
-      }
-    } catch (e) {
-      createNotification(text.CONTACT.error, "error");
-    } finally {
-      setIsSending(false);
-    }
-  };
-  useEffect(() => {
-    if (contact?.includes("@")) {
-      setDisabledSend(false);
-    } else {
-      setDisabledSend(true);
-    }
-  }, [contact]);
+  let links: Link[] = [
+    {
+      href: "https://play.google.com/store/apps/details?id=com.spin311.microsoft_automatic_rewards",
+      text: text.PROJECT.download,
+      icon: faArrowDown,
+      link: true,
+    },
+    {
+      href: "https://github.com/spin311/MicrosoftRewardsWebsite",
+      text: "GitHub",
+      icon: faGithub,
+      link: true,
+      internal: false,
+    },
+    {
+      href: "/donate",
+      text: text.GENERAL.donate,
+      icon: faDonate,
+      link: false,
+      internal: true,
+    },
+  ];
 
   return (
     <>
       <Helmet>
-        <title>Test Microsoft Automatic Rewards phone app</title>
-        <meta
-          name="description"
-          content="Test Microsoft Automatic Rewards phone app"
-        />
+        <title>Microsoft Rewards App</title>
+        <meta name="description" content="Microsoft Automatic Rewards App" />
       </Helmet>
       <BackArrow />
-      <div className="center">
-        <div className="row">
-          <div className="contact-form p-lg">
-            {backArrow && <BackArrow />}
-            <h2>{text.MICROSOFT.test_title}</h2>
-            <p>{formatTextWithLineBreaks(text.MICROSOFT.test_description)}</p>
-            <form onSubmit={(e) => void handleSubmit(e)}>
-              <label htmlFor="contactInput">
-                {text.GENERAL.e_mail} <IsRequired />
-              </label>
-              <input
-                type="text"
-                id="contactInput"
-                name="contact"
-                value={contact}
-                placeholder={text.EXTENSION.your_email}
-                onChange={(e) => setContact(e.target.value)}
+      <div className="website center">
+        <div className="solo">
+          <h1 className={"app-title"}>
+            {text.MICROSOFT.test_title ?? "Microsoft Rewards"}
+            <img
+              src={`${import.meta.env.PUBLIC_URL ?? ""}/assets/images/microsoft.png`}
+              alt="app logo"
+              className="app-logo"
+            />
+          </h1>
+          <HeaderLinks links={links} />
+          <div className="website-header">
+            {!isMobile && (
+              <div className="qr-code-with-text">
+                <img
+                  src={`${import.meta.env.PUBLIC_URL ?? ""}/assets/svgs/qr-code-app.svg`}
+                  alt="QR code"
+                  className="qr-code"
+                />
+                <span>{text.WEBSITE.scan ?? "Scan QR code"}</span>
+              </div>
+            )}
+            <LinkComponent
+              classList="website-phone"
+              href="https://play.google.com/store/apps/details?id=com.spin311.microsoft_automatic_rewards"
+              internal={false}
+            >
+              <img
+                className="website-phone-image"
+                src={`${import.meta.env.PUBLIC_URL ?? ""}/assets/images/mar-phone.png`}
+                alt="Microsoft Automatic Rewards Phone App"
               />
-              <button
-                type="submit"
-                disabled={disabledSend}
-                data-tooltip-id="disabled-btn-tooltip"
-                data-tooltip-content={text.CONTACT.disabled_tooltip}
-                data-tooltip-place="right"
-              >
-                {isSending ? text.CONTACT.sending : text.CONTACT.send}
-              </button>
-              {disabledSend && <Tooltip id="disabled-btn-tooltip" />}
-            </form>
+              <div>{text.MICROSOFT.download ?? "Download App"}</div>
+            </LinkComponent>
           </div>
-          <img
-            className="phone-img"
-            src={`${import.meta.env.PUBLIC_URL ?? ""}/assets/images/mar-phone.png`}
-            alt="Microsoft Automatic Rewards Phone App"
-          />
+
+          <p>{text.MICROSOFT.test_description ?? "Download the app."}</p>
         </div>
       </div>
     </>

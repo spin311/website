@@ -3,6 +3,7 @@ import { useLanguage } from "../../../../context/LanguageContext";
 import React from "react";
 import "./About.css";
 import { Link } from "react-router-dom";
+import LinkComponent from "../../../link-component/LinkComponent";
 function About() {
   const { text, formatHtml } = useLanguage();
   return (
@@ -44,9 +45,10 @@ function About() {
             </li>
           </ul>
         </div>
-        <Link
-          className="about-image"
-          to="/microsoft-automatic-rewards/mobile/test-app"
+        <LinkComponent
+          classList="about-image"
+          href="/microsoft-automatic-rewards/mobile/test-app"
+          internal={true}
         >
           <img
             className="about-phone"
@@ -54,7 +56,7 @@ function About() {
             alt="Microsoft Automatic Rewards Phone App"
           />
           <div>{text.MICROSOFT.download}</div>
-        </Link>
+        </LinkComponent>
       </div>
     </div>
   );

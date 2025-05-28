@@ -58,7 +58,7 @@ function MicrosoftAutomaticRewards() {
       internal: false,
     },
     {
-      href: "/microsoft-automatic-rewards/mobile/website",
+      href: "/microsoft-automatic-rewards/mobile/test-app",
       text: text.GENERAL.mobile,
       icon: faMobileScreen,
       link: false,

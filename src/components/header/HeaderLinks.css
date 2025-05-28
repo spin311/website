@@ -1,0 +1,14 @@
+.header-links {
+    font-size: 1.2em;
+    display: flex;
+    justify-content: center;
+    gap: 2em;
+    margin-bottom: 2em;
+    flex-wrap: wrap;
+}
+
+@media screen and (max-width: 768px) {
+    .header-links {
+        font-size: 1rem;
+    }
+}

@@ -14,15 +14,6 @@
         font-size: 4rem;
 }
 
-.header-links {
-        font-size: 1.2em;
-        display: flex;
-        justify-content: center;
-        gap: 2em;
-        margin-bottom: 2em;
-        flex-wrap: wrap;
-}
-
 .profile-picture {
         width: 170px;
         height: 170px;
@@ -41,11 +32,6 @@
         .App-header h1 {
                 font-size: 3rem;
         }
-
-        .header-links {
-                font-size: 1rem;
-        }
-
         .profile-picture {
                 width: 145px;
                 height: 145px;

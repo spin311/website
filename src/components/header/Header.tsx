@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import LinkComponent from "../link-component/LinkComponent";
 import { Link } from "../../types/ComponentTypes";
+import HeaderLinks from "./HeaderLinks";
 
 type HeaderProps = {
   title: {
@@ -22,17 +23,7 @@ function Header({ title, links, image }: HeaderProps) {
     <div id="home">
       <header className="App-header">
         <h1 className={`${title.class} name`}>{title.text}</h1>
-        <div className="header-links">
-          {links.map((link: Link, i: number) => (
-            <React.Fragment key={i}>
-              <LinkComponent internal={link.internal} href={link.href}>
-                <>
-                  {link.text} <FontAwesomeIcon icon={link.icon} />
-                </>
-              </LinkComponent>
-            </React.Fragment>
-          ))}
-        </div>
+        <HeaderLinks links={links} />
         <img
           src={`${import.meta.env.PUBLIC_URL ?? ""}/${image.src}`}
           alt={image.alt}
