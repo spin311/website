@@ -1,5 +1,5 @@
 import "./App.css";
-import React from "react";
+import React, { useEffect } from "react";
 import {
   faAddressBook,
   faBriefcase,
@@ -18,11 +18,26 @@ import SidebarMenu from "./components/sidebar-menu/SidebarMenu";
 import Contact from "./components/footer/contact/Contact";
 import { useLanguage } from "./context/LanguageContext";
 import { Link, Section } from "./types/ComponentTypes";
+import { useSearchParams } from "react-router-dom";
+import { Language } from "./types/enums";
 
 function App() {
-  const { text, language } = useLanguage();
+  const { text, language, changeLanguage } = useLanguage();
+  const [searchParams] = useSearchParams();
+  const langParam = searchParams.get("lang");
   const title = { text: "Svit Spindler", class: "" };
-  const cvLink = `${import.meta.env.PUBLIC_URL ?? ""}/assets/CV/CV_${language === "en" ? "ENG" : "SLO"}.pdf`;
+  const cvLink = `${import.meta.env.PUBLIC_URL ?? ""}/assets/CV/CV_${language === Language.ENGLISH ? "ENG" : "SLO"}.pdf`;
+
+  function isLanguage(value: string): value is Language {
+    return Object.values(Language).includes(value as Language);
+  }
+
+  useEffect(() => {
+    if (langParam && isLanguage(langParam)) {
+      changeLanguage(langParam);
+    }
+  }, [langParam]);
+
   const links: Link[] = [
     {
       text: "GitHub",

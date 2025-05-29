@@ -5,10 +5,11 @@ import React from "react";
 
 import { useTheme } from "../../context/ThemeContext";
 import { useLanguage } from "../../context/LanguageContext";
+import { Language } from "../../types/enums";
 
 function SidebarButtons() {
   const { darkMode, toggleTheme } = useTheme();
-  const { language, changeLanguage, text } = useLanguage();
+  const { language, toggleLanguage, text } = useLanguage();
 
   const languageImage =
     language === "en"
@@ -31,11 +32,11 @@ function SidebarButtons() {
         id="language-btn"
         className="btn language-btn"
         src={languageImage}
-        onClick={changeLanguage}
+        onClick={toggleLanguage}
         data-tooltip-id="lang-btn-tooltip"
         data-tooltip-content={text.GENERAL.change_language}
         data-tooltip-place="left"
-        alt={`Button to change language to ${language === "en" ? "Slovenian" : "English"}`}
+        alt={`Button to change language to ${language === Language.ENGLISH ? "Slovenian" : "English"}`}
       />
       <Tooltip id="lang-btn-tooltip" />
 
