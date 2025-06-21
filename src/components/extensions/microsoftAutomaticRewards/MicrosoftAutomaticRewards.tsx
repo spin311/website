@@ -82,6 +82,7 @@ function MicrosoftAutomaticRewards() {
       <Helmet>
         <meta
           name="impact-site-verification"
+          // @ts-ignore
           value="7d56abec-43c6-4c6e-be24-46174c5bff55"
         />
         <title>Microsoft Automatic Rewards</title>
