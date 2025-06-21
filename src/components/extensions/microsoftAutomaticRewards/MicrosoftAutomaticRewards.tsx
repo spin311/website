@@ -85,7 +85,7 @@ function MicrosoftAutomaticRewards() {
           name="description"
           content="Microsoft Automatic Rewards browser extension"
         />
-        <meta name='impact-site-verification' value='7d56abec-43c6-4c6e-be24-46174c5bff55'>
+        <meta name='impact-site-verification' value='7d56abec-43c6-4c6e-be24-46174c5bff55'/>
       </Helmet>
       <div className="App">
         <SidebarMenu classes="SidebarMenu" sections={microsoftSections} />
