@@ -2,9 +2,18 @@ package config
 
 import (
 	"github.com/joho/godotenv"
+	"gorm.io/driver/postgres"
+	"gorm.io/gorm"
 	"log"
 	"os"
+	"sync"
 	"websiteApi/internal/repository/models"
+)
+
+var (
+	dbInstance *gorm.DB
+	dbOnce     sync.Once
+	dbErr      error
 )
 
 func init() {
@@ -15,6 +24,22 @@ func init() {
 			log.Println("No .env file found, proceeding with environment variables")
 		}
 	}
+}
+
+func initDB() {
+	dsn := os.Getenv("DATABASE_URL")
+	dbInstance, dbErr = gorm.Open(postgres.Open(dsn), &gorm.Config{})
+	if dbErr != nil {
+		return
+	}
+	if err := dbInstance.AutoMigrate(&models.Uninstall{}); err != nil {
+		log.Printf("AutoMigrate error: %v", err)
+	}
+}
+
+func GetDB() (*gorm.DB, error) {
+	dbOnce.Do(initDB)
+	return dbInstance, dbErr
 }
 
 func GetEmailConfig() *models.EmailConfig {

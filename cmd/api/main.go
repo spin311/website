@@ -29,6 +29,7 @@ func main() {
 	r.HandleFunc("/starredRepos", handlers.GetStarredRepos).Methods(http.MethodGet)
 	r.HandleFunc("/sendEmail", handlers.SendEmail(userRateLimiter)).Methods(http.MethodPost, http.MethodOptions)
 	r.HandleFunc("/extension", handlers.GetExtension).Methods(http.MethodGet)
+	r.HandleFunc("/uninstall", handlers.Uninstall).Methods(http.MethodPost, http.MethodOptions)
 
 	// Swagger UI
 	r.PathPrefix("/swagger/").Handler(httpSwagger.WrapHandler)
