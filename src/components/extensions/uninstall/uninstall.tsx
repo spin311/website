@@ -6,11 +6,10 @@ import React from "react";
 
 import { useLanguage } from "../../../context/LanguageContext";
 import { useNotification } from "../../../context/NotificationContext";
-import { getOrCreateGUID } from "../../../helpers/Guid";
 
 import "./uninstall.css";
 import IsRequired from "../../is-required/IsRequired";
-import { Mail, MailResponse } from "../../../types/ComponentTypes";
+import { UninstallBody } from "../../../types/ComponentTypes";
 
 function Uninstall() {
   const { text } = useLanguage();
@@ -20,6 +19,7 @@ function Uninstall() {
     contact: "",
     explanation: "",
   });
+  const [wasSent, setWasSent] = useState(false);
   const [isSending, setIsSending] = useState(false);
   const [disabledSend, setDisabledSend] = useState(false);
   const handleChange = (
@@ -34,56 +34,56 @@ function Uninstall() {
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    const guid = getOrCreateGUID();
-    try {
-      setIsSending(true);
-      const mail: Mail = {
-        subject: `${extensionName || "Extension"} uninstall`,
-        sender: `${extensionName || "Extension"} user`,
-        contact: `${extensionName || "Extension"} user`,
-        body: "",
-      };
-      if (inputs.contact?.trim()) {
-        mail.contact = inputs.contact;
-      }
-      let bodyContent = `Reason: ${inputs.reason || ""}`;
-      if (inputs.explanation?.trim()) {
-        bodyContent += `\n\n${inputs.explanation}`;
-      }
-      mail.body = bodyContent;
-      const response = await fetch(
-        `${import.meta.env.VITE_API_HOST ?? ""}/sendEmail`,
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            "X-User-ID": guid,
-          },
-          body: JSON.stringify(mail),
-        },
+    setIsSending(true);
+
+    const resetInputs = () =>
+      setInputs({ reason: "", contact: "", explanation: "" });
+
+    const notifySuccess = () =>
+      createNotification(text.CONTACT.success, "success");
+    const notifyError = (message?: string) =>
+      createNotification(
+        `${text.CONTACT.error}\nError: ${message || "There was an error sending the email. Please try again later."}`,
+        "error",
       );
-      const re = (await response.json()) as MailResponse;
+
+    try {
+      const apiHost = import.meta.env.VITE_API_HOST ?? "";
+      const uninstall: UninstallBody = {
+        extension_name: extensionName || "Extension",
+        reason: inputs.reason,
+        contact: inputs.contact,
+        message: inputs.explanation,
+      };
+
+      const response = await fetch(`${apiHost}/uninstall`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(uninstall),
+      });
+
       if (response.ok) {
-        setInputs(() => ({
-          reason: "",
-          contact: "",
-          explanation: "",
-        }));
-        createNotification(text.CONTACT.success, "success");
+        resetInputs();
+        notifySuccess();
+        setWasSent(true);
       } else {
-        createNotification(
-          `${text.CONTACT.error}\nError:${re.Message ?? "There was an error sending the email. Please try again later."}`,
-          "error",
-        );
+        notifyError();
       }
     } catch (e) {
-      createNotification(text.CONTACT.error, "error");
+      notifyError();
     } finally {
       setIsSending(false);
     }
   };
+
   useEffect(() => {
-    setDisabledSend(!inputs.reason);
+    setDisabledSend(
+      !inputs.reason ||
+        (inputs.reason === text.EXTENSION.other && !inputs.explanation) ||
+        wasSent,
+    );
   }, [inputs]);
   return (
     <>
@@ -166,6 +166,21 @@ function Uninstall() {
             <label htmlFor="other">{text.EXTENSION.other}</label>
           </div>
 
+          <label htmlFor="body">
+            {text.CONTACT.message}{" "}
+            {inputs.reason === text.EXTENSION.other && !inputs.explanation ? (
+              <IsRequired />
+            ) : null}
+          </label>
+          <textarea
+            id="body"
+            name="explanation"
+            rows={4}
+            value={inputs.explanation}
+            onChange={handleChange}
+            placeholder={text.CONTACT.message_placeholder}
+          ></textarea>
+
           <label htmlFor="contactInput">{text.CONTACT.contact} </label>
           <input
             type="text"
@@ -175,16 +190,6 @@ function Uninstall() {
             placeholder={text.EXTENSION.your_email}
             onChange={handleChange}
           />
-
-          <label htmlFor="body">{text.CONTACT.message}</label>
-          <textarea
-            id="body"
-            name="explanation"
-            rows={4}
-            value={inputs.explanation}
-            onChange={handleChange}
-            placeholder={text.CONTACT.message_placeholder}
-          ></textarea>
 
           <button
             type="submit"

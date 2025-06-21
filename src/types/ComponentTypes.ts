@@ -63,6 +63,13 @@ export type Mail = {
   body: string;
 };
 
+export type UninstallBody = {
+  extension_name: string;
+  reason: string;
+  contact?: string;
+  message?: string;
+};
+
 export interface MailResponse {
   Message?: string;
 }
