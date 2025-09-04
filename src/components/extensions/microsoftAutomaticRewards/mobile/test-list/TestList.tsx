@@ -16,7 +16,7 @@ function TestList() {
 
   let links: Link[] = [
     {
-      href: "https://github.com/spin311/MicrosoftRewardsWebsite/releases/tag/app",
+      href: "https://play.google.com/store/apps/details?id=com.spin311.microsoft_automatic_rewards",
       text: text.PROJECT.download,
       icon: faArrowDown,
       link: true,
@@ -68,7 +68,7 @@ function TestList() {
             )}
             <LinkComponent
               classList="website-phone"
-              href="https://github.com/spin311/MicrosoftRewardsWebsite/releases/tag/app"
+              href="https://play.google.com/store/apps/details?id=com.spin311.microsoft_automatic_rewards"
               internal={false}
             >
               <img
