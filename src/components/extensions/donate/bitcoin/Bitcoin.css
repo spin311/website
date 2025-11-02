@@ -1,0 +1,28 @@
+.copy-button {
+    padding-top: 2px;
+    border-radius: 6px;
+    border: 1px solid var(--border-color);
+    background: var(--background-color);
+    cursor: pointer;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s ease, border 0.2s ease;
+}
+
+.copy-button:hover {
+    background: var(--background-secondary-color);
+}
+
+.btc-address {
+    word-break: break-all;
+    font-size: 0.85rem;
+    margin: 10px 0;
+    color: var(--secondary-color);
+    transition: color 0.2s ease;
+    display: flex;
+    justify-content: center;
+    gap: 0.5em;
+    align-items: center;
+}

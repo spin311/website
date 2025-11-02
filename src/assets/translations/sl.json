@@ -55,7 +55,7 @@
     "p4_description": "Spletna stran za eksperiment diplomske naloge \"Inženiring pozivov\", ki omogoča prevajanje in shranjevanje Python kode ter vključuje klepet s chatGPT. Zaledje je bilo razvito z Javo in HSQLDB ter nameščeno na AWS.",
     "p5_description": "Videoigra Survalien, v kateri pomagamo vesoljcu popraviti njegovo ladjo in preživeti na Zemlji. Igra vključuje različne AI nasprotnike, naključno generacijo zemljevidov, glavnega šefa in animacije.",
     "p6_description": "Mobilna aplikacija za ugibanje lokacije drugih uporabnikov. Omogoča tekmovanje z drugimi uporabniki na podoben način kot popularna videoigra GeoGuessr. Izdelana na hackathonu DragonHack 2024 z uporabo Kotlina in NOSQL baze Back4App.",
-    "p7_description": "Android Kotlin aplikacija za spodbujanje krvodajalskih akcij. Omogoča beleženje in spodbujanje obiskov z uporabo gamifikacije. Aplikacija je dosegla 2. mesto na Eestech Challenge 2023 hackatlonu."
+    "p7_description": "Razširitev za Chrome za pridobivanje zastonj iger iz platform Steam in Epic Games. Prikaže seznam trenutnih in prihodnjih brezplačnih iger. Tedensko jo uporablja več kot {users} uporabnikov in ima povprečno oceno {rating}/5."
 },
   "CONTACT": {
     "contact": "Kontakt",
@@ -117,6 +117,7 @@
     "donate1": "<b>Izboljšati moje razširitve</b> z dodajanjem novih funkcij in popravljanjem napak",
     "donate2": "<b>Ohraniti moje razširitve posodobljene</b> z najnovejšimi spremembami",
     "donate3": "<b>Ostati neodvisen</b> brez oglasov ali plačljivih funkcij",
+    "copy_tooltip": "kopirano",
     "new_feature": "Predlagaj novo funkcionalnost",
     "your_email": "Vnesite vaš e-poštni naslov",
     "form_title": "Povratne informacije o odstranitvi razširitve",
@@ -138,6 +139,7 @@
     "search_delay": "Zamik med iskanji",
     "get_rewards": "Pridobi nagrade",
     "stop_searches": "Ustavi iskanja",
-    "scan": "Odpri na telefonu"
+    "scan": "Odpri na telefonu",
+    "support_me": "Podpri me na"
   }
 }

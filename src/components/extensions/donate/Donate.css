@@ -1,0 +1,59 @@
+
+.donate-svg {
+    height: 1.3em;
+    width: 1.3em;
+}
+
+.donations-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.donation-card {
+    flex: 1 1 30%;
+    min-width: 250px;
+    margin: 10px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px var(--shadow-color);
+    text-align: center;
+    background: var(--background-card-color);
+    color: var(--secondary-color);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.donation-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.donation-title {
+    margin-bottom: 15px;
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.titleStyle {
+    margin-bottom: 15px;
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.kofi-button {
+    display: inline-block;
+    padding: 10px 16px;
+    background: #ffc439;
+    color: var(--primary-color);
+    border-radius: 6px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.kofi-button:hover {
+    background: #ffd766;
+    transform: translateY(-2px);
+}
