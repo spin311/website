@@ -33,14 +33,18 @@
     "xp1_desc2": "Design and development of applications and microservices",
     "xp1_desc3": "Development of systems on top of Oracle databases",
     "xp2_title": "Frontend Developer",
-    "xp2_desc1": "Lead Frontend Engineer on the project Formaviva",
+    "xp2_desc1": "Responsible for frontend on Formaviva project",
     "xp2_desc2": "CI/CD pipeline, docker and backend",
-    "xp2_desc3": "Writing tests, QA",
+    "xp2_desc3": "Improved  tests & QA",
     "xp3_title": "Programming Teacher",
     "xp3_desc1": "Teaching programming to children and teenagers, developing curriculums",
     "xp3_desc2": "Coordinating multiple groups and assistants",
-    "website": "Website",
-    "current": "current"
+    "xp4_title": "Backend Developer",
+    "xp4_desc1": "Planning and implementing using Java, Kotlin, MySQL",
+    "xp4_desc2": "Test driven development with unit tests",
+    "xp4_desc3": "QA, code reviews, K9s",
+    "xp4_desc4": "Integration with AWS (S3, Terraform, SNS/SQS)",
+    "website": "Website"
   },
   "PROJECT": {
     "title": "Projects",

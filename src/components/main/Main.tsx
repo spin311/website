@@ -31,7 +31,7 @@ function Main({ classes = "" }: MainProps) {
       {
         id: 1,
         extensionId: "ocmmbfdhomnkljmjkmafegefcgcfkefo",
-        name: "Microsoft Automatic Rewards",
+        name: "Search Automatic Rewards",
         ghName: "MicrosoftRewardsWebsite",
         type: text.PROJECT.t_extension,
         ghUrl: "https://github.com/spin311/MicrosoftRewardsWebsite",
@@ -48,6 +48,25 @@ function Main({ classes = "" }: MainProps) {
       },
       {
         id: 2,
+        extensionId: "mndghaafpgiinfecbbbcppppiblmjepk",
+        name: "Free Game Claimer",
+        ghName: "epic-free-games-claim",
+        type: text.PROJECT.t_extension,
+        ghUrl: "https://github.com/spin311/epic-free-games-claim",
+        description: text.PROJECT.p7_description,
+        img: `${import.meta.env.PUBLIC_URL ?? ""}/assets/images/claimer.png`,
+        website:
+            "https://chromewebstore.google.com/detail/free-game-claimer-for-ste/mndghaafpgiinfecbbbcppppiblmjepk",
+        download_link:
+            "https://chromewebstore.google.com/detail/free-game-claimer-for-ste/mndghaafpgiinfecbbbcppppiblmjepk",
+        stars: 0,
+        forks: 0,
+        users: 1000,
+        rating: 4.6,
+        created_at: null,
+      },
+      {
+        id: 3,
         extensionId: "mlicfddkgjkeajfgkihplfbgpmbonbao",
         name: "Prolific Studies Notifier",
         ghName: "ProlificAutomaticStudies",
@@ -62,25 +81,6 @@ function Main({ classes = "" }: MainProps) {
         forks: 0,
         users: 3000,
         rating: 4.1,
-        created_at: null,
-      },
-      {
-        id: 3,
-        extensionId: "mndghaafpgiinfecbbbcppppiblmjepk",
-        name: "Free Game Claimer",
-        ghName: "epic-free-games-claim",
-        type: text.PROJECT.t_extension,
-        ghUrl: "https://github.com/spin311/epic-free-games-claim",
-        description: text.PROJECT.p7_description,
-        img: `${import.meta.env.PUBLIC_URL ?? ""}/assets/images/claimer.png`,
-        website:
-          "https://chromewebstore.google.com/detail/free-game-claimer-for-ste/mndghaafpgiinfecbbbcppppiblmjepk",
-        download_link:
-          "https://chromewebstore.google.com/detail/free-game-claimer-for-ste/mndghaafpgiinfecbbbcppppiblmjepk",
-        stars: 0,
-        forks: 0,
-        users: 1000,
-        rating: 4.6,
         created_at: null,
       },
       {
@@ -286,9 +286,21 @@ function Main({ classes = "" }: MainProps) {
         text.EXPERIENCE.xp2_desc3,
       ],
       website: "https://nightwatch.io/",
-      years: `2024 - ${text.EXPERIENCE.current}`,
+      years: `2024 - 2025`,
       logo: `${import.meta.env.PUBLIC_URL ?? ""}/assets/images/nightwatch.jpg`,
     },
+    {
+      title: text.EXPERIENCE.xp4_title,
+      company: "Sportradar",
+      desc: [
+        text.EXPERIENCE.xp4_desc1,
+        text.EXPERIENCE.xp4_desc2,
+        text.EXPERIENCE.xp4_desc3,
+      ],
+      website: "https://sportradar.com/",
+      years: `2025 - 2026`,
+      logo: `${import.meta.env.PUBLIC_URL ?? ""}/assets/images/sportradar.png`,
+    }
   ];
 
   const handleSortChange = (event: ChangeEvent<HTMLSelectElement>) => {
