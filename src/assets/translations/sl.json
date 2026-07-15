@@ -98,7 +98,7 @@
     "feature4": "Prilagodljive nastavitve",
     "feature5": "Iskanje naključnih besed ali znakov",
     "download": "Prenesi aplikacijo",
-    "test_title": "Microsoft Automatic Rewards aplikacija",
+    "test_title": "Search automatic rewards aplikacija",
     "test_description": "Mobilna aplikacija za avtomatizacijo točk Microsoft Rewards točk. V aplikaciji odpre Bing zavihke."
   },
   "PROLIFIC": {
@@ -136,8 +136,8 @@
     "other": "Drugo"
   },
   "WEBSITE": {
-    "title": "Spletna stran Microsoft Automatic Rewards",
-    "description": "Implementacija spletne strani za Microsoft Automatic Rewards, ki jo lahko uporabljate na mobilni napravi za pridobivanje mobilnih točk. Deluje tako, da odpira nove zavihke Bing",
+    "title": "Spletna stran Search automatic rewards",
+    "description": "Implementacija spletne strani za Search automatic rewards, ki jo lahko uporabljate na mobilni napravi za pridobivanje mobilnih točk. Deluje tako, da odpira nove zavihke Bing",
     "allow_popup": "*Za delovanje je potrebno dovoliti pojavna okna",
     "search_nu": "Število iskanj",
     "search_delay": "Zamik med iskanji",

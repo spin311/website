@@ -53,7 +53,7 @@ function About() {
           <img
             className="about-phone"
             src={`${import.meta.env.PUBLIC_URL ?? ""}/assets/images/mar-phone.png`}
-            alt="Microsoft Automatic Rewards Phone App"
+            alt="Search automatic rewards Phone App"
           />
           <div>{text.MICROSOFT.download}</div>
         </LinkComponent>

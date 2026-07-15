@@ -9,19 +9,19 @@ function Privacy() {
         <title>Privacy Policy</title>
         <meta
           name="description"
-          content="Privacy Policy for Microsoft Automatic Rewards app"
+          content="Privacy Policy for Search automatic rewards app"
         />
       </Helmet>
       <div className="terms">
         <h1 className="titles">
-          Privacy Policy for Microsoft Automatic Rewards
+          Privacy Policy for Search automatic rewards
         </h1>
         <p>
           <strong>Effective Date:</strong> April 16, 2025
         </p>
 
         <p>
-          This app, <strong>Microsoft Automatic Rewards</strong>, is a
+          This app, <strong>Search automatic rewards</strong>, is a
           third-party utility designed to automate Bing searches for users
           participating in the Microsoft Rewards program.
         </p>

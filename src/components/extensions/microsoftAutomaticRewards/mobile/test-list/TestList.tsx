@@ -41,7 +41,7 @@ function TestList() {
     <>
       <Helmet>
         <title>Microsoft Rewards App</title>
-        <meta name="description" content="Microsoft Automatic Rewards App" />
+        <meta name="description" content="Search automatic rewards App" />
       </Helmet>
       <BackArrow />
       <div className="website center">
@@ -74,7 +74,7 @@ function TestList() {
               <img
                 className="website-phone-image"
                 src={`${import.meta.env.PUBLIC_URL ?? ""}/assets/images/mar-phone.png`}
-                alt="Microsoft Automatic Rewards Phone App"
+                alt="Search automatic rewards Phone App"
               />
               <div>{text.MICROSOFT.download ?? "Download App"}</div>
             </LinkComponent>

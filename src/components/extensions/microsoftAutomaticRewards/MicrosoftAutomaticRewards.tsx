@@ -42,7 +42,7 @@ function MicrosoftAutomaticRewards() {
     { id: "donate", icon: faDonate, text: text.GENERAL.donate },
     { id: "contact", icon: faAddressBook, text: text.CONTACT.contact },
   ];
-  const title = { text: "Microsoft Automatic Rewards", class: "md-text" };
+  const title = { text: "Search automatic rewards", class: "md-text" };
   const downloadLink = {
     href: "https://chromewebstore.google.com/detail/microsoft-automatic-rewar/ocmmbfdhomnkljmjkmafegefcgcfkefo",
     text: text.PROJECT.download,
@@ -75,15 +75,15 @@ function MicrosoftAutomaticRewards() {
   links = !isMobile ? [downloadLink, ...links] : links;
   const image = {
     src: "assets/images/microsoft.png",
-    alt: "Microsoft Automatic Rewards",
+    alt: "Search automatic rewards",
   };
   return (
     <>
       <Helmet>
-        <title>Microsoft Automatic Rewards</title>
+        <title>Search automatic rewards</title>
         <meta
           name="description"
-          content="Microsoft Automatic Rewards browser extension"
+          content="Search automatic rewards browser extension"
         />
       </Helmet>
       <div className="App">

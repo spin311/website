@@ -97,7 +97,7 @@
     "feature4": "Customizable settings",
     "feature5": "Random words or letters search",
     "download": "Download App",
-    "test_title": "Microsoft Automatic Rewards app",
+    "test_title": "Search automatic rewards app",
     "test_description": "Mobile app for automating Microsoft Rewards points generation. It opens Bing tabs inside the app."
   },
   "PROLIFIC": {
@@ -135,8 +135,8 @@
     "other": "Other"
   },
   "WEBSITE": {
-    "title": "Microsoft Automatic Rewards Website",
-    "description": "Website implementation for Microsoft Automatic Rewards that you can use on your mobile device to get mobile points. It works by opening new bing tabs",
+    "title": "Search automatic rewards Website",
+    "description": "Website implementation for Search automatic rewards that you can use on your mobile device to get mobile points. It works by opening new bing tabs",
     "allow_popup": "*Need to allow popups to work",
     "search_nu": "Number of searches",
     "search_delay": "Delay between searches",

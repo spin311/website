@@ -160,7 +160,7 @@ function Website() {
         <title>Microsoft Rewards Website</title>
         <meta
           name="description"
-          content="Microsoft Automatic Rewards Website"
+          content="Search automatic rewards Website"
         />
       </Helmet>
       <BackArrow />
@@ -185,7 +185,7 @@ function Website() {
               <img
                 className="website-phone-image"
                 src={`${import.meta.env.PUBLIC_URL ?? ""}/assets/images/mar-phone.png`}
-                alt="Microsoft Automatic Rewards Phone App"
+                alt="Search automatic rewards Phone App"
               />
               <div>{text.MICROSOFT.download ?? "Download App"}</div>
             </Link>
