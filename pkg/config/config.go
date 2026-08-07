@@ -44,11 +44,9 @@ func GetDB() (*gorm.DB, error) {
 
 func GetEmailConfig() *models.EmailConfig {
 	return &models.EmailConfig{
-		EmailUser:      os.Getenv("EMAIL_USER"),
-		EmailPassword:  os.Getenv("EMAIL_PASSWORD"),
-		EmailRecipient: os.Getenv("EMAIL_RECIPIENT"),
-		EmailHost:      os.Getenv("EMAIL_HOST"),
-		EmailPort:      os.Getenv("EMAIL_PORT"),
+		APIKey:    os.Getenv("RESEND_API_KEY"),
+		From:      os.Getenv("EMAIL_FROM"),
+		Recipient: os.Getenv("EMAIL_RECIPIENT"),
 	}
 }
 
