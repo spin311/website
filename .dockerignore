@@ -1,0 +1,10 @@
+# Never ship secrets into the image; the platform injects env vars directly.
+.env
+.env.*
+
+# API client collections and editor state are not needed to compile.
+personal-website-bruno/
+website-api-bruno/
+.idea/
+.git/
+*.exe
