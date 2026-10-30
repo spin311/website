@@ -5,10 +5,10 @@ import {
   faBriefcase,
   faDiagramProject,
   faHouse,
-  faEnvelope,
   faFile,
 } from "@fortawesome/free-solid-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons/faGithub";
+import { faLinkedin } from "@fortawesome/free-brands-svg-icons/faLinkedin";
 import { Helmet } from "react-helmet";
 
 import Header from "./components/header/Header";
@@ -48,10 +48,10 @@ function App() {
       internal: false,
     },
     {
-      text: "E-Mail",
-      href: "mailto:svit.spindler@gmail.com",
-      icon: faEnvelope,
-      link: false,
+      text: "LinkedIn",
+      href: "https://www.linkedin.com/in/svit-spindler-591a7a28b/",
+      icon: faLinkedin,
+      link: true,
       internal: false,
     },
     { text: "CV", href: cvLink, icon: faFile, link: true, internal: false },
