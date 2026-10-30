@@ -45,6 +45,10 @@
     "xp4_desc2": "Test driven development z unit testi",
     "xp4_desc3": "QA, code reviews, K9s",
     "xp4_desc4": "Uporaba ter integracija z AWS (S3, Terraform, SNS/SQS)",
+    "xp5_desc1": "Razvoj spletnih aplikacij, CRM sistemov in AI rešitev za stranke",
+    "xp5_desc2": "Integracije z zunanjimi API-ji, avtomatizirano pošiljanje sporočil in obdelava dokumentov",
+    "xp5_desc3": "Strežniška infrastruktura, Docker, CI/CD in nadzor sistemov",
+    "present": "danes",
     "website": "Spletna stran"
   },
   "PROJECT": {
