@@ -1,0 +1,36 @@
+# Svit Spindler
+
+> Portfolio of Svit Spindler, a computer science graduate and software developer with hands-on experience in mobile, web, backend and database development. The site lists work experience, hobby projects (Chrome extensions, mobile apps, websites and a video game) and ways to get in touch.
+
+The site is available in English and Slovenian (add `?lang=sl` to a URL for Slovenian).
+
+## About
+
+- [Portfolio](https://svitspindler.com/): about, work experience and projects
+- [CV in English](https://svitspindler.com/assets/CV/CV_ENG.pdf)
+- [CV in Slovenian](https://svitspindler.com/assets/CV/CV_SLO.pdf)
+- [GitHub](https://github.com/spin311): source code of most projects
+- [Contact form](https://svitspindler.com/contact): send a message, or e-mail svit.spindler@gmail.com
+
+## Experience
+
+- Full Stack Developer at [Opti Solutions](https://opti-solutions.si/) (2026 - present): web applications, CRMs and AI solutions for clients, third-party API integrations, server infrastructure, Docker, CI/CD
+- Backend Developer at [Sportradar](https://sportradar.com/) (2025 - 2026): Java, Kotlin, MySQL, test-driven development, code reviews
+- Full Stack Developer at [Nightwatch, Formaviva](https://nightwatch.io/) (2024 - 2025): frontend of the Formaviva project, CI/CD, Docker, backend, tests and QA
+- Full Stack Developer at [Ixtlan Team](https://www.ixtlan-team.si/) (2023 - 2024): TypeScript, Angular, Java, PL/SQL, microservices on Oracle databases
+- Programming Teacher at [Digital School](https://digitalschool.si/) (2021 - 2024): teaching programming to children and teenagers, developing curriculums
+
+## Projects
+
+- [Digitalna Košarica](https://digitalna-kosarica.si/): price comparison website for Slovenian grocery stores, built with Spring Boot, PostgreSQL/TimescaleDB and Next.js
+- [Search Automatic Rewards](https://svitspindler.com/microsoft-automatic-rewards): Chrome extension that automates daily Microsoft Rewards points, with Google's Featured badge ([source](https://github.com/spin311/MicrosoftRewardsWebsite))
+- [Prolific Studies Notifier](https://svitspindler.com/prolific-studies-notifier): Chrome extension that alerts users to new Prolific studies ([source](https://github.com/spin311/ProlificAutomaticStudies))
+- [Free Game Claimer](https://chromewebstore.google.com/detail/free-game-claimer-for-ste/mndghaafpgiinfecbbbcppppiblmjepk): Chrome extension that lists and claims free Steam and Epic Games ([source](https://github.com/spin311/epic-free-games-claim))
+- [Gobar](https://juicevodka.github.io/Gobar/): mobile app that identifies mushrooms with an AI model; won "Best Carbon footprint reduction app" at DragonHack 2023 ([source](https://github.com/JuiceVodka/Gobar))
+- [KeSi](https://juicevodka.github.io/KeSi/): Android location-guessing game similar to GeoGuessr, built at DragonHack 2024 with Kotlin ([source](https://github.com/JuiceVodka/KeSi))
+- [ChatGPT prompt engineering](https://spin311.github.io/diploma/): website for a thesis experiment that compiles Python code alongside a ChatGPT chat; Java and HSQLDB backend on AWS ([source](https://github.com/spin311/hiter-inzeniring-diploma))
+- [Survalien](https://github.com/gregorkovac/Survalien-Unity): Unity video game about helping an alien repair his ship and survive on Earth
+
+## Optional
+
+- [Donate](https://svitspindler.com/donate): support the development of the extensions

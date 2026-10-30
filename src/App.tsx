@@ -20,6 +20,7 @@ import { useLanguage } from "./context/LanguageContext";
 import { Link, Section } from "./types/ComponentTypes";
 import { useSearchParams } from "react-router-dom";
 import { Language } from "./types/enums";
+import { retinaImage } from "./helpers/images";
 
 function App() {
   const { text, language, changeLanguage } = useLanguage();
@@ -55,7 +56,7 @@ function App() {
     },
     { text: "CV", href: cvLink, icon: faFile, link: true, internal: false },
   ];
-  const image = { src: "assets/images/profile.jpg", alt: "Profile" };
+  const image = { ...retinaImage("profile", 170, 170), alt: "Profile" };
 
   const mainAppSections: Section[] = [
     { id: "home", icon: faHouse, text: text.GENERAL.home },

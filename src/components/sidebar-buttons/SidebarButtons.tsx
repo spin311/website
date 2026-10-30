@@ -14,10 +14,10 @@ function SidebarButtons() {
   const languageImage =
     language === "en"
       ? `${import.meta.env.PUBLIC_URL ?? ""}/assets/images/flag-uk.svg`
-      : `${import.meta.env.PUBLIC_URL ?? ""}/assets/images/flag-slo.png`;
+      : `${import.meta.env.PUBLIC_URL ?? ""}/assets/images/flag-slo.webp`;
   const darkModeImage = darkMode
-    ? `${import.meta.env.PUBLIC_URL ?? ""}/assets/images/dark-mode.png`
-    : `${import.meta.env.PUBLIC_URL ?? ""}/assets/images/light-mode.png`;
+    ? `${import.meta.env.PUBLIC_URL ?? ""}/assets/images/dark-mode.webp`
+    : `${import.meta.env.PUBLIC_URL ?? ""}/assets/images/light-mode.webp`;
   const darkModeTooltip = darkMode
     ? text.GENERAL.toggle_lightMode
     : text.GENERAL.toggle_darkMode;

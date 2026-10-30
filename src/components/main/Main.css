@@ -10,3 +10,21 @@
     cursor: pointer;
     transition: all 0.3s;
 }
+/* On the container, not each card: the browser restarts CSS animations on elements
+   React moves, so per-card fade-ins would replay whenever the projects are re-sorted */
+.projects {
+    animation: projects-fade-in 0.5s ease-out;
+}
+
+@keyframes projects-fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .projects {
+        animation: none;
+    }
+}

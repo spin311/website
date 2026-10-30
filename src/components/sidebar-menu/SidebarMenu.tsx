@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import React from "react";
 
 import useActiveSection from "../../hooks/useActiveSection";
-import useIsMobile from "../../hooks/useIsMobile";
 import { Section } from "../../types/ComponentTypes";
 
 type SidebarMenuProps = {
@@ -15,7 +14,6 @@ type SidebarMenuProps = {
 const SidebarMenu = ({ sections, classes = "" }: SidebarMenuProps) => {
   const sectionIds = sections.map((section) => section.id);
   const activeSection = useActiveSection(sectionIds);
-  const isMobile = useIsMobile();
 
   return (
     <div className={`sidebar-menu ${classes}`}>
@@ -29,14 +27,14 @@ const SidebarMenu = ({ sections, classes = "" }: SidebarMenuProps) => {
               <Link to={section.href}>
                 {" "}
                 <FontAwesomeIcon icon={section.icon} />{" "}
-                {isMobile ? "" : section.text}{" "}
+                <span className="sidebar-text">{section.text}</span>{" "}
               </Link>
             )}
             {!section.link && (
               <a href={`#${section.id}`}>
                 {" "}
                 <FontAwesomeIcon icon={section.icon} />{" "}
-                {isMobile ? "" : section.text}
+                <span className="sidebar-text">{section.text}</span>
               </a>
             )}
           </li>
