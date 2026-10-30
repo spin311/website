@@ -35,8 +35,8 @@ export type ProjectType = {
   id: number;
   extensionId?: string;
   name: string;
-  ghName: string;
-  ghUrl: string;
+  ghName?: string;
+  ghUrl?: string;
   type: string;
   description: string;
   img: string;

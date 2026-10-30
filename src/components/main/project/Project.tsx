@@ -71,24 +71,26 @@ function Project({ project, isLoading }: ProjectProps) {
             <FontAwesomeIcon icon={faArrowDown} /> {text.PROJECT.download}
           </a>
         )}
-        <a href={ghUrl} target="_blank" rel="noopener noreferrer">
-          <FontAwesomeIcon icon={faGithub} /> Github
-          {stars > 0 && (
-            <>
-              <FontAwesomeIcon icon={faStar} className="ml-small" />: {stars}
-            </>
-          )}
-          {isLoading ? (
-            <FontAwesomeIcon icon={faSpinner} className="fa-spin ml-small" />
-          ) : (
-            forks > 0 && (
+        {ghUrl && (
+          <a href={ghUrl} target="_blank" rel="noopener noreferrer">
+            <FontAwesomeIcon icon={faGithub} /> Github
+            {stars > 0 && (
               <>
-                <FontAwesomeIcon icon={faCodeFork} className="ml-small" />:{" "}
-                {forks}
+                <FontAwesomeIcon icon={faStar} className="ml-small" />: {stars}
               </>
-            )
-          )}
-        </a>
+            )}
+            {isLoading ? (
+              <FontAwesomeIcon icon={faSpinner} className="fa-spin ml-small" />
+            ) : (
+              forks > 0 && (
+                <>
+                  <FontAwesomeIcon icon={faCodeFork} className="ml-small" />:{" "}
+                  {forks}
+                </>
+              )
+            )}
+          </a>
+        )}
       </div>
       <p>
         {text.GENERAL.type}: <span className="bold-light">{type}</span>
