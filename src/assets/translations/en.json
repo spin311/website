@@ -44,8 +44,8 @@
     "xp4_desc2": "Test driven development with unit tests",
     "xp4_desc3": "QA, code reviews, K9s",
     "xp4_desc4": "Integration with AWS (S3, Terraform, SNS/SQS)",
-    "xp5_desc1": "Development of web applications, CRMs and AI solutions for clients (TypeScript, React, Next.js, Node.js, PostgreSQL)",
-    "xp5_desc2": "AI integrations with Claude and OpenAI: chatbots, AI-personalized outreach, document processing",
+    "xp5_desc1": "Development of web applications, CRMs and AI solutions for clients",
+    "xp5_desc2": "Integrations with third-party APIs, automated outreach and document processing",
     "xp5_desc3": "Server infrastructure, Docker, CI/CD and monitoring",
     "present": "present",
     "website": "Website"
