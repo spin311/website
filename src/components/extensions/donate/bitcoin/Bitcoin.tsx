@@ -29,7 +29,7 @@ function Bitcoin() {
       <div>
         <p className="btc-address">
           {btcAddress}
-          <a onClick={copyAddress} className="copy-button">
+          <a onClick={() => void copyAddress()} className="copy-button">
             <img
               className="donate-svg"
               src={`${import.meta.env.PUBLIC_URL ?? ""}/assets/svgs/copy.svg`}

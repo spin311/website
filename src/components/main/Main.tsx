@@ -75,9 +75,9 @@ function Main({ classes = "" }: MainProps) {
         description: text.PROJECT.p7_description,
         img: { src: `${IMAGES_URL}/claimer.webp`, width: 128, height: 128 },
         website:
-            "https://chromewebstore.google.com/detail/free-game-claimer-for-ste/mndghaafpgiinfecbbbcppppiblmjepk",
+          "https://chromewebstore.google.com/detail/free-game-claimer-for-ste/mndghaafpgiinfecbbbcppppiblmjepk",
         download_link:
-            "https://chromewebstore.google.com/detail/free-game-claimer-for-ste/mndghaafpgiinfecbbbcppppiblmjepk",
+          "https://chromewebstore.google.com/detail/free-game-claimer-for-ste/mndghaafpgiinfecbbbcppppiblmjepk",
         stars: 0,
         forks: 0,
         users: 1000,

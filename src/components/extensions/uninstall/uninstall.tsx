@@ -1,8 +1,7 @@
 import { Helmet } from "react-helmet";
-import { ChangeEvent, FormEvent, useEffect, useState } from "react";
+import React, { ChangeEvent, FormEvent, useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { Tooltip } from "react-tooltip";
-import React from "react";
 
 import { useLanguage } from "../../../context/LanguageContext";
 import { useNotification } from "../../../context/NotificationContext";
@@ -84,7 +83,7 @@ function Uninstall() {
         (inputs.reason === text.EXTENSION.other && !inputs.explanation) ||
         wasSent,
     );
-  }, [inputs]);
+  }, [inputs, wasSent, text.EXTENSION.other]);
   return (
     <>
       <Helmet>

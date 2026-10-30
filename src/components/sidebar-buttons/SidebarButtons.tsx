@@ -5,13 +5,14 @@ import React from "react";
 
 import { useTheme } from "../../context/ThemeContext";
 import { useLanguage } from "../../context/LanguageContext";
+import { Language } from "../../types/enums";
 
 function SidebarButtons() {
   const { darkMode, toggleTheme } = useTheme();
   const { language, toggleLanguage, text } = useLanguage();
 
   const languageImage =
-    language === "en"
+    language === Language.ENGLISH
       ? `${import.meta.env.PUBLIC_URL ?? ""}/assets/images/flag-uk.svg`
       : `${import.meta.env.PUBLIC_URL ?? ""}/assets/images/flag-slo.webp`;
   const darkModeImage = darkMode

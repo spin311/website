@@ -13,17 +13,15 @@ function Privacy() {
         />
       </Helmet>
       <div className="terms">
-        <h1 className="titles">
-          Privacy Policy for Search automatic rewards
-        </h1>
+        <h1 className="titles">Privacy Policy for Search automatic rewards</h1>
         <p>
           <strong>Effective Date:</strong> April 16, 2025
         </p>
 
         <p>
-          This app, <strong>Search automatic rewards</strong>, is a
-          third-party utility designed to automate Bing searches for users
-          participating in the Microsoft Rewards program.
+          This app, <strong>Search automatic rewards</strong>, is a third-party
+          utility designed to automate Bing searches for users participating in
+          the Microsoft Rewards program.
         </p>
 
         <h2 className="titles">1. Information We Collect</h2>

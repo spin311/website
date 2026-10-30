@@ -1,8 +1,6 @@
 import React from "react";
 import "./Header.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-import LinkComponent from "../link-component/LinkComponent";
 import { Link } from "../../types/ComponentTypes";
 import HeaderLinks from "./HeaderLinks";
 

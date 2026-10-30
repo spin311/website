@@ -53,7 +53,10 @@ function useFlipAnimation<T extends HTMLElement>(order: unknown) {
       if (dx !== 0 || dy !== 0) {
         animations.push(
           element.animate(
-            [{ transform: `translate(${dx}px, ${dy}px)` }, { transform: "none" }],
+            [
+              { transform: `translate(${dx}px, ${dy}px)` },
+              { transform: "none" },
+            ],
             { duration: DURATION_MS, easing: "ease-in-out" },
           ),
         );
