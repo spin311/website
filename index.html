@@ -5,9 +5,10 @@
     <link rel="icon" href="/favicon.ico" />
     <link rel="icon" sizes="32x32" href="/favicon.ico">
     <link rel="icon" sizes="16x16" href="/favicon.ico">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Poppins&family=Kay+Pho+Du:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Fonts of the first screen: fetched alongside the JS so they are ready before the
+         first render, instead of swapping in afterwards and shifting the layout -->
+    <link rel="preload" href="/node_modules/@fontsource/poppins/files/poppins-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/node_modules/@fontsource/kay-pho-du/files/kay-pho-du-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
     <meta name="description" content="Portfolio of Svit Spindler, a web developer specializing in full-stack and frontend development, React and mobile app development. See my projects and experience." />

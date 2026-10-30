@@ -10,9 +10,10 @@ import {
 
 import Experience from "./experience/Experience";
 import Project from "./project/Project";
+import { IMAGES_URL, retinaImage } from "../../helpers/images";
 
 import numeral from "numeral";
-import { motion, AnimatePresence } from "framer-motion";
+import useFlipAnimation from "../../hooks/useFlipAnimation";
 
 type MainProps = {
   classes?: string;
@@ -21,6 +22,13 @@ type MainProps = {
 interface ExtensionValues {
   userCount?: number;
   ratingValue?: number;
+}
+
+const API_HOST = import.meta.env.VITE_API_HOST ?? "";
+
+async function fetchJson<T>(path: string): Promise<T> {
+  const response = await fetch(`${API_HOST}${path}`);
+  return (await response.json()) as T;
 }
 
 function Main({ classes = "" }: MainProps) {
@@ -33,7 +41,7 @@ function Main({ classes = "" }: MainProps) {
         name: "Digitalna Košarica",
         type: text.GENERAL.website,
         description: text.PROJECT.p8_description,
-        img: `${import.meta.env.PUBLIC_URL ?? ""}/assets/images/kosarica.png`,
+        img: retinaImage("kosarica", 150, 150),
         website: "https://digitalna-kosarica.si/",
         stars: 0,
         forks: 0,
@@ -47,7 +55,7 @@ function Main({ classes = "" }: MainProps) {
         type: text.PROJECT.t_extension,
         ghUrl: "https://github.com/spin311/MicrosoftRewardsWebsite",
         description: text.PROJECT.p1_description,
-        img: `${import.meta.env.PUBLIC_URL ?? ""}/assets/images/microsoft.png`,
+        img: retinaImage("microsoft", 150, 150),
         website: "/microsoft-automatic-rewards",
         download_link:
           "https://chromewebstore.google.com/detail/microsoft-automatic-rewar/ocmmbfdhomnkljmjkmafegefcgcfkefo",
@@ -65,7 +73,7 @@ function Main({ classes = "" }: MainProps) {
         type: text.PROJECT.t_extension,
         ghUrl: "https://github.com/spin311/epic-free-games-claim",
         description: text.PROJECT.p7_description,
-        img: `${import.meta.env.PUBLIC_URL ?? ""}/assets/images/claimer.png`,
+        img: { src: `${IMAGES_URL}/claimer.webp`, width: 128, height: 128 },
         website:
             "https://chromewebstore.google.com/detail/free-game-claimer-for-ste/mndghaafpgiinfecbbbcppppiblmjepk",
         download_link:
@@ -84,7 +92,7 @@ function Main({ classes = "" }: MainProps) {
         type: text.PROJECT.t_extension,
         ghUrl: "https://github.com/spin311/ProlificAutomaticStudies",
         description: text.PROJECT.p2_description,
-        img: `${import.meta.env.PUBLIC_URL ?? ""}/assets/images/prolific.png`,
+        img: { src: `${IMAGES_URL}/prolific.webp`, width: 128, height: 128 },
         website: "/prolific-studies-notifier",
         download_link:
           "https://chromewebstore.google.com/detail/prolific-studies-notifier/mlicfddkgjkeajfgkihplfbgpmbonbao",
@@ -101,7 +109,7 @@ function Main({ classes = "" }: MainProps) {
         type: text.PROJECT.t_mobile,
         ghUrl: "https://github.com/JuiceVodka/Gobar",
         description: text.PROJECT.p3_description,
-        img: `${import.meta.env.PUBLIC_URL ?? ""}/assets/images/gobar.png`,
+        img: retinaImage("gobar", 150, 150),
         website: "https://juicevodka.github.io/Gobar/",
         download_link: `${import.meta.env.PUBLIC_URL ?? ""}/assets/files/Gobar.apk`,
         stars: 0,
@@ -115,7 +123,7 @@ function Main({ classes = "" }: MainProps) {
         type: text.PROJECT.t_game,
         ghUrl: "https://github.com/gregorkovac/Survalien-Unity",
         description: text.PROJECT.p5_description,
-        img: `${import.meta.env.PUBLIC_URL ?? ""}/assets/images/survalien.png`,
+        img: retinaImage("survalien", 150, 120),
         website:
           "https://www.dropbox.com/scl/fi/hdcw6938y4ha3virfb4fo/Survalien%20-%20Predstavitev.mp4?rlkey=xho6lfj4m78doev6sjyvwmda5&e=3&dl=0",
         download_link:
@@ -131,7 +139,7 @@ function Main({ classes = "" }: MainProps) {
         type: text.PROJECT.t_mobile,
         ghUrl: "https://github.com/JuiceVodka/KeSi",
         description: text.PROJECT.p6_description,
-        img: `${import.meta.env.PUBLIC_URL ?? ""}/assets/images/kesi.png`,
+        img: retinaImage("kesi", 150, 82),
         website: "https://juicevodka.github.io/KeSi/",
         download_link: `${import.meta.env.PUBLIC_URL ?? ""}/assets/files/KeSi.apk`,
         stars: 0,
@@ -145,7 +153,7 @@ function Main({ classes = "" }: MainProps) {
         type: text.GENERAL.website,
         ghUrl: "https://github.com/spin311/hiter-inzeniring-diploma",
         description: text.PROJECT.p4_description,
-        img: `${import.meta.env.PUBLIC_URL ?? ""}/assets/images/prompt.png`,
+        img: retinaImage("prompt", 150, 150),
         website: "https://spin311.github.io/diploma/",
         stars: 0,
         forks: 0,
@@ -156,19 +164,30 @@ function Main({ classes = "" }: MainProps) {
   );
 
   const [projects, setProjects] = useState<ProjectType[]>(allProjects);
+  const { containerRef: projectsRef, captureOrder } =
+    useFlipAnimation<HTMLDivElement>(projects);
 
   const [isLoading, setIsLoading] = useState(true);
 
   const getProjectStars = async () => {
+    setIsLoading(true);
+    // Start every request before awaiting any, so the extension lookups run in
+    // parallel with starredRepos instead of queueing behind it.
+    const starredReposRequest = fetchJson<RepositoryType[]>("/starredRepos");
+    const extensionRequests = projects.map((project) =>
+      project.type === text.PROJECT.t_extension && project.extensionId
+        ? fetchJson<ExtensionValues>(
+            `/extension?id=${project.extensionId}`,
+          ).catch((e: unknown) => {
+            console.error("Error fetching extension data:", e);
+            return null;
+          })
+        : null,
+    );
     try {
-      setIsLoading(true);
-      const response = await fetch(
-        `${import.meta.env.VITE_API_HOST ?? ""}/starredRepos`,
-      );
-      const starredRepos: RepositoryType[] =
-        (await response.json()) as RepositoryType[];
+      const starredRepos = await starredReposRequest;
       const updatedProjects: ProjectType[] = await Promise.all(
-        projects.map(async (project) => {
+        projects.map(async (project, index) => {
           const matchingRepo = starredRepos.find(
             (repo) => repo.name === project.ghName,
           );
@@ -183,41 +202,31 @@ function Main({ classes = "" }: MainProps) {
             };
           }
 
-          if (
-            project.type === text.PROJECT.t_extension &&
-            project.extensionId
-          ) {
-            try {
-              const extensionResponse = await fetch(
-                `${import.meta.env.VITE_API_HOST ?? ""}/extension?id=${project.extensionId}`,
-              );
-              const extensionValues: ExtensionValues =
-                (await extensionResponse.json()) as ExtensionValues;
-              updatedProject = {
-                ...updatedProject,
-                users: extensionValues?.userCount || project.users,
-                rating:
-                  parseFloat(extensionValues?.ratingValue?.toFixed(1) ?? "0") ||
-                  project.rating,
-              };
-              updatedProject.description = replaceDescription(
-                updatedProject,
-                updatedProject.users!,
-                updatedProject.rating!,
-              );
-            } catch (e) {
-              updatedProject.description = replaceDescription(
-                updatedProject,
-                updatedProject.users!,
-                updatedProject.rating!,
-              );
-              console.error("Error fetching extension data:", e);
-            }
+          const extensionRequest = extensionRequests[index];
+          if (extensionRequest) {
+            const extensionValues = await extensionRequest;
+            const users = extensionValues?.userCount || project.users;
+            const rating =
+              parseFloat(extensionValues?.ratingValue?.toFixed(1) ?? "0") ||
+              project.rating;
+            updatedProject = {
+              ...updatedProject,
+              users,
+              rating,
+              description: replaceDescription(project, users!, rating!),
+            };
           }
           return updatedProject;
         }),
       );
-      setProjects(updatedProjects);
+      // Merge into the current list so a sort chosen while the requests were in
+      // flight is kept
+      const updatedById = new Map(
+        updatedProjects.map((project) => [project.id, project]),
+      );
+      setProjects((current) =>
+        current.map((project) => updatedById.get(project.id) ?? project),
+      );
     } catch (error) {
       console.error("Error fetching project stars:", error);
     } finally {
@@ -274,7 +283,7 @@ function Main({ classes = "" }: MainProps) {
       desc: [text.EXPERIENCE.xp3_desc1, text.EXPERIENCE.xp3_desc2],
       website: "https://digitalschool.si/",
       years: `2021 - 2024`,
-      logo: `${import.meta.env.PUBLIC_URL ?? ""}/assets/images/ds.png`,
+      logo: `${IMAGES_URL}/ds.webp`,
     },
     {
       title: text.EXPERIENCE.xp1_title,
@@ -286,7 +295,7 @@ function Main({ classes = "" }: MainProps) {
       ],
       website: "https://www.ixtlan-team.si/",
       years: "2023 - 2024",
-      logo: `${import.meta.env.PUBLIC_URL ?? ""}/assets/images/ix.png`,
+      logo: `${IMAGES_URL}/ix.webp`,
     },
     {
       title: text.EXPERIENCE.xp1_title,
@@ -298,7 +307,7 @@ function Main({ classes = "" }: MainProps) {
       ],
       website: "https://nightwatch.io/",
       years: `2024 - 2025`,
-      logo: `${import.meta.env.PUBLIC_URL ?? ""}/assets/images/nightwatch.jpg`,
+      logo: `${IMAGES_URL}/nightwatch.webp`,
     },
     {
       title: text.EXPERIENCE.xp4_title,
@@ -310,7 +319,7 @@ function Main({ classes = "" }: MainProps) {
       ],
       website: "https://sportradar.com/",
       years: `2025 - 2026`,
-      logo: `${import.meta.env.PUBLIC_URL ?? ""}/assets/images/sportradar.png`,
+      logo: `${IMAGES_URL}/sportradar.webp`,
     },
     {
       title: text.EXPERIENCE.xp1_title,
@@ -322,7 +331,7 @@ function Main({ classes = "" }: MainProps) {
       ],
       website: "https://opti-solutions.si/",
       years: `2026 - ${text.EXPERIENCE.present}`,
-      logo: `${import.meta.env.PUBLIC_URL ?? ""}/assets/images/opti.png`,
+      logo: `${IMAGES_URL}/opti.webp`,
     },
   ];
 
@@ -346,7 +355,8 @@ function Main({ classes = "" }: MainProps) {
         new Date(a.created_at ?? 0).getTime(),
     };
 
-    setProjects(projects.sort(sortFunctions[option]));
+    captureOrder();
+    setProjects([...projects].sort(sortFunctions[option]));
   };
 
   function formatBigNumbers(number: number) {
@@ -364,7 +374,7 @@ function Main({ classes = "" }: MainProps) {
   }
 
   return (
-    <div className={`Main ${classes}`}>
+    <main className={`Main ${classes}`}>
       <h2>{text.MAIN.title}</h2>
       <p>{formatTextWithLineBreaks(text.MAIN.description)}</p>
       <hr />
@@ -399,24 +409,15 @@ function Main({ classes = "" }: MainProps) {
           <option value="date+">{text.GENERAL.dateAsc}</option>
           <option value="date-">{text.GENERAL.dateDesc}</option>
         </select>
-        <div className="projects">
-          <AnimatePresence>
-            {projects.map((project) => (
-              <motion.div
-                key={project.id}
-                layout
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -20 }}
-                transition={{ duration: 0.5 }}
-              >
-                <Project project={project} isLoading={isLoading} />
-              </motion.div>
-            ))}
-          </AnimatePresence>
+        <div className="projects" ref={projectsRef}>
+          {projects.map((project) => (
+            <div key={project.id} data-flip-id={project.id}>
+              <Project project={project} isLoading={isLoading} />
+            </div>
+          ))}
         </div>
       </div>
-    </div>
+    </main>
   );
 }
 

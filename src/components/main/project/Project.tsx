@@ -41,7 +41,15 @@ function Project({ project, isLoading }: ProjectProps) {
   return (
     <div className="project-card">
       <span className="project-header">
-        <img src={img} alt={name} className="project-image" />
+        <img
+          src={img.src}
+          srcSet={img.srcSet}
+          width={img.width}
+          height={img.height}
+          loading="lazy"
+          alt={name}
+          className="project-image"
+        />
         {created_at && (
           <span className="project-date">
             <b>{formattedDate} </b>

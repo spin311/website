@@ -74,7 +74,7 @@ function MicrosoftAutomaticRewards() {
   ];
   links = !isMobile ? [downloadLink, ...links] : links;
   const image = {
-    src: "assets/images/microsoft.png",
+    src: `${import.meta.env.PUBLIC_URL ?? ""}/assets/images/microsoft.png`,
     alt: "Search automatic rewards",
   };
   return (

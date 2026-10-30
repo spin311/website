@@ -58,6 +58,8 @@ Once the development server is running, you can view the portfolio in your brows
 - `src/components`: Contains the React components used in the project.
 - `src/context`: Contains the context providers for theme and language.
 - `public`: Contains static files such as the favicon and manifest.
+- `public/llms.txt`: Summary of the site for AI agents; update it when experience or projects change.
+- `scripts/optimize-image.sh`: Exports a new image to WebP at its display size and at 2x, e.g. `scripts/optimize-image.sh ~/logo.png myproject 150 150`, then reference it with `retinaImage("myproject", 150, 150)`.
 
 ## Features
 -**Projects**: Fetches and displays GitHub projects and their stats using the GitHub API.

@@ -4,11 +4,12 @@
   "private": true,
   "homepage": "https://svitspindler.com",
   "dependencies": {
+    "@fontsource/kay-pho-du": "^5.3.0",
+    "@fontsource/poppins": "^5.3.0",
     "@fortawesome/fontawesome-svg-core": "^6.6.0",
     "@fortawesome/free-brands-svg-icons": "^6.7.2",
     "@fortawesome/free-solid-svg-icons": "^6.7.2",
     "@fortawesome/react-fontawesome": "^0.2.2",
-    "framer-motion": "^12.5.0",
     "html-react-parser": "^5.2.2",
     "numeral": "^2.0.6",
     "path-browserify": "^1.0.1",
@@ -19,8 +20,7 @@
     "react-helmet": "^6.1.0",
     "react-router-dom": "^7.2.0",
     "react-tooltip": "^5.28.0",
-    "sitemap": "^8.0.0",
-    "web-vitals": "^5.0.1"
+    "sitemap": "^8.0.0"
   },
   "scripts": {
     "dev": "vite",
@@ -31,6 +31,7 @@
     "generate-sitemap": "node scripts/sitemap-generator.js",
     "check-translations": "node scripts/check-translations.js",
     "check-sitemap": "node scripts/check-sitemap.js",
+    "check-netlify-routes": "node scripts/check-netlify-routes.js",
     "lint": "eslint \"src/**/*.{ts,tsx}\"",
     "lint:fix": "eslint \"src/**/*.{ts,tsx}\" --fix"
   },

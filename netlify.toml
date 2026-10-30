@@ -1,4 +1,58 @@
+# Routes of the single-page app, served by index.html. Keep this list in sync with the
+# <Route>s in src/index.tsx: `npm run check-netlify-routes` (run in CI) compares them.
+# Real files in build/ always win over these rules, and "/" is index.html itself.
+[[redirects]]
+  from = "/contact"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/donate"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/uninstall"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/microsoft-automatic-rewards"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/microsoft-automatic-rewards/mobile/privacy"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/microsoft-automatic-rewards/mobile/website"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/microsoft-automatic-rewards/mobile/test-app"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/prolific-studies-notifier"
+  to = "/index.html"
+  status = 200
+
+# Everything else doesn't exist: the app still renders its "Page not found" page, but with
+# a real 404 status. Crawlers and agents (e.g. /.well-known/ard.json) then see a missing
+# page instead of a 200, and a tab from an older deploy that asks for a removed /static/
+# chunk gets a clean failure, after which src/index.tsx reloads it.
 [[redirects]]
   from = "/*"
   to = "/index.html"
-  status = 200
+  status = 404
+
+# Vite emits its JS, CSS and fonts into /static/ with a content hash in each file name,
+# so a file never changes under the same URL and browsers can keep it for a year.
+[[headers]]
+  for = "/static/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"

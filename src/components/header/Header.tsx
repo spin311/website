@@ -14,6 +14,7 @@ type HeaderProps = {
   links: Link[];
   image: {
     src: string;
+    srcSet?: string;
     alt: string;
   };
 };
@@ -25,7 +26,8 @@ function Header({ title, links, image }: HeaderProps) {
         <h1 className={`${title.class} name`}>{title.text}</h1>
         <HeaderLinks links={links} />
         <img
-          src={`${import.meta.env.PUBLIC_URL ?? ""}/${image.src}`}
+          src={image.src}
+          srcSet={image.srcSet}
           alt={image.alt}
           className="profile-picture"
         />

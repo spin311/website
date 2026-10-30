@@ -31,6 +31,13 @@ export type ExperienceType = {
   logo: string;
 };
 
+export type ImageType = {
+  src: string;
+  srcSet?: string;
+  width: number;
+  height: number;
+};
+
 export type ProjectType = {
   id: number;
   extensionId?: string;
@@ -39,7 +46,7 @@ export type ProjectType = {
   ghUrl?: string;
   type: string;
   description: string;
-  img: string;
+  img: ImageType;
   website: string | null;
   download_link?: string;
   stars: number;

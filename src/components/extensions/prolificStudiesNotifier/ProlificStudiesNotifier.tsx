@@ -59,7 +59,7 @@ function ProlificStudiesNotifier() {
     },
   ];
   const image = {
-    src: "assets/images/prolific.png",
+    src: `${import.meta.env.PUBLIC_URL ?? ""}/assets/images/prolific.png`,
     alt: "Prolific Studies Notifier",
   };
   return (

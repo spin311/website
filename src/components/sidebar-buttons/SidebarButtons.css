@@ -9,7 +9,11 @@
     gap: 1em;
 }
 
-.btn:hover {
+.sidebar-button {
+    display: flex;
+    padding: 0;
+    border: 0;
+    background: none;
     cursor: pointer;
 }
 .darkmode-btn {
