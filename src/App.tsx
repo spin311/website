@@ -75,7 +75,7 @@ function App() {
         <div className="Content">
           <Header links={links} title={title} image={image} />
           <Main classes="Main" />
-          <Contact></Contact>
+          <Contact classes="Contact"></Contact>
           <Footer />
         </div>
       </div>
