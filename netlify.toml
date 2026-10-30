@@ -1,22 +1,54 @@
-# Nothing is published under /.well-known/. Without this rule the SPA fallback below
-# answers those URLs (e.g. the /.well-known/ard.json agent manifest) with index.html
-# and a 200, which crawlers and agents read as a broken file instead of a missing one.
+# Routes of the single-page app, served by index.html. Keep this list in sync with the
+# <Route>s in src/index.tsx: `npm run check-netlify-routes` (run in CI) compares them.
+# Real files in build/ always win over these rules, and "/" is index.html itself.
 [[redirects]]
-  from = "/.well-known/*"
+  from = "/contact"
   to = "/index.html"
-  status = 404
+  status = 200
 
-# Hashed files from an older deploy no longer exist. Answer them with a 404 instead of
-# the SPA's index.html, so a stale tab's import fails cleanly and src/index.tsx reloads.
 [[redirects]]
-  from = "/static/*"
+  from = "/donate"
   to = "/index.html"
-  status = 404
+  status = 200
 
+[[redirects]]
+  from = "/uninstall"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/microsoft-automatic-rewards"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/microsoft-automatic-rewards/mobile/privacy"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/microsoft-automatic-rewards/mobile/website"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/microsoft-automatic-rewards/mobile/test-app"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/prolific-studies-notifier"
+  to = "/index.html"
+  status = 200
+
+# Everything else doesn't exist: the app still renders its "Page not found" page, but with
+# a real 404 status. Crawlers and agents (e.g. /.well-known/ard.json) then see a missing
+# page instead of a 200, and a tab from an older deploy that asks for a removed /static/
+# chunk gets a clean failure, after which src/index.tsx reloads it.
 [[redirects]]
   from = "/*"
   to = "/index.html"
-  status = 200
+  status = 404
 
 # Vite emits its JS, CSS and fonts into /static/ with a content hash in each file name,
 # so a file never changes under the same URL and browsers can keep it for a year.

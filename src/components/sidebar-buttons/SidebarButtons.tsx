@@ -5,7 +5,6 @@ import React from "react";
 
 import { useTheme } from "../../context/ThemeContext";
 import { useLanguage } from "../../context/LanguageContext";
-import { Language } from "../../types/enums";
 
 function SidebarButtons() {
   const { darkMode, toggleTheme } = useTheme();
@@ -28,28 +27,32 @@ function SidebarButtons() {
   }
   return (
     <div className="sidebar-buttons">
-      <img
+      <button
+        type="button"
         id="language-btn"
-        className="btn language-btn"
-        src={languageImage}
+        className="sidebar-button"
         onClick={toggleLanguage}
+        aria-label={text.GENERAL.change_language}
         data-tooltip-id="lang-btn-tooltip"
         data-tooltip-content={text.GENERAL.change_language}
         data-tooltip-place="left"
-        alt={`Button to change language to ${language === Language.ENGLISH ? "Slovenian" : "English"}`}
-      />
+      >
+        <img className="language-btn" src={languageImage} alt="" />
+      </button>
       <Tooltip id="lang-btn-tooltip" />
 
-      <img
+      <button
+        type="button"
         id="darkmode-btn"
-        className="btn darkmode-btn"
-        src={darkModeImage}
+        className="sidebar-button"
         onClick={toggleTheme}
+        aria-label={darkModeTooltip}
         data-tooltip-id="darkMode-btn-tooltip"
         data-tooltip-content={darkModeTooltip}
         data-tooltip-place="left"
-        alt={`Button to toggle ${darkMode ? "light" : "dark"} mode`}
-      />
+      >
+        <img className="darkmode-btn" src={darkModeImage} alt="" />
+      </button>
       <Tooltip id="darkMode-btn-tooltip" />
     </div>
   );

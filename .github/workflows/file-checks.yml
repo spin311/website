@@ -25,3 +25,6 @@ jobs:
 
       - name: Check sitemap matching
         run: npm run check-sitemap
+
+      - name: Check Netlify routes matching
+        run: npm run check-netlify-routes
