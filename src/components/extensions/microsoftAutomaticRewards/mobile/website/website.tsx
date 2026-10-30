@@ -158,10 +158,7 @@ function Website() {
     <>
       <Helmet>
         <title>Microsoft Rewards Website</title>
-        <meta
-          name="description"
-          content="Search automatic rewards Website"
-        />
+        <meta name="description" content="Search automatic rewards Website" />
       </Helmet>
       <BackArrow />
       <div className="website center">

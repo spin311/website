@@ -1,13 +1,12 @@
 import { useLanguage } from "../../../context/LanguageContext";
 import "./Contact.css";
-import { ChangeEvent, FormEvent, useEffect, useState } from "react";
+import React, { ChangeEvent, FormEvent, useEffect, useState } from "react";
 import { Tooltip } from "react-tooltip";
 import { getOrCreateGUID } from "../../../helpers/Guid";
 import { useNotification } from "../../../context/NotificationContext";
 import { useSearchParams } from "react-router-dom";
 import BackArrow from "../../back-arrow/BackArrow";
 import IsRequired from "../../is-required/IsRequired";
-import React from "react";
 import { MailResponse } from "../../../types/ComponentTypes";
 
 interface ContactProps {

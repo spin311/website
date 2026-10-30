@@ -1,6 +1,7 @@
 import React, {
   createContext,
   ReactNode,
+  useCallback,
   useContext,
   useEffect,
   useState,
@@ -10,10 +11,10 @@ import parse from "html-react-parser";
 import enText from "../assets/translations/en.json";
 import sloText from "../assets/translations/sl.json";
 import { ReactNodeProps } from "../types/PropTypes";
-import { Language } from "../types/enums";
+import { isLanguage, Language } from "../types/enums";
 
 type LanguageContextType = {
-  language: string;
+  language: Language;
   toggleLanguage: () => void;
   changeLanguage: (newLanguage: Language) => void;
   text: Record<string, Record<string, string>>;
@@ -31,13 +32,15 @@ const LanguageContext = createContext<LanguageContextType>({
 });
 
 export function LanguageProvider({ children }: ReactNodeProps) {
-  const [language, setLanguage] = useState(() => {
-    return localStorage.getItem("language") || Language.ENGLISH;
+  const [language, setLanguage] = useState<Language>(() => {
+    const storedLanguage = localStorage.getItem("language");
+    return isLanguage(storedLanguage) ? storedLanguage : Language.ENGLISH;
   });
 
-  function changeLanguage(newLanguage: Language) {
+  // Stable so consumers can list it as an effect dependency.
+  const changeLanguage = useCallback((newLanguage: Language) => {
     setLanguage(newLanguage);
-  }
+  }, []);
 
   useEffect(() => {
     localStorage.setItem("language", language);

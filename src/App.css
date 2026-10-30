@@ -31,6 +31,9 @@ html {
 .Content {
     grid-area: Content;
 }
+.Contact {
+    margin-top: 3rem;
+}
 
 
 a:hover {

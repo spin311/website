@@ -5,10 +5,10 @@ import {
   faBriefcase,
   faDiagramProject,
   faHouse,
-  faEnvelope,
   faFile,
 } from "@fortawesome/free-solid-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons/faGithub";
+import { faLinkedin } from "@fortawesome/free-brands-svg-icons/faLinkedin";
 import { Helmet } from "react-helmet";
 
 import Header from "./components/header/Header";
@@ -19,7 +19,7 @@ import Contact from "./components/footer/contact/Contact";
 import { useLanguage } from "./context/LanguageContext";
 import { Link, Section } from "./types/ComponentTypes";
 import { useSearchParams } from "react-router-dom";
-import { Language } from "./types/enums";
+import { isLanguage, Language } from "./types/enums";
 import { retinaImage } from "./helpers/images";
 
 function App() {
@@ -29,15 +29,11 @@ function App() {
   const title = { text: "Svit Spindler", class: "" };
   const cvLink = `${import.meta.env.PUBLIC_URL ?? ""}/assets/CV/CV_${language === Language.ENGLISH ? "ENG" : "SLO"}.pdf`;
 
-  function isLanguage(value: string): value is Language {
-    return Object.values(Language).includes(value as Language);
-  }
-
   useEffect(() => {
-    if (langParam && isLanguage(langParam)) {
+    if (isLanguage(langParam)) {
       changeLanguage(langParam);
     }
-  }, [langParam]);
+  }, [langParam, changeLanguage]);
 
   const links: Link[] = [
     {
@@ -48,10 +44,10 @@ function App() {
       internal: false,
     },
     {
-      text: "E-Mail",
-      href: "mailto:svit.spindler@gmail.com",
-      icon: faEnvelope,
-      link: false,
+      text: "LinkedIn",
+      href: "https://www.linkedin.com/in/svit-spindler-591a7a28b/",
+      icon: faLinkedin,
+      link: true,
       internal: false,
     },
     { text: "CV", href: cvLink, icon: faFile, link: true, internal: false },
@@ -75,7 +71,7 @@ function App() {
         <div className="Content">
           <Header links={links} title={title} image={image} />
           <Main classes="Main" />
-          <Contact></Contact>
+          <Contact classes="Contact"></Contact>
           <Footer />
         </div>
       </div>

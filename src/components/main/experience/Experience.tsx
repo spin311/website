@@ -28,8 +28,7 @@ function Experience({
       <div className="xp-info">
         <div className="ext-title">{title}</div>
         <div className="company">
-          {company}{" "}
-          <img className="company-logo" src={logo} alt="" />
+          {company} <img className="company-logo" src={logo} alt="" />
         </div>
         <span className="year">
           <b>{years} </b>

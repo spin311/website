@@ -1,5 +1,5 @@
 .contact-form {
-    margin: 0 auto;
+    margin-inline: auto;
     padding: 1em;
     background: var(--background-secondary-color);
     border-radius: 5px;

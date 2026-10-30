@@ -14,7 +14,7 @@ function TestList() {
   const { text } = useLanguage();
   const isMobile = useIsMobile();
 
-  let links: Link[] = [
+  const links: Link[] = [
     {
       href: "https://play.google.com/store/apps/details?id=com.spin311.microsoft_automatic_rewards",
       text: text.PROJECT.download,
