@@ -29,6 +29,17 @@ function Main({ classes = "" }: MainProps) {
   const allProjects: ProjectType[] = useMemo(
     () => [
       {
+        id: 8,
+        name: "Digitalna Košarica",
+        type: text.GENERAL.website,
+        description: text.PROJECT.p8_description,
+        img: `${import.meta.env.PUBLIC_URL ?? ""}/assets/images/kosarica.png`,
+        website: "https://digitalna-kosarica.si/",
+        stars: 0,
+        forks: 0,
+        created_at: "2025-09-03",
+      },
+      {
         id: 1,
         extensionId: "ocmmbfdhomnkljmjkmafegefcgcfkefo",
         name: "Search Automatic Rewards",

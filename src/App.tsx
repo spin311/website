@@ -55,7 +55,7 @@ function App() {
     },
     { text: "CV", href: cvLink, icon: faFile, link: true, internal: false },
   ];
-  const image = { src: "assets/images/cropped_image2.png", alt: "Profile" };
+  const image = { src: "assets/images/profile.jpg", alt: "Profile" };
 
   const mainAppSections: Section[] = [
     { id: "home", icon: faHouse, text: text.GENERAL.home },
