@@ -311,7 +311,19 @@ function Main({ classes = "" }: MainProps) {
       website: "https://sportradar.com/",
       years: `2025 - 2026`,
       logo: `${import.meta.env.PUBLIC_URL ?? ""}/assets/images/sportradar.png`,
-    }
+    },
+    {
+      title: text.EXPERIENCE.xp1_title,
+      company: "Opti Solutions",
+      desc: [
+        text.EXPERIENCE.xp5_desc1,
+        text.EXPERIENCE.xp5_desc2,
+        text.EXPERIENCE.xp5_desc3,
+      ],
+      website: "https://opti-solutions.si/",
+      years: `2026 - ${text.EXPERIENCE.present}`,
+      logo: `${import.meta.env.PUBLIC_URL ?? ""}/assets/images/opti.png`,
+    },
   ];
 
   const handleSortChange = (event: ChangeEvent<HTMLSelectElement>) => {
