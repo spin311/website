@@ -1,4 +1,4 @@
-import { useLayoutEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 // A section becomes active once its top edge scrolls above this fraction of the viewport.
 const ACTIVATION_LINE_RATIO = 0.4;
@@ -29,8 +29,7 @@ const useActiveSection = (sectionIds: string[]) => {
   // Callers build a new array on every render, so key the effect on its contents.
   const idsKey = sectionIds.join(",");
 
-  // Layout effect so the first paint already shows the active section.
-  useLayoutEffect(() => {
+  useEffect(() => {
     const sections = idsKey
       .split(",")
       .map((id) => document.getElementById(id))
@@ -51,10 +50,11 @@ const useActiveSection = (sectionIds: string[]) => {
       }
     };
 
-    // Late images and fetched project data move sections without firing a scroll event.
-    const layoutObserver = new ResizeObserver(scheduleUpdate);
+    // Also covers late images and fetched project data, which move sections without a
+    // scroll event. Its first callback, right after observe(), sets the initial section:
+    // it runs once layout is done, so reading geometry there doesn't force a reflow.
+    const layoutObserver = new ResizeObserver(update);
 
-    update();
     window.addEventListener("scroll", scheduleUpdate, { passive: true });
     window.addEventListener("resize", scheduleUpdate);
     layoutObserver.observe(document.body);
