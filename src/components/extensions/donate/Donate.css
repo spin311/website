@@ -12,6 +12,44 @@
     padding: 20px;
 }
 
+/* GitHub Sponsors leads the page in a row of its own: the embedded card is
+   600px wide, more than the 30% columns below can give it. */
+.github-sponsors {
+    max-width: 680px;
+    container-type: inline-size;
+}
+
+/* GitHub's card reflows with its width but can't resize the iframe, so the
+   frame's height steps with the space it gets: the card needs ~106px at 600px
+   wide and ~228px at 250px. Measured with the current short bio; a longer bio
+   needs taller steps. */
+.github-sponsors-card {
+    display: block;
+    width: 100%;
+    max-width: 600px;
+    height: 240px;
+    margin: 0 auto;
+    border: 0;
+}
+
+@container (min-width: 320px) {
+    .github-sponsors-card {
+        height: 200px;
+    }
+}
+
+@container (min-width: 400px) {
+    .github-sponsors-card {
+        height: 150px;
+    }
+}
+
+@container (min-width: 544px) {
+    .github-sponsors-card {
+        height: 120px;
+    }
+}
+
 .donation-card {
     flex: 1 1 30%;
     min-width: 250px;
