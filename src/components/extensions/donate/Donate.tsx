@@ -6,6 +6,7 @@ import BackArrow from "../../back-arrow/BackArrow";
 import Bitcoin from "./bitcoin/Bitcoin";
 import Paypal from "./paypal/Paypal";
 import Kofi from "./kofi/Kofi";
+import GithubSponsors from "./github-sponsors/GithubSponsors";
 
 interface DonateProps {
   soloComponent?: boolean;
@@ -43,6 +44,9 @@ function Donate({ soloComponent = false, className = "" }: DonateProps) {
           </ul>
           <p>{formatHtml(text.EXTENSION.donation_request)}</p>
           <div className="donate-options">
+            <div className="donations-container">
+              <GithubSponsors />
+            </div>
             <div className="donations-container">
               <Paypal />
               <Kofi />
