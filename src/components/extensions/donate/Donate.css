@@ -50,6 +50,12 @@
     }
 }
 
+.github-sponsors-link {
+    display: inline-block;
+    margin-top: 8px;
+    font-size: 0.9rem;
+}
+
 .donation-card {
     flex: 1 1 30%;
     min-width: 250px;
