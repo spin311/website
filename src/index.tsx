@@ -50,6 +50,10 @@ const ProlificStudiesNotifier = lazy(
     ),
 );
 
+const FreeGameClaimer = lazy(
+  () => import("./components/extensions/freeGameClaimer/FreeGameClaimer"),
+);
+
 // A deploy replaces the hashed route chunks, so a tab opened before it can ask for
 // files that no longer exist. Reload to pick up the new index.html, at most once per
 // RELOAD_GUARD_MS so a chunk that is really missing can't cause a reload loop.
@@ -102,6 +106,10 @@ root.render(
                 <Route
                   path="/prolific-studies-notifier"
                   element={<ProlificStudiesNotifier />}
+                />
+                <Route
+                  path="/free-game-claimer"
+                  element={<FreeGameClaimer />}
                 />
 
                 <Route path="*" element={<NotFound />} />

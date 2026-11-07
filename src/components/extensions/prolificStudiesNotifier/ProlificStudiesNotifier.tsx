@@ -38,7 +38,7 @@ function ProlificStudiesNotifier() {
   const title = { text: "Prolific Studies Notifier", class: "md-text" };
   const links = [
     {
-      href: "https://chromewebstore.google.com/detail/prolific-studies-notifier/mlicfddkgjkeajfgkihplfbgpmbonbao",
+      href: "https://chromewebstore.google.com/detail/prolific-studies-notifier/mlicfddkgjkeajfgkihplfbgpmbonbao?utm_source=website&utm_medium=landing-page",
       text: text.PROJECT.download,
       icon: faArrowDown,
       link: true,

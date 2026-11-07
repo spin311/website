@@ -44,7 +44,7 @@ function MicrosoftAutomaticRewards() {
   ];
   const title = { text: "Search automatic rewards", class: "md-text" };
   const downloadLink = {
-    href: "https://chromewebstore.google.com/detail/microsoft-automatic-rewar/ocmmbfdhomnkljmjkmafegefcgcfkefo",
+    href: "https://chromewebstore.google.com/detail/microsoft-automatic-rewar/ocmmbfdhomnkljmjkmafegefcgcfkefo?utm_source=website&utm_medium=landing-page",
     text: text.PROJECT.download,
     icon: faArrowDown,
     link: true,

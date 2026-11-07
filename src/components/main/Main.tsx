@@ -74,8 +74,7 @@ function Main({ classes = "" }: MainProps) {
         ghUrl: "https://github.com/spin311/epic-free-games-claim",
         description: text.PROJECT.p7_description,
         img: { src: `${IMAGES_URL}/claimer.webp`, width: 128, height: 128 },
-        website:
-          "https://chromewebstore.google.com/detail/free-game-claimer-for-ste/mndghaafpgiinfecbbbcppppiblmjepk",
+        website: "/free-game-claimer",
         download_link:
           "https://chromewebstore.google.com/detail/free-game-claimer-for-ste/mndghaafpgiinfecbbbcppppiblmjepk",
         stars: 0,
