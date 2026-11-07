@@ -28,14 +28,14 @@
     text-decoration: underline;
 }
 
-.mb-2 {
+.claimer-page .mb-2 {
     margin-bottom: 1rem;
 }
 
-.mb-4 {
+.claimer-page .mb-4 {
     margin-bottom: 2rem;
 }
 
-.underline-link a {
+.claimer-page .underline-link a {
     text-decoration: underline;
 }

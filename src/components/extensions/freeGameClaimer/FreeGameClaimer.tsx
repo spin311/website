@@ -87,7 +87,7 @@ function FreeGameClaimer() {
       </Helmet>
       <div className="App">
         <SidebarMenu classes="SidebarMenu" sections={sections} />
-        <div className="Content">
+        <div className="Content claimer-page">
           <Header title={title} links={links} image={image} />
           <About />
           <hr className="mb-2" />

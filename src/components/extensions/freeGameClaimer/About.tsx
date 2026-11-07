@@ -15,7 +15,7 @@ function About() {
         src={`${IMAGES_URL}/claimer-promo.webp`}
         srcSet={`${IMAGES_URL}/claimer-promo.webp 1x, ${IMAGES_URL}/claimer-promo@2x.webp 2x`}
         width={1000}
-        height={625}
+        height={418}
         alt={text.CLAIMER.promo_alt}
       />
     </div>
