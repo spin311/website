@@ -64,7 +64,10 @@ function App() {
     <>
       <Helmet>
         <title>Svit Spindler</title>
-        <meta name="description" content="Personal website of Svit Spindler" />
+        <meta
+          name="description"
+          content="Portfolio of Svit Spindler, a web developer specializing in full-stack and frontend development, React and mobile app development. See my projects and experience."
+        />
       </Helmet>
       <div className="App">
         <SidebarMenu classes="SidebarMenu" sections={mainAppSections} />
