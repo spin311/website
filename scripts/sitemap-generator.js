@@ -13,6 +13,7 @@ const links = [
     { url: '/microsoft-automatic-rewards/mobile/website', changefreq: 'monthly' },
     { url: '/microsoft-automatic-rewards/mobile/test-app', changefreq: 'monthly' },
     { url: '/prolific-studies-notifier', changefreq: 'monthly' },
+    { url: '/free-game-claimer', changefreq: 'monthly' },
 ];
 
 // Create the stream and define your site hostname

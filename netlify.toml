@@ -41,6 +41,11 @@
   to = "/index.html"
   status = 200
 
+[[redirects]]
+  from = "/free-game-claimer"
+  to = "/index.html"
+  status = 200
+
 # Everything else doesn't exist: the app still renders its "Page not found" page, but with
 # a real 404 status. Crawlers and agents (e.g. /.well-known/ard.json) then see a missing
 # page instead of a 200, and a tab from an older deploy that asks for a removed /static/
