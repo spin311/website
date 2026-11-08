@@ -1,10 +1,8 @@
 import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCircleQuestion,
   faLightbulb,
   faListOl,
-  faTriangleExclamation,
 } from "@fortawesome/free-solid-svg-icons";
 
 import { useLanguage } from "../../../context/LanguageContext";
@@ -19,9 +17,8 @@ import TranslatedList, { numberedKeys } from "../shared/TranslatedList";
 const GROUP = "MICROSOFT";
 
 // Installing the extension opens this page, so "Getting started" doubles as onboarding.
-// Kept low-key on purpose: Microsoft's terms prohibit automated searches.
 function MicrosoftAutomaticRewards() {
-  const { text, formatHtml } = useLanguage();
+  const { text } = useLanguage();
   const sections = [
     { id: "setup", icon: faListOl, text: text.EXTENSION.setup_title },
     { id: "features", icon: faLightbulb, text: text.GENERAL.features },
@@ -46,10 +43,6 @@ function MicrosoftAutomaticRewards() {
           factKeys={["fact_browsers", "fact_free", "fact_source"]}
         />
         <p>{text.MICROSOFT.intro}</p>
-        <div className="ext-note" role="note">
-          <FontAwesomeIcon icon={faTriangleExclamation} />
-          <p>{formatHtml(text.MICROSOFT.risk)}</p>
-        </div>
       </section>
 
       <section id="setup">
@@ -78,7 +71,7 @@ function MicrosoftAutomaticRewards() {
 
       <section id="faq">
         <h2>{text.EXTENSION.faq_title}</h2>
-        <FaqList group={GROUP} count={4} />
+        <FaqList group={GROUP} count={3} />
         <p>
           {text.EXTENSION.faq_bug}{" "}
           <a
