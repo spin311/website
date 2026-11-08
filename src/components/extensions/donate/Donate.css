@@ -1,103 +1,281 @@
+/* Donate options, used at the end of each extension page and on /donate. */
 
-.donate-svg {
-    height: 1.3em;
-    width: 1.3em;
+.donate-options,
+.donate-page {
+    --donate-line: rgba(128, 128, 128, 0.3);
+    --donate-sponsor: #bf3989;
+    --donate-sponsor-hover: #a3306f;
 }
 
-.donations-container {
+.donate-options {
+    display: grid;
+    gap: 1.25rem;
+    margin-top: 1.5rem;
+}
+
+.donate-card {
+    padding: 1.5rem;
+    border-radius: 12px;
+    background: var(--background-card-color);
+    box-shadow: 0 2px 10px var(--shadow-color);
+}
+
+.donate-card h3 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 0 0 0.75rem;
+    font-size: 1.25rem;
+}
+
+.donate-card p {
+    line-height: 1.6;
+}
+
+.donate-sponsors {
+    border-top: 4px solid var(--donate-sponsor);
+}
+
+.donate-heart {
+    color: #db61a2;
+}
+
+.donate-tiers {
+    display: grid;
+    gap: 0.5rem;
+    margin: 1rem 0 1.25rem;
+    padding: 0;
+    list-style: none;
+}
+
+.donate-tiers li {
+    padding: 0.6rem 0.9rem;
+    border: 1px solid var(--donate-line);
+    border-radius: 8px;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.donate-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.7rem 1.2rem;
+    border: 1px solid var(--donate-line);
+    border-radius: 8px;
+    background: transparent;
+    color: var(--primary-color);
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.15s ease, transform 0.15s ease;
+}
+
+.donate-button:hover {
+    opacity: 1;
+    background: rgba(128, 128, 128, 0.1);
+    transform: translateY(-1px);
+}
+
+.donate-button:focus-visible,
+.donate-bitcoin summary:focus-visible,
+.donate-project:focus-visible {
+    outline: 2px solid var(--active-color);
+    outline-offset: 2px;
+}
+
+.donate-button-sponsor {
+    width: 100%;
+    box-sizing: border-box;
+    border-color: var(--donate-sponsor);
+    background: var(--donate-sponsor);
+    color: white;
+}
+
+.donate-button-sponsor:hover {
+    background: var(--donate-sponsor-hover);
+}
+
+.donate-buttons {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 0.75rem;
+    margin-top: 1rem;
+}
+
+.donate-paypal-icon {
+    color: #0070ba;
+}
+
+.dark-mode .donate-paypal-icon {
+    color: #4fa3e0;
+}
+
+.donate-kofi-icon {
+    width: 20px;
+    height: 20px;
+}
+
+.donate-small {
+    margin: 0.75rem 0 0;
+    color: var(--text-secondary-color);
+    font-size: 0.85rem;
+}
+
+.donate-bitcoin {
+    margin-top: 1.25rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--donate-line);
+}
+
+.donate-bitcoin summary {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    list-style: none;
+}
+
+.donate-bitcoin summary::-webkit-details-marker {
+    display: none;
+}
+
+.donate-bitcoin summary::after {
+    content: "+";
+    margin-left: auto;
+    font-size: 1.2rem;
+    line-height: 1;
+}
+
+.donate-bitcoin[open] summary::after {
+    content: "\2212";
+}
+
+.donate-bitcoin-icon {
+    color: #f7931a;
+}
+
+.donate-bitcoin-body {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    padding: 20px;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
 }
 
-/* GitHub Sponsors leads the page in a row of its own: the embedded card is
-   600px wide, more than the 30% columns below can give it. */
-.github-sponsors {
-    max-width: 680px;
-    container-type: inline-size;
+.donate-bitcoin-body > div {
+    flex: 1 1 180px;
+    min-width: 0;
 }
 
-/* GitHub's card reflows with its width but can't resize the iframe, so the
-   frame's height steps with the space it gets: the card needs ~106px at 600px
-   wide and ~228px at 250px. Measured with the current short bio; a longer bio
-   needs taller steps. */
-.github-sponsors-card {
+.donate-qr {
+    border-radius: 6px;
+}
+
+.donate-btc-address {
     display: block;
-    width: 100%;
-    max-width: 600px;
-    height: 240px;
+    margin-bottom: 0.6rem;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 0.85rem;
+    word-break: break-all;
+    user-select: all;
+}
+
+.donate-copy {
+    padding: 0.4rem 0.9rem;
+    font-size: 0.85rem;
+}
+
+/* /donate */
+
+.donate-page {
+    max-width: 760px;
     margin: 0 auto;
-    border: 0;
+    padding: 4rem 1.25rem 3rem;
 }
 
-@container (min-width: 320px) {
-    .github-sponsors-card {
-        height: 200px;
-    }
+.donate-page h1 {
+    margin: 0 0 1rem;
+    font-family: "Kay Pho Du", serif;
+    font-size: 2.75rem;
+    line-height: 1.2;
 }
 
-@container (min-width: 400px) {
-    .github-sponsors-card {
-        height: 150px;
-    }
+.donate-page h2 {
+    margin: 2.5rem 0 1rem;
+    font-size: 1.5rem;
 }
 
-@container (min-width: 544px) {
-    .github-sponsors-card {
-        height: 120px;
-    }
+.donate-page p,
+.donate-page li {
+    line-height: 1.6;
 }
 
-.github-sponsors-link {
-    display: inline-block;
-    margin-top: 8px;
+.donate-page li a {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.donate-page-lead {
+    font-size: 1.15rem;
+}
+
+.donate-projects {
+    display: grid;
+    gap: 0.75rem;
+    margin: 0 0 1.25rem;
+    padding: 0;
+    list-style: none;
+}
+
+.donate-project {
+    display: grid;
+    grid-template-columns: 48px 1fr auto;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.9rem 1rem;
+    border-radius: 10px;
+    background: var(--background-card-color);
+    box-shadow: 0 1px 4px var(--shadow-color);
+}
+
+.donate-project img {
+    width: 48px;
+    height: 48px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.donate-project-name {
+    display: block;
+    font-weight: 600;
+}
+
+.donate-project-desc,
+.donate-project-users {
+    color: var(--text-secondary-color);
     font-size: 0.9rem;
 }
 
-.donation-card {
-    flex: 1 1 30%;
-    min-width: 250px;
-    margin: 10px;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 8px var(--shadow-color);
-    text-align: center;
-    background: var(--background-card-color);
-    color: var(--secondary-color);
-    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+.donate-project-users {
+    white-space: nowrap;
 }
 
-.donation-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-}
+@media screen and (max-width: 560px) {
+    .donate-page h1 {
+        font-size: 2.2rem;
+    }
 
-.donation-title {
-    margin-bottom: 15px;
-    font-size: 1.25rem;
-    font-weight: 600;
-}
+    .donate-project {
+        grid-template-columns: 48px 1fr;
+    }
 
-.titleStyle {
-    margin-bottom: 15px;
-    font-size: 1.25rem;
-    font-weight: 600;
-}
-
-.kofi-button {
-    display: inline-block;
-    padding: 10px 16px;
-    background: #ffc439;
-    color: var(--primary-color);
-    border-radius: 6px;
-    font-weight: 700;
-    text-decoration: none;
-    transition: background 0.2s ease, transform 0.2s ease;
-}
-
-.kofi-button:hover {
-    background: #ffd766;
-    transform: translateY(-2px);
+    .donate-project-users {
+        grid-column: 2;
+    }
 }

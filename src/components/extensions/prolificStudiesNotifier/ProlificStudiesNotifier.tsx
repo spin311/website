@@ -1,90 +1,115 @@
-import {
-  faAddressBook,
-  faArrowDown,
-  faArrowLeft,
-  faDonate,
-  faHouse,
-  faLightbulb,
-} from "@fortawesome/free-solid-svg-icons";
 import React from "react";
-import { faGithub } from "@fortawesome/free-brands-svg-icons/faGithub";
-import { Helmet } from "react-helmet";
+import {
+  faCircleQuestion,
+  faLightbulb,
+  faListOl,
+  faShieldHalved,
+} from "@fortawesome/free-solid-svg-icons";
 
 import { useLanguage } from "../../../context/LanguageContext";
-import SidebarMenu from "../../sidebar-menu/SidebarMenu";
-import Header from "../../header/Header";
-import Donate from "../donate/Donate";
-import Contact from "../../footer/contact/Contact";
-import Footer from "../../footer/Footer";
+import { IMAGES_URL } from "../../../helpers/images";
+import { PROLIFIC_STUDIES_NOTIFIER } from "../extensionInfo";
+import ExtensionPage from "../shared/ExtensionPage";
+import ExtensionFacts from "../shared/ExtensionFacts";
+import FaqList from "../shared/FaqList";
+import Screenshot from "../shared/Screenshot";
+import TranslatedList, { numberedKeys } from "../shared/TranslatedList";
 
-import About from "./about/About";
-import Features from "./features/Features";
+const GROUP = "PROLIFIC";
+// Each of the two popup captures takes half the column, or all of it on phones.
+const PAIR_SIZES = "(max-width: 767px) 80vw, 20vw";
 
+// Installing the extension opens this page, so "Getting started" doubles as onboarding.
 function ProlificStudiesNotifier() {
   const { text } = useLanguage();
-  const prolificSections = [
-    {
-      id: "back",
-      icon: faArrowLeft,
-      text: text.GENERAL.back,
-      link: true,
-      href: "/",
-    },
-    { id: "home", icon: faHouse, text: text.GENERAL.home },
+  const sections = [
+    { id: "setup", icon: faListOl, text: text.EXTENSION.setup_title },
     { id: "features", icon: faLightbulb, text: text.GENERAL.features },
-    { id: "donate", icon: faDonate, text: text.GENERAL.donate },
-    { id: "contact", icon: faAddressBook, text: text.CONTACT.contact },
+    { id: "privacy", icon: faShieldHalved, text: text.EXTENSION.privacy_title },
+    { id: "faq", icon: faCircleQuestion, text: text.EXTENSION.faq_title },
   ];
-  const title = { text: "Prolific Studies Notifier", class: "md-text" };
-  const links = [
-    {
-      href: "https://chromewebstore.google.com/detail/prolific-studies-notifier/mlicfddkgjkeajfgkihplfbgpmbonbao?utm_source=website&utm_medium=landing-page",
-      text: text.PROJECT.download,
-      icon: faArrowDown,
-      link: true,
-    },
-    {
-      href: "https://github.com/spin311/ProlificAutomaticStudies",
-      text: "GitHub",
-      icon: faGithub,
-      link: true,
-      internal: false,
-    },
-    {
-      href: "/donate",
-      text: text.GENERAL.donate,
-      icon: faDonate,
-      link: false,
-      internal: true,
-    },
-  ];
-  const image = {
-    src: `${import.meta.env.PUBLIC_URL ?? ""}/assets/images/prolific.png`,
-    alt: "Prolific Studies Notifier",
-  };
+
   return (
-    <>
-      <Helmet>
-        <title>Prolific Studies Notifier</title>
-        <meta
-          name="description"
-          content="Prolific Studies Notifier browser extension"
+    <ExtensionPage
+      extension={PROLIFIC_STUDIES_NOTIFIER}
+      meta={{
+        title: text.PROLIFIC.meta_title,
+        description: text.PROLIFIC.meta_description,
+      }}
+      icon={{ src: `${IMAGES_URL}/prolific.webp`, alt: "" }}
+      sections={sections}
+    >
+      <section id="about">
+        <p className="ext-lead">{text.PROLIFIC.tagline}</p>
+        <ExtensionFacts
+          extension={PROLIFIC_STUDIES_NOTIFIER}
+          factKeys={["fact_browsers", "fact_free", "fact_source"]}
         />
-      </Helmet>
-      <div className="App">
-        <SidebarMenu classes="SidebarMenu" sections={prolificSections} />
-        <div className="Content">
-          <Header title={title} links={links} image={image} />
-          <About />
-          <hr className="mb-2" />
-          <Features />
-          <hr />
-          <Donate className="mb-4" />
-          <Contact />
-          <Footer />
+        <p>{text.PROLIFIC.intro}</p>
+        <Screenshot
+          name="prolific-promo"
+          width={700}
+          height={280}
+          alt={text.PROLIFIC.promo_alt}
+          isEager
+        />
+      </section>
+
+      <section id="setup">
+        <h2>{text.EXTENSION.setup_title}</h2>
+        <p>{text.PROLIFIC.setup_intro}</p>
+        <TranslatedList
+          group={GROUP}
+          keys={numberedKeys("step", 4)}
+          ordered
+          className="ext-steps"
+        />
+      </section>
+
+      <section id="features">
+        <h2>{text.GENERAL.features}</h2>
+        <TranslatedList group={GROUP} keys={numberedKeys("feature", 7)} />
+        <div className="ext-shot-pair">
+          <Screenshot
+            name="prolific-settings"
+            width={360}
+            height={598}
+            alt={text.PROLIFIC.settings_caption}
+            caption={text.PROLIFIC.settings_caption}
+            sizes={PAIR_SIZES}
+          />
+          <Screenshot
+            name="prolific-studies"
+            width={360}
+            height={586}
+            alt={text.PROLIFIC.studies_caption}
+            caption={text.PROLIFIC.studies_caption}
+            sizes={PAIR_SIZES}
+          />
         </div>
-      </div>
-    </>
+      </section>
+
+      <section id="privacy">
+        <h2>{text.EXTENSION.privacy_title}</h2>
+        <TranslatedList group={GROUP} keys={numberedKeys("privacy", 4)} />
+      </section>
+
+      <section id="faq">
+        <h2>{text.EXTENSION.faq_title}</h2>
+        <FaqList group={GROUP} count={6} />
+        <p>
+          {text.EXTENSION.faq_bug}{" "}
+          <a
+            href={`${PROLIFIC_STUDIES_NOTIFIER.githubUrl}/issues`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {text.EXTENSION.faq_bug_link}
+          </a>
+        </p>
+      </section>
+    </ExtensionPage>
   );
 }
+
 export default ProlificStudiesNotifier;

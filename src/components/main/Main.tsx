@@ -14,6 +14,12 @@ import { IMAGES_URL, retinaImage } from "../../helpers/images";
 
 import numeral from "numeral";
 import useFlipAnimation from "../../hooks/useFlipAnimation";
+import { fetchJson } from "../../helpers/api";
+import {
+  FREE_GAME_CLAIMER,
+  PROLIFIC_STUDIES_NOTIFIER,
+  SEARCH_AUTOMATIC_REWARDS,
+} from "../extensions/extensionInfo";
 
 type MainProps = {
   classes?: string;
@@ -22,13 +28,6 @@ type MainProps = {
 interface ExtensionValues {
   userCount?: number;
   ratingValue?: number;
-}
-
-const API_HOST = import.meta.env.VITE_API_HOST ?? "";
-
-async function fetchJson<T>(path: string): Promise<T> {
-  const response = await fetch(`${API_HOST}${path}`);
-  return (await response.json()) as T;
 }
 
 function Main({ classes = "" }: MainProps) {
@@ -61,8 +60,8 @@ function Main({ classes = "" }: MainProps) {
           "https://chromewebstore.google.com/detail/microsoft-automatic-rewar/ocmmbfdhomnkljmjkmafegefcgcfkefo",
         stars: 0,
         forks: 0,
-        users: 15000,
-        rating: 4.6,
+        users: SEARCH_AUTOMATIC_REWARDS.fallbackUsers,
+        rating: 4.5,
         created_at: null,
       },
       {
@@ -79,8 +78,8 @@ function Main({ classes = "" }: MainProps) {
           "https://chromewebstore.google.com/detail/free-game-claimer-for-ste/mndghaafpgiinfecbbbcppppiblmjepk",
         stars: 0,
         forks: 0,
-        users: 1000,
-        rating: 4.6,
+        users: FREE_GAME_CLAIMER.fallbackUsers,
+        rating: 4.5,
         created_at: null,
       },
       {
@@ -97,8 +96,8 @@ function Main({ classes = "" }: MainProps) {
           "https://chromewebstore.google.com/detail/prolific-studies-notifier/mlicfddkgjkeajfgkihplfbgpmbonbao",
         stars: 0,
         forks: 0,
-        users: 3000,
-        rating: 4.1,
+        users: PROLIFIC_STUDIES_NOTIFIER.fallbackUsers,
+        rating: 3.6,
         created_at: null,
       },
       {
