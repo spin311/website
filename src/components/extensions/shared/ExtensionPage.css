@@ -1,0 +1,195 @@
+/* Shared layout of the extension pages (Search Automatic Rewards, Free Game Claimer,
+   Prolific Studies Notifier) and the donate section they end with. */
+
+.extension-page {
+    --ext-divider: rgba(128, 128, 128, 0.3);
+    --ext-radius: 10px;
+}
+
+.extension-page > section {
+    padding-block: 1.5rem 2rem;
+    border-top: 1px solid var(--ext-divider);
+}
+
+.extension-page > section:first-of-type {
+    border-top: 0;
+    padding-top: 0;
+}
+
+.extension-page h2 {
+    margin-top: 0;
+}
+
+.extension-page h3 {
+    font-size: 1.15rem;
+    margin: 1.5rem 0 0.5rem;
+}
+
+.extension-page section a:not(.donate-button) {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.ext-lead {
+    font-size: 1.2rem;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+.ext-facts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 1rem 0 1.5rem;
+    padding: 0;
+    list-style: none;
+}
+
+.ext-facts li {
+    padding: 0.3rem 0.8rem;
+    border-radius: 999px;
+    background: var(--background-card-color);
+    box-shadow: 0 1px 3px var(--shadow-color);
+    font-size: 0.85rem;
+}
+
+.ext-list {
+    padding-left: 1.2rem;
+}
+
+.ext-list > li {
+    margin-bottom: 0.75rem;
+    line-height: 1.55;
+}
+
+/* Numbered setup steps with the number in a circle. */
+.ext-steps {
+    counter-reset: ext-step;
+    margin: 1rem 0;
+    padding: 0;
+    list-style: none;
+}
+
+.ext-steps > li {
+    counter-increment: ext-step;
+    position: relative;
+    min-height: 1.8rem;
+    margin-bottom: 1rem;
+    padding-left: 2.6rem;
+    line-height: 1.55;
+}
+
+.ext-steps > li::before {
+    content: counter(ext-step);
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: grid;
+    place-items: center;
+    width: 1.8rem;
+    height: 1.8rem;
+    border-radius: 50%;
+    background: var(--active-color);
+    color: white;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.ext-shot {
+    margin: 1.5rem 0;
+}
+
+.ext-shot img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: var(--ext-radius);
+    box-shadow: 0 2px 12px var(--shadow-color);
+}
+
+.ext-shot figcaption {
+    margin-top: 0.6rem;
+    color: var(--text-secondary-color);
+    font-size: 0.85rem;
+    text-align: center;
+}
+
+/* A popup capture shown at its real size rather than stretched to the column. */
+.ext-shot-narrow {
+    max-width: 400px;
+    margin-inline: auto;
+}
+
+/* Two portrait popup captures side by side, stacked on narrow screens. */
+.ext-shot-pair {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+.ext-shot-pair .ext-shot {
+    margin: 0;
+}
+
+.ext-note {
+    display: flex;
+    gap: 0.75rem;
+    margin: 1.5rem 0;
+    padding: 0.9rem 1rem;
+    border-left: 4px solid #d99a00;
+    border-radius: 6px;
+    background: var(--background-card-color);
+    box-shadow: 0 1px 3px var(--shadow-color);
+}
+
+.ext-note svg {
+    flex-shrink: 0;
+    margin-top: 0.25rem;
+    color: #d99a00;
+}
+
+.ext-note p {
+    margin: 0;
+    line-height: 1.55;
+}
+
+.ext-faq details {
+    border-bottom: 1px solid var(--ext-divider);
+}
+
+.ext-faq summary {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.9rem 0;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    list-style: none;
+}
+
+.ext-faq summary::-webkit-details-marker {
+    display: none;
+}
+
+.ext-faq summary::after {
+    content: "+";
+    flex-shrink: 0;
+    font-size: 1.2rem;
+    line-height: 1;
+}
+
+.ext-faq details[open] summary::after {
+    content: "\2212";
+}
+
+.ext-faq summary:focus-visible {
+    outline: 2px solid var(--active-color);
+    outline-offset: 2px;
+}
+
+.ext-faq details p {
+    margin: 0 0 1rem;
+    line-height: 1.6;
+}

@@ -21,7 +21,9 @@ const MicrosoftAutomaticRewards = lazy(
       "./components/extensions/microsoftAutomaticRewards/MicrosoftAutomaticRewards"
     ),
 );
-const Donate = lazy(() => import("./components/extensions/donate/Donate"));
+const DonatePage = lazy(
+  () => import("./components/extensions/donate/DonatePage"),
+);
 const Uninstall = lazy(
   () => import("./components/extensions/uninstall/uninstall"),
 );
@@ -82,10 +84,7 @@ root.render(
               <Routes>
                 <Route path="/" element={<App />} />
                 <Route path="/contact" element={<ContactMe />} />
-                <Route
-                  path="/donate"
-                  element={<Donate soloComponent={true} />}
-                />
+                <Route path="/donate" element={<DonatePage />} />
                 <Route path="/uninstall" element={<Uninstall />} />
                 <Route
                   path="/microsoft-automatic-rewards"

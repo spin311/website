@@ -23,8 +23,8 @@ The site is available in English and Slovenian (add `?lang=sl` to a URL for Slov
 ## Projects
 
 - [Digitalna Košarica](https://digitalna-kosarica.si/): price comparison website for Slovenian grocery stores, built with Spring Boot, PostgreSQL/TimescaleDB and Next.js
-- [Search Automatic Rewards](https://svitspindler.com/microsoft-automatic-rewards): Chrome extension that automates daily Microsoft Rewards points, with Google's Featured badge ([source](https://github.com/spin311/MicrosoftRewardsWebsite))
-- [Prolific Studies Notifier](https://svitspindler.com/prolific-studies-notifier): Chrome extension that alerts users to new Prolific studies ([source](https://github.com/spin311/ProlificAutomaticStudies))
+- [Search Automatic Rewards](https://svitspindler.com/microsoft-automatic-rewards): Chrome and Firefox extension that automates daily Microsoft Rewards points, with Google's Featured badge ([source](https://github.com/spin311/MicrosoftRewardsWebsite))
+- [Prolific Studies Notifier](https://svitspindler.com/prolific-studies-notifier): Chrome and Firefox extension that alerts users to new Prolific studies ([source](https://github.com/spin311/ProlificAutomaticStudies))
 - [Free Game Claimer](https://svitspindler.com/free-game-claimer): Chrome and Firefox extension that automatically claims free games from Epic, Steam, GOG, IndieGala and Prime Gaming ([source](https://github.com/spin311/epic-free-games-claim))
 - [Gobar](https://juicevodka.github.io/Gobar/): mobile app that identifies mushrooms with an AI model; won "Best Carbon footprint reduction app" at DragonHack 2023 ([source](https://github.com/JuiceVodka/Gobar))
 - [KeSi](https://juicevodka.github.io/KeSi/): Android location-guessing game similar to GeoGuessr, built at DragonHack 2024 with Kotlin ([source](https://github.com/JuiceVodka/KeSi))
@@ -33,4 +33,4 @@ The site is available in English and Slovenian (add `?lang=sl` to a URL for Slov
 
 ## Optional
 
-- [Donate](https://svitspindler.com/donate): support the development of the extensions
+- [Donate](https://svitspindler.com/donate): sponsor the extensions on GitHub, or donate once with PayPal, Ko-fi or Bitcoin

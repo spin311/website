@@ -1,107 +1,96 @@
-import "./MicrosoftAutomaticRewards.css";
-import "../../../App.css";
 import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faAddressBook,
-  faHouse,
-  faArrowDown,
-  faMobileScreen,
-  faArrowLeft,
-  faDonate,
+  faCircleQuestion,
   faLightbulb,
+  faListOl,
+  faTriangleExclamation,
 } from "@fortawesome/free-solid-svg-icons";
-import { faGithub } from "@fortawesome/free-brands-svg-icons/faGithub";
-import { Helmet } from "react-helmet";
-import { Outlet } from "react-router-dom";
 
-import SidebarMenu from "../../sidebar-menu/SidebarMenu";
 import { useLanguage } from "../../../context/LanguageContext";
-import Header from "../../header/Header";
-import Contact from "../../footer/contact/Contact";
-import Footer from "../../footer/Footer";
-import Donate from "../donate/Donate";
-import useIsMobile from "../../../hooks/useIsMobile";
+import { retinaImage } from "../../../helpers/images";
+import { SEARCH_AUTOMATIC_REWARDS } from "../extensionInfo";
+import ExtensionPage from "../shared/ExtensionPage";
+import ExtensionFacts from "../shared/ExtensionFacts";
+import FaqList from "../shared/FaqList";
+import Screenshot from "../shared/Screenshot";
+import TranslatedList, { numberedKeys } from "../shared/TranslatedList";
 
-import About from "./about/About";
-import Features from "./features/Features";
-import { Link } from "../../../types/ComponentTypes";
+const GROUP = "MICROSOFT";
 
+// Installing the extension opens this page, so "Getting started" doubles as onboarding.
+// Kept low-key on purpose: Microsoft's terms prohibit automated searches.
 function MicrosoftAutomaticRewards() {
-  const { text } = useLanguage();
-  const isMobile = useIsMobile();
-  const microsoftSections = [
-    {
-      id: "back",
-      icon: faArrowLeft,
-      text: text.GENERAL.back,
-      link: true,
-      href: "/",
-    },
-    { id: "home", icon: faHouse, text: text.GENERAL.home },
+  const { text, formatHtml } = useLanguage();
+  const sections = [
+    { id: "setup", icon: faListOl, text: text.EXTENSION.setup_title },
     { id: "features", icon: faLightbulb, text: text.GENERAL.features },
-    { id: "donate", icon: faDonate, text: text.GENERAL.donate },
-    { id: "contact", icon: faAddressBook, text: text.CONTACT.contact },
+    { id: "faq", icon: faCircleQuestion, text: text.EXTENSION.faq_title },
   ];
-  const title = { text: "Search automatic rewards", class: "md-text" };
-  const downloadLink = {
-    href: "https://chromewebstore.google.com/detail/microsoft-automatic-rewar/ocmmbfdhomnkljmjkmafegefcgcfkefo?utm_source=website&utm_medium=landing-page",
-    text: text.PROJECT.download,
-    icon: faArrowDown,
-    link: true,
-  };
-  let links: Link[] = [
-    {
-      href: "https://github.com/spin311/MicrosoftRewardsWebsite",
-      text: "GitHub",
-      icon: faGithub,
-      link: true,
-      internal: false,
-    },
-    {
-      href: "/microsoft-automatic-rewards/mobile/test-app",
-      text: text.GENERAL.mobile,
-      icon: faMobileScreen,
-      link: false,
-      internal: true,
-    },
-    {
-      href: "/donate",
-      text: text.GENERAL.donate,
-      icon: faDonate,
-      link: false,
-      internal: true,
-    },
-  ];
-  links = !isMobile ? [downloadLink, ...links] : links;
-  const image = {
-    src: `${import.meta.env.PUBLIC_URL ?? ""}/assets/images/microsoft.png`,
-    alt: "Search automatic rewards",
-  };
-  return (
-    <>
-      <Helmet>
-        <title>Search automatic rewards</title>
-        <meta
-          name="description"
-          content="Search automatic rewards browser extension"
-        />
-      </Helmet>
-      <div className="App">
-        <SidebarMenu classes="SidebarMenu" sections={microsoftSections} />
-        <div className="Content">
-          <Header title={title} links={links} image={image} />
-          <About />
-          <hr className="mb-2" />
-          <Features className="mb-2" />
-          <hr />
-          <Donate className="mb-4" />
+  const { src, srcSet } = retinaImage("microsoft", 170, 170);
 
-          <Contact />
-          <Footer />
+  return (
+    <ExtensionPage
+      extension={SEARCH_AUTOMATIC_REWARDS}
+      meta={{
+        title: text.MICROSOFT.meta_title,
+        description: text.MICROSOFT.meta_description,
+      }}
+      icon={{ src, srcSet, alt: "" }}
+      sections={sections}
+    >
+      <section id="about">
+        <p className="ext-lead">{text.MICROSOFT.tagline}</p>
+        <ExtensionFacts
+          extension={SEARCH_AUTOMATIC_REWARDS}
+          factKeys={["fact_browsers", "fact_free", "fact_source"]}
+        />
+        <p>{text.MICROSOFT.intro}</p>
+        <div className="ext-note" role="note">
+          <FontAwesomeIcon icon={faTriangleExclamation} />
+          <p>{formatHtml(text.MICROSOFT.risk)}</p>
         </div>
-      </div>
-      <Outlet />
-    </>
+      </section>
+
+      <section id="setup">
+        <h2>{text.EXTENSION.setup_title}</h2>
+        <TranslatedList
+          group={GROUP}
+          keys={numberedKeys("step", 4)}
+          ordered
+          className="ext-steps"
+        />
+      </section>
+
+      <section id="features">
+        <h2>{text.GENERAL.features}</h2>
+        <TranslatedList group={GROUP} keys={numberedKeys("feature", 7)} />
+        <Screenshot
+          name="sar-popup"
+          width={400}
+          height={250}
+          alt={text.MICROSOFT.popup_caption}
+          caption={text.MICROSOFT.popup_caption}
+          className="ext-shot-narrow"
+          sizes="(max-width: 767px) 80vw, 400px"
+        />
+      </section>
+
+      <section id="faq">
+        <h2>{text.EXTENSION.faq_title}</h2>
+        <FaqList group={GROUP} count={4} />
+        <p>
+          {text.EXTENSION.faq_bug}{" "}
+          <a
+            href={`${SEARCH_AUTOMATIC_REWARDS.githubUrl}/issues`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {text.EXTENSION.faq_bug_link}
+          </a>
+        </p>
+      </section>
+    </ExtensionPage>
   );
 }
 
