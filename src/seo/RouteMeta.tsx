@@ -21,7 +21,8 @@ function RouteMeta({ path }: { path: string }) {
     <Helmet>
       <title>{meta.title}</title>
       <meta name="description" content={meta.description} />
-      <link rel="canonical" href={meta.canonical} />
+      {/* A noindex page with a canonical sends Google two conflicting signals */}
+      {!meta.noindex && <link rel="canonical" href={meta.canonical} />}
       {meta.noindex && <meta name="robots" content="noindex" />}
       <meta property="og:site_name" content={SITE_NAME} />
       <meta property="og:type" content="website" />

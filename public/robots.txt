@@ -1,11 +1,11 @@
 # https://www.robotstxt.org/robotstxt.html
-# Search engines, link previews and AI crawlers are all welcome. /uninstall is the
-# feedback form an extension opens after removal; it has nothing to index.
+# Search engines, link previews and AI crawlers are all welcome. /uninstall stays out
+# of search through its noindex tag, not here: a crawler blocked by robots.txt never
+# fetches the page, so it would never see the tag.
 User-agent: *
-Disallow: /uninstall
+Disallow:
 
 # AI crawlers and agents, named explicitly so the permission is unambiguous.
-# A crawler that has its own group ignores the * group, so /uninstall is repeated.
 User-agent: GPTBot
 User-agent: OAI-SearchBot
 User-agent: ChatGPT-User
