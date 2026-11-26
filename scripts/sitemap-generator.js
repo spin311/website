@@ -1,30 +1,34 @@
+// Writes the sitemap. `npm run build` runs it with build/sitemap.xml so <lastmod> is the
+// build date; without an argument it refreshes the committed public/sitemap.xml.
+// Pages with noindex (see NOINDEX_PATHS in src/seo/routes.ts) stay out of it.
 const { SitemapStream, streamToPromise } = require('sitemap');
 const { writeFileSync, mkdirSync, existsSync } = require('fs');
-const { resolve } = require('path');
+const { dirname, resolve } = require('path');
+
+const lastmod = new Date().toISOString().slice(0, 10);
 
 // Define links for your routes
 const links = [
-    { url: '/', changefreq: 'daily', priority: 1.0 },
-    { url: '/contact', changefreq: 'monthly', priority: 0.7 },
-    { url: '/donate', changefreq: 'monthly' },
-    { url: '/uninstall', changefreq: 'monthly' },
-    { url: '/microsoft-automatic-rewards', changefreq: 'monthly' },
-    { url: '/microsoft-automatic-rewards/mobile/privacy', changefreq: 'monthly' },
-    { url: '/microsoft-automatic-rewards/mobile/website', changefreq: 'monthly' },
-    { url: '/microsoft-automatic-rewards/mobile/test-app', changefreq: 'monthly' },
-    { url: '/prolific-studies-notifier', changefreq: 'monthly' },
-    { url: '/free-game-claimer', changefreq: 'monthly' },
-];
+    { url: '/' },
+    { url: '/contact' },
+    { url: '/donate' },
+    { url: '/microsoft-automatic-rewards' },
+    { url: '/microsoft-automatic-rewards/mobile/privacy' },
+    { url: '/microsoft-automatic-rewards/mobile/website' },
+    { url: '/microsoft-automatic-rewards/mobile/test-app' },
+    { url: '/prolific-studies-notifier' },
+    { url: '/free-game-claimer' },
+].map((link) => ({ ...link, lastmod }));
 
 // Create the stream and define your site hostname
-const sitemap = new SitemapStream({ hostname: 'https://svitspindler.com' }); // Replace with your real domain
+const sitemap = new SitemapStream({ hostname: 'https://svitspindler.com' });
 
-// Absolute path to public/sitemap.xml
-const sitemapPath = resolve(__dirname, '..', 'public', 'sitemap.xml');
+const sitemapPath = process.argv[2]
+    ? resolve(process.argv[2])
+    : resolve(__dirname, '..', 'public', 'sitemap.xml');
 
-// Ensure public directory exists
-const publicDir = resolve(__dirname, '..', 'public');
-if (!existsSync(publicDir)) mkdirSync(publicDir);
+const outputDir = dirname(sitemapPath);
+if (!existsSync(outputDir)) mkdirSync(outputDir, { recursive: true });
 
 // Write sitemap
 streamToPromise(sitemap)
@@ -32,7 +36,10 @@ streamToPromise(sitemap)
         writeFileSync(sitemapPath, data.toString());
         console.log(`✅ Sitemap successfully created at ${sitemapPath}`);
     })
-    .catch(console.error);
+    .catch((error) => {
+        console.error(error);
+        process.exit(1);
+    });
 
 // Push URLs into the stream
 links.forEach(link => sitemap.write(link));
