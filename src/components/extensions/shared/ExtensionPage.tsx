@@ -1,5 +1,7 @@
 import "./ExtensionPage.css";
 import React, { ReactNode } from "react";
+import { Link as RouterLink } from "react-router-dom";
+import parse, { domToReact, Element } from "html-react-parser";
 import {
   faAddressBook,
   faArrowLeft,
@@ -81,6 +83,18 @@ function ExtensionPage({
         <div className="Content extension-page">
           <Header
             title={{ text: extension.name, class: "md-text" }}
+            tagline={
+              <p className="header-byline">
+                {parse(text.HEADER.byline, {
+                  replace: (node) =>
+                    node instanceof Element && node.name === "a" ? (
+                      <RouterLink to="/">
+                        {domToReact(node.children as never)}
+                      </RouterLink>
+                    ) : undefined,
+                })}
+              </p>
+            }
             links={links}
             image={icon}
           />

@@ -276,36 +276,16 @@ function Main({ classes = "" }: MainProps) {
 
   const experiences: ExperienceType[] = [
     {
-      title: text.EXPERIENCE.xp3_title,
-      company: "Digital School",
-      desc: [text.EXPERIENCE.xp3_desc1, text.EXPERIENCE.xp3_desc2],
-      website: "https://digitalschool.si/",
-      years: `2021 - 2024`,
-      logo: `${IMAGES_URL}/ds.webp`,
-    },
-    {
       title: text.EXPERIENCE.xp1_title,
-      company: "Ixtlan Team",
+      company: "Opti Solutions",
       desc: [
-        text.EXPERIENCE.xp1_desc1,
-        text.EXPERIENCE.xp1_desc2,
-        text.EXPERIENCE.xp1_desc3,
+        text.EXPERIENCE.xp5_desc1,
+        text.EXPERIENCE.xp5_desc2,
+        text.EXPERIENCE.xp5_desc3,
       ],
-      website: "https://www.ixtlan-team.si/",
-      years: "2023 - 2024",
-      logo: `${IMAGES_URL}/ix.webp`,
-    },
-    {
-      title: text.EXPERIENCE.xp1_title,
-      company: "Nightwatch, Formaviva",
-      desc: [
-        text.EXPERIENCE.xp2_desc1,
-        text.EXPERIENCE.xp2_desc2,
-        text.EXPERIENCE.xp2_desc3,
-      ],
-      website: "https://nightwatch.io/",
-      years: `2024 - 2025`,
-      logo: `${IMAGES_URL}/nightwatch.webp`,
+      website: "https://opti-solutions.si/",
+      years: `2026 - ${text.EXPERIENCE.present}`,
+      logo: `${IMAGES_URL}/opti.webp`,
     },
     {
       title: text.EXPERIENCE.xp4_title,
@@ -321,15 +301,35 @@ function Main({ classes = "" }: MainProps) {
     },
     {
       title: text.EXPERIENCE.xp1_title,
-      company: "Opti Solutions",
+      company: "Nightwatch, Formaviva",
       desc: [
-        text.EXPERIENCE.xp5_desc1,
-        text.EXPERIENCE.xp5_desc2,
-        text.EXPERIENCE.xp5_desc3,
+        text.EXPERIENCE.xp2_desc1,
+        text.EXPERIENCE.xp2_desc2,
+        text.EXPERIENCE.xp2_desc3,
       ],
-      website: "https://opti-solutions.si/",
-      years: `2026 - ${text.EXPERIENCE.present}`,
-      logo: `${IMAGES_URL}/opti.webp`,
+      website: "https://nightwatch.io/",
+      years: `2024 - 2025`,
+      logo: `${IMAGES_URL}/nightwatch.webp`,
+    },
+    {
+      title: text.EXPERIENCE.xp1_title,
+      company: "Ixtlan Team",
+      desc: [
+        text.EXPERIENCE.xp1_desc1,
+        text.EXPERIENCE.xp1_desc2,
+        text.EXPERIENCE.xp1_desc3,
+      ],
+      website: "https://www.ixtlan-team.si/",
+      years: "2023 - 2024",
+      logo: `${IMAGES_URL}/ix.webp`,
+    },
+    {
+      title: text.EXPERIENCE.xp3_title,
+      company: "Digital School",
+      desc: [text.EXPERIENCE.xp3_desc1, text.EXPERIENCE.xp3_desc2],
+      website: "https://digitalschool.si/",
+      years: `2021 - 2024`,
+      logo: `${IMAGES_URL}/ds.webp`,
     },
   ];
 

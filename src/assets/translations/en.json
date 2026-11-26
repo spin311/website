@@ -22,9 +22,15 @@
     "e_mail": "E-mail",
     "mobile": "Mobile"
   },
+  "HEADER": {
+    "role": "Full-stack software engineer in Ljubljana",
+    "stack": "Java · Spring Boot · Kotlin · TypeScript · React · Next.js",
+    "proof": "I build and run <a href='https://digitalna-kosarica.si/?utm_source=svitspindler' target='_blank' rel='noopener noreferrer'>Digitalna Košarica</a> and <a href='#projects'>browser extensions</a> with 40,000+ users.",
+    "byline": "Made by <a href='/'>Svit Spindler</a>, full-stack software engineer"
+  },
   "MAIN": {
     "title": "About me",
-    "description": "I am a computer science graduate with hands-on experience in mobile, web, backend, and database systems development.\nIn my free time I like developing my own hobby projects to learn new technologies. I am particularly interested in writing Google extensions and mobile applications."
+    "description": "I'm a full-stack software engineer in Ljubljana. I work mostly with Java and Spring Boot on the backend and TypeScript with React or Next.js on the frontend, and I like owning a product end to end: the data model, the API, the UI, the deployment and the numbers after launch.\nIn my own time I build and run Digitalna Košarica, a price comparison site for Slovenian grocery stores, and three free, open-source browser extensions with more than 40,000 users."
   },
   "EXPERIENCE": {
     "title": "Experience",
@@ -32,7 +38,6 @@
     "xp1_desc1": "Development of software solutions using Typescript, Angular, Java, PL/SQL",
     "xp1_desc2": "Design and development of applications and microservices",
     "xp1_desc3": "Development of systems on top of Oracle databases",
-    "xp2_title": "Frontend Developer",
     "xp2_desc1": "Responsible for frontend on Formaviva project",
     "xp2_desc2": "CI/CD pipeline, docker and backend",
     "xp2_desc3": "Improved  tests & QA",
