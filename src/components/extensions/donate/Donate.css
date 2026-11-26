@@ -66,7 +66,7 @@
     border-radius: 8px;
     background: transparent;
     color: var(--primary-color);
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins', 'Poppins Fallback', sans-serif;
     font-size: 1rem;
     font-weight: 600;
     text-decoration: none;
@@ -136,7 +136,7 @@
     align-items: center;
     gap: 0.5rem;
     cursor: pointer;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins', 'Poppins Fallback', sans-serif;
     font-weight: 600;
     list-style: none;
 }
@@ -201,7 +201,7 @@
 
 .donate-page h1 {
     margin: 0 0 1rem;
-    font-family: "Kay Pho Du", serif;
+    font-family: "Kay Pho Du", "Kay Pho Du Fallback", serif;
     font-size: 2.75rem;
     line-height: 1.2;
 }

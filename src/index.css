@@ -66,3 +66,26 @@ body {
 .w-40 {
     width: 40%;
 }
+
+/* Metric-matched stand-ins for the web fonts, used until the real ones arrive. They take
+   the same width and line height as Poppins 400 and Kay Pho Du 700, so the swap does not
+   reflow the prerendered text. Values come from the fonts' own metrics against Arial and
+   Times New Roman Bold (size-adjust = average letter width ratio; overrides = font
+   ascent/descent/line gap divided by size-adjust). Liberation fonts are the Linux twins. */
+@font-face {
+  font-family: "Poppins Fallback";
+  src: local("Arial"), local("Liberation Sans"), local("Helvetica");
+  size-adjust: 114.1%;
+  ascent-override: 92.02%;
+  descent-override: 30.67%;
+  line-gap-override: 8.76%;
+}
+@font-face {
+  font-family: "Kay Pho Du Fallback";
+  font-weight: 700;
+  src: local("Times New Roman Bold"), local("TimesNewRomanPS-BoldMT"), local("Liberation Serif Bold");
+  size-adjust: 107.88%;
+  ascent-override: 87.99%;
+  descent-override: 23.76%;
+  line-gap-override: 0%;
+}

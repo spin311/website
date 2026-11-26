@@ -1,12 +1,12 @@
 .App-header {
-        font-family: "Kay Pho Du", serif;
+        font-family: "Kay Pho Du", "Kay Pho Du Fallback", serif;
         font-weight: 400;
         font-style: normal;
         margin-bottom: 5em;
 }
 
 .name {
-        font-family: "Kay Pho Du", serif;
+        font-family: "Kay Pho Du", "Kay Pho Du Fallback", serif;
         text-align: center;
 }
 
