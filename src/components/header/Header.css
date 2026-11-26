@@ -10,6 +10,12 @@
         text-align: center;
 }
 
+/* The home page name stays on one line, so swapping in Kay Pho Du can't change its
+   height (src/fonts.css). Extension titles (.md-text) are long and must wrap. */
+.name:not(.md-text) {
+        white-space: nowrap;
+}
+
 .App-header h1 {
         font-size: 4rem;
 }
@@ -30,7 +36,7 @@
 
 @media screen and (max-width: 768px) {
         .App-header h1 {
-                font-size: 3rem;
+                font-size: min(3rem, 14vw);
         }
         .profile-picture {
                 width: 145px;

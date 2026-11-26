@@ -1,7 +1,6 @@
 import React from "react";
 import { hydrateRoot, createRoot } from "react-dom/client";
-import "@fontsource/kay-pho-du/700.css";
-import "@fontsource/poppins/400.css";
+import "./fonts.css";
 import "./index.css";
 import "./fontAwesome";
 import { BrowserRouter } from "react-router-dom";
