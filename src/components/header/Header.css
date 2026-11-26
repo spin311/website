@@ -57,6 +57,7 @@
 .header-stack {
         font-size: 0.9rem;
         opacity: 0.75;
+        text-wrap: balance;
         margin-top: 0.25rem !important;
 }
 
@@ -84,7 +85,8 @@
                 font-size: 1.1rem;
         }
         .header-stack {
-                font-size: 0.8rem;
+                font-size: 0.72rem;
+                padding-inline: 0;
         }
         .header-proof {
                 font-size: 0.95rem;
