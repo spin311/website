@@ -9,7 +9,7 @@ import {
 import { faChrome } from "@fortawesome/free-brands-svg-icons/faChrome";
 import { faFirefoxBrowser } from "@fortawesome/free-brands-svg-icons/faFirefoxBrowser";
 import { faGithub } from "@fortawesome/free-brands-svg-icons/faGithub";
-import { Helmet } from "react-helmet";
+import RouteMeta from "../../../seo/RouteMeta";
 
 import { useLanguage } from "../../../context/LanguageContext";
 import { Link, Section } from "../../../types/ComponentTypes";
@@ -22,7 +22,6 @@ import { ExtensionInfo } from "../extensionInfo";
 
 type ExtensionPageProps = {
   extension: ExtensionInfo;
-  meta: { title: string; description: string };
   icon: { src: string; srcSet?: string; alt: string };
   /** Sidebar entries for the page's own sections, between Home and Donate. */
   sections: Section[];
@@ -32,7 +31,6 @@ type ExtensionPageProps = {
 /** Shared frame of an extension page: sidebar, header with store links, donate, contact. */
 function ExtensionPage({
   extension,
-  meta,
   icon,
   sections,
   children,
@@ -77,10 +75,7 @@ function ExtensionPage({
 
   return (
     <>
-      <Helmet>
-        <title>{meta.title}</title>
-        <meta name="description" content={meta.description} />
-      </Helmet>
+      <RouteMeta path={extension.page} />
       <div className="App">
         <SidebarMenu classes="SidebarMenu" sections={navSections} />
         <div className="Content extension-page">

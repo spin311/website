@@ -1,6 +1,6 @@
 import "./Donate.css";
 import React from "react";
-import { Helmet } from "react-helmet";
+import RouteMeta from "../../../seo/RouteMeta";
 import { Link } from "react-router-dom";
 
 import { useLanguage } from "../../../context/LanguageContext";
@@ -60,10 +60,7 @@ function DonatePage() {
 
   return (
     <>
-      <Helmet>
-        <title>{text.DONATE.page_meta_title}</title>
-        <meta name="description" content={text.DONATE.page_meta_description} />
-      </Helmet>
+      <RouteMeta path="/donate" />
       <BackArrow />
       <main className="donate-page">
         <h1>{text.DONATE.page_title}</h1>

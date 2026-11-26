@@ -1,5 +1,6 @@
 import "./NotFound.css";
-import { Helmet } from "react-helmet";
+import RouteMeta from "../../seo/RouteMeta";
+import { NOT_FOUND_PATH } from "../../seo/routes";
 import React from "react";
 
 import BackArrow from "../back-arrow/BackArrow";
@@ -9,10 +10,7 @@ function NotFound() {
   const { text } = useLanguage();
   return (
     <>
-      <Helmet>
-        <title>404 {text.GENERAL.not_found}</title>
-        <meta name="description" content="Not found page" />
-      </Helmet>
+      <RouteMeta path={NOT_FOUND_PATH} />
       <BackArrow />
       <div className={"notFound"}>
         <h1>404 {text.GENERAL.not_found}</h1>

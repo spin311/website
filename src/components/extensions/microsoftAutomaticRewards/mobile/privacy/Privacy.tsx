@@ -1,17 +1,11 @@
 import "./Privacy.css";
-import { Helmet } from "react-helmet";
+import RouteMeta from "../../../../../seo/RouteMeta";
 import React from "react";
 
 function Privacy() {
   return (
     <>
-      <Helmet>
-        <title>Privacy Policy</title>
-        <meta
-          name="description"
-          content="Privacy Policy for Search automatic rewards app"
-        />
-      </Helmet>
+      <RouteMeta path="/microsoft-automatic-rewards/mobile/privacy" />
       <div className="terms">
         <h1 className="titles">Privacy Policy for Search automatic rewards</h1>
         <p>
