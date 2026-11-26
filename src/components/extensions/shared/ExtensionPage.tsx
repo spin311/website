@@ -1,5 +1,7 @@
 import "./ExtensionPage.css";
 import React, { ReactNode } from "react";
+import { Link as RouterLink } from "react-router-dom";
+import parse, { domToReact, Element } from "html-react-parser";
 import {
   faAddressBook,
   faArrowLeft,
@@ -10,8 +12,6 @@ import { faChrome } from "@fortawesome/free-brands-svg-icons/faChrome";
 import { faFirefoxBrowser } from "@fortawesome/free-brands-svg-icons/faFirefoxBrowser";
 import { faGithub } from "@fortawesome/free-brands-svg-icons/faGithub";
 import { Helmet } from "react-helmet";
-import { Link as RouterLink } from "react-router-dom";
-import parse, { domToReact, Element } from "html-react-parser";
 
 import { useLanguage } from "../../../context/LanguageContext";
 import { Link, Section } from "../../../types/ComponentTypes";
