@@ -27,3 +27,4 @@ yarn-error.log*
 /personal-website-bruno
 /website-api-bruno
 /.github/.idea
+dist-ssr
