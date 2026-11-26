@@ -40,6 +40,10 @@ export default defineConfig(({ isSsrBuild }) => ({
     // netlify.toml can cache it as immutable
     assetsDir: "static",
     sourcemap: !isSsrBuild,
+    // Pages are prerendered, so their markup is on screen before a route's JS chunk loads.
+    // Route stylesheets must already be in index.html (inlined below), or the page
+    // would first paint unstyled and jump when its chunk's CSS arrives.
+    cssCodeSplit: false,
     // Fonts come in unicode-range subsets the browser fetches only when a page needs
     // them; inlining the small ones would put every subset into index.html instead.
     assetsInlineLimit: (filePath) =>
