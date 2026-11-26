@@ -38,7 +38,7 @@
         }
 }
 .header-tagline {
-        font-family: "Poppins", sans-serif;
+        font-family: "Poppins", "Poppins Fallback", sans-serif;
         text-align: center;
         margin: -0.4rem auto 1.2rem;
         max-width: 38rem;
