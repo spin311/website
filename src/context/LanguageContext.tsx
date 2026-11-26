@@ -11,7 +11,8 @@ import parse from "html-react-parser";
 import enText from "../assets/translations/en.json";
 import sloText from "../assets/translations/sl.json";
 import { ReactNodeProps } from "../types/PropTypes";
-import { isLanguage, Language } from "../types/enums";
+import { Language } from "../types/enums";
+import { readStoredLanguage } from "../helpers/preferences";
 
 type LanguageContextType = {
   language: Language;
@@ -32,10 +33,8 @@ const LanguageContext = createContext<LanguageContextType>({
 });
 
 export function LanguageProvider({ children }: ReactNodeProps) {
-  const [language, setLanguage] = useState<Language>(() => {
-    const storedLanguage = localStorage.getItem("language");
-    return isLanguage(storedLanguage) ? storedLanguage : Language.ENGLISH;
-  });
+  // Reads storage only in the browser; the server renders English
+  const [language, setLanguage] = useState<Language>(readStoredLanguage);
 
   // Stable so consumers can list it as an effect dependency.
   const changeLanguage = useCallback((newLanguage: Language) => {
