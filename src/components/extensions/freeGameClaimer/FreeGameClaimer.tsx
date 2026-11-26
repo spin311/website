@@ -29,10 +29,6 @@ function FreeGameClaimer() {
   return (
     <ExtensionPage
       extension={FREE_GAME_CLAIMER}
-      meta={{
-        title: text.CLAIMER.meta_title,
-        description: text.CLAIMER.meta_description,
-      }}
       icon={{ src: `${IMAGES_URL}/claimer.webp`, alt: "" }}
       sections={sections}
     >

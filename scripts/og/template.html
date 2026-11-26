@@ -1,0 +1,84 @@
+<!doctype html>
+<!-- Share image (1200x630) for src/seo/routes.ts. Open with ?v=home | free-game-claimer |
+     prolific-studies-notifier; scripts/og/generate.mjs screenshots each into public/assets/og/. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Share image</title>
+<style>
+  @font-face { font-family: "Kay Pho Du"; font-weight: 700; src: url("../../node_modules/@fontsource/kay-pho-du/files/kay-pho-du-latin-700-normal.woff2") format("woff2"); }
+  @font-face { font-family: "Poppins"; font-weight: 400; src: url("../../node_modules/@fontsource/poppins/files/poppins-latin-400-normal.woff2") format("woff2"); }
+  @font-face { font-family: "Poppins"; font-weight: 600; src: url("../../node_modules/@fontsource/poppins/files/poppins-latin-600-normal.woff2") format("woff2"); }
+  * { box-sizing: border-box; margin: 0; }
+  html, body { width: 1200px; height: 630px; overflow: hidden; }
+  body { font-family: "Poppins", sans-serif; position: relative; }
+  .card { width: 1200px; height: 630px; display: flex; align-items: center; padding: 0 72px; gap: 56px; position: relative; }
+  .text { flex: 1; min-width: 0; }
+  .accent { position: absolute; left: 0; top: 0; bottom: 0; width: 18px; }
+
+  /* home: the site's light theme */
+  .home { background: #eeefef; color: #000; }
+  .home .accent { background: #3b3bf6; }
+  .home h1 { font-family: "Kay Pho Du", serif; font-weight: 700; font-size: 104px; line-height: 1.05; }
+  .home .role { font-size: 34px; margin-top: 18px; color: #333; }
+  .home .stack { font-size: 26px; margin-top: 26px; font-weight: 600; color: #3b3bf6; }
+  .home .proof { font-size: 24px; margin-top: 44px; color: #666; line-height: 1.4; }
+  .home .photo { width: 330px; height: 330px; border-radius: 50%; border: 6px solid #000; flex: none; background: url("../../public/assets/images/profile@2x.webp") center / cover; }
+
+  /* extensions: the colours of their own store promo images */
+  .free-game-claimer { background: #161819; color: #fff; }
+  .free-game-claimer .accent { background: #4ade80; }
+  .free-game-claimer .lead { color: #b8b8c0; }
+  .prolific-studies-notifier { background: #2282ad; color: #fff; }
+  .prolific-studies-notifier .accent { background: #fff; }
+  .prolific-studies-notifier .lead { color: #e3f0f7; }
+  .icon { width: 112px; height: 112px; border-radius: 26px; display: block; }
+  .ext h1 { font-weight: 600; font-size: 70px; line-height: 1.08; margin-top: 30px; letter-spacing: -1px; }
+  .ext .lead { font-size: 31px; line-height: 1.4; margin-top: 22px; }
+  .ext .tags { font-size: 22px; font-weight: 600; margin-top: 34px; opacity: .9; }
+  .shot { width: 470px; height: 630px; flex: none; position: relative; overflow: hidden; }
+  .shot img { position: absolute; display: block; max-width: none; }
+
+  [hidden] { display: none !important; }
+</style>
+</head>
+<body>
+<div class="card home" id="home" hidden>
+  <div class="accent"></div>
+  <div class="text">
+    <h1>Svit Spindler</h1>
+    <p class="role">Full-stack software engineer in Ljubljana</p>
+    <p class="stack">Java · Spring Boot · TypeScript · React</p>
+    <p class="proof">Digitalna Košarica and browser extensions with 40,000+ users</p>
+  </div>
+  <div class="photo"></div>
+</div>
+
+<div class="card ext free-game-claimer" id="free-game-claimer" hidden>
+  <div class="accent"></div>
+  <div class="text">
+    <img class="icon" src="../../public/assets/images/claimer.webp" alt="">
+    <h1>Free Game Claimer</h1>
+    <p class="lead">Claims free games from Epic, Steam, GOG, IndieGala and Prime Gaming for you.</p>
+    <p class="tags">Free · Open source · Chrome and Firefox</p>
+  </div>
+  <div class="shot"><img src="../../public/assets/images/claimer-promo@2x.webp" alt="" style="width:1610px;left:-960px;top:-43px"></div>
+</div>
+
+<div class="card ext prolific-studies-notifier" id="prolific-studies-notifier" hidden>
+  <div class="accent"></div>
+  <div class="text">
+    <img class="icon" src="../../public/assets/images/prolific.webp" alt="">
+    <h1>Prolific Studies Notifier</h1>
+    <p class="lead">A sound and a desktop notification the moment a new study appears.</p>
+    <p class="tags">Free · Notify-only · Chrome and Firefox</p>
+  </div>
+  <div class="shot"><img src="../../public/assets/images/prolific-studies@2x.webp" alt="" style="width:440px;left:12px;top:48px;border-radius:14px 14px 0 0"></div>
+</div>
+
+<script>
+  const variant = new URLSearchParams(location.search).get("v") || "home";
+  document.getElementById(variant).hidden = false;
+</script>
+</body>
+</html>

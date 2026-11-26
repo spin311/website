@@ -1,14 +1,11 @@
-import { Helmet } from "react-helmet";
+import RouteMeta from "../../seo/RouteMeta";
 import React from "react";
 
 import Contact from "../footer/contact/Contact";
 function ContactMe() {
   return (
     <>
-      <Helmet>
-        <title>Contact Me</title>
-        <meta name="description" content="Contact me" />
-      </Helmet>
+      <RouteMeta path="/contact" />
       <div className={"center"}>
         <Contact classes={"w-40"} backArrow={true}></Contact>
       </div>

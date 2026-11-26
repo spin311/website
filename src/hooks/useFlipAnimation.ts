@@ -1,4 +1,8 @@
-import { useLayoutEffect, useRef } from "react";
+import { useEffect, useLayoutEffect, useRef } from "react";
+
+// useLayoutEffect warns when the page is prerendered; there is nothing to measure then
+const useIsomorphicLayoutEffect =
+  typeof window === "undefined" ? useEffect : useLayoutEffect;
 
 const DURATION_MS = 500;
 
@@ -35,7 +39,7 @@ function useFlipAnimation<T extends HTMLElement>(order: unknown) {
     runningAnimations.current.forEach((animation) => animation.cancel());
   };
 
-  useLayoutEffect(() => {
+  useIsomorphicLayoutEffect(() => {
     const first = firstPositions.current;
     firstPositions.current = null;
     if (

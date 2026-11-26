@@ -9,7 +9,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons/faGithub";
 import { faLinkedin } from "@fortawesome/free-brands-svg-icons/faLinkedin";
-import { Helmet } from "react-helmet";
+import RouteMeta from "./seo/RouteMeta";
 
 import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
@@ -62,13 +62,7 @@ function App() {
   ];
   return (
     <>
-      <Helmet>
-        <title>Svit Spindler</title>
-        <meta
-          name="description"
-          content="Portfolio of Svit Spindler, a web developer specializing in full-stack and frontend development, React and mobile app development. See my projects and experience."
-        />
-      </Helmet>
+      <RouteMeta path="/" />
       <div className="App">
         <SidebarMenu classes="SidebarMenu" sections={mainAppSections} />
         <div className="Content">

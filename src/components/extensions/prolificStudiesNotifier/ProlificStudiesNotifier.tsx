@@ -32,10 +32,6 @@ function ProlificStudiesNotifier() {
   return (
     <ExtensionPage
       extension={PROLIFIC_STUDIES_NOTIFIER}
-      meta={{
-        title: text.PROLIFIC.meta_title,
-        description: text.PROLIFIC.meta_description,
-      }}
       icon={{ src: `${IMAGES_URL}/prolific.webp`, alt: "" }}
       sections={sections}
     >

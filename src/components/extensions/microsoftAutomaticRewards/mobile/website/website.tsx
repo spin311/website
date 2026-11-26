@@ -8,12 +8,13 @@ import React, {
 } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import { Tooltip } from "react-tooltip";
-import { Helmet } from "react-helmet";
+import RouteMeta from "../../../../../seo/RouteMeta";
 import { generate } from "random-words";
 
 import BackArrow from "../../../../back-arrow/BackArrow";
 import ImageTooltip from "../../../../image-tooltip/ImageTooltip";
 import useIsMobile from "../../../../../hooks/useIsMobile";
+import { readStorage } from "../../../../../helpers/preferences";
 import { useLanguage } from "../../../../../context/LanguageContext";
 
 import "./website.css";
@@ -44,7 +45,7 @@ function Website() {
       return { searchNu, searchDelay, isWordsSelected: true };
     }
 
-    const savedInputs = localStorage.getItem("websiteFormInputs");
+    const savedInputs = readStorage("websiteFormInputs");
     return savedInputs
       ? (JSON.parse(savedInputs) as Inputs)
       : { searchNu: 12, searchDelay: 7, isWordsSelected: true };
@@ -156,10 +157,7 @@ function Website() {
 
   return (
     <>
-      <Helmet>
-        <title>Microsoft Rewards Website</title>
-        <meta name="description" content="Search automatic rewards Website" />
-      </Helmet>
+      <RouteMeta path="/microsoft-automatic-rewards/mobile/website" />
       <BackArrow />
       <div className="website center">
         <div className="solo">

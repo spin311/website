@@ -11,7 +11,7 @@
 
 .company {
     grid-area: company;
-    font-family: Poppins, sans-serif;
+    font-family: Poppins, 'Poppins Fallback', sans-serif;
 }
 
 .year {

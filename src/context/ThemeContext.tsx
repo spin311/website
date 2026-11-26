@@ -1,5 +1,6 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
 import { ReactNodeProps } from "../types/PropTypes";
+import { readStoredDarkMode } from "../helpers/preferences";
 
 type ThemeContextType = {
   darkMode: boolean;
@@ -9,10 +10,8 @@ type ThemeContextType = {
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export function ThemeProvider({ children }: ReactNodeProps) {
-  const [darkMode, setDarkMode] = useState<boolean>(() => {
-    const stored = localStorage.getItem("darkMode");
-    return stored ? (JSON.parse(stored) as boolean) : false;
-  });
+  // Reads storage only in the browser; the server renders the light theme
+  const [darkMode, setDarkMode] = useState<boolean>(readStoredDarkMode);
 
   useEffect(() => {
     localStorage.setItem("darkMode", JSON.stringify(darkMode));

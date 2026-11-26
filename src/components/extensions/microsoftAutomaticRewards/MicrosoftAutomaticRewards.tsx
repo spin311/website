@@ -29,10 +29,6 @@ function MicrosoftAutomaticRewards() {
   return (
     <ExtensionPage
       extension={SEARCH_AUTOMATIC_REWARDS}
-      meta={{
-        title: text.MICROSOFT.meta_title,
-        description: text.MICROSOFT.meta_description,
-      }}
       icon={{ src, srcSet, alt: "" }}
       sections={sections}
     >

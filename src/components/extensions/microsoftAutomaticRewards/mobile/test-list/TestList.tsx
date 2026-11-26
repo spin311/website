@@ -1,5 +1,5 @@
 import React from "react";
-import { Helmet } from "react-helmet";
+import RouteMeta from "../../../../../seo/RouteMeta";
 import BackArrow from "../../../../back-arrow/BackArrow";
 import useIsMobile from "../../../../../hooks/useIsMobile";
 import { useLanguage } from "../../../../../context/LanguageContext";
@@ -39,10 +39,7 @@ function TestList() {
 
   return (
     <>
-      <Helmet>
-        <title>Microsoft Rewards App</title>
-        <meta name="description" content="Search automatic rewards App" />
-      </Helmet>
+      <RouteMeta path="/microsoft-automatic-rewards/mobile/test-app" />
       <BackArrow />
       <div className="website center">
         <div className="solo">

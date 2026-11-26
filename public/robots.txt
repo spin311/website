@@ -1,4 +1,22 @@
 # https://www.robotstxt.org/robotstxt.html
+# Search engines, link previews and AI crawlers are all welcome. /uninstall stays out
+# of search through its noindex tag, not here: a crawler blocked by robots.txt never
+# fetches the page, so it would never see the tag.
 User-agent: *
 Disallow:
+
+# AI crawlers and agents, named explicitly so the permission is unambiguous.
+User-agent: GPTBot
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: ClaudeBot
+User-agent: Claude-User
+User-agent: Claude-SearchBot
+User-agent: PerplexityBot
+User-agent: Perplexity-User
+User-agent: Google-Extended
+User-agent: Applebot-Extended
+User-agent: CCBot
+Disallow:
+
 Sitemap: https://svitspindler.com/sitemap.xml

@@ -1,4 +1,4 @@
-import { Helmet } from "react-helmet";
+import RouteMeta from "../../../seo/RouteMeta";
 import React, { ChangeEvent, FormEvent, useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { Tooltip } from "react-tooltip";
@@ -86,10 +86,7 @@ function Uninstall() {
   }, [inputs, wasSent, text.EXTENSION.other]);
   return (
     <>
-      <Helmet>
-        <title>Uninstall</title>
-        <meta name="description" content="Uninstall reason" />
-      </Helmet>
+      <RouteMeta path="/uninstall" />
       <div className="uninstall-form center" id="contact">
         <h1>{text.EXTENSION.form_title}</h1>
         <p>{text.EXTENSION.form_explanation}</p>

@@ -1,58 +1,74 @@
-# Routes of the single-page app, served by index.html. Keep this list in sync with the
-# <Route>s in src/index.tsx: `npm run check-netlify-routes` (run in CI) compares them.
-# Real files in build/ always win over these rules, and "/" is index.html itself.
+# Every page is prerendered at build time (scripts/prerender.mjs, run by `npm run build`) into
+# build/<route>/index.html, and "/" is build/index.html. Each route gets one rewrite to its own
+# file, so /contact is served as-is (status 200): no redirect to /contact/, no .html in the URL.
+# force = true makes the rewrite win over Netlify's directory handling for build/contact/.
+# Keep this list in sync with the <Route>s in src/AppRoutes.tsx: `npm run check-netlify-routes`
+# (run in CI) compares them.
+[build]
+  command = "npm run build"
+  publish = "build"
+
 [[redirects]]
   from = "/contact"
-  to = "/index.html"
+  to = "/contact/index.html"
   status = 200
+  force = true
 
 [[redirects]]
   from = "/donate"
-  to = "/index.html"
+  to = "/donate/index.html"
   status = 200
+  force = true
 
 [[redirects]]
   from = "/uninstall"
-  to = "/index.html"
+  to = "/uninstall/index.html"
   status = 200
+  force = true
 
 [[redirects]]
   from = "/microsoft-automatic-rewards"
-  to = "/index.html"
+  to = "/microsoft-automatic-rewards/index.html"
   status = 200
+  force = true
 
 [[redirects]]
   from = "/microsoft-automatic-rewards/mobile/privacy"
-  to = "/index.html"
+  to = "/microsoft-automatic-rewards/mobile/privacy/index.html"
   status = 200
+  force = true
 
 [[redirects]]
   from = "/microsoft-automatic-rewards/mobile/website"
-  to = "/index.html"
+  to = "/microsoft-automatic-rewards/mobile/website/index.html"
   status = 200
+  force = true
 
 [[redirects]]
   from = "/microsoft-automatic-rewards/mobile/test-app"
-  to = "/index.html"
+  to = "/microsoft-automatic-rewards/mobile/test-app/index.html"
   status = 200
+  force = true
 
 [[redirects]]
   from = "/prolific-studies-notifier"
-  to = "/index.html"
+  to = "/prolific-studies-notifier/index.html"
   status = 200
+  force = true
 
 [[redirects]]
   from = "/free-game-claimer"
-  to = "/index.html"
+  to = "/free-game-claimer/index.html"
   status = 200
+  force = true
 
-# Everything else doesn't exist: the app still renders its "Page not found" page, but with
-# a real 404 status. Crawlers and agents (e.g. /.well-known/ard.json) then see a missing
+# Everything else doesn't exist: the prerendered "Page not found" page, with a real 404
+# status. Crawlers and agents (e.g. /.well-known/ard.json) then see a missing
 # page instead of a 200, and a tab from an older deploy that asks for a removed /static/
 # chunk gets a clean failure, after which src/index.tsx reloads it.
 [[redirects]]
   from = "/*"
-  to = "/index.html"
+  to = "/404.html"
   status = 404
 
 # Vite emits its JS, CSS and fonts into /static/ with a content hash in each file name,
