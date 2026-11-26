@@ -5,7 +5,7 @@ import "@fontsource/poppins/400.css";
 import "./index.css";
 import { BrowserRouter } from "react-router-dom";
 
-import AppRoutes from "./AppRoutes";
+import AppRoutes, { preloadRoute } from "./AppRoutes";
 import { canHydratePrerenderedHtml } from "./helpers/preferences";
 
 // A deploy replaces the hashed route chunks, so a tab opened before it can ask for
@@ -34,10 +34,13 @@ const app = (
 
 // Netlify serves every page prerendered (scripts/prerender.mjs). That HTML shows the
 // default visit (English, light theme), so only visitors who match it can hydrate it;
-// everyone else, and `vite dev` where #root is empty, gets a client render.
+// everyone else, and `vite dev` where #root is empty, gets a client render. The route's
+// chunk is loaded first so the prerendered page stays on screen until the app can
+// replace it, with no blank frame in between.
 const { pathname, search } = window.location;
 if (container.hasChildNodes() && canHydratePrerenderedHtml(pathname, search)) {
   hydrateRoot(container, app);
 } else {
-  createRoot(container).render(app);
+  const render = () => createRoot(container).render(app);
+  preloadRoute(pathname.replace(/(.)\/$/, "$1")).then(render, render);
 }
