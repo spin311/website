@@ -22,9 +22,15 @@
     "e_mail": "E-pošta",
     "mobile": "Telefon"
   },
+  "HEADER": {
+    "role": "Full-stack razvijalec programske opreme, Ljubljana",
+    "stack": "Java · Spring Boot · Kotlin · TypeScript · React · Next.js",
+    "proof": "Razvijam in vzdržujem <a href='https://digitalna-kosarica.si/?utm_source=svitspindler' target='_blank' rel='noopener noreferrer'>Digitalno Košarico</a> in <a href='#projects'>razširitve za brskalnik</a> z več kot 40.000 uporabniki.",
+    "byline": "Avtor: <a href='/'>Svit Spindler</a>, full-stack razvijalec programske opreme"
+  },
   "MAIN": {
     "title": "O meni",
-    "description": "Sem diplomirani inženir računalništva z izkušnjami z razvojem mobilnih in spletnih aplikacij, zaledja ter baznih sistemov.\nV prostem času se za učenje novih tehnologij rad ukvarjam z razvojem hobi projektov, predvsem s pisanjem Google razširitev in mobilnih aplikacij.\n"
+    "description": "Sem full-stack razvijalec programske opreme iz Ljubljane. Največ delam z Javo in Spring Bootom na zalednem delu ter s TypeScriptom in Reactom ali Next.js na čelnem delu. Rad skrbim za izdelek od začetka do konca: podatkovni model, API, uporabniški vmesnik, postavitev in številke po zagonu.\nV prostem času razvijam in vzdržujem Digitalno Košarico, spletno stran za primerjavo cen v slovenskih trgovinah, ter tri brezplačne odprtokodne razširitve za brskalnik z več kot 40.000 uporabniki."
   },
   "EXPERIENCE": {
     "title": "Izkušnje",
@@ -32,7 +38,6 @@
     "xp1_desc1": "Razvoj programske opreme z uporabo Typescripta, Angularja, Java, PL/SQL",
     "xp1_desc2": "Načrtovanje in razvoj aplikacij in mikrostoritev",
     "xp1_desc3": "Izdelava sistemov nad podatkovnimi zbirkami Oracle.",
-    "xp2_title": "Frontend razvijalec",
     "xp2_desc1": "Odgovoren za Frontend na projektu Formaviva",
     "xp2_desc2": "Backend, integracija CI/CD & Docker",
     "xp2_desc3": "Izboljšal testing & QA",

@@ -37,3 +37,56 @@
                 height: 145px;
         }
 }
+.header-tagline {
+        font-family: "Poppins", sans-serif;
+        text-align: center;
+        margin: -0.4rem auto 1.2rem;
+        max-width: 38rem;
+        padding-inline: 0.5rem;
+}
+
+.header-tagline p {
+        margin: 0;
+}
+
+.header-role {
+        font-size: 1.25rem;
+        font-weight: 600;
+}
+
+.header-stack {
+        font-size: 0.9rem;
+        opacity: 0.75;
+        margin-top: 0.25rem !important;
+}
+
+.header-proof {
+        font-size: 1rem;
+        margin-top: 0.6rem !important;
+}
+
+.header-proof a {
+        text-decoration: underline;
+        text-underline-offset: 2px;
+}
+
+.header-byline {
+        font-size: 1rem;
+}
+
+.header-byline a {
+        text-decoration: underline;
+        text-underline-offset: 2px;
+}
+
+@media screen and (max-width: 768px) {
+        .header-role {
+                font-size: 1.1rem;
+        }
+        .header-stack {
+                font-size: 0.8rem;
+        }
+        .header-proof {
+                font-size: 0.95rem;
+        }
+}

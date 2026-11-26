@@ -23,7 +23,7 @@ import { isLanguage, Language } from "./types/enums";
 import { retinaImage } from "./helpers/images";
 
 function App() {
-  const { text, language, changeLanguage } = useLanguage();
+  const { text, language, changeLanguage, formatHtml } = useLanguage();
   const [searchParams] = useSearchParams();
   const langParam = searchParams.get("lang");
   const title = { text: "Svit Spindler", class: "" };
@@ -72,7 +72,18 @@ function App() {
       <div className="App">
         <SidebarMenu classes="SidebarMenu" sections={mainAppSections} />
         <div className="Content">
-          <Header links={links} title={title} image={image} />
+          <Header
+            links={links}
+            title={title}
+            image={image}
+            tagline={
+              <>
+                <p className="header-role">{text.HEADER.role}</p>
+                <p className="header-stack">{text.HEADER.stack}</p>
+                <p className="header-proof">{formatHtml(text.HEADER.proof)}</p>
+              </>
+            }
+          />
           <Main classes="Main" />
           <Contact classes="Contact"></Contact>
           <Footer />
